@@ -1,5 +1,5 @@
 ---
-sidebar_position: 2
+sidebar_position: 11
 title: Despachos
 description: Crear, editar y listar despachos
 slug: /documentos/despachos
@@ -252,15 +252,131 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
 ## POST un despacho
 - POST `/v1/shippings.json` 
 
-#### Parámetros
-- **limit**, limita la cantidad de items de una respuesta JSON, por defecto el limit es 25, el máximo permitido es 50.
-- offset, permite paginar los items de una respuesta JSON, por defecto el offset es 0.
+Para crear un documento del tipo despacho (manual o electrónico), se debe enviar un JSON con la siguiente estructura:
 
-#### Ejemplos
-- `GET /v1/documents.json?limit=50&offset=0`
-- `GET /v1/documents.json?fields=[number,totalAmount]`
+### Referencias y fechas
 
+```json
+{
+  "documentTypeId": 20,
+  "officeId": 1,
+  "priceListId": 18,
+  "emissionDate": 1407715200,
+}
+```
+- **documentTypeId**, Id del tipo de documento que indicara si es factura, boleta, nota de venta etc. (Integer).
+- **officeId**, Id de la sucursal donde se emite el documento, si no es especificada el documento quedara asignado a la sucursal por defecto del sistema (Integer).
+- **priceListId**, Id de la lista de precio utilizada por el documento, si no es especificada se utilizara la lista de precio por defecto de la sucursal (Integer).
+- **emissionDate**, Fecha de emisión del documento (Integer) (no se debe aplicar zona horaria, solo considerar la fecha).
+- **shippingTypeId**, Id tipo de despacho (tipo de traslado) (Integer) 
+- **municipality**, Comuna de despacho (String) 
+- **address**, Dirección de despacho (String)
+- **recipient**, Nombre quien recepciona despacho (String)
 
-```json title="Response /documents/421.json "
+:::note
+Opcionalmente puedes utilizar el parámetro **codeSii** en vez de **documentTypeId** si conoces el código tributario del documento.
+:::
 
+:::info
+Se deben enviar los datos de dirección del cliente como direcciones del despacho
+:::
+
+### A partir de existente
+Si se desea generar una guía a partir de otro documento, se debe enviar el identificador del detalle del documento original:
+
+```json "
+{
+{
+   "details": [
+       {
+           "detailId": 105,
+           "quantity": 1
+       }
+   ],
+}
+```
+
+- **detailId**, Id de detalle del documento de referencia
+- **quantity**, Cantidad asociada al detalle
+
+### Traslado interno
+Si se desea generar una guía de traslado interno, se debe agregar al envío
+
+```json "
+{
+ "officeId": 1,
+ "destinationOfficeId":3,
+ "shippingTypeId": 5
+}
+```
+
+- **officeId**, Id de sucursal origen (donde se genera el documento)
+- **destinationOfficeId**, Id sucursal destino
+- **shippingTypeId**, Id tipo de despacho
+
+### Ejemplo JSON
+
+#### Envío
+```json title="POST /shippings.json "
+{
+  "documentTypeId": 7,
+  "officeId": 1,
+  "emissionDate": 1462527931,
+  "shippingTypeId": 6,
+  "municipality": "Puerto Varas",
+  "city": "Puerto Varas",
+  "address": "la quebrada 1005",
+  "declareSii": 1,
+  "recipient": "Edison Packard",
+  "details": [
+    {
+      "quantity": 500,
+      "code": "1372685554",
+      "netUnitValue": 12000
+    }
+  ],
+  "client": {
+    "code": "1-7",
+    "municipality": "Puerto Montt",
+    "activity": "Arriendo de maquinaria pesada",
+    "company": "Maquinarías Express",
+    "city": "PUERTO MONTT",
+    "email": "apidespachos@bsale.cl",
+    "address": "Los Alamos #122"
+  }
+}
+```
+
+#### Respuesta
+
+```json title="201 Response /shippings.json "
+{
+  "href": "https://api.bsale.cl/v1/shippings/1554.json",
+  "id": 1554,
+  "shippingDate": 1576454400,
+  "address": "la quebrada 1005",
+  "municipality": "Puerto Varas",
+  "city": "Puerto Varas",
+  "recipient": "Edison Packard",
+  "state": 0,
+  "office": {
+    "href": "https://api.bsale.cl/v1/offices/1.json",
+    "id": "1"
+  },
+  "user": {
+    "href": "https://api.bsale.cl/v1/users/257.json",
+    "id": "257"
+  },
+  "shipping_type": {
+    "href": "https://api.bsale.cl/v1/shipping_types/6.json",
+    "id": "6"
+  },
+  "guide": {
+    "href": "https://api.bsale.cl/v1/documents/61716.json",
+    "id": "61716"
+  },
+  "details": {
+    "href": "https://api.bsale.cl/v1/shippings/1554/details.json"
+  }
+}
 ```

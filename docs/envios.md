@@ -1,5 +1,5 @@
 ---
-sidebar_position: 6
+
 title: Envíos
 description: Genera envíos mediante tienda en línea Bsale
 slug: /envíos

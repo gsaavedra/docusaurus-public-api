@@ -12,12 +12,19 @@ Lo primero que debes seguir para conectarte a la API de Bsale es que puedas obte
 
 ## Obtén tu token de acceso
 
-Para obtener tu `access_token` tanto para **pruebas** como para conectar un ambiente en **producción**, debes solicitar al mail ayuda@bsale.app.
+### Token de pruebas
+Para obtener tu `access_token` a un **ambiente de pruebas**, [crea una cuenta](https://account.bsale.dev/users/validate-email) para obtenerlo.
 
+![img alt](/img/copyToken.png)
+
+### Token producción
+Para obtener tu `access_token` y conectar un **ambiente en producción**, debes solicitar al mail ayuda@bsale.app.
+
+### OAuth 2.0
+:::caution
 **Deberás implementar OAuth 2.0 cuando la integración esté lista** y desees que tus clientes conecten ambas apps sin necesidad de pedir un token por mail. 
-Si cumples esta condición, sigue leyendo.
-
-### Cómo funciona OAuth 2.0
+:::
+#### Cómo funciona OAuth 2.0
 
 <details>
   <summary>Un poco de historia 🎓 </summary>
@@ -78,7 +85,7 @@ En esta pantalla el usuario que aprobará deberá loguearse con sus credenciales
 Si las credenciales son correctas el usuario será dirigido a una pantalla donde podrá autorizar el acceso de  la aplicación a los recursos de la empresa o instancia.
 :::
 
-![img alt](/img/authOauth..png)
+![img alt](/img/authOauth.png)
 
 ## Etapa II: Authorization Grant
 Luego que el usuario autorizó a la aplicación , este será redirigido a la URL que se definió en el parámetro `redirect_uri` y se le concatenará un el código de autorización, el cual podrá usar la aplicación para solicitar su token.

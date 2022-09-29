@@ -1,29 +1,29 @@
 ---
-sidebar_position: 14
+sidebar_position: 32
 title: Webhooks
-description: Servicio de notificaciones de documentos
-slug: /documentos/webhooks
+description: Servicio de notificaciones pagos de documentos
+slug: /pagos/webhooks
 tags: 
  - webhooks
 ---
 
-# Webhooks documentos
+# Webhooks pagos
 
 :::info
 Para consumir los recursos notificados, se debe usar `https://api.bsale.io` como **url base**
 :::
 
 ## Esructura JSON
-Cada vez que en Bsale se genere un documento recibirás una notificación POST a la URL que definiste con la siguiente estructura:
+Cada vez que en Bsale se ejecuta una acción sobre la información asociada a un pago, recibirás una notificación. En el caso en el que se cree un pago o se elimine recibirás el siguiente Json
 
 ```json
 {
-   "cpnId": 2,
-   "resource": "/documents/14417.json",
-   "resourceId": "14417",
-   "topic": "document",
-   "action": "post",
-   "officeId": "2"
+    "cpnId": 8849,
+    "resource": "/v1/payments/3229.json",
+    "resourceId": "3229",
+    "topic": "payment",
+    "action": "post",
+    "send": 1646914861
 }
 ```
 

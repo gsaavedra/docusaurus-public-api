@@ -1,5 +1,5 @@
 ---
-sidebar_position: 1
+sidebar_position: 10
 title: Documentos
 description: Crear, editar y listar documentos
 slug: /documentos
@@ -758,3 +758,382 @@ Para documentos pre-venta, es posible que desees facturar de forma recurrente, p
 ```
 - **renovationId**, Identificador del evento de renovación.
 - **renovationDate**, Fecha de la renovación. 
+
+### Cliente del documento 
+:::note
+En algunos documentos no es necesario agregar el cliente como en el caso de la boleta, sin embargo, para la **factura es obligatorio**.
+:::
+
+#### Cliente 
+```json 
+{
+  "client": {
+    "code": "98765432-1",
+    "city": "Capital del Oeste",
+    "company": "Capsule Corp",
+    "municipality": "Capital del Oeste",
+    "activity": "Development and research",
+    "address": "Hoi Poi #750",
+    "email": "dr@brief.cl",
+    "companyOrPerson": 1
+  }
+}
+```
+- **code**, Rut del cliente (String).
+- **city**, Ciudad del cliente  (String).
+- **company**, Razón social del cliente (String).
+- **municipality**, Comuna del cliente (String).
+- **activity**, Giro del cliente (String).
+- **address**, Dirección del cliente (String). 
+- **email**, indica el correo electronico del cliente  (String).
+- **companyOrPerson**, indica si el cliente es persona natural o empresa (0)Persona o (1)Empresa (Boolean).
+- **firstName**, Nombre de persona (String).
+- **lastName**, Apellido de persona (String).
+
+:::tip
+Opcionalmente puedes utilizar el parámetro `clientId` si el cliente ya esta creado en Bsale y conoces su identificador.
+```json 
+{
+   "clientId": 24
+}
+```
+:::
+
+:::tip
+Si tienes una dirección ya ingresada en Bsale para ese cliente, puedes enviar el id de esa dirección en el parámetro `addressId`.
+```json 
+{
+  "clientId": 24,
+  "addressId": 8
+}
+```
+:::
+
+Si necesitas que Bsale **envié el documento al correo del cliente** puedes agregar a la raíz del JSON el atributo `sendEmail`, es decir, fuera del nodo client:
+```json 
+{
+  "client": {
+    "code": "98765432-1",
+    "city": "Capital del Oeste",
+    "company": "Capsule Corp",
+    "municipality": "Capital del Oeste",
+    "activity": "Development and research",
+    "address": "Hoi Poi #750",
+    "email": "dr@brief.cl",
+    "companyOrPerson": 1
+  },
+  "sendEmail": 1
+}
+```
+
+#### Cliente extranjero
+Si el cliente es extranjero se debe enviar el atributo `isForeigner` en **1**, por defecto este valor es 0, esto es necesario para los documentos de exportación.
+```json 
+{
+  "client": {
+    "city": "Hawai",
+    "company": "Mountain Apple Company Inc",
+    "municipality": "Honolulu",
+    "activity": "Musician",
+    "address": "izhawaii dot com #100 street",
+    "email": "Israel@Kamakawiwo.ole",
+    "isForeigner": 1
+  }
+}
+```
+:::tip
+Si envías `isForeigner` con valor 1, Bsale generará un rut **55555555-5** por defecto. Si necesitas que la representación visual del documento indique un DNI, NIT, NIF etc Puedes enviar el adicionalmente el `code` de cliente con su valor.
+:::
+
+### Detalles
+
+```json 
+{
+   "details": [
+       {
+           "variantId": 157,
+           "netUnitValue": 53975,
+           "quantity": 1,
+           "taxId": "[1]",
+           "discount": 50,
+       }
+   ]
+}
+```
+- **variantId**, Id de la variante que indicara cual variante es la que se esta vendiendo de la variante (Integer).
+- **code**, De forma alternativa al Id, se puede utilizar el SKU de la variante  (String).
+- **barCode**, De forma alternativa al Id, se puede utilizar el código de barras de la variante (String).
+- **netUnitValue**, Valor unitario neto de la variante, este valor es sin impuestos (Float).
+- **quantity**, Cantidad de la variante que se esta vendiendo (Integer).
+- **taxId**, Arreglo de identificadores de los impuestos a utilizar, estos tienen que ir dentro de "[]"  (String).
+- **comment**, Descripción breve de la variante  (String).
+- **discount**, Porcentaje del descuento si se desea aplicar uno (Float).
+
+#### Con control de stock
+En el caso de **manejar tu stock con Bsale**, el detalle tendría una estructura similar a:
+
+```json 
+{
+   "details": [
+       {
+           "code": 157,
+           "netUnitValue": 53975,
+           "quantity": 1
+       }
+   ]
+}
+```
+:::tip
+Si controlas stock, puedes usar `code` o `variantId` o `barCode` para referenciar a tu producto existente en Bsale.
+:::
+
+#### Sin control de stock
+En el caso de solo necesitar **declarar documentos en el SII con Bsale**, el detalle tendría una estructura similar a:
+```json 
+{
+   "details": [
+       {
+           "comment": "El nombre del producto que se muestra en la línea del documento",
+           "netUnitValue": 53975,
+           "quantity": 1,
+           "taxId": "[1]"
+       }
+   ]
+}
+```
+
+### Impuestos
+:::caution
+Es **muy importante** que se envíen los impuestos por cada detalle, de lo contrario el detalle del documento saldrá exento.
+:::
+#### Referencia por id
+Puedes usar el arreglo `taxId` para referenciar los id's de impuestos configurados en Bsale
+```json 
+{
+   "details": [
+       {
+           "comment": "El nombre del producto que se muestra en la línea del documento",
+           "netUnitValue": 53975,
+           "quantity": 1,
+           "taxId": "[1,2]",
+           "discount": 0,
+       }
+   ]
+}
+```
+
+#### Referencia por código tributario
+También es posible especificar los impuestos, enviando su código tributario y el porcentaje que se le quiere aplicar al producto. Dentro del arreglo `taxes`.
+```json 
+{
+  "details": [
+    {
+      "netUnitValue": 53975,
+      "quantity": 1,
+      "taxes": [
+        {
+          "code": 14,
+          "percentage": 19
+        },
+        {
+          "code": 35,
+          "percentage": 46.9
+        }
+      ],
+      "comment": "el nombre del producto que voy a vender",
+      "discount": 5
+    }
+  ]
+}
+```
+:::note
+El `percentage` enviado, actualizará el porcentaje usado en la configuración de Bsale.
+:::
+
+### A partir de existente
+Si se desea generar un documento a partir de otro, se debe enviar el identificador del detalle del documento original:
+```json 
+{
+  "details": [
+    {
+      "detailId": 1050,
+      "quantity": 1
+    }
+  ]
+}
+```
+
+### Forma de pago (opcional)
+Se pueden especificar los pagos asociados al documento, se requiere un nodo similar a:
+```json 
+{
+  "payments": [
+    {
+      "paymentTypeId": 1,
+      "amount": 70000,
+      "recordDate": 1407715200
+    }
+  ]
+}
+```
+- **paymentTypeId**, Id de la forma de pago utilizada en el pago del documento (Integer).
+- **amount**, monto del pago del documento (Integer).
+- **recordDate**, Fecha en la cual se realizo el pago del documento, se envía en formato GMT (Integer).
+
+:::info
+En caso de no enviar Bsale detectara la forma de pago por defecto y asignara el monto total del documento a esa forma de pago.
+:::
+### Referencias electrónicas (opcional)
+Se pueden enviar referencias par aun documento como ordenes de compra, guías de despacho etc. Se requiere un nodo similar a:
+```json 
+{
+  "references": [
+    {
+      "number": "123",
+      "referenceDate": 1407715200,
+      "reason": "Orden de Compra 123",
+      "codeSii": 801
+    }
+  ]
+}
+```
+- **number**, Folio del documento de referencia (String).
+- **referenceDate**, Fecha del documento de referencia (Integer).
+- **reason**, Razón del documento (String).
+- **codeSii**, Código tributario del documento de referencia (Integer).
+
+### Atributos dinámicos (opcional)
+En el caso de necesitar agregar atributos adicionales al documento, se necesita un nodo similar a:
+```json 
+{
+  "dynamicAttributes": [
+    {
+      "description": "098",
+      "dynamicAttributeId": 17
+    },
+    {
+      "description": "nombre",
+      "dynamicAttributeId": 18
+    }
+  ]
+}
+```
+- **description**, Valor del atributo (String).
+- **dynamicAttributeId**, Id de la atributo dinámico (Integer).
+
+:::tip
+Para usar atributos adicionales deben primero deben crearse y referenciar su id.
+:::
+
+### Id externo (opcional)
+Se pueden enviar un id de referencia propio de su sistema para evitar duplicidad de emisión. La API buscará por el id al hacer POST de un documento, y si ya existe retornará el documento que se generó previamente en vez de generar uno nuevo.
+```json 
+{
+   "salesId": "AAA000012"
+}
+```
+- **salesId**, ID de referencia (String 255).
+
+### Ejemplo JSON
+
+#### Envío
+```json title="POST /documents.json "
+{
+  "documentTypeId": 8,
+  "officeId": 1,
+  "emissionDate": 1407715200,
+  "expirationDate": 1407715200,
+  "declareSii": 1,
+  "priceListId": 18,
+  "client": {
+    "code": "12345678-9",
+    "city": "Puerto Varas",
+    "company": "Imaginex",
+    "municipality": "comuna",
+    "activity": "giro",
+    "address": "direccion"
+  },
+  "details": [
+    {
+      "variantId": 1,
+      "netUnitValue": 53975,
+      "quantity": 1,
+      "taxId": "[1,2]",
+      "comment": "Producto 1",
+      "discount": 0
+    }
+  ],
+  "payments": [
+    {
+      "paymentTypeId": 1,
+      "amount": 70000,
+      "recordDate": 1407715200
+    }
+  ],
+  "references": [
+    {
+      "number": 123,
+      "referenceDate": 1407715200,
+      "reason": "Orden de Compra 123",
+      "codeSii": 801
+    }
+  ],
+  "dynamicAttributes": [
+    {
+      "description": "098 codigo servicio",
+      "dynamicAttributeId": 17
+    },
+    {
+      "description": "Observacion nomal, sin anotaciones",
+      "dynamicAttributeId": 18
+    }
+  ]
+}
+```
+
+#### Respuesta
+
+```json title="201 Response /documents.json "
+{
+  "urlTimbre": "http://s3.amazonaws.com/bsale/timbres/T33_F933.png",
+  "client": {
+    "href": "https://api.bsale.cl/v1/clients/211.json",
+    "id": "211"
+  },
+  "address": "direccion valida",
+  "token": "a1a3291afd78",
+  "userId": 1,
+  "exemptAmount": 0,
+  "office": {
+    "href": "https://api.bsale.cl/v1/offices/1.json",
+    "id": "1"
+  },
+  "urlXml": " ",
+  "expirationDate": 1407643200,
+  "municipality": "puerto montt",
+  "netAmount": 53975,
+  "totalAmount": 74486,
+  "document_type": {
+    "href": "https://api.bsale.cl/v1/document_types/8.json",
+    "id": "8"
+  },
+  "taxAmount": 20511,
+  "number": 933,
+  "href": "https://api.bsale.cl/v1/documents/11561.json",
+  "emissionDate": 1407643200,
+  "urlPdf": "http://app.bsale.cl/view/339/a1a3291afd78.pdf",
+  "id": 11561,
+  "references": {
+    "href": "https://api.bsale.cl/v1/documents/11561/references.json"
+  },
+  "city": "puerto montt",
+  "state": 0
+}
+```
+
+## DELETE un documento
+
+DELETE `/v1/documents/30.json?officeId=2`, elimina un documento no electrónico
+
+- Se debe enviar la sucursal en la cual se eliminara el documento
+
