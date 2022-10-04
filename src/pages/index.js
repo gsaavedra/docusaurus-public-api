@@ -17,8 +17,31 @@ function HomepageHeader() {
         <div className={styles.buttons}>
           <Link
             className="button button--secondary button--lg"
-            to="/primeros-pasos">
-            Ingresar 📖
+            to="/CL/inicio">
+            API Chile <img src="img/clemoji.png"
+     alt="logo chile"
+     width="20"
+     height="20"></img>
+          </Link>
+          &nbsp;
+          &nbsp;
+          <Link
+            className="button button--secondary button--lg"
+            to="/PE/inicio">
+            API Perú <img src="img/peemoji.png"
+     alt="logo Perú"
+     width="20"
+     height="20"></img>
+          </Link>
+          &nbsp;
+          &nbsp;
+          <Link
+            className="button button--secondary button--lg"
+            to="/MX/inicio">
+            API México <img src="img/mxemoji.png"
+     alt="logo México"
+     width="20"
+     height="20"></img>
           </Link>
         </div>
       </div>

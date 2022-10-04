@@ -10,7 +10,7 @@ const config = {
   tagline: 'Conoce nuestras documentaciones para el desarrollo de integraciones.',
   url: 'https://EstebanBah.github.io',
   baseUrl: '/docusaurus-public-api/',
-  onBrokenLinks: 'throw',
+  onBrokenLinks: 'ignore',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
 
@@ -35,11 +35,28 @@ const config = {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
           routeBasePath: '/',
+          includeCurrentVersion:false,
+          versions: {
+            CL: {
+              banner: "none",
+              label: '🌎 CL',
+              badge: true,
+              path: '/CL',
+            },
+            PE: {
+              banner: "none",
+              label: '🌎 PE',
+            },
+            MX: {
+              label: '🌎 MX',
+              banner: "unmaintained"
+            }
+          }
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
         },
         blog: {
-          showReadingTime: true,
+          showReadingTime: false,
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
         },
@@ -60,11 +77,15 @@ const config = {
           src: 'img/logo.svg',
         },
         items: [
+//          {
+//            type: 'doc',
+//            docId: 'home',
+//            position: 'left',
+//            label: 'Documentación',
+//          },
           {
-            type: 'doc',
-            docId: 'home',
-            position: 'left',
-            label: 'Documentación',
+            type: 'docsVersionDropdown',
+            position: 'right',
           },
  //         {to: '/blog', label: 'Blog', position: 'left'},
           // {
@@ -82,7 +103,7 @@ const config = {
             items: [
               {
                 label: 'Primeros pasos',
-                to: '/primeros-pasos',
+                to: '/CL/primeros-pasos',
               },
               {
                 label: 'Casos de uso',
@@ -94,15 +115,15 @@ const config = {
             title: 'Enlaces',
             items: [
               {
-                label: 'Bsale Developers',
+                label: 'Sitio web Bsale Developers',
                 href: 'https://www.bsale.dev',
               },
               {
-                label: 'Slack',
-                href: 'https://slack.com/intl/es-cl/help/articles/',
+                label: 'Canal Slack',
+                href: 'https://join.slack.com/t/bsaledev/shared_invite/zt-1h1cqt05g-fqnTiREZYN8g47gf~caO5w',
               },
               {
-                label: 'Contacto',
+                label: 'Formulario contacto',
                 href: 'https://bsalehelp.zendesk.com/hc/es/requests/new',
               },
             ],
