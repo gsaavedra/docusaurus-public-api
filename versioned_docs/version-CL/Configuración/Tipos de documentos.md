@@ -17,7 +17,7 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
 
 ```js title="Response /document_types/1.json"
 {
-  "href": "https://api.bsale.cl/v1/document_types/1.json",
+  "href": "https://api.bsale.io/v1/document_types/1.json",
   "id": 1,
   "name": "NOTA VENTA",
   "initialNumber": 1,
@@ -91,13 +91,13 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
 
 ```json title="Response /document_types.json "
 {
-  "href": "https://api.bsale.cl/v1/document_types.json",
+  "href": "https://api.bsale.io/v1/document_types.json",
   "count": 3,
   "limit": 25,
   "offset": 0,
   "items": [
     {
-      "href": "https://api.bsale.cl/v1/document_types/2.json",
+      "href": "https://api.bsale.io/v1/document_types/2.json",
       "id": 2,
       "name": "FACTURA EXENTA O NO AFECTA ELECTRONICA",
       "initialNumber": 1,
@@ -119,12 +119,12 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
       "ipadPrint": 0,
       "ipadPrintHigh": "0",
       "book_type": {
-        "href": "https://api.bsale.cl/v1/book_types/1.json",
+        "href": "https://api.bsale.io/v1/book_types/1.json",
         "id": "1"
       }
     },
     {
-      "href": "https://api.bsale.cl/v1/document_types/3.json",
+      "href": "https://api.bsale.io/v1/document_types/3.json",
       "id": 3,
       "name": "NOTA CREDITO ELECTRONICA",
       "initialNumber": 43,
@@ -146,12 +146,12 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
       "ipadPrint": 0,
       "ipadPrintHigh": "0",
       "book_type": {
-        "href": "https://api.bsale.cl/v1/book_types/1.json",
+        "href": "https://api.bsale.io/v1/book_types/1.json",
         "id": "1"
       }
     },
     {
-      "href": "https://api.bsale.cl/v1/document_types/1.json",
+      "href": "https://api.bsale.io/v1/document_types/1.json",
       "id": 1,
       "name": "NOTA VENTA",
       "initialNumber": 1,
@@ -187,7 +187,7 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
 
 ```json title="Response /document_types/1.json"
 {
-  "href": "https://api.bsale.cl/v1/document_types/1.json",
+  "href": "https://api.bsale.io/v1/document_types/1.json",
   "id": 1,
   "name": "NOTA VENTA",
   "initialNumber": 1,
@@ -297,7 +297,7 @@ Solo es posible editar "Nombre del documento", "Estado" y "Si requiere datos de 
 #### Respuesta
 ```json
 {
-  "href": "https://api.bsale.cl/v1/document_types/10.json",
+  "href": "https://api.bsale.io/v1/document_types/10.json",
   "id": 10,
   "name": "Documento Boleta",
   "initialNumber": 1,
@@ -322,7 +322,7 @@ Solo es posible editar "Nombre del documento", "Estado" y "Si requiere datos de 
   "useMaxDays": 0,
   "maxDays": -1,
   "book_type": {
-    "href": "https://api.bsale.cl/v1/book_types/1.json",
+    "href": "https://api.bsale.io/v1/book_types/1.json",
     "id": "1"
   }
 }

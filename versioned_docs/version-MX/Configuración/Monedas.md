@@ -20,7 +20,7 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
 
 ```js title="Response /coins/1.json"
 {
-  "href": "https://api.bsale.cl/v1/coins/1.json",
+  "href": "https://api.bsale.io/v1/coins/1.json",
   "id": 1,
   "name": "Peso Chileno",
   "symbol": "$",
@@ -59,13 +59,13 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
 
 ```json title="Response /coins.json "
 {
-  "href": "https://api.bsale.cl/v1/coins.json",
+  "href": "https://api.bsale.io/v1/coins.json",
   "count": 3,
   "limit": 25,
   "offset": 0,
   "items": [
     {
-      "href": "https://api.bsale.cl/v1/coins/3.json",
+      "href": "https://api.bsale.io/v1/coins/3.json",
       "id": 3,
       "name": "Dolar",
       "symbol": "USD",
@@ -73,7 +73,7 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
       "totalRound": 0
     },
     {
-      "href": "https://api.bsale.cl/v1/coins/1.json",
+      "href": "https://api.bsale.io/v1/coins/1.json",
       "id": 1,
       "name": "Peso Chileno",
       "symbol": "$",
@@ -81,7 +81,7 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
       "totalRound": 0
     },
     {
-      "href": "https://api.bsale.cl/v1/coins/2.json",
+      "href": "https://api.bsale.io/v1/coins/2.json",
       "id": 2,
       "name": "UF",
       "symbol": "(UF)",
@@ -96,7 +96,7 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
 
 ```json title="Response /coins/2.json"
 {
-  "href": "https://api.bsale.cl/v1/coins/2.json",
+  "href": "https://api.bsale.io/v1/coins/2.json",
   "id": 2,
   "name": "Euro",
   "symbol": "€",
@@ -137,13 +137,13 @@ En el ejemplo, donde 2 es el `id` de la moneda y `1533223010` es la fecha en uni
   
 ```json 
 {
-    "href": "https://api.bsale.cl/v1/coins/1/sales.json?startdate=1576022400&enddate=1576022400",
+    "href": "https://api.bsale.io/v1/coins/1/sales.json?startdate=1576022400&enddate=1576022400",
     "count": 1,
     "limit": 25,
     "offset": 0,
     "items": [
         {
-            "href": "https://api.bsale.cl/v1/documents/83.json",
+            "href": "https://api.bsale.io/v1/documents/83.json",
             "id": 83,
             "name": "BOLETA MANUAL (no valido al SII)",
             "number": 39

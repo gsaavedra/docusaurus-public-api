@@ -13,7 +13,7 @@ Lo primero que debes seguir para conectarte a la API de Bsale es que puedas obte
 ## Obtén tu token de acceso
 
 ### Token de pruebas
-Para obtener tu `access_token` a un **ambiente de pruebas**, [crea una cuenta](https://account.bsale.dev/users/validate-email) para obtenerlo.
+Para obtener tu `access_token` a un **ambiente de pruebas**, [crea una cuenta](https://account.bsale.dev/users/create) para obtenerlo.
 
 ![img alt](/img/copyToken.png)
 

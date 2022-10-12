@@ -77,12 +77,11 @@ const config = {
           src: 'img/logo.svg',
         },
         items: [
-//          {
-//            type: 'doc',
-//            docId: 'home',
-//            position: 'left',
-//            label: 'Documentación',
-//          },
+         {
+            to: '/faq',
+            position: 'left',
+            label: 'faq',
+          },
           {
             type: 'docsVersionDropdown',
             position: 'right',

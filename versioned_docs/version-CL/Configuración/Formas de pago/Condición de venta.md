@@ -19,7 +19,7 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
 
 ```js title="Response /sale_conditions/1.json"
 {
-  "href": "https://api.bsale.cl/v1/sale_conditions/1.json",
+  "href": "https://api.bsale.io/v1/sale_conditions/1.json",
   "id": 1,
   "name": "Al dia",
   "timeCondition": 7,
@@ -58,13 +58,13 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
 
 ```json title="Response /sale_conditions.json "
 {
-  "href": "https://api.bsale.cl/v1/sale_conditions.json",
+  "href": "https://api.bsale.io/v1/sale_conditions.json",
   "count": 1,
   "limit": 25,
   "offset": 0,
   "items": [
     {
-      "href": "https://api.bsale.cl/v1/sale_conditions/1.json",
+      "href": "https://api.bsale.io/v1/sale_conditions/1.json",
       "id": 1,
       "name": "Al dia",
       "timeCondition": 7,
@@ -79,7 +79,7 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
 
 ```json title="Response /sale_conditions/1.json"
 {
-  "href": "https://api.bsale.cl/v1/sale_conditions/1.json",
+  "href": "https://api.bsale.io/v1/sale_conditions/1.json",
   "id": 1,
   "name": "Al dia",
   "timeCondition": 7,

@@ -15,13 +15,13 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
 
 ```json title="Response /payments.json"
 {
-    "href": "https://api.bsale.cl/v1/payments.json",
+    "href": "https://api.bsale.io/v1/payments.json",
     "count": 2365,
     "limit": 3,
     "offset": 0,
     "items": [
         {
-            "href": "https://api.bsale.cl/v1/payments/1280.json",
+            "href": "https://api.bsale.io/v1/payments/1280.json",
             "id": 1280,
             "recordDate": "",
             "amount": 68000.0,
@@ -35,24 +35,24 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
             "createdAt": 1584993084,
             "state": 0,
             "payment_type": {
-                "href": "https://api.bsale.cl/v1/payment_types/4.json",
+                "href": "https://api.bsale.io/v1/payment_types/4.json",
                 "id": "4"
             },
             "document": {
-                "href": "https://api.bsale.cl/v1/documents/1528.json",
+                "href": "https://api.bsale.io/v1/documents/1528.json",
                 "id": "1528"
             },
             "office": {
-                "href": "https://api.bsale.cl/v1/offices/1.json",
+                "href": "https://api.bsale.io/v1/offices/1.json",
                 "id": "1"
             },
             "user": {
-                "href": "https://api.bsale.cl/v1/users/2.json",
+                "href": "https://api.bsale.io/v1/users/2.json",
                 "id": "2"
             }
         },
         {
-            "href": "https://api.bsale.cl/v1/payments/1927.json",
+            "href": "https://api.bsale.io/v1/payments/1927.json",
             "id": 1927,
             "recordDate": "",
             "amount": 11900.0,
@@ -66,24 +66,24 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
             "createdAt": 1608441509,
             "state": 0,
             "payment_type": {
-                "href": "https://api.bsale.cl/v1/payment_types/10.json",
+                "href": "https://api.bsale.io/v1/payment_types/10.json",
                 "id": "10"
             },
             "document": {
-                "href": "https://api.bsale.cl/v1/documents/2343.json",
+                "href": "https://api.bsale.io/v1/documents/2343.json",
                 "id": "2343"
             },
             "office": {
-                "href": "https://api.bsale.cl/v1/offices/1.json",
+                "href": "https://api.bsale.io/v1/offices/1.json",
                 "id": "1"
             },
             "user": {
-                "href": "https://api.bsale.cl/v1/users/2.json",
+                "href": "https://api.bsale.io/v1/users/2.json",
                 "id": "2"
             }
         },
         {
-            "href": "https://api.bsale.cl/v1/payments/1929.json",
+            "href": "https://api.bsale.io/v1/payments/1929.json",
             "id": 1929,
             "recordDate": "",
             "amount": 11900.0,
@@ -97,24 +97,24 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
             "createdAt": 1608441526,
             "state": 0,
             "payment_type": {
-                "href": "https://api.bsale.cl/v1/payment_types/10.json",
+                "href": "https://api.bsale.io/v1/payment_types/10.json",
                 "id": "10"
             },
             "document": {
-                "href": "https://api.bsale.cl/v1/documents/2345.json",
+                "href": "https://api.bsale.io/v1/documents/2345.json",
                 "id": "2345"
             },
             "office": {
-                "href": "https://api.bsale.cl/v1/offices/1.json",
+                "href": "https://api.bsale.io/v1/offices/1.json",
                 "id": "1"
             },
             "user": {
-                "href": "https://api.bsale.cl/v1/users/2.json",
+                "href": "https://api.bsale.io/v1/users/2.json",
                 "id": "2"
             }
         }
     ],
-    "next": "https://api.bsale.cl/v1/payments.json?limit=3&offset=3"
+    "next": "https://api.bsale.io/v1/payments.json?limit=3&offset=3"
 }
 ```
 
@@ -161,13 +161,13 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
 
 ```json title="Response /payments.json "
 {
-  "href": "https://api.bsale.cl/v1/payments.json",
+  "href": "https://api.bsale.io/v1/payments.json",
   "count": 155881,
   "limit": 3,
   "offset": 0,
   "items": [
       {
-      "href": "https://api.bsale.cl/v1/payments/79.json",
+      "href": "https://api.bsale.io/v1/payments/79.json",
       "id": 79,
       "recordDate": 1548720000,
       "amount": 6000,
@@ -181,24 +181,24 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
       "createdAt": 1548768524,
       "state": 0,
       "payment_type": {
-          "href": "https://api.bsale.cl/v1/payment_types/4.json",
+          "href": "https://api.bsale.io/v1/payment_types/4.json",
           "id": "4"
       },
       "document": {
-          "href": "https://api.bsale.cl/v1/documents/195.json",
+          "href": "https://api.bsale.io/v1/documents/195.json",
           "id": "195"
       },
       "office": {
-          "href": "https://api.bsale.cl/v1/offices/1.json",
+          "href": "https://api.bsale.io/v1/offices/1.json",
           "id": "1"
       },
       "user": {
-          "href": "https://api.bsale.cl/v1/users/1.json",
+          "href": "https://api.bsale.io/v1/users/1.json",
           "id": "1"
       }
     },
     {
-      "href": "https://api.bsale.cl/v1/payments/78.json",
+      "href": "https://api.bsale.io/v1/payments/78.json",
       "id": 78,
       "recordDate": 1548720000,
       "amount": 29142,
@@ -212,37 +212,37 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
       "createdAt": 1548768418,
       "state": 0,
       "payment_type": {
-          "href": "https://api.bsale.cl/v1/payment_types/4.json",
+          "href": "https://api.bsale.io/v1/payment_types/4.json",
           "id": "4"
       },
       "documents": [
           {
-              "href": "https://api.bsale.cl/v1/documents/194.json",
+              "href": "https://api.bsale.io/v1/documents/194.json",
               "id": "194",
               "amount": 2002
           },
           {
-              "href": "https://api.bsale.cl/v1/documents/195.json",
+              "href": "https://api.bsale.io/v1/documents/195.json",
               "id": "195",
               "amount": 6000
           },
           {
-              "href": "https://api.bsale.cl/v1/documents/196.json",
+              "href": "https://api.bsale.io/v1/documents/196.json",
               "id": "196",
               "amount": 21140
           }
       ],
       "office": {
-          "href": "https://api.bsale.cl/v1/offices/1.json",
+          "href": "https://api.bsale.io/v1/offices/1.json",
           "id": "1"
       },
       "user": {
-          "href": "https://api.bsale.cl/v1/users/1.json",
+          "href": "https://api.bsale.io/v1/users/1.json",
           "id": "1"
       }
     }
   ],
-  "next": "https://api.bsale.cl/v1/payments.json?limit=3\u0026offset=3"
+  "next": "https://api.bsale.io/v1/payments.json?limit=3\u0026offset=3"
 }
 ```
 ## GET un pago
@@ -257,7 +257,7 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
 
 ```json title="Response /payments/950.json"
 {
-  "href": "https://api.bsale.cl/v1/payments/950.json",
+  "href": "https://api.bsale.io/v1/payments/950.json",
   "id": 950,
   "recordDate": 1396494000,
   "amount": "68643.0",
@@ -266,19 +266,19 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
   "checkAmount": "0",
   "state": 0,
   "payment_type": {
-    "href": "https://api.bsale.cl/v1/payment_types/1.json",
+    "href": "https://api.bsale.io/v1/payment_types/1.json",
     "id": "1"
   },
   "document": {
-    "href": "https://api.bsale.cl/v1/documents/3285.json",
+    "href": "https://api.bsale.io/v1/documents/3285.json",
     "id": "3285"
   },
   "office": {
-    "href": "https://api.bsale.cl/v1/offices/2.json",
+    "href": "https://api.bsale.io/v1/offices/2.json",
     "id": "2"
   },
   "user": {
-    "href": "https://api.bsale.cl/v1/users/7.json",
+    "href": "https://api.bsale.io/v1/users/7.json",
     "id": "7"
   }
 }
@@ -467,13 +467,13 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
 
 ```json title="Response /payments/purchases.json"
 {
-  "href": "https://api.bsale.cl/v1/documents.json",
+  "href": "https://api.bsale.io/v1/documents.json",
   "count": 43,
   "limit": 3,
   "offset": 0,
   "items": [
     {
-      "href": "https://api.bsale.cl/v1/documents/1.json",
+      "href": "https://api.bsale.io/v1/documents/1.json",
       "id": 1,
       "emissionDate": 1519084800,
       "expirationDate": 1519084800,
@@ -505,47 +505,47 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
       "urlPdfOriginal": "http://app2.bsale.cl/view/18790/d132cb4d5f82.pdf",
       "token": "d132cb4d5f82",
       "state": 0,
-      "urlXml": "https://api.bsale.cl/v1/18790/files/d132cb4d5f82.xml",
+      "urlXml": "https://api.bsale.io/v1/18790/files/d132cb4d5f82.xml",
       "informedSii": 2,
       "responseMsgSii": null,
       "document_type": {
-        "href": "https://api.bsale.cl/v1/document_types/5.json",
+        "href": "https://api.bsale.io/v1/document_types/5.json",
         "id": "5"
       },
       "client": {
-        "href": "https://api.bsale.cl/v1/payments/412.json",
+        "href": "https://api.bsale.io/v1/payments/412.json",
         "id": "412"
       },
       "office": {
-        "href": "https://api.bsale.cl/v1/offices/1.json",
+        "href": "https://api.bsale.io/v1/offices/1.json",
         "id": "1"
       },
       "user": {
-        "href": "https://api.bsale.cl/v1/users/5.json",
+        "href": "https://api.bsale.io/v1/users/5.json",
         "id": "5"
       },
       "coin": {
-        "href": "https://api.bsale.cl/v1/coins/1.json",
+        "href": "https://api.bsale.io/v1/coins/1.json",
         "id": "1"
       },
       "references": {
-        "href": "https://api.bsale.cl/v1/documents/1/references.json"
+        "href": "https://api.bsale.io/v1/documents/1/references.json"
       },
       "document_taxes": {
-        "href": "https://api.bsale.cl/v1/documents/1/document_taxes.json"
+        "href": "https://api.bsale.io/v1/documents/1/document_taxes.json"
       },
       "details": {
-        "href": "https://api.bsale.cl/v1/documents/1/details.json"
+        "href": "https://api.bsale.io/v1/documents/1/details.json"
       },
       "sellers": {
-        "href": "https://api.bsale.cl/v1/documents/1/sellers.json"
+        "href": "https://api.bsale.io/v1/documents/1/sellers.json"
       },
       "attributes": {
-        "href": "https://api.bsale.cl/v1/documents/1/attributes.json"
+        "href": "https://api.bsale.io/v1/documents/1/attributes.json"
       }
     },
     {
-      "href": "https://api.bsale.cl/v1/documents/25.json",
+      "href": "https://api.bsale.io/v1/documents/25.json",
       "id": 25,
       "emissionDate": 1519257600,
       "expirationDate": 1519257600,
@@ -577,47 +577,47 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
       "urlPdfOriginal": "http://app2.bsale.cl/view/18790/8a350bb0a82d.pdf",
       "token": "8a350bb0a82d",
       "state": 0,
-      "urlXml": "https://api.bsale.cl/v1/18790/files/8a350bb0a82d.xml",
+      "urlXml": "https://api.bsale.io/v1/18790/files/8a350bb0a82d.xml",
       "informedSii": 2,
       "responseMsgSii": null,
       "document_type": {
-        "href": "https://api.bsale.cl/v1/document_types/3.json",
+        "href": "https://api.bsale.io/v1/document_types/3.json",
         "id": "3"
       },
       "client": {
-        "href": "https://api.bsale.cl/v1/payments/412.json",
+        "href": "https://api.bsale.io/v1/payments/412.json",
         "id": "412"
       },
       "office": {
-        "href": "https://api.bsale.cl/v1/offices/1.json",
+        "href": "https://api.bsale.io/v1/offices/1.json",
         "id": "1"
       },
       "user": {
-        "href": "https://api.bsale.cl/v1/users/3.json",
+        "href": "https://api.bsale.io/v1/users/3.json",
         "id": "3"
       },
       "coin": {
-        "href": "https://api.bsale.cl/v1/coins/1.json",
+        "href": "https://api.bsale.io/v1/coins/1.json",
         "id": "1"
       },
       "references": {
-        "href": "https://api.bsale.cl/v1/documents/25/references.json"
+        "href": "https://api.bsale.io/v1/documents/25/references.json"
       },
       "document_taxes": {
-        "href": "https://api.bsale.cl/v1/documents/25/document_taxes.json"
+        "href": "https://api.bsale.io/v1/documents/25/document_taxes.json"
       },
       "details": {
-        "href": "https://api.bsale.cl/v1/documents/25/details.json"
+        "href": "https://api.bsale.io/v1/documents/25/details.json"
       },
       "sellers": {
-        "href": "https://api.bsale.cl/v1/documents/25/sellers.json"
+        "href": "https://api.bsale.io/v1/documents/25/sellers.json"
       },
       "attributes": {
-        "href": "https://api.bsale.cl/v1/documents/25/attributes.json"
+        "href": "https://api.bsale.io/v1/documents/25/attributes.json"
       }
     },
     {
-      "href": "https://api.bsale.cl/v1/documents/2.json",
+      "href": "https://api.bsale.io/v1/documents/2.json",
       "id": 2,
       "emissionDate": 1519084800,
       "expirationDate": 1519084800,
@@ -649,47 +649,47 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
       "urlPdfOriginal": "http://app2.bsale.cl/view/18790/960ca7eb7519.pdf",
       "token": "960ca7eb7519",
       "state": 0,
-      "urlXml": "https://api.bsale.cl/v1/18790/files/960ca7eb7519.xml",
+      "urlXml": "https://api.bsale.io/v1/18790/files/960ca7eb7519.xml",
       "informedSii": 2,
       "responseMsgSii": null,
       "document_type": {
-        "href": "https://api.bsale.cl/v1/document_types/5.json",
+        "href": "https://api.bsale.io/v1/document_types/5.json",
         "id": "5"
       },
       "client": {
-        "href": "https://api.bsale.cl/v1/payments/412.json",
+        "href": "https://api.bsale.io/v1/payments/412.json",
         "id": "412"
       },
       "office": {
-        "href": "https://api.bsale.cl/v1/offices/1.json",
+        "href": "https://api.bsale.io/v1/offices/1.json",
         "id": "1"
       },
       "user": {
-        "href": "https://api.bsale.cl/v1/users/5.json",
+        "href": "https://api.bsale.io/v1/users/5.json",
         "id": "5"
       },
       "coin": {
-        "href": "https://api.bsale.cl/v1/coins/1.json",
+        "href": "https://api.bsale.io/v1/coins/1.json",
         "id": "1"
       },
       "references": {
-        "href": "https://api.bsale.cl/v1/documents/2/references.json"
+        "href": "https://api.bsale.io/v1/documents/2/references.json"
       },
       "document_taxes": {
-        "href": "https://api.bsale.cl/v1/documents/2/document_taxes.json"
+        "href": "https://api.bsale.io/v1/documents/2/document_taxes.json"
       },
       "details": {
-        "href": "https://api.bsale.cl/v1/documents/2/details.json"
+        "href": "https://api.bsale.io/v1/documents/2/details.json"
       },
       "sellers": {
-        "href": "https://api.bsale.cl/v1/documents/2/sellers.json"
+        "href": "https://api.bsale.io/v1/documents/2/sellers.json"
       },
       "attributes": {
-        "href": "https://api.bsale.cl/v1/documents/2/attributes.json"
+        "href": "https://api.bsale.io/v1/documents/2/attributes.json"
       }
     }
   ],
-  "next": "https://api.bsale.cl/v1/documents.json?limit=3&offset=3"
+  "next": "https://api.bsale.io/v1/documents.json?limit=3&offset=3"
 }
 ```
 
@@ -713,7 +713,7 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
   "upcomingDebt": 30000,
   "totalDebt": 70000,
   "client": {
-    "href": "https://api.bsale.cl/v1/payments/1.json",
+    "href": "https://api.bsale.io/v1/payments/1.json",
     "id": 1,
     "firstName": "Roberto",
     "lastName": "",
@@ -722,7 +722,7 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
   },
   "overdue_documents": [
     {
-      "href": "https://api.bsale.cl/v1/documents/6514.json",
+      "href": "https://api.bsale.io/v1/documents/6514.json",
       "id": 6514,
       "name": "Factura Electronica",
       "number": 123123123217,
@@ -732,7 +732,7 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
       "totalAmountOwed": 20000
     },
     {
-      "href": "https://api.bsale.cl/v1/documents/6515.json",
+      "href": "https://api.bsale.io/v1/documents/6515.json",
       "id": 6515,
       "name": "Factura Electronica",
       "number": 123123123218,
@@ -744,7 +744,7 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
   ],
   "upcoming_documents": [
     {
-      "href": "https://api.bsale.cl/v1/documents/6520.json",
+      "href": "https://api.bsale.io/v1/documents/6520.json",
       "id": 6520,
       "name": "Factura Electronica",
       "number": 123123123220,
@@ -821,7 +821,7 @@ Si se desean crear atributos especiales para el pagose debe enviar la siguiente 
 #### Respuesta
 ```json
 {
-  "href": "https://api.bsale.cl/v1/payments/4873.json",
+  "href": "https://api.bsale.io/v1/payments/4873.json",
   "id": 4873,
   "recordDate": 1436214454,
   "amount": 3791,
@@ -831,19 +831,19 @@ Si se desean crear atributos especiales para el pagose debe enviar la siguiente 
   "checkTaken": 0,
   "state": 0,
   "payment_type": {
-    "href": "https://api.bsale.cl/v1/payment_types/11.json",
+    "href": "https://api.bsale.io/v1/payment_types/11.json",
     "id": "11"
   },
   "document": {
-    "href": "https://api.bsale.cl/v1/documents/3004.json",
+    "href": "https://api.bsale.io/v1/documents/3004.json",
     "id": "3004"
   },
   "office": {
-    "href": "https://api.bsale.cl/v1/offices/2.json",
+    "href": "https://api.bsale.io/v1/offices/2.json",
     "id": "2"
   },
   "user": {
-    "href": "https://api.bsale.cl/v1/users/2.json",
+    "href": "https://api.bsale.io/v1/users/2.json",
     "id": "2"
   }
 }

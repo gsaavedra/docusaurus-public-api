@@ -20,7 +20,7 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
 
 ```js title="Response /book_types/1.json"
 {
-   "href": "https://api.bsale.cl/v1/book_types/1.json",
+   "href": "https://api.bsale.io/v1/book_types/1.json",
    "id": 1,
    "name": "Libro Venta",
    "dteProcess": "Venta",
@@ -59,13 +59,13 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
 
 ```json title="Response /book_types.json "
 {
-  "href": "https://api.bsale.cl/v1/book_types.json",
+  "href": "https://api.bsale.io/v1/book_types.json",
   "count": 3,
   "limit": 25,
   "offset": 0,
   "items": [
     {
-      "href": "https://api.bsale.cl/v1/book_types/3.json",
+      "href": "https://api.bsale.io/v1/book_types/3.json",
       "id": 3,
       "name": "Libro Boleta",
       "dteProcess": "Boleta",
@@ -73,7 +73,7 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
       "state": 0
     },
     {
-      "href": "https://api.bsale.cl/v1/book_types/2.json",
+      "href": "https://api.bsale.io/v1/book_types/2.json",
       "id": 2,
       "name": "Libro Compra",
       "dteProcess": "Compra",
@@ -81,7 +81,7 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
       "state": 1
     },
     {
-      "href": "https://api.bsale.cl/v1/book_types/1.json",
+      "href": "https://api.bsale.io/v1/book_types/1.json",
       "id": 1,
       "name": "Libro Venta",
       "dteProcess": "Venta",
@@ -96,7 +96,7 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
 
 ```json title="Response /book_types/1.json"
 {
-  "href": "https://api.bsale.cl/v1/book_types/1.json",
+  "href": "https://api.bsale.io/v1/book_types/1.json",
   "id": 1,
   "name": "Libro Venta",
   "dteProcess": "Venta",

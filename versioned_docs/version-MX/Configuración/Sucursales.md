@@ -20,7 +20,7 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
 
 ```js title="Response /offices/1.json"
 {
-  "href": "https://api.bsale.cl/v1/offices/1.json",
+  "href": "https://api.bsale.io/v1/offices/1.json",
   "id": 1,
   "name": "Tienda Online",
   "description": "",
@@ -80,13 +80,13 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
 
 ```json title="Response /offices.json "
 {
-  "href": "https://api.bsale.cl/v1/offices.json",
+  "href": "https://api.bsale.io/v1/offices.json",
   "count": 4,
   "limit": 25,
   "offset": 0,
   "items": [
     {
-      "href": "https://api.bsale.cl/v1/offices/2.json",
+      "href": "https://api.bsale.io/v1/offices/2.json",
       "id": 2,
       "name": "Casa Matriz - Puerto Varas",
       "description": "",
@@ -103,7 +103,7 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
       "imagestionCellarId": 0
     },
     {
-      "href": "https://api.bsale.cl/v1/offices/3.json",
+      "href": "https://api.bsale.io/v1/offices/3.json",
       "id": 3,
       "name": "Casa Matriz Pto. Varas en ($)",
       "description": "",
@@ -120,7 +120,7 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
       "imagestionCellarId": 0
     },
     {
-      "href": "https://api.bsale.cl/v1/offices/4.json",
+      "href": "https://api.bsale.io/v1/offices/4.json",
       "id": 4,
       "name": "Internacional",
       "description": "",
@@ -137,7 +137,7 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
       "imagestionCellarId": 0
     },
     {
-      "href": "https://api.bsale.cl/v1/offices/1.json",
+      "href": "https://api.bsale.io/v1/offices/1.json",
       "id": 1,
       "name": "Tienda Online",
       "description": "",
@@ -161,7 +161,7 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
 
 ```json title="Response /offices/1.json"
 {
-  "href": "https://api.bsale.cl/v1/offices/1.json",
+  "href": "https://api.bsale.io/v1/offices/1.json",
   "id": 1,
   "name": "Tienda Online",
   "description": "",
@@ -222,7 +222,7 @@ Para crear un cliente, se debe enviar un JSON con la siguiente estructura:
   "latitude": "",
   "name": "Imaginex",
   "isVirtual": 0,
-  "href": "https://api.bsale.cl/v1/offices/5.json",
+  "href": "https://api.bsale.io/v1/offices/5.json",
   "address": "Santa Rosa 402",
   "id": 5,
   "city": "Puerto Varas",
@@ -257,7 +257,7 @@ Se debe enviar un Json con la siguiente estructura
   "latitude": "",
   "name": "Imaginex TI",
   "isVirtual": 0,
-  "href": "https://api.bsale.cl/v1/offices/5.json",
+  "href": "https://api.bsale.io/v1/offices/5.json",
   "address": "SSanta Rosa 402 oficina B",
   "id": 5,
   "city": "Puerto Varas",
@@ -285,7 +285,7 @@ La sucursal no estará visible mediante interfaz y tendrá un `state` 99. Sus do
   "latitude": "",
   "name": "Imaginex TI",
   "isVirtual": 0,
-  "href": "https://api.bsale.cl/v1/offices/5.json",
+  "href": "https://api.bsale.io/v1/offices/5.json",
   "address": "Santa Rosa 402 oficina B",
   "id": 5,
   "city": "Puerto Varas",

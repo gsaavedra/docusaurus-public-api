@@ -16,7 +16,7 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
 
 ```js title="Response /third_party_documents/38.json"
 {
-  "href": "https://api.bsale.cl/v1/third_party_documents/38.json",
+  "href": "https://api.bsale.io/v1/third_party_documents/38.json",
   "id": 38,
   "codeSii": "34",
   "emissionDate": 1330657200,
@@ -141,7 +141,7 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
 
 ```json title="Response /third_party_documents/38.json "
 {
-  "href": "https://api.bsale.cl/v1/third_party_documents/38.json",
+  "href": "https://api.bsale.io/v1/third_party_documents/38.json",
   "id": 38,
   "codeSii": "34",
   "emissionDate": 1330657200,

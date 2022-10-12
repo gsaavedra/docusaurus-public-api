@@ -23,32 +23,32 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
 
 ```js title="Response /clients.json"
 {
-  "href": "https://api.bsale.cl/v1/clients.json",
+  "href": "https://api.bsale.io/v1/clients.json",
   "count": 2,
   "limit": 25,
   "offset": 0,
   "items": [
     {
-      "href": "https://api.bsale.cl/v1/clients/2.json",
+      "href": "https://api.bsale.io/v1/clients/2.json",
       "id": 2,
       "firstName": "Francisco",
       "lastName": "Pullnm",
       "email": "fpull@gmail.com",
       "state": 0,
       "office": {
-        "href": "https://api.bsale.cl/v1/offices/1.json",
+        "href": "https://api.bsale.io/v1/offices/1.json",
         "id": "1"
       }
     },
     {
-      "href": "https://api.bsale.cl/v1/clients/1.json",
+      "href": "https://api.bsale.io/v1/clients/1.json",
       "id": 1,
       "firstName": "Asistente",
       "lastName": "bsale",
       "email": "ayuda@bsale.app",
       "state": 0,
       "office": {
-        "href": "https://api.bsale.cl/v1/offices/1.json",
+        "href": "https://api.bsale.io/v1/offices/1.json",
         "id": "1"
       }
     }
@@ -112,13 +112,13 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
 
 ```json title="Response /clients.json "
 {
-  "href": "https://api.bsale.cl/v1/clients.json",
+  "href": "https://api.bsale.io/v1/clients.json",
   "count": 112,
   "limit": 25,
   "offset": 0,
   "items": [
     {
-      "href": "https://api.bsale.cl/v1/clients/65.json",
+      "href": "https://api.bsale.io/v1/clients/65.json",
       "id": 65,
       "firstName": "a",
       "lastName": "sa",
@@ -142,17 +142,17 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
       "sendDte": 0,
       "prestashopClienId": 0,
       "contacts": {
-        "href": "https://api.bsale.cl/v1/clients/65/contacts.json"
+        "href": "https://api.bsale.io/v1/clients/65/contacts.json"
       },
       "attributes": {
-        "href": "https://api.bsale.cl/v1/clients/65/attributes.json"
+        "href": "https://api.bsale.io/v1/clients/65/attributes.json"
       },
       "addresses": {
-        "href": "https//api.bsale.cl/v1/clients/65/addresses.json"
+        "href": "https//api.bsale.io/v1/clients/65/addresses.json"
       }
     },
     {
-      "href": "https://api.bsale.cl/v1/clients/102.json",
+      "href": "https://api.bsale.io/v1/clients/102.json",
       "id": 102,
       "firstName": "Adriana",
       "lastName": "Talhouk",
@@ -176,13 +176,13 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
       "sendDte": 0,
       "prestashopClienId": 0,
       "contacts": {
-        "href": "https://api.bsale.cl/v1/clients/102/contacts.json"
+        "href": "https://api.bsale.io/v1/clients/102/contacts.json"
       },
       "attributes": {
-        "href": "https://api.bsale.cl/v1/clients/102/attributes.json"
+        "href": "https://api.bsale.io/v1/clients/102/attributes.json"
       },
       "addresses": {
-        "href": "https//api.bsale.cl/v1/clients/102/addresses.json"
+        "href": "https//api.bsale.io/v1/clients/102/addresses.json"
       }
     }
   ]
@@ -200,7 +200,7 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
 
 ```json title="Response /clients/80.json"
 {
-  "href": "https://api.bsale.cl/v1/clients/80.json",
+  "href": "https://api.bsale.io/v1/clients/80.json",
   "id": 80,
   "firstName": "juanito",
   "lastName": "mena",
@@ -224,13 +224,13 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
   "sendDte": 0,
   "prestashopClienId": 0,
   "contacts": {
-    "href": "https://api.bsale.cl/v1/clients/80/contacts.json"
+    "href": "https://api.bsale.io/v1/clients/80/contacts.json"
   },
   "attributes": {
-    "href": "https://api.bsale.cl/v1/clients/80/attributes.json"
+    "href": "https://api.bsale.io/v1/clients/80/attributes.json"
   },
   "addresses": {
-    "href": "https//api.bsale.cl/v1/clients/80/addresses.json"
+    "href": "https//api.bsale.io/v1/clients/80/addresses.json"
   }
 }
 ```
@@ -239,31 +239,31 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
 
 ```json 
 {
-  "href": "https://api.bsale.cl/v1/clients/796/attributes.json",
+  "href": "https://api.bsale.io/v1/clients/796/attributes.json",
   "count": 4,
   "limit": 25,
   "offset": 0,
   "items": [
     {
-      "href": "https://api.bsale.cl/v1/dynamic_attributes/44.json",
+      "href": "https://api.bsale.io/v1/dynamic_attributes/44.json",
       "id": 44,
       "name": "Rubro",
       "value": ""
     },
     {
-      "href": "https://api.bsale.cl/v1/dynamic_attributes/72.json",
+      "href": "https://api.bsale.io/v1/dynamic_attributes/72.json",
       "id": 72,
       "name": "NOMBRE FANTASIA",
       "value": ""
     },
     {
-      "href": "https://api.bsale.cl/v1/dynamic_attributes/73.json",
+      "href": "https://api.bsale.io/v1/dynamic_attributes/73.json",
       "id": 73,
       "name": "wefcqwrevgrqebvqerbv",
       "value": ""
     },
     {
-      "href": "https://api.bsale.cl/v1/dynamic_attributes/76.json",
+      "href": "https://api.bsale.io/v1/dynamic_attributes/76.json",
       "id": 76,
       "name": "Número Cliente",
       "value": ""
@@ -288,13 +288,13 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
 
 ```json
 {
-  "href": "https://api.bsale.cl/v1/clients/4/contacts.json",
+  "href": "https://api.bsale.io/v1/clients/4/contacts.json",
   "count": 2,
   "limit": 25,
   "offset": 0,
   "items": [
     {
-      "href": "https://api.bsale.cl/v1/clients/4/contacts/31.json",
+      "href": "https://api.bsale.io/v1/clients/4/contacts/31.json",
       "id": 31,
       "firstName": "Andres",
       "lastName": "Villanueva",
@@ -302,7 +302,7 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
       "email": "a.villanueva@gmail.cl"
     },
     {
-      "href": "https://api.bsale.cl/v1/clients/4/contacts/32.json",
+      "href": "https://api.bsale.io/v1/clients/4/contacts/32.json",
       "id": 32,
       "firstName": "Juana ",
       "lastName": "Jeldres",
@@ -317,7 +317,7 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
   
 ```json title="Response /clients/156/attributes/93.json"
 {
-   "href": "https://api.bsale.cl/v1/clients/4/contacts/31.json",
+   "href": "https://api.bsale.io/v1/clients/4/contacts/31.json",
    "id": 31,
    "firstName": "Carlitos",
    "lastName": "Finster ",
@@ -344,7 +344,7 @@ Para crear un contacto de cliente, se debe enviar un JSON con la siguiente estru
 ##### Respuesta
 ```json
 {
-  "href": "https://api.bsale.cl/v1/clients/55/contacts/1.json",
+  "href": "https://api.bsale.io/v1/clients/55/contacts/1.json",
   "id": 1,
   "firstName": "Tommy",
   "lastName": "Vercetti",
@@ -373,13 +373,13 @@ Para crear un contacto de cliente, se debe enviar un JSON con la siguiente estru
 
 ```json
 {
-  "href": "https://api.bsale.cl/v1/clients/55/addresses.json",
+  "href": "https://api.bsale.io/v1/clients/55/addresses.json",
   "count": 2,
   "limit": 25,
   "offset": 0,
   "items": [
     {
-      "href": "https://api.bsale.cl/v1/clients/55/addresses/8.json",
+      "href": "https://api.bsale.io/v1/clients/55/addresses/8.json",
       "id": 8,
       "addressName": "SUC 1",
       "address": "SOTERO SANZ 100",
@@ -388,7 +388,7 @@ Para crear un contacto de cliente, se debe enviar un JSON con la siguiente estru
       "state": 0
     },
     {
-      "href": "https://api.bsale.cl/v1/clients/55/addresses/9.json",
+      "href": "https://api.bsale.io/v1/clients/55/addresses/9.json",
       "id": 9,
       "addressName": "SUC 2",
       "address": "PEDRO DE VALDIVIA 200",
@@ -404,7 +404,7 @@ Para crear un contacto de cliente, se debe enviar un JSON con la siguiente estru
 
 ```json
 {
-  "href": "https://api.bsale.cl/v1/clients/55/addresses/8.json",
+  "href": "https://api.bsale.io/v1/clients/55/addresses/8.json",
   "id": 8,
   "addressName": "SUC 1",
   "address": "SOTERO SANZ 100",
@@ -432,7 +432,7 @@ Para crear una dirección de cliente, se debe enviar un JSON con la siguiente es
 ##### Respuesta
 ```json
 {
-  "href": "https://api.bsale.cl/v1/clients/55/addresses/6.json",
+  "href": "https://api.bsale.io/v1/clients/55/addresses/6.json",
   "id": 6,
   "addressName": "SUC 3",
   "address": "NUNCIO MONSEÑOR SOTERO SANZ 100, OF. 401",
@@ -460,7 +460,7 @@ Se debe enviar un Json con la siguiente estructura
 #### Respuesta
 ```json
 {
-  "href": "https://api.bsale.cl/v1/clients/55/addresses/6.json",
+  "href": "https://api.bsale.io/v1/clients/55/addresses/6.json",
   "id": 6,
   "addressName": "SUC 4",
   "address": "OF. 401",
@@ -476,7 +476,7 @@ Se debe enviar un Json con la siguiente estructura
 #### Respuesta
 ```json
 {
-  "href": "https://api.bsale.cl/v1/clients/55/addresses/6.json",
+  "href": "https://api.bsale.io/v1/clients/55/addresses/6.json",
   "id": 6,
   "addressName": "SUC 4",
   "address": "OF. 401",
@@ -562,7 +562,7 @@ Si se desean crear atributos especiales para el cliente se debe enviar la siguie
   "note": "Cliente premiun",
   "phone": "66287196",
   "contacts": {
-    "href": "https://api.bsale.cl/v1/clients/67/contacts.json"
+    "href": "https://api.bsale.io/v1/clients/67/contacts.json"
   },
   "prestashopClienId": 0,
   "activity": "Venta de ropa",
@@ -570,7 +570,7 @@ Si se desean crear atributos especiales para el cliente se debe enviar la siguie
   "facebook": "",
   "company": "Particular",
   "code": "2-7",
-  "href": "https://api.bsale.cl/v1/clients/67.json"
+  "href": "https://api.bsale.io/v1/clients/67.json"
 }
 ```
 
@@ -639,7 +639,7 @@ Se debe enviar un Json con la siguiente estructura
   "note": "Cliente premiun",
   "phone": "66287196",
   "contacts": {
-    "href": "https://api.bsale.cl/v1/clients/67/contacts.json"
+    "href": "https://api.bsale.io/v1/clients/67/contacts.json"
   },
   "prestashopClienId": 0,
   "activity": "Venta de ropa",
@@ -647,7 +647,7 @@ Se debe enviar un Json con la siguiente estructura
   "facebook": "",
   "company": "Particular",
   "code": "2-7",
-  "href": "https://api.bsale.cl/v1/clients/67.json"
+  "href": "https://api.bsale.io/v1/clients/67.json"
 }
 ```
 
@@ -661,7 +661,7 @@ El cliente no estará visible mediante interfaz y tendrá un `state` 99. Sus doc
 
 ```json
 {
-  "href": "https://api.bsale.cl/v1/clients/30.json",
+  "href": "https://api.bsale.io/v1/clients/30.json",
   "id": 30,
   "firstName": "Andres",
   "lastName": "Vasquez",
@@ -682,15 +682,15 @@ El cliente no estará visible mediante interfaz y tendrá un `state` 99. Sus doc
   "sendDte": 0,
   "prestashopClienId": 0,
   "payment_type": {
-    "href": "https://api.bsale.cl/v1/payment_types/2.json",
+    "href": "https://api.bsale.io/v1/payment_types/2.json",
     "id": "2"
   },
   "sale_condition": {
-    "href": "https://api.bsale.cl/v1/sale_conditions/1.json",
+    "href": "https://api.bsale.io/v1/sale_conditions/1.json",
     "id": "2"
   },
   "contacts": {
-    "href": "https://api.bsale.cl/v1/clients/30/contacts.json"
+    "href": "https://api.bsale.io/v1/clients/30/contacts.json"
   }
 }
 ```

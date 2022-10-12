@@ -24,7 +24,7 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
 
 ```js title="Response /variants/2373.json"
 {
-  "href": "https://api.bsale.cl/v1/variants/2373.json",
+  "href": "https://api.bsale.io/v1/variants/2373.json",
   "id": 2373,
   "description": "240 ML",
   "unlimitedStock": 0,
@@ -42,14 +42,14 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
   "prestashopCombinationId": 0,
   "prestashopValueId": 0,
   "product": {
-    "href": "https://api.bsale.cl/v1/products/656.json",
+    "href": "https://api.bsale.io/v1/products/656.json",
     "id": "656"
   },
   "attribute_values": {
-    "href": "https://api.bsale.cl/v1/variants/2373/attribute_values.json"
+    "href": "https://api.bsale.io/v1/variants/2373/attribute_values.json"
   },
   "costs": {
-    "href": "https://api.bsale.cl/v1/variants/2373/costs.json"
+    "href": "https://api.bsale.io/v1/variants/2373/costs.json"
   }
 }
 ```
@@ -103,13 +103,13 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
 
 ```json title="Response /variants.json "
 {
-  "href": "https://api.bsale.cl/v1/variants.json",
+  "href": "https://api.bsale.io/v1/variants.json",
   "count": 868,
   "limit": 3,
   "offset": 0,
   "items": [
     {
-      "href": "https://api.bsale.cl/v1/variants/1548.json",
+      "href": "https://api.bsale.io/v1/variants/1548.json",
       "id": 1548,
       "description": "120 ML",
       "unlimitedStock": 0,
@@ -127,18 +127,18 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
       "prestashopCombinationId": 0,
       "prestashopValueId": 0,
       "product": {
-        "href": "https://api.bsale.cl/v1/products/416.json",
+        "href": "https://api.bsale.io/v1/products/416.json",
         "id": "416"
       },
       "attribute_values": {
-        "href": "https://api.bsale.cl/v1/variants/1548/attribute_values.json"
+        "href": "https://api.bsale.io/v1/variants/1548/attribute_values.json"
       },
       "costs": {
-        "href": "https://api.bsale.cl/v1/variants/1548/costs.json"
+        "href": "https://api.bsale.io/v1/variants/1548/costs.json"
       }
     },
     {
-      "href": "https://api.bsale.cl/v1/variants/1555.json",
+      "href": "https://api.bsale.io/v1/variants/1555.json",
       "id": 1555,
       "description": "150 ML",
       "unlimitedStock": 0,
@@ -156,18 +156,18 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
       "prestashopCombinationId": 0,
       "prestashopValueId": 0,
       "product": {
-        "href": "https://api.bsale.cl/v1/products/420.json",
+        "href": "https://api.bsale.io/v1/products/420.json",
         "id": "420"
       },
       "attribute_values": {
-        "href": "https://api.bsale.cl/v1/variants/1555/attribute_values.json"
+        "href": "https://api.bsale.io/v1/variants/1555/attribute_values.json"
       },
       "costs": {
-        "href": "https://api.bsale.cl/v1/variants/1555/costs.json"
+        "href": "https://api.bsale.io/v1/variants/1555/costs.json"
       }
     },
     {
-      "href": "https://api.bsale.cl/v1/variants/2101.json",
+      "href": "https://api.bsale.io/v1/variants/2101.json",
       "id": 2101,
       "description": "300 ML",
       "unlimitedStock": 0,
@@ -185,18 +185,18 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
       "prestashopCombinationId": 0,
       "prestashopValueId": 0,
       "product": {
-        "href": "https://api.bsale.cl/v1/products/588.json",
+        "href": "https://api.bsale.io/v1/products/588.json",
         "id": "588"
       },
       "attribute_values": {
-        "href": "https://api.bsale.cl/v1/variants/2101/attribute_values.json"
+        "href": "https://api.bsale.io/v1/variants/2101/attribute_values.json"
       },
       "costs": {
-        "href": "https://api.bsale.cl/v1/variants/2101/costs.json"
+        "href": "https://api.bsale.io/v1/variants/2101/costs.json"
       }
     }
   ],
-  "next": "https://api.bsale.cl/v1/variants.json?limit=3&offset=3"
+  "next": "https://api.bsale.io/v1/variants.json?limit=3&offset=3"
 }
 ```
 ## GET una variante
@@ -211,7 +211,7 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
 
 ```json title="Response /variants/2373.json"
 {
-  "href": "https://api.bsale.cl/v1/variants/2373.json",
+  "href": "https://api.bsale.io/v1/variants/2373.json",
   "id": 2373,
   "description": "240 ML",
   "unlimitedStock": 0,
@@ -229,14 +229,14 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
   "prestashopCombinationId": 0,
   "prestashopValueId": 0,
   "product": {
-    "href": "https://api.bsale.cl/v1/products/656.json",
+    "href": "https://api.bsale.io/v1/products/656.json",
     "id": "656"
   },
   "attribute_values": {
-    "href": "https://api.bsale.cl/v1/variants/2373/attribute_values.json"
+    "href": "https://api.bsale.io/v1/variants/2373/attribute_values.json"
   },
   "costs": {
-    "href": "https://api.bsale.cl/v1/variants/2373/costs.json"
+    "href": "https://api.bsale.io/v1/variants/2373/costs.json"
   }
 }
 ```
@@ -257,44 +257,44 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
 
 ```json
 {
-  "href": "https://api.bsale.cl/v1/variants/5730/attribute_values.json",
+  "href": "https://api.bsale.io/v1/variants/5730/attribute_values.json",
   "count": 4,
   "limit": 25,
   "offset": 0,
   "items": [
     {
-      "href": "https://api.bsale.cl/v1/variants/5730/attribute_values/34192.json",
+      "href": "https://api.bsale.io/v1/variants/5730/attribute_values/34192.json",
       "id": 34192,
       "description": "Microsoft",
       "attribute": {
-        "href": "https://api.bsale.cl/v1/product_types/6/attributes/25.json",
+        "href": "https://api.bsale.io/v1/product_types/6/attributes/25.json",
         "id": "25"
       }
     },
     {
-      "href": "https://api.bsale.cl/v1/variants/5730/attribute_values/34193.json",
+      "href": "https://api.bsale.io/v1/variants/5730/attribute_values/34193.json",
       "id": 34193,
       "description": "14-09-2010",
       "attribute": {
-        "href": "https://api.bsale.cl/v1/product_types/6/attributes/28.json",
+        "href": "https://api.bsale.io/v1/product_types/6/attributes/28.json",
         "id": "28"
       }
     },
     {
-      "href": "https://api.bsale.cl/v1/variants/5730/attribute_values/34194.json",
+      "href": "https://api.bsale.io/v1/variants/5730/attribute_values/34194.json",
       "id": 34194,
       "description": "Multi idiomas (Región Latinoamerica) ",
       "attribute": {
-        "href": "https://api.bsale.cl/v1/product_types/6/attributes/29.json",
+        "href": "https://api.bsale.io/v1/product_types/6/attributes/29.json",
         "id": "29"
       }
     },
     {
-      "href": "https://api.bsale.cl/v1/variants/5730/attribute_values/34195.json",
+      "href": "https://api.bsale.io/v1/variants/5730/attribute_values/34195.json",
       "id": 34195,
       "description": "365 / 24hrs",
       "attribute": {
-        "href": "https://api.bsale.cl/v1/product_types/6/attributes/24.json",
+        "href": "https://api.bsale.io/v1/product_types/6/attributes/24.json",
         "id": "24"
       }
     }
@@ -307,11 +307,11 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
   
 ```json title="Response /variants/531/attribute_values/2.json"
 {
-  "href": "https://api.bsale.cl/v1/variants/531/attribute_values/2.json",
+  "href": "https://api.bsale.io/v1/variants/531/attribute_values/2.json",
   "id": 2,
   "description": "SI",
   "attribute": {
-    "href": "https://api.bsale.cl/v1/product_types/8/attributes/12.json",
+    "href": "https://api.bsale.io/v1/product_types/8/attributes/12.json",
     "id": "12"
   }
 }
@@ -326,7 +326,7 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
   "history": [
     {
       "reception_detail": {
-        "href": "https://api.bsale.cl/v1/stocks/receptions/2539/details/7734.json",
+        "href": "https://api.bsale.io/v1/stocks/receptions/2539/details/7734.json",
         "id": 7734
       },
       "admissionDate": 1441238400,
@@ -335,7 +335,7 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
     },
     {
       "reception_detail": {
-        "href": "https://api.bsale.cl/v1/stocks/receptions/2542/details/7744.json",
+        "href": "https://api.bsale.io/v1/stocks/receptions/2542/details/7744.json",
         "id": 7744
       },
       "admissionDate": 1441324800,
@@ -392,7 +392,7 @@ Si el tipo de producto al que pertenece la variante posee atributos, se deben en
 #### Respuesta
 ```json
 {
-  "href": "https://api.bsale.cl/v1/variants/2110.json",
+  "href": "https://api.bsale.io/v1/variants/2110.json",
   "id": 2110,
   "description": "Age of empires II",
   "unlimitedStock": 0,
@@ -410,11 +410,11 @@ Si el tipo de producto al que pertenece la variante posee atributos, se deben en
   "prestashopCombinationId": 0,
   "prestashopValueId": 0,
   "product": {
-    "href": "https://api.bsale.cl/v1/products/595.json",
+    "href": "https://api.bsale.io/v1/products/595.json",
     "id": "595"
   },
   "attribute_values": {
-    "href": "https://api.bsale.cl/v1/variants/2110/attribute_values.json"
+    "href": "https://api.bsale.io/v1/variants/2110/attribute_values.json"
   }
 }
 ```
@@ -446,7 +446,7 @@ Se debe enviar un Json con la siguiente estructura:
 #### Respuesta
 ```json
 {
-  "href": "https://api.bsale.cl/v1/variants/2110.json",
+  "href": "https://api.bsale.io/v1/variants/2110.json",
   "id": 2110,
   "description": "Age of empires 2",
   "unlimitedStock": 0,
@@ -464,11 +464,11 @@ Se debe enviar un Json con la siguiente estructura:
   "prestashopCombinationId": 0,
   "prestashopValueId": 0,
   "product": {
-    "href": "https://api.bsale.cl/v1/products/595.json",
+    "href": "https://api.bsale.io/v1/products/595.json",
     "id": "595"
   },
   "attribute_values": {
-    "href": "https://api.bsale.cl/v1/variants/2110/attribute_values.json"
+    "href": "https://api.bsale.io/v1/variants/2110/attribute_values.json"
   }
 }
 ```
@@ -483,7 +483,7 @@ La variante no estará visible mediante interfaz y tendrá un `state` 99
 
 ```json
 {
-  "href": "https://api.bsale.cl/v1/variants/2110.json",
+  "href": "https://api.bsale.io/v1/variants/2110.json",
   "id": 2110,
   "description": "Nintendo Wii U Basic Controller",
   "unlimitedStock": 0,
@@ -501,11 +501,11 @@ La variante no estará visible mediante interfaz y tendrá un `state` 99
   "prestashopCombinationId": 0,
   "prestashopValueId": 0,
   "product": {
-    "href": "https://api.bsale.cl/v1/products/595.json",
+    "href": "https://api.bsale.io/v1/products/595.json",
     "id": "595"
   },
   "attribute_values": {
-    "href": "https://api.bsale.cl/v1/variants/2110/attribute_values.json"
+    "href": "https://api.bsale.io/v1/variants/2110/attribute_values.json"
   }
 }
 ```

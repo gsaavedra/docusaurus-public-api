@@ -23,7 +23,7 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
 
 ```js title="Response /payment_types/1.json"
 {
-  "href": "https://api.bsale.cl/v1/payment_types/1.json",
+  "href": "https://api.bsale.io/v1/payment_types/1.json",
   "id": 1,
   "name": "Deposito en Cuenta Corriente",
   "isVirtual": 1,
@@ -82,13 +82,13 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
 
 ```json title="Response /payment_types.json "
 {
-  "href": "https://api.bsale.cl/v1/payment_types.json",
+  "href": "https://api.bsale.io/v1/payment_types.json",
   "count": 4,
   "limit": 25,
   "offset": 0,
   "items": [
     {
-      "href": "https://api.bsale.cl/v1/payment_types/7.json",
+      "href": "https://api.bsale.io/v1/payment_types/7.json",
       "id": 7,
       "name": "ABONO DE CLIENTE",
       "isVirtual": 0,
@@ -106,7 +106,7 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
       "agreementCode": null
     },
     {
-      "href": "https://api.bsale.cl/v1/payment_types/5.json",
+      "href": "https://api.bsale.io/v1/payment_types/5.json",
       "id": 5,
       "name": "CHEQUE",
       "isVirtual": 0,
@@ -123,11 +123,11 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
       "isAgreementBank": 0,
       "agreementCode": null,
       "dynamic_attributes": {
-        "href": "https://api.bsale.cl/v1/payment_types/5/dynamic_attributes.json"
+        "href": "https://api.bsale.io/v1/payment_types/5/dynamic_attributes.json"
       }
     },
     {
-      "href": "https://api.bsale.cl/v1/payment_types/4.json",
+      "href": "https://api.bsale.io/v1/payment_types/4.json",
       "id": 4,
       "name": "CREDITO",
       "isVirtual": 0,
@@ -145,7 +145,7 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
       "agreementCode": null
     },
     {
-      "href": "https://api.bsale.cl/v1/payment_types/1.json",
+      "href": "https://api.bsale.io/v1/payment_types/1.json",
       "id": 1,
       "name": "EFECTIVO",
       "isVirtual": 0,
@@ -163,7 +163,7 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
       "agreementCode": null
     },
     {
-      "href": "https://api.bsale.cl/v1/payment_types/3.json",
+      "href": "https://api.bsale.io/v1/payment_types/3.json",
       "id": 3,
       "name": "NOTA CREDITO DEVOLUCION",
       "isVirtual": 0,
@@ -188,7 +188,7 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
 
 ```json title="Response /payment_types/7.json"
 {
-  "href": "https://api.bsale.cl/v1/payment_types/7.json",
+  "href": "https://api.bsale.io/v1/payment_types/7.json",
   "id": 7,
   "name": "ABONO DE CLIENTE",
   "isVirtual": 0,
@@ -222,13 +222,13 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
 
 ```json
 {
-    "href": "https://api.bsale.cl/v1/dynamic_attributes.json",
+    "href": "https://api.bsale.io/v1/dynamic_attributes.json",
     "count": 6,
     "limit": 25,
     "offset": 0,
     "items": [
         {
-            "href": "https://api.bsale.cl/v1/dynamic_attributes/2.json",
+            "href": "https://api.bsale.io/v1/dynamic_attributes/2.json",
             "id": 2,
             "name": "Banco",
             "tip": "",
@@ -236,12 +236,12 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
             "isMandatory": 1,
             "state": 0,
             "payment_type": {
-                "href": "https://api.bsale.cl/v1/payment_types/5.json",
+                "href": "https://api.bsale.io/v1/payment_types/5.json",
                 "id": "5"
             }
         },
         {
-            "href": "https://api.bsale.cl/v1/dynamic_attributes/3.json",
+            "href": "https://api.bsale.io/v1/dynamic_attributes/3.json",
             "id": 3,
             "name": "Número",
             "tip": "",
@@ -249,12 +249,12 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
             "isMandatory": 1,
             "state": 0,
             "payment_type": {
-                "href": "https://api.bsale.cl/v1/payment_types/5.json",
+                "href": "https://api.bsale.io/v1/payment_types/5.json",
                 "id": "5"
             }
         },
         {
-            "href": "https://api.bsale.cl/v1/dynamic_attributes/19.json",
+            "href": "https://api.bsale.io/v1/dynamic_attributes/19.json",
             "id": 19,
             "name": "Nº Autoriza DICOM",
             "tip": "",
@@ -262,12 +262,12 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
             "isMandatory": 1,
             "state": 1,
             "payment_type": {
-                "href": "https://api.bsale.cl/v1/payment_types/5.json",
+                "href": "https://api.bsale.io/v1/payment_types/5.json",
                 "id": "5"
             }
         },
         {
-            "href": "https://api.bsale.cl/v1/dynamic_attributes/94.json",
+            "href": "https://api.bsale.io/v1/dynamic_attributes/94.json",
             "id": 94,
             "name": "Opcion",
             "tip": "",
@@ -275,29 +275,29 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
             "isMandatory": 0,
             "state": 0,
             "payment_type": {
-                "href": "https://api.bsale.cl/v1/payment_types/5.json",
+                "href": "https://api.bsale.io/v1/payment_types/5.json",
                 "id": "5"
             },
             "details": {
-                "href": "https://api.bsale.cl/v1/dynamic_attributes/94/details.json",
+                "href": "https://api.bsale.io/v1/dynamic_attributes/94/details.json",
                 "count": 3,
                 "limit": 25,
                 "offset": 0,
                 "items": [
                     {
-                        "href": "https://api.bsale.cl/v1/dynamic_attributes/94/details/60.json",
+                        "href": "https://api.bsale.io/v1/dynamic_attributes/94/details/60.json",
                         "id": 60,
                         "name": "A",
                         "state": 0
                     },
                     {
-                        "href": "https://api.bsale.cl/v1/dynamic_attributes/94/details/61.json",
+                        "href": "https://api.bsale.io/v1/dynamic_attributes/94/details/61.json",
                         "id": 61,
                         "name": "B",
                         "state": 0
                     },
                     {
-                        "href": "https://api.bsale.cl/v1/dynamic_attributes/94/details/62.json",
+                        "href": "https://api.bsale.io/v1/dynamic_attributes/94/details/62.json",
                         "id": 62,
                         "name": "C",
                         "state": 0
@@ -306,7 +306,7 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
             }
         },
         {
-            "href": "https://api.bsale.cl/v1/dynamic_attributes/18.json",
+            "href": "https://api.bsale.io/v1/dynamic_attributes/18.json",
             "id": 18,
             "name": "Titular",
             "tip": "",
@@ -314,12 +314,12 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
             "isMandatory": 1,
             "state": 0,
             "payment_type": {
-                "href": "https://api.bsale.cl/v1/payment_types/5.json",
+                "href": "https://api.bsale.io/v1/payment_types/5.json",
                 "id": "5"
             }
         },
         {
-            "href": "https://api.bsale.cl/v1/dynamic_attributes/17.json",
+            "href": "https://api.bsale.io/v1/dynamic_attributes/17.json",
             "id": 17,
             "name": "Vencimiento",
             "tip": "",
@@ -327,7 +327,7 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
             "isMandatory": 1,
             "state": 1,
             "payment_type": {
-                "href": "https://api.bsale.cl/v1/payment_types/5.json",
+                "href": "https://api.bsale.io/v1/payment_types/5.json",
                 "id": "5"
             }
         }
@@ -401,7 +401,7 @@ Si se desean usar atributos especiales para la forma de pago, se debe enviar la 
 #### Respuesta
 ```json
 {
-  "href": "https://api.bsale.cl/v1/payment_types/10.json",
+  "href": "https://api.bsale.io/v1/payment_types/10.json",
   "id": 10,
   "name": "Tarjeta de crédito",
   "isVirtual": 0,

@@ -212,31 +212,31 @@ Las colecciones son un conjunto de productos web asociados por un criterio basad
 
 ```json 
 {
-  "href": "https://api.bsale.cl/v1/clients/796/attributes.json",
+  "href": "https://api.bsale.io/v1/clients/796/attributes.json",
   "count": 4,
   "limit": 25,
   "offset": 0,
   "items": [
     {
-      "href": "https://api.bsale.cl/v1/dynamic_attributes/44.json",
+      "href": "https://api.bsale.io/v1/dynamic_attributes/44.json",
       "id": 44,
       "name": "Rubro",
       "value": ""
     },
     {
-      "href": "https://api.bsale.cl/v1/dynamic_attributes/72.json",
+      "href": "https://api.bsale.io/v1/dynamic_attributes/72.json",
       "id": 72,
       "name": "NOMBRE FANTASIA",
       "value": ""
     },
     {
-      "href": "https://api.bsale.cl/v1/dynamic_attributes/73.json",
+      "href": "https://api.bsale.io/v1/dynamic_attributes/73.json",
       "id": 73,
       "name": "wefcqwrevgrqebvqerbv",
       "value": ""
     },
     {
-      "href": "https://api.bsale.cl/v1/dynamic_attributes/76.json",
+      "href": "https://api.bsale.io/v1/dynamic_attributes/76.json",
       "id": 76,
       "name": "Número Cliente",
       "value": ""

@@ -25,7 +25,7 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
 
 ```js title="Response /documents.json"
 {
-  "href": "https://api.bsale.cl/v1/documents/382.json",
+  "href": "https://api.bsale.io/v1/documents/382.json",
   "id": 382,
   "emissionDate": 1463540400,
   "expirationDate": 1464663600,
@@ -63,32 +63,32 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
   "informedSii": 1,
   "responseMsgSii": null,
   "document_type": {
-    "href": "https://api.bsale.cl/v1/document_types/1.json",
+    "href": "https://api.bsale.io/v1/document_types/1.json",
     "id": "1"
   },
   "client": {
-    "href": "https://api.bsale.cl/v1/clients/7.json",
+    "href": "https://api.bsale.io/v1/clients/7.json",
     "id": "7"
   },
   "office": {
-    "href": "https://api.bsale.cl/v1/offices/2.json",
+    "href": "https://api.bsale.io/v1/offices/2.json",
     "id": "2"
   },
   "user": {
-    "href": "https://api.bsale.cl/v1/users/2.json",
+    "href": "https://api.bsale.io/v1/users/2.json",
     "id": "2"
   },
   "references": {
-    "href": "https://api.bsale.cl/v1/documents/382/references.json"
+    "href": "https://api.bsale.io/v1/documents/382/references.json"
   },
   "document_taxes": {
-    "href": "https://api.bsale.cl/v1/documents/382/document_taxes.json"
+    "href": "https://api.bsale.io/v1/documents/382/document_taxes.json"
   },
   "details": {
-    "href": "https://api.bsale.cl/v1/documents/382/details.json"
+    "href": "https://api.bsale.io/v1/documents/382/details.json"
   },
   "sellers": {
-    "href": "https://api.bsale.cl/v1/documents/382/sellers.json"
+    "href": "https://api.bsale.io/v1/documents/382/sellers.json"
   }
 }
 ```
@@ -195,7 +195,7 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
 
 ```json title="Response /documents/421.json "
 {
-  "href": "https://api.bsale.cl/v1/documents/421.json",
+  "href": "https://api.bsale.io/v1/documents/421.json",
   "id": 421,
   "emissionDate": 1351652400,
   "expirationDate": 1351652400,
@@ -231,32 +231,32 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
   "informedSii": 2,
   "responseMsgSii": null,
   "document_type": {
-    "href": "https://api.bsale.cl/v1/document_types/4.json",
+    "href": "https://api.bsale.io/v1/document_types/4.json",
     "id": "4"
   },
   "client": {
-    "href": "https://api.bsale.cl/v1/clients/7.json",
+    "href": "https://api.bsale.io/v1/clients/7.json",
     "id": "7"
   },
   "office": {
-    "href": "https://api.bsale.cl/v1/offices/2.json",
+    "href": "https://api.bsale.io/v1/offices/2.json",
     "id": "2"
   },
   "user": {
-    "href": "https://api.bsale.cl/v1/users/2.json",
+    "href": "https://api.bsale.io/v1/users/2.json",
     "id": "2"
   },
   "references": {
-    "href": "https://api.bsale.cl/v1/documents/421/references.json"
+    "href": "https://api.bsale.io/v1/documents/421/references.json"
   },
   "document_taxes": {
-    "href": "https://api.bsale.cl/v1/documents/421/document_taxes.json"
+    "href": "https://api.bsale.io/v1/documents/421/document_taxes.json"
   },
   "details": {
-    "href": "https://api.bsale.cl/v1/documents/421/details.json"
+    "href": "https://api.bsale.io/v1/documents/421/details.json"
   },
   "sellers": {
-    "href": "https://api.bsale.cl/v1/documents/421/sellers.json"
+    "href": "https://api.bsale.io/v1/documents/421/sellers.json"
   }
 }
 ```
@@ -403,7 +403,7 @@ Entrega los costos asociados a una venta solo si los productos fueron despachado
 
 ```json title="Response /documents/145071.json "
 {
-  "href": "https://api.bsale.cl/v1/documents/145071.json",
+  "href": "https://api.bsale.io/v1/documents/145071.json",
   "id": 145071,
   "name": "FACTURA ELECTRONICA",
   "number": 320,
@@ -411,13 +411,13 @@ Entrega los costos asociados a una venta solo si los productos fueron despachado
   "cost_detail": [
     {
       "variant": {
-        "href": "https://api.bsale.cl/v1/variants/6884.json",
+        "href": "https://api.bsale.io/v1/variants/6884.json",
         "id": 6884,
         "description": "Morado",
         "code": "DD1009M"
       },
       "shipping_detail": {
-        "href": "https://api.bsale.cl/v1/shippings/121576/details/290425.json",
+        "href": "https://api.bsale.io/v1/shippings/121576/details/290425.json",
         "id": 290425,
         "quantity": 1,
         "variantStock": 0,
@@ -427,13 +427,13 @@ Entrega los costos asociados a una venta solo si los productos fueron despachado
     },
     {
       "variant": {
-        "href": "https://api.bsale.cl/v1/variants/11272.json",
+        "href": "https://api.bsale.io/v1/variants/11272.json",
         "id": 11272,
         "description": "Morado",
         "code": "CE3703"
       },
       "shipping_detail": {
-        "href": "https://api.bsale.cl/v1/shippings/121576/details/290426.json",
+        "href": "https://api.bsale.io/v1/shippings/121576/details/290426.json",
         "id": 290426,
         "quantity": 1,
         "variantStock": 0,
@@ -443,13 +443,13 @@ Entrega los costos asociados a una venta solo si los productos fueron despachado
     },
     {
       "variant": {
-        "href": "https://api.bsale.cl/v1/variants/6949.json",
+        "href": "https://api.bsale.io/v1/variants/6949.json",
         "id": 6949,
         "description": "Rojo",
         "code": "HB1026"
       },
       "shipping_detail": {
-        "href": "https://api.bsale.cl/v1/shippings/121576/details/290427.json",
+        "href": "https://api.bsale.io/v1/shippings/121576/details/290427.json",
         "id": 290427,
         "quantity": 2,
         "variantStock": 15,
@@ -466,13 +466,13 @@ Entrega los costos asociados a una venta solo si los productos fueron despachado
 
 ```json title="Response /documents/4139/details.json"
 {
-    "href": "https://api.bsale.cl/v1/documents/4139/details.json",
+    "href": "https://api.bsale.io/v1/documents/4139/details.json",
     "count": 1,
     "limit": 25,
     "offset": 0,
     "items": [
         {
-            "href": "https://api.bsale.cl/v1/documents/4139/details/6182.json",
+            "href": "https://api.bsale.io/v1/documents/4139/details/6182.json",
             "id": 6182,
             "lineNumber": 0,
             "quantity": 1.0,
@@ -484,7 +484,7 @@ Entrega los costos asociados a una venta solo si los productos fueron despachado
             "netDiscount": 0.0,
             "totalDiscount": 0.0,
             "variant": {
-                "href": "https://api.bsale.cl/v1/variants/8045.json",
+                "href": "https://api.bsale.io/v1/variants/8045.json",
                 "id": 8045,
                 "description": "Standard",
                 "code": "1661885024042"
@@ -500,7 +500,7 @@ Entrega los costos asociados a una venta solo si los productos fueron despachado
 
 ```json title="Response /documents/4139/details/6182.json"
 {
-    "href": "https://api.bsale.cl/v1/documents/4139/details/6182.json",
+    "href": "https://api.bsale.io/v1/documents/4139/details/6182.json",
     "id": 6182,
     "lineNumber": 0,
     "quantity": 1.0,
@@ -512,7 +512,7 @@ Entrega los costos asociados a una venta solo si los productos fueron despachado
     "netDiscount": 0.0,
     "totalDiscount": 0.0,
     "variant": {
-        "href": "https://api.bsale.cl/v1/variants/8045.json",
+        "href": "https://api.bsale.io/v1/variants/8045.json",
         "id": 8045,
         "description": "Standard",
         "code": "1661885024042"
@@ -532,30 +532,30 @@ Retorna sólo referencias electrónicas (**XML**).
 :::
 ```json title="Response /documents/4139/references.json "
 {
-  "href": "https://api.bsale.cl/v1/documents/4139/references.json",
+  "href": "https://api.bsale.io/v1/documents/4139/references.json",
   "count": 2,
   "limit": 25,
   "offset": 0,
   "items": [
     {
-      "href": "https://api.bsale.cl/v1/documents/4139/references/5.json",
+      "href": "https://api.bsale.io/v1/documents/4139/references/5.json",
       "id": 5,
       "referenceDate": 1407643200,
       "number": "123",
       "reason": "Orden de Compra 123",
       "dte_code": {
-        "href": "https://api.bsale.cl/v1/dte_codes/20.json",
+        "href": "https://api.bsale.io/v1/dte_codes/20.json",
         "id": "20"
       }
     },
     {
-      "href": "https://api.bsale.cl/v1/documents/4139/references/6.json",
+      "href": "https://api.bsale.io/v1/documents/4139/references/6.json",
       "id": 6,
       "referenceDate": 1407643200,
       "number": "456",
       "reason": "Guia despacho 456",
       "dte_code": {
-        "href": "https://api.bsale.cl/v1/dte_codes/15.json",
+        "href": "https://api.bsale.io/v1/dte_codes/15.json",
         "id": "15"
       }
     }
@@ -568,13 +568,13 @@ Retorna sólo referencias electrónicas (**XML**).
 
 ```json title="Response /documents/11561/references/5.json "
 {
-  "href": "https://api.bsale.cl/v1/documents/11561/references/5.json",
+  "href": "https://api.bsale.io/v1/documents/11561/references/5.json",
   "id": 5,
   "referenceDate": 1407643200,
   "number": "123",
   "reason": "Orden de Compra 123",
   "dte_code": {
-    "href": "https://api.bsale.cl/v1/dte_codes/20.json",
+    "href": "https://api.bsale.io/v1/dte_codes/20.json",
     "id": "20"
   }
 }
@@ -584,18 +584,18 @@ Retorna sólo referencias electrónicas (**XML**).
 
 ```json title="Response /documents/12644/document_taxes.json "
 {
-  "href": "https://api.bsale.cl/v1/documents/12644/document_taxes.json",
+  "href": "https://api.bsale.io/v1/documents/12644/document_taxes.json",
   "count": 1,
   "limit": 25,
   "offset": 0,
   "items": [
     {
-      "href": "https://api.bsale.cl/v1/documents/12644/document_taxes/12626.json",
+      "href": "https://api.bsale.io/v1/documents/12644/document_taxes/12626.json",
       "id": 12626,
       "totalAmount": 797,
       "exemptAmount": 0,
       "tax": {
-        "href": "https://api.bsale.cl/v1/taxes/1.json",
+        "href": "https://api.bsale.io/v1/taxes/1.json",
         "id": "1"
       }
     }
@@ -607,12 +607,12 @@ Retorna sólo referencias electrónicas (**XML**).
 
 ```json title="Response /documents/12644/document_taxes/12626.json "
 {
-  "href": "https://api.bsale.cl/v1/documents/12644/document_taxes/12626.json",
+  "href": "https://api.bsale.io/v1/documents/12644/document_taxes/12626.json",
   "id": 12626,
   "totalAmount": 797,
   "exemptAmount": 0,
   "tax": {
-    "href": "https://api.bsale.cl/v1/taxes/1.json",
+    "href": "https://api.bsale.io/v1/taxes/1.json",
     "id": "1"
   }
 }
@@ -622,13 +622,13 @@ Retorna sólo referencias electrónicas (**XML**).
 
 ```json title="Response /documents/421/sellers.json "
 {
-  "href": "https://api.bsale.cl/v1/documents/421/sellers.json",
+  "href": "https://api.bsale.io/v1/documents/421/sellers.json",
   "count": 1,
   "limit": 25,
   "offset": 0,
   "items": [
     {
-      "href": "https://api.bsale.cl/v1/users/2.json",
+      "href": "https://api.bsale.io/v1/users/2.json",
       "id": 2,
       "firstName": "Vendedor Demo",
       "lastName": "Bsale"
@@ -645,25 +645,25 @@ Retorna los [atributos dinámicos](/atributos-dinamicos) asociados al documento,
 
 ```json title="Response /documents/9682/attributes.json "
 {
-  "href": "https://api.bsale.cl/v1/documents/9682/attributes.json",
+  "href": "https://api.bsale.io/v1/documents/9682/attributes.json",
   "count": 3,
   "limit": 25,
   "offset": 0,
   "items": [
     {
-      "href": "https://api.bsale.cl/v1/dynamic_attributes/70.json",
+      "href": "https://api.bsale.io/v1/dynamic_attributes/70.json",
       "id": 70,
       "name": "DETALLE DE PAGO",
       "value": ""
     },
     {
-      "href": "https://api.bsale.cl/v1/dynamic_attributes/90.json",
+      "href": "https://api.bsale.io/v1/dynamic_attributes/90.json",
       "id": 90,
       "name": "Tipo Descuento",
       "value": ""
     },
     {
-      "href": "https://api.bsale.cl/v1/dynamic_attributes/92.json",
+      "href": "https://api.bsale.io/v1/dynamic_attributes/92.json",
       "id": 92,
       "name": "SubTotal Venta",
       "value": ""
@@ -1147,7 +1147,7 @@ Se pueden enviar un id de referencia propio de su sistema para evitar duplicidad
 {
   "urlTimbre": "http://s3.amazonaws.com/bsale/timbres/T33_F933.png",
   "client": {
-    "href": "https://api.bsale.cl/v1/clients/211.json",
+    "href": "https://api.bsale.io/v1/clients/211.json",
     "id": "211"
   },
   "address": "direccion valida",
@@ -1155,7 +1155,7 @@ Se pueden enviar un id de referencia propio de su sistema para evitar duplicidad
   "userId": 1,
   "exemptAmount": 0,
   "office": {
-    "href": "https://api.bsale.cl/v1/offices/1.json",
+    "href": "https://api.bsale.io/v1/offices/1.json",
     "id": "1"
   },
   "urlXml": " ",
@@ -1164,17 +1164,17 @@ Se pueden enviar un id de referencia propio de su sistema para evitar duplicidad
   "netAmount": 53975,
   "totalAmount": 74486,
   "document_type": {
-    "href": "https://api.bsale.cl/v1/document_types/8.json",
+    "href": "https://api.bsale.io/v1/document_types/8.json",
     "id": "8"
   },
   "taxAmount": 20511,
   "number": 933,
-  "href": "https://api.bsale.cl/v1/documents/11561.json",
+  "href": "https://api.bsale.io/v1/documents/11561.json",
   "emissionDate": 1407643200,
   "urlPdf": "http://app.bsale.cl/view/339/a1a3291afd78.pdf",
   "id": 11561,
   "references": {
-    "href": "https://api.bsale.cl/v1/documents/11561/references.json"
+    "href": "https://api.bsale.io/v1/documents/11561/references.json"
   },
   "city": "puerto montt",
   "state": 0

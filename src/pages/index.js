@@ -17,7 +17,7 @@ function HomepageHeader() {
         <div className={styles.buttons}>
           <Link
             className="button button--secondary button--lg"
-            to="/CL/inicio">
+            to="/CL/primeros-pasos">
             API Chile <img src="img/clemoji.png"
      alt="logo chile"
      width="20"
@@ -27,7 +27,7 @@ function HomepageHeader() {
           &nbsp;
           <Link
             className="button button--secondary button--lg"
-            to="/PE/inicio">
+            to="/PE/primeros-pasos">
             API Perú <img src="img/peemoji.png"
      alt="logo Perú"
      width="20"
@@ -37,7 +37,7 @@ function HomepageHeader() {
           &nbsp;
           <Link
             className="button button--secondary button--lg"
-            to="/MX/inicio">
+            to="/MX/primeros-pasos">
             API México <img src="img/mxemoji.png"
      alt="logo México"
      width="20"
