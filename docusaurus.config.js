@@ -9,7 +9,7 @@ const config = {
   title: 'Documentación API Bsale',
   tagline: 'Conoce nuestras documentaciones para el desarrollo de integraciones.',
   url: 'https://gmontero.github.io',
-  baseUrl: '/docusaurus-api-doc-ext/',
+  baseUrl: '/',
   onBrokenLinks: 'ignore',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
