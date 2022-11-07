@@ -8,8 +8,7 @@ const FeatureList = [
     Svg: require('@site/static/img/undraw_bibliophile_re_xarc.svg').default,
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        Explora y conoce nuestras documentaciones. Desde facturación para ventas, control de inventario, gestión de clientes, e-commerce, envíos, etc.
       </>
     ),
   },
@@ -18,8 +17,7 @@ const FeatureList = [
     Svg: require('@site/static/img/undraw_bookmarks_re_mq1u.svg').default,
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+        Revisa los webhooks, son un complemento eficiente para implementar en el consumo de nuestras API's.
       </>
     ),
   },
@@ -28,8 +26,7 @@ const FeatureList = [
     Svg: require('@site/static/img/undraw_two_factor_authentication_namy.svg').default,
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        Si requieres de una implementación rápida y sin pasos innecesarios, revisa el servicio de OAuth 2.0.
       </>
     ),
   },

@@ -39,16 +39,16 @@ const config = {
           versions: {
             CL: {
               banner: "none",
-              label: '🌎 CL',
+              label: '⚪ CL',
               badge: true,
               path: '/CL',
             },
             PE: {
               banner: "none",
-              label: '🌎 PE',
+              label: '⚪ PE',
             },
             MX: {
-              label: '🌎 MX',
+              label: '⚪ MX',
               banner: "unmaintained"
             }
           }
@@ -104,10 +104,10 @@ const config = {
                 label: 'Primeros pasos',
                 to: '/CL/primeros-pasos',
               },
-              {
-                label: 'Casos de uso',
-                to: '/blog',
-              },
+             // {
+              //  label: 'Casos de uso',
+              //  to: '/blog',
+             // },
             ],
           },
           {
