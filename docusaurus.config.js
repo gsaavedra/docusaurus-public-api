@@ -8,7 +8,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 const config = {
   title: 'Documentación API Bsale',
   tagline: 'Conoce nuestras documentaciones para el desarrollo de integraciones.',
-  url: 'https://gmontero.github.io',
+  url: 'https://docs.bsale.dev',
   baseUrl: '/',
   onBrokenLinks: 'ignore',
   onBrokenMarkdownLinks: 'warn',

@@ -50,7 +50,7 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
 | **details** | nodo que indica los detalles de la lista de precio. | |
 
 ## GET listas de precio
-- GET `/v1/price_lists.jso` retornará todas las listas de precio.
+- GET `/v1/price_lists.json` retornará todas las listas de precio.
 
 #### Parámetros
 - **limit**, limita la cantidad de items de una respuesta JSON, por defecto el limit es 25, el máximo permitido es 50.

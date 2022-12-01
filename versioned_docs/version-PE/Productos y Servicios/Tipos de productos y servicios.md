@@ -24,7 +24,7 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
 
 ```js title="Response /product_types/2.json"
 {
-  "href": "https://api.bsale.com.pe/v1/product_types/2.json",
+  "href": "https://api.bsale.io/v1/product_types/2.json",
   "id": 2,
   "name": "Sin Tipo de Producto",
   "isEditable": 1,
@@ -32,7 +32,7 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
   "imagestionCategoryId": 0,
   "prestashopCategoryId": 0,
   "attributes": {
-    "href": "https://api.bsale.com.pe/v1/product_types/2/attributes.json"
+    "href": "https://api.bsale.io/v1/product_types/2/attributes.json"
   }
 }
 ```
@@ -67,13 +67,13 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
 
 ```json title="Response /product_types.json "
 {
-  "href": "https://api.bsale.com.pe/v1/product_types.json",
+  "href": "https://api.bsale.io/v1/product_types.json",
   "count": 4,
   "limit": 25,
   "offset": 0,
   "items": [
     {
-      "href": "https://api.bsale.com.pe/v1/product_types/30.json",
+      "href": "https://api.bsale.io/v1/product_types/30.json",
       "id": 30,
       "name": "Accesorios Computación",
       "isEditable": 1,
@@ -81,11 +81,11 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
       "imagestionCategoryId": 0,
       "prestashopCategoryId": 0,
       "attributes": {
-        "href": "https://api.bsale.com.pe/v1/product_types/30/attributes.json"
+        "href": "https://api.bsale.io/v1/product_types/30/attributes.json"
       }
     },
     {
-      "href": "https://api.bsale.com.pe/v1/product_types/9.json",
+      "href": "https://api.bsale.io/v1/product_types/9.json",
       "id": 9,
       "name": "Arriendo de producto",
       "isEditable": 1,
@@ -93,11 +93,11 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
       "imagestionCategoryId": 0,
       "prestashopCategoryId": 0,
       "attributes": {
-        "href": "https://api.bsale.com.pe/v1/product_types/9/attributes.json"
+        "href": "https://api.bsale.io/v1/product_types/9/attributes.json"
       }
     },
     {
-      "href": "https://api.bsale.com.pe/v1/product_types/16.json",
+      "href": "https://api.bsale.io/v1/product_types/16.json",
       "id": 16,
       "name": "ARRIENDOS CHILEAN",
       "isEditable": 1,
@@ -105,11 +105,11 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
       "imagestionCategoryId": 0,
       "prestashopCategoryId": 0,
       "attributes": {
-        "href": "https://api.bsale.com.pe/v1/product_types/16/attributes.json"
+        "href": "https://api.bsale.io/v1/product_types/16/attributes.json"
       }
     },
     {
-      "href": "https://api.bsale.com.pe/v1/product_types/5.json",
+      "href": "https://api.bsale.io/v1/product_types/5.json",
       "id": 5,
       "name": "Artículos Oficina",
       "isEditable": 1,
@@ -117,7 +117,7 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
       "imagestionCategoryId": 0,
       "prestashopCategoryId": 0,
       "attributes": {
-        "href": "https://api.bsale.com.pe/v1/product_types/5/attributes.json"
+        "href": "https://api.bsale.io/v1/product_types/5/attributes.json"
       }
     }
   ]
@@ -128,7 +128,7 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
 
 ```json title="Response /product_types/2.json"
 {
-  "href": "https://api.bsale.com.pe/v1/product_types/2.json",
+  "href": "https://api.bsale.io/v1/product_types/2.json",
   "id": 2,
   "name": "Sin Tipo de Producto",
   "isEditable": 1,
@@ -136,7 +136,7 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
   "imagestionCategoryId": 0,
   "prestashopCategoryId": 0,
   "attributes": {
-    "href": "https://api.bsale.com.pe/v1/product_types/2/attributes.json"
+    "href": "https://api.bsale.io/v1/product_types/2/attributes.json"
   }
 }
 ```
@@ -146,13 +146,13 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
 
 ```json
 {
-  "href": "https://api.bsale.com.pe/v1/products.json",
+  "href": "https://api.bsale.io/v1/products.json",
   "count": 2,
   "limit": 25,
   "offset": 0,
   "items": [
     {
-      "href": "https://api.bsale.com.pe/v1/products/2.json",
+      "href": "https://api.bsale.io/v1/products/2.json",
       "id": 2,
       "name": "Asesoria Informatica Imagestion Capacitacion",
       "description": "",
@@ -166,12 +166,12 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
       "prestashopProductId": 0,
       "presashopAttributeId": 0,
       "product_type": {
-        "href": "https://api.bsale.com.pe/v1/product_types/3.json",
+        "href": "https://api.bsale.io/v1/product_types/3.json",
         "id": "3"
       }
     },
     {
-      "href": "https://api.bsale.com.pe/v1/products/49.json",
+      "href": "https://api.bsale.io/v1/products/49.json",
       "id": 49,
       "name": "Etravel Capacitacion",
       "description": "",
@@ -185,7 +185,7 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
       "prestashopProductId": 0,
       "presashopAttributeId": 0,
       "product_type": {
-        "href": "https://api.bsale.com.pe/v1/product_types/3.json",
+        "href": "https://api.bsale.io/v1/product_types/3.json",
         "id": "3"
       }
     }
@@ -209,13 +209,13 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
   
 ```json title="Response /product_types/44/attributes.json"
 {
-  "href": "https://api.bsale.com.pe/v1/product_types/44/attributes.json",
+  "href": "https://api.bsale.io/v1/product_types/44/attributes.json",
   "count": 2,
   "limit": 25,
   "offset": 0,
   "items": [
     {
-      "href": "https://api.bsale.com.pe/v1/product_types/44/attributes/46.json",
+      "href": "https://api.bsale.io/v1/product_types/44/attributes/46.json",
       "id": 46,
       "name": "Fabricante",
       "isMandatory": 0,
@@ -225,7 +225,7 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
       "state": 0
     },
     {
-      "href": "https://api.bsale.com.pe/v1/product_types/44/attributes/47.json",
+      "href": "https://api.bsale.io/v1/product_types/44/attributes/47.json",
       "id": 47,
       "name": "Sistema",
       "isMandatory": 0,
@@ -243,7 +243,7 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
   
 ```json title="Response /product_types/156/attributes/93.json"
 {
-  "href": "https://api.bsale.com.pe/v1/product_types/156/attributes/93.json",
+  "href": "https://api.bsale.io/v1/product_types/156/attributes/93.json",
   "id": 93,
   "name": "atributito",
   "isMandatory": 0,
@@ -304,7 +304,7 @@ Si se desean crear atributos especiales para el tipo de producto se debe enviar 
 #### Respuesta
 ```json
 {
-  "href": "https://api.bsale.com.pe/v1/product_types/44.json",
+  "href": "https://api.bsale.io/v1/product_types/44.json",
   "id": 44,
   "name": "Discos físicos",
   "isEditable": 1,
@@ -312,7 +312,7 @@ Si se desean crear atributos especiales para el tipo de producto se debe enviar 
   "imagestionCategoryId": 0,
   "prestashopCategoryId": 0,
   "attributes": {
-    "href": "https://api.bsale.com.pe/v1/product_types/44/attributes.json"
+    "href": "https://api.bsale.io/v1/product_types/44/attributes.json"
   }
 }
 ```
@@ -353,7 +353,7 @@ Se debe enviar un Json con la siguiente estructura.
 #### Respuesta
 ```json
 {
-  "href": "https://api.bsale.com.pe/v1/product_types/44.json",
+  "href": "https://api.bsale.io/v1/product_types/44.json",
   "id": 44,
   "name": "Consolas Next GEN",
   "isEditable": 1,
@@ -361,7 +361,7 @@ Se debe enviar un Json con la siguiente estructura.
   "imagestionCategoryId": 0,
   "prestashopCategoryId": 0,
   "attributes": {
-    "href": "https://api.bsale.com.pe/v1/product_types/44/attributes.json"
+    "href": "https://api.bsale.io/v1/product_types/44/attributes.json"
   }
 }
 ```
@@ -379,7 +379,7 @@ El producto no estará visible mediante interfaz y tendrá un `state` 99
 
 ```json
 {
-   "href": "https://api.bsale.com.pe/v1/product_types/44.json",
+   "href": "https://api.bsale.io/v1/product_types/44.json",
    "id": 44,
    "name": "Consolas Next GEN 2",
    "isEditable": 1,
@@ -387,7 +387,7 @@ El producto no estará visible mediante interfaz y tendrá un `state` 99
    "imagestionCategoryId": 0,
    "prestashopCategoryId": 0,
    "attributes": {
-       "href": "https://api.bsale.com.pe/v1/product_types/44/attributes.json"
+       "href": "https://api.bsale.io/v1/product_types/44/attributes.json"
    }
 }
 ```

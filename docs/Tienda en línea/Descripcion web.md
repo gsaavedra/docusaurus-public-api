@@ -192,56 +192,92 @@ Las colecciones son un conjunto de productos web asociados por un criterio basad
   "next": "https://api.bsale.io/v2/markets/1/collections.json?limit=25&offset=25"
 }
 ```
-## GET una colección
-- GET `/v2/markets/:idMarket/collection/:collId/market_info.json` Retornará las colecciones de productos asociados al market.
 
-#### Parámetros
-- **limit** limita la cantidad de items de una respuesta JSON, por defecto el limit es 25, el máximo permitido es 50.
-- **offset** permite paginar los items de una respuesta JSON, por defecto el offset es 0.
-- **prodcutWfId** permite filtrar por producto web id.
-- **productId** permite filtrar por producto id.
-- **search_text** permite buscar por coincidencia de texto (nombre producto, descripción, marca)
-- **brand** permite filtrar por marca id.
-- **brand_static** permite filtrar por nombre de marca.
-- **minPrice** permite filtrar por el minimo de precio
-- **maxPrice** permite filtrar por el maximo de precio
-- **expand** indicar opcional para expandir nodos (String)
+### GET una colección
+- GET `/v1/markets/:idMarket/products/market_info.json?collId=:id` Retornará las colecciones de productos asociados al market.
 
-#### Ejemplos
-- `GET /v2/markets/1/collection/22/market_info.json?minPrice=210000&maxPrice=300000`
+##### Ejemplos
+- `GET /v1/markets/1/products/market_info.json?collId=23`
 
 ```json 
 {
-  "href": "https://api.bsale.cl/v1/clients/796/attributes.json",
-  "count": 4,
-  "limit": 25,
-  "offset": 0,
-  "items": [
-    {
-      "href": "https://api.bsale.cl/v1/dynamic_attributes/44.json",
-      "id": 44,
-      "name": "Rubro",
-      "value": ""
-    },
-    {
-      "href": "https://api.bsale.cl/v1/dynamic_attributes/72.json",
-      "id": 72,
-      "name": "NOMBRE FANTASIA",
-      "value": ""
-    },
-    {
-      "href": "https://api.bsale.cl/v1/dynamic_attributes/73.json",
-      "id": 73,
-      "name": "wefcqwrevgrqebvqerbv",
-      "value": ""
-    },
-    {
-      "href": "https://api.bsale.cl/v1/dynamic_attributes/76.json",
-      "id": 76,
-      "name": "Número Cliente",
-      "value": ""
-    }
-  ]
+    "code": "200",
+    "href": "https://api.bsale.io//v2/markets/1/products/market_info.json?&collId=2894&mkId=1&priceList=5",
+    "count": 1,
+    "limit": 25,
+    "offset": 0,
+    "data": [
+        {
+            "id": 342,
+            "productId": 145,
+            "idVariantDefault": 253,
+            "urlSlug": "bicicleta-mtb-limited-talla-l",
+            "name": "Bicicleta MTB Limited Talla L",
+            "description": "<p>Bicicleta MTB Limited Talla L Aro 29\"<br>Bicicleta Mountain Bike Modelo Limited de marco Talla L con Aro 29\", marca Ram.</p>",
+            "descriptions": {
+                "href": "https://api.bsale.io/v2/products/market_info/342.json?expand=[descriptions]"
+            },
+            "displayNotice": "",
+            "state": 1,
+            "mkProductType": "normal",
+            "productType": {
+                "id": 5,
+                "href": "https://api.bsale.io/v2/product_types/5.json"
+            },
+            "productTaxes": {
+                "href": "https://api.bsale.io/v2/products/145/product_taxes.json"
+            },
+            "urlImg": "https://dojiw2m9tvv09.cloudfront.net/69237/product/tallal7785.jpg",
+            "pictures": {
+                "href": "https://api.bsale.io/v2/products/market_info/342/pictures.json"
+            },
+            "urlVideo": null,
+            "shippingUnit": null,
+            "width": null,
+            "depth": null,
+            "length": null,
+            "baseInfo": {
+                "id": 145,
+                "name": "Bicicleta Hombre",
+                "classification": 0,
+                "stockControl": 0,
+                "href": "https://api.bsale.io/v2/products/145.json"
+            },
+            "variant": {
+                "id": 253,
+                "price": 243697.478991597,
+                "description": "L",
+                "finalPrice": 290000,
+                "fpWithoutDiscount": 290000,
+                "taxPrice": 46302.52,
+                "taxDiscountPrice": 46302.52,
+                "netDiscountPrice": 243697.48,
+                "unlimitedStock": 0,
+                "allowDecimal": 0,
+                "allowNegativeStock": 0,
+                "code": "1654607597922",
+                "discount": {
+                    "percent": 0,
+                    "minimumQuantity": 0
+                }
+            },
+            "variants": {
+                "href": "https://api.bsale.io/v2/products/market_info/342/variants.json"
+            },
+            "discounts": null,
+            "stocks": {
+                "href": "https://api.bsale.io/v2/stocks.json?product=145"
+            },
+            "integration": {
+                "order_by": 4
+            },
+            "order": 1,
+            "totalStock": 160,
+            "collections": {
+                "href": "https://api.bsale.io/v2/products/145/collections.json"
+            }
+        }
+    ]
 }
 ```
 

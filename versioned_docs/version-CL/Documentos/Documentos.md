@@ -10,7 +10,7 @@ Listar documentos generados en Bsale, del tipo venta, pre-venta, despachos, etc.
 
 :::info
 **Crear documentos** del tipo venta (Boleta, Factura electrónica, etc) o documentos asociados al proceso de venta (notas de venta, cotizaciones, etc). 
-Para la **creación** de documentos como [notas de crédito](/devoluciones#post-una-devolución), [despachos](/despachos#post-un-despacho). Ver su documentación asociada.
+Para la **creación** de documentos como [notas de crédito](/CL/devoluciones#post-una-devolución), [despachos](/CL/documentos/despachos#post-un-despacho). Ver su documentación asociada.
 :::
 
 Cómo funciona la interfaz de Bsale, mira éstos videos:
@@ -689,9 +689,9 @@ Para crear un documento de venta ya sea electrónico (Factura y Boleta Electrón
   "declareSii": 1
 }
 ```
-- **documentTypeId**, [Id del tipo de documento](/tipos-de-documentos) que indicara si es factura, boleta, nota de venta etc. (Integer).
-- **officeId**, [Id de la sucursal](/sucursales) donde se emite el documento, si no es especificada el documento quedara asignado a la sucursal por defecto del sistema (Integer).
-- **priceListId**, [Id de la lista de precio](/listas-de-precio) utilizada por el documento, si no es especificada se utilizara la lista de precio por defecto de la sucursal (Integer).
+- **documentTypeId**, [Id del tipo de documento](/CL/tipos-de-documentos) que indicara si es factura, boleta, nota de venta etc. (Integer).
+- **officeId**, [Id de la sucursal](/CL/sucursales) donde se emite el documento, si no es especificada el documento quedara asignado a la sucursal por defecto del sistema (Integer).
+- **priceListId**, [Id de la lista de precio](/CL/listas-de-precio) utilizada por el documento, si no es especificada se utilizara la lista de precio por defecto de la sucursal (Integer).
 - **emissionDate**, Fecha de emisión del documento (Integer) (no se debe aplicar zona horaria, solo considerar la fecha).
 - **expirationDate**, Fecha vencimiento del documento (Integer) (no se debe aplicar zona horaria, solo considerar la fecha).
 - **declareSii**, Si se desea declarar el documento al Servicio de impuestos internos se envía 1, en caso contrario un 0 (Boolean).
@@ -792,7 +792,7 @@ Si se necesita generar una **factura de exportación**, se deben enviar valores 
 - **totalPackages**, paquetes totales
 
 :::tip
-En el ejemplo se usa `clientId` para asociar un cliente. En caso de crearlo desde el documento, como **cliente extranjero**, mira [esta referencia](/clientes#cliente-extranjero).
+En el ejemplo se usa `clientId` para asociar un cliente. En caso de crearlo desde el documento, como **cliente extranjero**, mira [esta referencia](/CL/clientes#cliente-extranjero).
 :::
 
 ### Vendedor
@@ -1026,7 +1026,7 @@ Se pueden especificar los pagos asociados al documento, se requiere un nodo simi
   ]
 }
 ```
-- **paymentTypeId**, [Id de la forma de pago](/formas-de-pago) utilizada en el pago del documento (Integer).
+- **paymentTypeId**, [Id de la forma de pago](/CL/formas-de-pago) utilizada en el pago del documento (Integer).
 - **amount**, monto del pago del documento (Integer).
 - **recordDate**, Fecha en la cual se realizo el pago del documento, se envía en formato GMT (Integer).
 

@@ -234,7 +234,7 @@ Para crear un cliente, se debe enviar un JSON con la siguiente estructura:
 }
 ```
 
-## PUT un cliente
+## PUT una sucursal
 - PUT `/v1/offices/5.json` 
 
 Se debe enviar un Json con la siguiente estructura

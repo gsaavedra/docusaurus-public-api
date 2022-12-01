@@ -2,7 +2,7 @@
 id: primeros-pasos
 sidebar_position: 2
 title: Primeros pasos
-description: My document description
+description: Primeros pasos para interactuar con la API de Bsale
 slug: /primeros-pasos
 ---
 

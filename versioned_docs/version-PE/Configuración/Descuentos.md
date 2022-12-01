@@ -19,7 +19,7 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
 
 ```json title="Response /discounts/1.json"
 {
-  "href": "https://api.bsale.com.pe/v1/discounts/1.json",
+  "href": "https://api.bsale.io/v1/discounts/1.json",
   "id": 1,
   "name": "Ajuste Precio",
   "percentage": "14.3",
@@ -56,13 +56,13 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
 
 ```json title="Response /discounts.json "
 {
-  "href": "https://api.bsale.com.pe/v1/discounts.json",
+  "href": "https://api.bsale.io/v1/discounts.json",
   "count": 3,
   "limit": 25,
   "offset": 0,
   "items": [
     {
-      "href": "https://api.bsale.com.pe/v1/discounts/1.json",
+      "href": "https://api.bsale.io/v1/discounts/1.json",
       "id": 1,
       "name": "Ajuste Precio",
       "percentage": "14.3",
@@ -70,7 +70,7 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
       "automatic": 0
     },
     {
-      "href": "https://api.bsale.com.pe/v1/discounts/3.json",
+      "href": "https://api.bsale.io/v1/discounts/3.json",
       "id": 3,
       "name": "Descuento CPT",
       "percentage": "75.0",
@@ -78,7 +78,7 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
       "automatic": 0
     },
     {
-      "href": "https://api.bsale.com.pe/v1/discounts/2.json",
+      "href": "https://api.bsale.io/v1/discounts/2.json",
       "id": 2,
       "name": "Descuento Imagestion",
       "percentage": "25.0",
@@ -93,7 +93,7 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
 
 ```json title="Response /discounts/1.json"
 {
-  "href": "https://api.bsale.com.pe/v1/discounts/1.json",
+  "href": "https://api.bsale.io/v1/discounts/1.json",
   "id": 1,
   "name": "Descuentos cliente preferencial",
   "percentage": "14.3",

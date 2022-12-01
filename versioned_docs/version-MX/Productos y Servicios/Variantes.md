@@ -353,7 +353,7 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
 - **availableFifo**, cantidad disponible de la variante de una recepción específica (Integer).
 
 ## POST una variante
-- POST `/v1/product_types.json` 
+- POST `/v1/variants.json` 
 
 Para crear una variante, se debe enviar un JSON con la siguiente estructura:
 ### Ejemplo JSON

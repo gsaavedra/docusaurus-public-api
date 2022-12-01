@@ -13,7 +13,7 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
 
 ```js title="Response /shipping_types/6.json"
 {
-  "href": "https://api.bsale.com.pe/v1/shipping_types/6.json",
+  "href": "https://api.bsale.io/v1/shipping_types/6.json",
   "id": 6,
   "name": "Otros traslados no venta",
   "codeSii": 6,
@@ -50,13 +50,13 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
 
 ```json title="Response /shipping_types.json "
 {
-  "href": "https://api.bsale.com.pe/v1/shipping_types.json",
+  "href": "https://api.bsale.io/v1/shipping_types.json",
   "count": 9,
   "limit": 25,
   "offset": 0,
   "items": [
     {
-      "href": "https://api.bsale.com.pe/v1/shipping_types/3.json",
+      "href": "https://api.bsale.io/v1/shipping_types/3.json",
       "id": 3,
       "name": "Consignaciones",
       "codeSii": 3,
@@ -64,7 +64,7 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
       "state": 0
     },
     {
-      "href": "https://api.bsale.com.pe/v1/shipping_types/4.json",
+      "href": "https://api.bsale.io/v1/shipping_types/4.json",
       "id": 4,
       "name": "Entrega gratuita",
       "codeSii": 4,
@@ -72,7 +72,7 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
       "state": 0
     },
     {
-      "href": "https://api.bsale.com.pe/v1/shipping_types/7.json",
+      "href": "https://api.bsale.io/v1/shipping_types/7.json",
       "id": 7,
       "name": "Guía de devolución",
       "codeSii": 7,
@@ -80,7 +80,7 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
       "state": 0
     },
     {
-      "href": "https://api.bsale.com.pe/v1/shipping_types/1.json",
+      "href": "https://api.bsale.io/v1/shipping_types/1.json",
       "id": 1,
       "name": "Operación constituye venta",
       "codeSii": 1,
@@ -88,7 +88,7 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
       "state": 0
     },
     {
-      "href": "https://api.bsale.com.pe/v1/shipping_types/6.json",
+      "href": "https://api.bsale.io/v1/shipping_types/6.json",
       "id": 6,
       "name": "Otros traslados no venta",
       "codeSii": 6,
@@ -96,7 +96,7 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
       "state": 0
     },
     {
-      "href": "https://api.bsale.com.pe/v1/shipping_types/5.json",
+      "href": "https://api.bsale.io/v1/shipping_types/5.json",
       "id": 5,
       "name": "Traslados internos",
       "codeSii": 5,
@@ -104,7 +104,7 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
       "state": 0
     },
     {
-      "href": "https://api.bsale.com.pe/v1/shipping_types/8.json",
+      "href": "https://api.bsale.io/v1/shipping_types/8.json",
       "id": 8,
       "name": "Traslado para exportación. (no venta)",
       "codeSii": 8,
@@ -112,7 +112,7 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
       "state": 0
     },
     {
-      "href": "https://api.bsale.com.pe/v1/shipping_types/2.json",
+      "href": "https://api.bsale.io/v1/shipping_types/2.json",
       "id": 2,
       "name": "Ventas por efectuar",
       "codeSii": 2,
@@ -120,7 +120,7 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
       "state": 0
     },
     {
-      "href": "https://api.bsale.com.pe/v1/shipping_types/9.json",
+      "href": "https://api.bsale.io/v1/shipping_types/9.json",
       "id": 9,
       "name": "Venta para exportación",
       "codeSii": 9,
@@ -135,7 +135,7 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
 
 ```json title="Response /shipping_types/6.json"
 {
-  "href": "https://api.bsale.com.pe/v1/shipping_types/6.json",
+  "href": "https://api.bsale.io/v1/shipping_types/6.json",
   "id": 6,
   "name": "Otros traslados no venta",
   "codeSii": 6,

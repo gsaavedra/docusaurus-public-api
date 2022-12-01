@@ -25,7 +25,7 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
 
 ```js title="Response /v1/shippings/22.json"
 {
-  "href": "https://api.bsale.com.pe/v1/shippings/22.json",
+  "href": "https://api.bsale.io/v1/shippings/22.json",
   "id": 22,
   "shippingDate": 1370318400,
   "address": null,
@@ -34,19 +34,19 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
   "recipient": null,
   "state": 0,
   "office": {
-    "href": "https://api.bsale.com.pe/v1/offices/1.json",
+    "href": "https://api.bsale.io/v1/offices/1.json",
     "id": "1"
   },
   "shipping_type": {
-    "href": "https://api.bsale.com.pe/v1/shipping_types/1.json",
+    "href": "https://api.bsale.io/v1/shipping_types/1.json",
     "id": "1"
   },
   "guide": {
-    "href": "https://api.bsale.com.pe/v1/documents/23.json",
+    "href": "https://api.bsale.io/v1/documents/23.json",
     "id": "23"
   },
   "details": {
-    "href": "https://api.bsale.com.pe/v1/shippings/22/details.json"
+    "href": "https://api.bsale.io/v1/shippings/22/details.json"
   }
 }
 ```
@@ -79,6 +79,7 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
 - **officeid**, Permite filtrar por sucursal.
 - **shippingtypeid**, filtra por documento de referencia.
 - **state**, boolean (0 o 1) indica si los documentos están activos(0) inactivos (1).
+- **documentid**, id documento guía de despacho
   
 #### Ejemplos
 - `GET /v1/shippings.json?limit=10&offset=0`
@@ -87,13 +88,13 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
 
 ```json title="Response /shippings.json "
 {
-  "href": "https://api.bsale.com.pe/v1/shippings.json",
+  "href": "https://api.bsale.io/v1/shippings.json",
   "count": 13430,
   "limit": 3,
   "offset": 0,
   "items": [
     {
-      "href": "https://api.bsale.com.pe/v1/shippings/22.json",
+      "href": "https://api.bsale.io/v1/shippings/22.json",
       "id": 22,
       "shippingDate": 1370318400,
       "address": null,
@@ -102,23 +103,23 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
       "recipient": null,
       "state": 0,
       "office": {
-        "href": "https://api.bsale.com.pe/v1/offices/1.json",
+        "href": "https://api.bsale.io/v1/offices/1.json",
         "id": "1"
       },
       "shipping_type": {
-        "href": "https://api.bsale.com.pe/v1/shipping_types/1.json",
+        "href": "https://api.bsale.io/v1/shipping_types/1.json",
         "id": "1"
       },
       "guide": {
-        "href": "https://api.bsale.com.pe/v1/documents/23.json",
+        "href": "https://api.bsale.io/v1/documents/23.json",
         "id": "23"
       },
       "details": {
-        "href": "https://api.bsale.com.pe/v1/shippings/22/details.json"
+        "href": "https://api.bsale.io/v1/shippings/22/details.json"
       }
     },
     {
-      "href": "https://api.bsale.com.pe/v1/shippings/23.json",
+      "href": "https://api.bsale.io/v1/shippings/23.json",
       "id": 23,
       "shippingDate": 1370318400,
       "address": null,
@@ -127,23 +128,23 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
       "recipient": null,
       "state": 0,
       "office": {
-        "href": "https://api.bsale.com.pe/v1/offices/1.json",
+        "href": "https://api.bsale.io/v1/offices/1.json",
         "id": "1"
       },
       "shipping_type": {
-        "href": "https://api.bsale.com.pe/v1/shipping_types/1.json",
+        "href": "https://api.bsale.io/v1/shipping_types/1.json",
         "id": "1"
       },
       "guide": {
-        "href": "https://api.bsale.com.pe/v1/documents/24.json",
+        "href": "https://api.bsale.io/v1/documents/24.json",
         "id": "24"
       },
       "details": {
-        "href": "https://api.bsale.com.pe/v1/shippings/23/details.json"
+        "href": "https://api.bsale.io/v1/shippings/23/details.json"
       }
     },
     {
-      "href": "https://api.bsale.com.pe/v1/shippings/24.json",
+      "href": "https://api.bsale.io/v1/shippings/24.json",
       "id": 24,
       "shippingDate": 1370318400,
       "address": null,
@@ -152,19 +153,19 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
       "recipient": null,
       "state": 0,
       "office": {
-        "href": "https://api.bsale.com.pe/v1/offices/1.json",
+        "href": "https://api.bsale.io/v1/offices/1.json",
         "id": "1"
       },
       "shipping_type": {
-        "href": "https://api.bsale.com.pe/v1/shipping_types/1.json",
+        "href": "https://api.bsale.io/v1/shipping_types/1.json",
         "id": "1"
       },
       "guide": {
-        "href": "https://api.bsale.com.pe/v1/documents/25.json",
+        "href": "https://api.bsale.io/v1/documents/25.json",
         "id": "25"
       },
       "details": {
-        "href": "https://api.bsale.com.pe/v1/shippings/24/details.json"
+        "href": "https://api.bsale.io/v1/shippings/24/details.json"
       }
     }
   ]
@@ -181,7 +182,7 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
 
 ```json title="Response /shippings/22.json "
 {
-  "href": "https://api.bsale.com.pe/v1/shippings/22.json",
+  "href": "https://api.bsale.io/v1/shippings/22.json",
   "id": 22,
   "shippingDate": 1370318400,
   "address": null,
@@ -190,19 +191,19 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
   "recipient": null,
   "state": 0,
   "office": {
-    "href": "https://api.bsale.com.pe/v1/offices/1.json",
+    "href": "https://api.bsale.io/v1/offices/1.json",
     "id": "1"
   },
   "shipping_type": {
-    "href": "https://api.bsale.com.pe/v1/shipping_types/1.json",
+    "href": "https://api.bsale.io/v1/shipping_types/1.json",
     "id": "1"
   },
   "guide": {
-    "href": "https://api.bsale.com.pe/v1/documents/23.json",
+    "href": "https://api.bsale.io/v1/documents/23.json",
     "id": "23"
   },
   "details": {
-    "href": "https://api.bsale.com.pe/v1/shippings/22/details.json"
+    "href": "https://api.bsale.io/v1/shippings/22/details.json"
   }
 }
 ```
@@ -212,19 +213,19 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
 
 ```json title="Response /shippings/22/details.json "
 {
-  "href": "https://api.bsale.com.pe/v1/shippings/22/details.json",
+  "href": "https://api.bsale.io/v1/shippings/22/details.json",
   "count": 1,
   "limit": 25,
   "offset": 0,
   "items": [
     {
-      "href": "https://api.bsale.com.pe/v1/shippings/22/details/31.json",
+      "href": "https://api.bsale.io/v1/shippings/22/details/31.json",
       "id": 31,
       "quantity": 1,
       "variantStock": 28,
       "variantCost": 0,
       "variant": {
-        "href": "https://api.bsale.com.pe/v1/variants/8.json",
+        "href": "https://api.bsale.io/v1/variants/8.json",
         "id": "8"
       }
     }
@@ -237,13 +238,13 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
 
 ```json title="Response /shippings/22/details/31.json "
 {
-  "href": "https://api.bsale.com.pe/v1/shippings/22/details/31.json",
+  "href": "https://api.bsale.io/v1/shippings/22/details/31.json",
   "id": 31,
   "quantity": 1,
   "variantStock": 28,
   "variantCost": 0,
   "variant": {
-    "href": "https://api.bsale.com.pe/v1/variants/8.json",
+    "href": "https://api.bsale.io/v1/variants/8.json",
     "id": "8"
   }
 }
@@ -351,7 +352,7 @@ Si se desea generar una guía de traslado interno, se debe agregar al envío
 
 ```json title="201 Response /shippings.json "
 {
-  "href": "https://api.bsale.com.pe/v1/shippings/1554.json",
+  "href": "https://api.bsale.io/v1/shippings/1554.json",
   "id": 1554,
   "shippingDate": 1576454400,
   "address": "la quebrada 1005",
@@ -360,23 +361,23 @@ Si se desea generar una guía de traslado interno, se debe agregar al envío
   "recipient": "Edison Packard",
   "state": 0,
   "office": {
-    "href": "https://api.bsale.com.pe/v1/offices/1.json",
+    "href": "https://api.bsale.io/v1/offices/1.json",
     "id": "1"
   },
   "user": {
-    "href": "https://api.bsale.com.pe/v1/users/257.json",
+    "href": "https://api.bsale.io/v1/users/257.json",
     "id": "257"
   },
   "shipping_type": {
-    "href": "https://api.bsale.com.pe/v1/shipping_types/6.json",
+    "href": "https://api.bsale.io/v1/shipping_types/6.json",
     "id": "6"
   },
   "guide": {
-    "href": "https://api.bsale.com.pe/v1/documents/61716.json",
+    "href": "https://api.bsale.io/v1/documents/61716.json",
     "id": "61716"
   },
   "details": {
-    "href": "https://api.bsale.com.pe/v1/shippings/1554/details.json"
+    "href": "https://api.bsale.io/v1/shippings/1554/details.json"
   }
 }
 ```

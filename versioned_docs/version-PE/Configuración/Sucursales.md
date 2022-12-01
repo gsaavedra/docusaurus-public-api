@@ -20,7 +20,7 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
 
 ```js title="Response /offices/1.json"
 {
-  "href": "https://api.bsale.com.pe/v1/offices/1.json",
+  "href": "https://api.bsale.io/v1/offices/1.json",
   "id": 1,
   "name": "Tienda Online",
   "description": "",
@@ -49,7 +49,7 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
 | **latitude**   | latitud de la sucursal | String |
 | **longitude**   | longitud la sucursal | String |
 | **isVirtual**   | indica si la sucursal estará disponible para trabajar en una pagina web No(0) o Si (1) | Boolean |
-| **municipality**   |, comuna de la sucursal | String |
+| **municipality**   | comuna de la sucursal | String |
 | **city**   | ciudad de la sucursal | String |
 | **zipCode**   | código postas de la sucursal | String |
 | **costCenter**   | centro de costo de la sucursal | String |
@@ -80,65 +80,52 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
 
 ```json title="Response /offices.json "
 {
-  "href": "https://api.bsale.com.pe/v1/offices.json",
-  "count": 4,
+  "href": "https://api.bsale.io/v1/offices.json",
+  "count": 3,
   "limit": 25,
   "offset": 0,
   "items": [
     {
-      "href": "https://api.bsale.com.pe/v1/offices/2.json",
-      "id": 2,
-      "name": "Casa Matriz - Puerto Varas",
-      "description": "",
-      "address": "Direccion de la sucursal",
-      "latitude": "",
-      "longitude": "",
-      "isVirtual": 0,
-      "country": "",
-      "municipality": "",
-      "city": "",
-      "zipCode": "",
-      "costCenter": "",
-      "state": 0,
-      "imagestionCellarId": 0
-    },
-    {
-      "href": "https://api.bsale.com.pe/v1/offices/3.json",
+      "href": "https://api.bsale.io/v1/offices/7.json",
       "id": 3,
-      "name": "Casa Matriz Pto. Varas en ($)",
+      "name": "DINERS CLUB MALL",
       "description": "",
-      "address": "Direccion de la sucursal",
+      "address": "SAN ISIDRO",
       "latitude": "",
       "longitude": "",
       "isVirtual": 0,
-      "country": "",
-      "municipality": "",
-      "city": "",
+      "country": "PERU",
+      "district": "SAN ISIDRO",
+      "city": "LIMA",
       "zipCode": "",
-      "costCenter": "",
-      "state": 1,
-      "imagestionCellarId": 0
-    },
-    {
-      "href": "https://api.bsale.com.pe/v1/offices/4.json",
-      "id": 4,
-      "name": "Internacional",
-      "description": "",
-      "address": "",
-      "latitude": "",
-      "longitude": "",
-      "isVirtual": 0,
-      "country": "",
-      "municipality": "",
-      "city": "",
-      "zipCode": "",
+      "email": "",
       "costCenter": "",
       "state": 0,
-      "imagestionCellarId": 0
+      "imagestionCellarId": 0,
+      "defaultPriceList": 2
     },
     {
-      "href": "https://api.bsale.com.pe/v1/offices/1.json",
+      "href": "https://api.bsale.io/v1/offices/1.json",
       "id": 1,
+      "name": "LITTLE MARKET",
+      "description": "",
+      "address": "Angamos Sur 666",
+      "latitude": "",
+      "longitude": "",
+      "isVirtual": 0,
+      "country": "",
+      "district": "Miraflores",
+      "city": "",
+      "zipCode": "",
+      "email": "",
+      "costCenter": "",
+      "state": 0,
+      "imagestionCellarId": 0,
+      "defaultPriceList": 0
+    },
+    {
+      "href": "https://api.bsale.io/v1/offices/1.json",
+      "id": 2,
       "name": "Tienda Online",
       "description": "",
       "address": "",
@@ -161,7 +148,7 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
 
 ```json title="Response /offices/1.json"
 {
-  "href": "https://api.bsale.com.pe/v1/offices/1.json",
+  "href": "https://api.bsale.io/v1/offices/1.json",
   "id": 1,
   "name": "Tienda Online",
   "description": "",
@@ -201,13 +188,13 @@ Para crear un cliente, se debe enviar un JSON con la siguiente estructura:
 {
   "longitude": "",
   "zipCode": "000000",
-  "name": "Imaginex",
+  "name": "Nueva sucursal",
   "latitude": "",
   "isVirtual": 0,
   "address": "Santa Rosa 402",
-  "country": "Chile",
-  "municipality": "Puerto Varas",
-  "city": "Puerto Varas",
+  "country": "Perú",
+  "municipality": "Lima",
+  "city": "San Isidro",
   "costCenter": "25",
   "description": "Oficina"
 }
@@ -220,21 +207,21 @@ Para crear un cliente, se debe enviar un JSON con la siguiente estructura:
   "longitude": "",
   "state": 0,
   "latitude": "",
-  "name": "Imaginex",
+  "name": "Nueva sucursal",
   "isVirtual": 0,
-  "href": "https://api.bsale.com.pe/v1/offices/5.json",
+  "href": "https://api.bsale.io/v1/offices/5.json",
   "address": "Santa Rosa 402",
   "id": 5,
-  "city": "Puerto Varas",
-  "municipality": "Puerto Varas",
-  "country": "Chile",
+  "country": "Perú",
+  "municipality": "Lima",
+  "city": "San Isidro",
   "costCenter": "25",
   "description": "Oficina",
   "imagestionCellarId": 0
 }
 ```
 
-## PUT un cliente
+## PUT una sucursal
 - PUT `/v1/offices/5.json` 
 
 Se debe enviar un Json con la siguiente estructura
@@ -257,7 +244,7 @@ Se debe enviar un Json con la siguiente estructura
   "latitude": "",
   "name": "Imaginex TI",
   "isVirtual": 0,
-  "href": "https://api.bsale.com.pe/v1/offices/5.json",
+  "href": "https://api.bsale.io/v1/offices/5.json",
   "address": "SSanta Rosa 402 oficina B",
   "id": 5,
   "city": "Puerto Varas",
@@ -285,12 +272,12 @@ La sucursal no estará visible mediante interfaz y tendrá un `state` 99. Sus do
   "latitude": "",
   "name": "Imaginex TI",
   "isVirtual": 0,
-  "href": "https://api.bsale.com.pe/v1/offices/5.json",
+  "href": "https://api.bsale.io/v1/offices/5.json",
   "address": "Santa Rosa 402 oficina B",
   "id": 5,
   "city": "Puerto Varas",
   "municipality": "Puerto Varas",
-  "country": "Chile",
+  "country": "Perú",
   "costCenter": "25",
   "description": "Oficina",
   "imagestionCellarId": 0

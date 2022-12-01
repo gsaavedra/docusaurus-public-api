@@ -21,14 +21,14 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
 ```js title="Response /users/2.json"
 
         {
-            "href": "https://api.bsale.com.pe/v1/users/2.json",
+            "href": "https://api.bsale.io/v1/users/2.json",
             "id": 2,
             "firstName": "Gabriel",
             "lastName": "Seguel",
             "email": "gseguel@bsale-prueba.cl",
             "state": 0,
             "office": {
-                "href": "https://api.bsale.com.pe/v1/offices/1.json",
+                "href": "https://api.bsale.io/v1/offices/1.json",
                 "id": "1"
             }
         }
@@ -69,32 +69,32 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
 
 ```json title="Response /users.json "
 {
-    "href": "https://api.bsale.com.pe/v1/users.json",
+    "href": "https://api.bsale.io/v1/users.json",
     "count": 2,
     "limit": 25,
     "offset": 0,
     "items": [
         {
-            "href": "https://api.bsale.com.pe/v1/users/2.json",
+            "href": "https://api.bsale.io/v1/users/2.json",
             "id": 2,
             "firstName": "Gabriel",
             "lastName": "Seguel",
             "email": "gseguel@bsale-prueba.cl",
             "state": 0,
             "office": {
-                "href": "https://api.bsale.com.pe/v1/offices/1.json",
+                "href": "https://api.bsale.io/v1/offices/1.json",
                 "id": "1"
             }
         },
         {
-            "href": "https://api.bsale.com.pe/v1/users/1.json",
+            "href": "https://api.bsale.io/v1/users/1.json",
             "id": 1,
             "firstName": "Soporte ",
             "lastName": "bsale",
             "email": "support@imaginex.cl",
             "state": 0,
             "office": {
-                "href": "https://api.bsale.com.pe/v1/offices/1.json",
+                "href": "https://api.bsale.io/v1/offices/1.json",
                 "id": "1"
             }
         }
@@ -112,14 +112,14 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
 
 ```json title="Response /users/10.json"
 {
-    "href": "https://api.bsale.com.pe/v1/users/10.json",
+    "href": "https://api.bsale.io/v1/users/10.json",
     "id": 1,
     "firstName": "Juan",
     "lastName": "Otto",
     "email": "ottoj@gmail.com",
     "state": 0,
     "office": {
-        "href": "https://api.bsale.com.pe/v1/offices/3.json",
+        "href": "https://api.bsale.io/v1/offices/3.json",
         "id": "3"
     }
 }
@@ -143,29 +143,29 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
     "total": 22500.0,
     "sellers": [
         {
-            "href": "https://api.bsale.com.pe/v1/users/2.json",
+            "href": "https://api.bsale.io/v1/users/2.json",
             "id": 2,
             "fullName": "Gabriel Seguel",
             "subtotal": 7500.0,
             "taxSubtotal": 1197.0,
             "sales": {
-                "href": "https://api.bsale.com.pe/v1/users/2/sales.json?startdate=1576022400&enddate=1576022400"
+                "href": "https://api.bsale.io/v1/users/2/sales.json?startdate=1576022400&enddate=1576022400"
             },
             "returns": {
-                "href": "https://api.bsale.com.pe/v1/users/2/returns.json?startdate=1576022400&enddate=1576022400"
+                "href": "https://api.bsale.io/v1/users/2/returns.json?startdate=1576022400&enddate=1576022400"
             }
         },
         {
-            "href": "https://api.bsale.com.pe/v1/users/1.json",
+            "href": "https://api.bsale.io/v1/users/1.json",
             "id": 1,
             "fullName": "Soporte  bsale",
             "subtotal": 15000.0,
             "taxSubtotal": 2395.0,
             "sales": {
-                "href": "https://api.bsale.com.pe/v1/users/1/sales.json?startdate=1576022400&enddate=1576022400"
+                "href": "https://api.bsale.io/v1/users/1/sales.json?startdate=1576022400&enddate=1576022400"
             },
             "returns": {
-                "href": "https://api.bsale.com.pe/v1/users/1/returns.json?startdate=1576022400&enddate=1576022400"
+                "href": "https://api.bsale.io/v1/users/1/returns.json?startdate=1576022400&enddate=1576022400"
             }
         }
     ]
@@ -192,13 +192,13 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
   
 ```json 
 {
-    "href": "https://api.bsale.com.pe/v1/users/1/sales.json?startdate=1576022400&enddate=1576022400",
+    "href": "https://api.bsale.io/v1/users/1/sales.json?startdate=1576022400&enddate=1576022400",
     "count": 1,
     "limit": 25,
     "offset": 0,
     "items": [
         {
-            "href": "https://api.bsale.com.pe/v1/documents/83.json",
+            "href": "https://api.bsale.io/v1/documents/83.json",
             "id": 83,
             "name": "BOLETA MANUAL (no valido al SII)",
             "number": 39
@@ -219,19 +219,19 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
 
 ```json 
 {
-  "href": "https://api.bsale.com.pe/v1/users/128/returns.json?startdate=1438560000&enddate=1438560000",
+  "href": "https://api.bsale.io/v1/users/128/returns.json?startdate=1438560000&enddate=1438560000",
   "count": 2,
   "limit": 25,
   "offset": 0,
   "items": [
     {
-      "href": "https://api.bsale.com.pe/v1/documents/6604.json",
+      "href": "https://api.bsale.io/v1/documents/6604.json",
       "id": 6604,
       "name": "Nota de crédito",
       "number": 50
     },
     {
-      "href": "https://api.bsale.com.pe/v1/documents/6606.json",
+      "href": "https://api.bsale.io/v1/documents/6606.json",
       "id": 6606,
       "name": "Nota de crédito",
       "number": 60

@@ -17,17 +17,19 @@ Para usar los impuestos creados, usar el nodo taxId o taxes en el envío del doc
 
 Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente estructura:
 
-```js title="Response /taxes/1.json"
-{
-  "href": "https://api.bsale.com.pe/v1/taxes/1.json",
-  "id": 1,
-  "name": "IVA",
-  "percentage": "19.0",
-  "forAllProducts": 0,
-  "ledgerAccount": null,
-  "code": "14",
-  "state": 0
-}
+```js title="Response /taxes/2.json"
+        {
+            "href": "https://api.bsale.io/v1/taxes/2.json",
+            "id": 2,
+            "name": "EXONERADO",
+            "percentage": 0.0,
+            "forAllProducts": 0,
+            "ledgerAccount": null,
+            "code": 9997,
+            "state": 0,
+            "overTax": 0,
+            "amountTax": 0
+        }
 ```
 
 ### Atributos
@@ -63,48 +65,78 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
 
 ```json title="Response /taxes.json "
 {
-  "href": "https://api.bsale.com.pe/v1/taxes.json",
-  "count": 2,
-  "limit": 25,
-  "offset": 0,
-  "items": [
-    {
-      "href": "https://api.bsale.com.pe/v1/taxes/2.json",
-      "id": 2,
-      "name": "Exento",
-      "percentage": "0.0",
-      "forAllProducts": 1,
-      "ledgerAccount": null,
-      "code": "0",
-      "state": 0
-    },
-    {
-      "href": "https://api.bsale.com.pe/v1/taxes/1.json",
-      "id": 1,
-      "name": "IVA",
-      "percentage": "19.0",
-      "forAllProducts": 0,
-      "ledgerAccount": null,
-      "code": "0",
-      "state": 0
-    }
-  ]
+    "href": "https://api.bsale.io/v1/taxes.json",
+    "count": 4,
+    "limit": 25,
+    "offset": 0,
+    "items": [
+        {
+            "href": "https://api.bsale.io/v1/taxes/2.json",
+            "id": 2,
+            "name": "EXONERADO",
+            "percentage": 0.0,
+            "forAllProducts": 0,
+            "ledgerAccount": null,
+            "code": 9997,
+            "state": 0,
+            "overTax": 0,
+            "amountTax": 0
+        },
+        {
+            "href": "https://api.bsale.io/v1/taxes/4.json",
+            "id": 4,
+            "name": "ICBPER",
+            "percentage": 0.3,
+            "forAllProducts": 0,
+            "ledgerAccount": null,
+            "code": 7152,
+            "state": 0,
+            "overTax": 0,
+            "amountTax": 1
+        },
+        {
+            "href": "https://api.bsale.io/v1/taxes/1.json",
+            "id": 1,
+            "name": "IGV",
+            "percentage": 18.0,
+            "forAllProducts": 1,
+            "ledgerAccount": null,
+            "code": 1000,
+            "state": 0,
+            "overTax": 0,
+            "amountTax": 0
+        },
+        {
+            "href": "https://api.bsale.io/v1/taxes/3.json",
+            "id": 3,
+            "name": "PARA EXPORTACION",
+            "percentage": 0.0,
+            "forAllProducts": 0,
+            "ledgerAccount": null,
+            "code": 9995,
+            "state": 0,
+            "overTax": 0,
+            "amountTax": 0
+        }
+    ]
 }
 ```
 ## GET un impuesto
 - GET `/v1/taxes/1.json` retornará un tipo de impuesto.
 
 ```json title="Response /taxes/1.json"
-{
-  "href": "https://api.bsale.com.pe/v1/taxes/1.json",
-  "id": 1,
-  "name": "IVA",
-  "percentage": "19.0",
-  "forAllProducts": 0,
-  "ledgerAccount": null,
-  "code": "0",
-  "state": 0
-}
+        {
+            "href": "https://api.bsale.io/v1/taxes/1.json",
+            "id": 1,
+            "name": "IGV",
+            "percentage": 18.0,
+            "forAllProducts": 1,
+            "ledgerAccount": null,
+            "code": 1000,
+            "state": 0,
+            "overTax": 0,
+            "amountTax": 0
+        }
 ```
 
 ## GET cantidad de Impuestos

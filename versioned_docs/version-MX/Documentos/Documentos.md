@@ -9,14 +9,11 @@ slug: /documentos
 Listar documentos generados en Bsale, del tipo venta, pre-venta, despachos, etc. Se puede obtener detalles, referencias, datos generales, etc. 
 
 :::info
-**Crear documentos** del tipo venta (Boleta, Factura electrónica, etc) o documentos asociados al proceso de venta (notas de venta, cotizaciones, etc). 
-Para la **creación** de documentos como [notas de crédito](/devoluciones#post-una-devolución), [despachos](/despachos#post-un-despacho). Ver su documentación asociada.
+**Crear documentos** del tipo venta o documentos asociados al proceso de venta (notas de venta, cotizaciones, etc). 
+
 :::
 
 Cómo funciona la interfaz de Bsale, mira éstos videos:
-
-- Creación de factura [Ver](https://www.youtube.com/watch?v=oHOyQud9Vq4) 
-- Creación de boleta [Ver](https://www.youtube.com/watch?v=UfxkD3EkrXc)
 - Creación de pre-venta [Ver](https://www.youtube.com/watch?v=pqaaaI25EKo)
 
 ## Estructura JSON
@@ -60,8 +57,8 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
   "address": null,
   "municipality": null,
   "city": null,
-  "informedSii": 1,
-  "responseMsgSii": null,
+  "informed": 1,
+  "responseMsg": null,
   "document_type": {
     "href": "https://api.bsale.io/v1/document_types/1.json",
     "id": "1"
@@ -129,8 +126,8 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
 |  **address**   | dirección del documento        | String        |
 |  **municipality**   | comuna del documento        | String        |
 |  **city**   | ciudad del documento        | String        |
-|  **informedSii**   | indica si el documento fue informado al SII, 0 es correcto, 1 es enviado, 2 es rechazado        | Integer        |
-| **responseMsgSii**   | respuesta de la declaración del documento al SII en caso de ser electrónico        | String        |
+|  **informed**   | indica si el documento fue informado, 0 es correcto, 1 es enviado, 2 es rechazado        | Integer        |
+| **responseMsg**   | respuesta de la declaración del documento, en caso de ser electrónico        | String        |
 | **document_type**   | nodo que indica el tipo del documento al cual pertenece el documento.        | Text        |
 | **client**   | nodo que indica el cliente al cual se le emitió el documento.        | Text        |
 | **office**   | nodo que indica la sucursal a la cual pertenece el documento.        | Text        |
@@ -159,8 +156,7 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
 - **clientcode**, filtra rut del cliente.
 - **officeid**, filtra documentos por la sucursal.
 - **saleconditionid**, filtra documentos por la condición de venta.
-- **informedsii**, filtra documentos si fue declarado en el SII, 0 es correcto, 1 es enviado, 2 es rechazado (Integer).
-- **codesii**, filtra documentos por el código tributario.
+- **informed**, filtra documentos si fue declarado, 0 es correcto, 1 es enviado, 2 es rechazado (Integer).
 - **totalamount**, filtra documentos por el monto total.
 - **referencecode**, filtra documentos por el código tributario de una referencia (ej. el código de una orden de compra).
 - **referencenumber**, filtra documentos por el folio de una referencia (ej. el folio de una orden de compra).
@@ -171,15 +167,12 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
 - `GET /v1/documents.json?fields=[number,totalAmount]`
 - `GET /v1/documents.json?number=53`
 - `GET /v1/documents.json?documenttypeid=1`
-- `GET /v1/documents.json?informedsii=0`
 - `GET /v1/documents.json?expand=[document_types,client,office,details,payments]`
 - `GET /v1/documents.json?emissiondate=1309478400&-expirationdate=1309478400&state=0`
 - `GET /v1/documents.json?emissiondaterange=[1414800000,1417391990]`
-- `GET /v1/documents.json?codesii=33&totalamount=14280`
 - `GET /v1/documents.json?referencecode=801`
 - `GET /v1/documents.json?referencenumber=123`
 - `GET /v1/documents.json?referencecode=801&referencenumber=123`
-- `GET /v1/documents.json?rcofdate=1629244800`
 - `GET /v1/documents.json?detailid=5350`
 - `GET /v1/documents.json?expand=details,payments`  
 
@@ -228,8 +221,8 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
   "address": "San Francisco 402, jj perez 7248",
   "municipality": "Santiago",
   "city": "Santiago",
-  "informedSii": 2,
-  "responseMsgSii": null,
+  "informed": 2,
+  "responseMsg": null,
   "document_type": {
     "href": "https://api.bsale.io/v1/document_types/4.json",
     "id": "4"
@@ -260,116 +253,7 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
   }
 }
 ```
-## Resúmenes
-### GET resumen de documentos emitidos
-- GET `/v1/documents/summary.json` retorna resumen de documentos.
 
-#### Parámetros
-- **limit**, limita la cantidad de items de una respuesta JSON, por defecto el limit es 25, el máximo permitido es 50.
-- **offset**, permite paginar los items de una respuesta JSON, por defecto el offset es 0.
-- **fields**, solo devolver atributos específicos de un recurso
-- **expand**, permite expandir instancias y colecciones.
-- **emissiondaterange**, filtra por rango de fecha de emisión.
-- **generationdaterange**, filtra por rango de fecha de generación.
-- **codesii**, Código documento basado en los identificadores del SII, pueden ser varios separados por coma.
-- **perdocument**, Boolean (0 o 1) indica si el resultado lo agrupa por documento.
-
-#### Ejemplos
-- `GET /v1/documents.json?limit=10&offset=0`
-- `GET /v1/documents/summary.json?emissiondaterange=[1404187200,1406779200]`
-- `GET /v1/documents/summary.json?generationdaterange=[1404187200,1406779200]`
-- `GET /v1/documents/summary.json?codesii=[33,31]`
-- `GET /v1/documents/summary.json?perdocument=1`
-- `GET /v1/documents/summary.json?rcofdaterange=[1627776000,1627862400]&codesii=[39]`
-
-```json title="Response /documents/summary.json?codesii=[39]"
-[
-  {
-    "generationDate": "",
-    "emissionDate": "",
-    "documentTypeName": "Boleta Electrónica",
-    "codeSii": "39",
-    "month": 7,
-    "year": 2014,
-    "officeId": 2,
-    "officeName": "Los Angeles",
-    "officeCostCenter": "",
-    "count": 1,
-    "totalNetAmount": 2791,
-    "totalTaxAmount": 530,
-    "totalAmount": 3321,
-    "totalExemptAmount": 0,
-    "taxes": [
-      {
-        "taxId": 1,
-        "taxName": "IVA",
-        "taxAmount": 530
-      }
-    ],
-    "details": [
-      {
-        "itemLedgerAccount": "",
-        "totalNetAmount": 2791
-      }
-    ],
-    "documentId": 10383,
-    "documentNumber": 9093
-  },
-  {
-    "generationDate": "",
-    "emissionDate": "",
-    "documentTypeName": "Boleta Electrónica",
-    "codeSii": "39",
-    "month": 7,
-    "year": 2014,
-    "officeId": 2,
-    "officeName": "Los Angeles",
-    "officeCostCenter": "",
-    "count": 1,
-    "totalNetAmount": 15132,
-    "totalTaxAmount": 2875,
-    "totalAmount": 18007,
-    "totalExemptAmount": 0,
-    "taxes": [
-      {
-        "taxId": 1,
-        "taxName": "IVA",
-        "taxAmount": 2875
-      }
-    ],
-    "details": [
-      {
-        "itemLedgerAccount": "",
-        "totalNetAmount": 15132
-      }
-    ],
-    "documentId": 10384,
-    "documentNumber": 9094
-  }
-]
-```
-### GET resumen de ventas Boletas electrónicas
-- GET `/v1/documents/summary/ticket.json` retorna resumen de boletas.
-
-#### Parámetros
-- **rcofdaterange**, Filtra por rango de fecha de RCOF
-
-#### Ejemplos
-- `GET /v1/documents/summary/ticket.json?rcofdaterange=[1635724800,1638230400]`
-
-```json title="Response /documents/summary/ticket.json?rcofdaterange=[1635724800,1638230400]"
-[
-  {
-    "codeSii": "39",
-    "documentTypeName": "BOLETA ELECTRÓNICA T",
-    "count": 233,
-    "totalNetAmount": 432340,
-    "totalExemptAmount": 123333,
-    "totalIvaAmount": 324344,
-    "totalAmount": 7787654
-  }
-]
-```
 ### GET cantidad de documentos
 - GET `/v1/documents/count.json` retorna cantidad de registros.
 
@@ -398,14 +282,12 @@ Entrega los costos asociados a una venta solo si los productos fueron despachado
 
 #### Ejemplos
 - `GET /v1/documents/costs.json?documentid=145071`
-- `GET /v1/documents/costs.json?codesii=33&number=320`
-
 
 ```json title="Response /documents/145071.json "
 {
   "href": "https://api.bsale.io/v1/documents/145071.json",
   "id": 145071,
-  "name": "FACTURA ELECTRONICA",
+  "name": "TICKET",
   "number": 320,
   "totalCost": 37949,
   "cost_detail": [
@@ -525,11 +407,6 @@ Entrega los costos asociados a una venta solo si los productos fueron despachado
 ### GET referencias de un documento
 - GET `/v1/documents/11561/references.json` retorna referencias del documento.
 
-:::info
-
-Retorna sólo referencias electrónicas (**XML**).
-
-:::
 ```json title="Response /documents/4139/references.json "
 {
   "href": "https://api.bsale.io/v1/documents/4139/references.json",
@@ -563,22 +440,6 @@ Retorna sólo referencias electrónicas (**XML**).
 }
 ```
 
-### GET una referencia de un documento
-- GET `/v1/documents/11561/references/5.json` retorna una única referencia.
-
-```json title="Response /documents/11561/references/5.json "
-{
-  "href": "https://api.bsale.io/v1/documents/11561/references/5.json",
-  "id": 5,
-  "referenceDate": 1407643200,
-  "number": "123",
-  "reason": "Orden de Compra 123",
-  "dte_code": {
-    "href": "https://api.bsale.io/v1/dte_codes/20.json",
-    "id": "20"
-  }
-}
-```
 ### GET impuestos de un documento
 - GET `/v1/documents/12644/document_taxes.json` retorna los impuestos asociados al documento.
 
@@ -640,7 +501,7 @@ Retorna sólo referencias electrónicas (**XML**).
 - GET `/v1/documents/9682/attributes.json` 
 
 :::info
-Retorna los [atributos dinámicos](/atributos-dinamicos) asociados al documento, **no electrónicos**.
+Retorna los [atributos dinámicos](/MX/atributos-dinamicos) asociados al documento, **no electrónicos**.
 :::
 
 ```json title="Response /documents/9682/attributes.json "
@@ -675,6 +536,10 @@ Retorna los [atributos dinámicos](/atributos-dinamicos) asociados al documento,
 ## POST un documento
 - POST `/v1/documents.json`
 
+:::note
+La generación de documentos sólo se soportan documentos no electrónicos
+:::
+
 Para crear un documento de venta ya sea electrónico (Factura y Boleta Electrónica) o no (Nota de venta, Factura y Boleta manual), se debe enviar un JSON con la siguiente estructura:
 
 ### Referencias y fechas
@@ -689,111 +554,11 @@ Para crear un documento de venta ya sea electrónico (Factura y Boleta Electrón
   "declareSii": 1
 }
 ```
-- **documentTypeId**, [Id del tipo de documento](/tipos-de-documentos) que indicara si es factura, boleta, nota de venta etc. (Integer).
-- **officeId**, [Id de la sucursal](/sucursales) donde se emite el documento, si no es especificada el documento quedara asignado a la sucursal por defecto del sistema (Integer).
-- **priceListId**, [Id de la lista de precio](/listas-de-precio) utilizada por el documento, si no es especificada se utilizara la lista de precio por defecto de la sucursal (Integer).
+- **documentTypeId**, [Id del tipo de documento](/MX/tipos-de-documentos) que indicara si es factura, boleta, nota de venta etc. (Integer).
+- **officeId**, [Id de la sucursal](/MX/sucursales) donde se emite el documento, si no es especificada el documento quedara asignado a la sucursal por defecto del sistema (Integer).
+- **priceListId**, [Id de la lista de precio](/MX/listas-de-precio) utilizada por el documento, si no es especificada se utilizara la lista de precio por defecto de la sucursal (Integer).
 - **emissionDate**, Fecha de emisión del documento (Integer) (no se debe aplicar zona horaria, solo considerar la fecha).
 - **expirationDate**, Fecha vencimiento del documento (Integer) (no se debe aplicar zona horaria, solo considerar la fecha).
-- **declareSii**, Si se desea declarar el documento al Servicio de impuestos internos se envía 1, en caso contrario un 0 (Boolean).
-
-:::note
-Opcionalmente puedes utilizar el parámetro **codeSii** en vez de **documentTypeId** si conoces el código tributario del documento.
-:::
-
-#### Liquidación de factura
-Si se necesita generar una **liquidación de factura**, se debe enviar el porcentaje de la comisión (`commissionRate`) junto al tipo de documento que se desea liquidar (`commissionCodeSii`).
-```json title="POST /documents.json "
-{
-  "codeSii": 39,
-  "officeId": 1,
-  "priceListId": 18,
-  "emissionDate": 1407715200,
-  "expirationDate": 1407715200,
-  "declareSii": 1,
-  "commissionRate": 20,
-  "commissionCodeSii": 33
-}
-```
-#### Factura de compra
-Si se necesita generar una **factura de compra**, puedes enviar el porcentaje de impuesto que deseas retener (`percentageTaxWithheld`) en este caso es 35%.
-```json title="POST /documents.json "
-{
-  "codeSii": 46,
-  "officeId": 1,
-  "priceListId": 18,
-  "emissionDate": 1407715200,
-  "expirationDate": 1407715200,
-  "declareSii": 1,
-  "percentageTaxWithheld": 35
-}
-```
-#### Factura de exportación
-Si se necesita generar una **factura de exportación**, se deben enviar valores propios de una exportación, ejemplo:
-```json title="POST /documents.json "
-{
-    "documentTypeId": 16,
-    "officeId": 1,
-    "coinId": 2,
-    "hasCustomsData": 1,
-    "exchangeRate": 800,
-    "exportNetAmount": 32.60,
-    "exportTaxAmount": 0,
-    "exportTotalAmount": 32.60,
-    "exportExemptAmount": 32.60,
-    "emissionDate": 1604431469,
-    "expirationDate": 1604431469,
-    "observation": "Aditional text..",
-    "clientId": 65,
-    "details": [
-        {
-            "netUnitValue": 7.5,
-            "quantity": 1,
-            "comment": "fish fillet- trout (Oncorhynchus mykiss) code:877363655355CL",
-            "discount": 0,
-            "exportNetAmount": 7.5,
-            "exportTaxAmount": 0,
-            "exportTotalAmount": 7.5
-        },
-        {
-            "netUnitValue": 25.1,
-            "quantity": 1,
-            "comment": "Despacho",
-            "discount": 0,
-            "exportNetAmount": 25.1,
-            "exportTaxAmount": 0,
-            "exportTotalAmount": 25.1
-        }
-    ],
-    "payments": [
-        {
-            "paymentTypeId": 8,
-            "amount": 32.56,
-            "recordDate": 1604431469
-        }
-    ],
-    "customsData": {
-        "clauseCode": "CIF",
-        "clauseAmount": 175175.78,
-        "saleModeId": 3,
-        "countryCode": "225",
-        "transportPathId": 4,
-        "totalPackages": 480
-    }
-}
-```
-##### Parámetros
-- **observation**, Glosa descriptiva documento
-- **exchangeRate**, Tipo de cambio a fecha de emisión
-- **clauseCode**, clausula de venta
-- **clauseAmount**, Monto clausula
-- **saleModeId**, Modalidad venta
-- **countryCode**, id del pais destino
-- **transportPatchId**, id via transporte
-- **totalPackages**, paquetes totales
-
-:::tip
-En el ejemplo se usa `clientId` para asociar un cliente. En caso de crearlo desde el documento, como **cliente extranjero**, mira [esta referencia](/clientes#cliente-extranjero).
-:::
 
 ### Vendedor
 Es posible que necesites asociar un vendedor diferente al que hace la petición para crear el documento, para eso debes enviar el atributo `sellerId`, con el `id` vendedor (usuario) en Bsale.
@@ -848,7 +613,7 @@ En algunos documentos no es necesario agregar el cliente como en el caso de la b
   }
 }
 ```
-- **code**, Rut del cliente (String).
+- **code**, Identificador del cliente (String).
 - **city**, Ciudad del cliente  (String).
 - **company**, Razón social del cliente (String).
 - **municipality**, Comuna del cliente (String).
@@ -972,33 +737,6 @@ Puedes usar el arreglo `taxId` para referenciar los id's de impuestos configurad
 }
 ```
 
-#### Referencia por código tributario
-También es posible especificar los impuestos, enviando su código tributario y el porcentaje que se le quiere aplicar al producto. Dentro del arreglo `taxes`.
-```json 
-{
-  "details": [
-    {
-      "netUnitValue": 53975,
-      "quantity": 1,
-      "taxes": [
-        {
-          "code": 14,
-          "percentage": 19
-        },
-        {
-          "code": 35,
-          "percentage": 46.9
-        }
-      ],
-      "comment": "el nombre del producto que voy a vender",
-      "discount": 5
-    }
-  ]
-}
-```
-:::note
-El `percentage` enviado, actualizará el porcentaje usado en la configuración de Bsale.
-:::
 
 ### A partir de existente
 Si se desea generar un documento a partir de otro, se debe enviar el identificador del detalle del documento original:
@@ -1026,31 +764,13 @@ Se pueden especificar los pagos asociados al documento, se requiere un nodo simi
   ]
 }
 ```
-- **paymentTypeId**, [Id de la forma de pago](/formas-de-pago) utilizada en el pago del documento (Integer).
+- **paymentTypeId**, [Id de la forma de pago](/MX/formas-de-pago) utilizada en el pago del documento (Integer).
 - **amount**, monto del pago del documento (Integer).
 - **recordDate**, Fecha en la cual se realizo el pago del documento, se envía en formato GMT (Integer).
 
 :::info
 En caso de no enviar Bsale detectara la forma de pago por defecto y asignara el monto total del documento a esa forma de pago.
 :::
-### Referencias electrónicas (opcional)
-Se pueden enviar referencias par aun documento como ordenes de compra, guías de despacho etc. Se requiere un nodo similar a:
-```json 
-{
-  "references": [
-    {
-      "number": "123",
-      "referenceDate": 1407715200,
-      "reason": "Orden de Compra 123",
-      "codeSii": 801
-    }
-  ]
-}
-```
-- **number**, Folio del documento de referencia (String).
-- **referenceDate**, Fecha del documento de referencia (Integer).
-- **reason**, Razón del documento (String).
-- **codeSii**, Código tributario del documento de referencia (Integer).
 
 ### Atributos dinámicos (opcional)
 En el caso de necesitar agregar atributos adicionales al documento, se necesita un nodo similar a:

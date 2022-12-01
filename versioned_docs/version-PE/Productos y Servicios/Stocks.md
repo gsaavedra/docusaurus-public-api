@@ -27,11 +27,11 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
   "quantityReserved": 0,
   "quantityAvailable": 60.36,
   "variant": {
-    "href": "https://api.bsale.com.pe/v1/variants/351.json",
+    "href": "https://api.bsale.io/v1/variants/351.json",
     "id": "351"
   },
   "office": {
-    "href": "https://api.bsale.com.pe/v1/offices/2.json",
+    "href": "https://api.bsale.io/v1/offices/2.json",
     "id": "2"
   }
 }
@@ -67,7 +67,7 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
 
 ```json title="Response /stocks.json"
 {
-  "href": "https://api.bsale.com.pe/v1/stocks.json",
+  "href": "https://api.bsale.io/v1/stocks.json",
   "count": 1049,
   "limit": 2,
   "offset": 0,
@@ -77,11 +77,11 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
       "quantityReserved": 0,
       "quantityAvailable": 60.36,
       "variant": {
-        "href": "https://api.bsale.com.pe/v1/variants/351.json",
+        "href": "https://api.bsale.io/v1/variants/351.json",
         "id": "351"
       },
       "office": {
-        "href": "https://api.bsale.com.pe/v1/offices/2.json",
+        "href": "https://api.bsale.io/v1/offices/2.json",
         "id": "2"
       }
     },
@@ -90,11 +90,11 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
       "quantityReserved": 0,
       "quantityAvailable": 0,
       "variant": {
-        "href": "https://api.bsale.com.pe/v1/variants/351.json",
+        "href": "https://api.bsale.io/v1/variants/351.json",
         "id": "351"
       },
       "office": {
-        "href": "https://api.bsale.com.pe/v1/offices/1.json",
+        "href": "https://api.bsale.io/v1/offices/1.json",
         "id": "1"
       }
     }
@@ -113,17 +113,17 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
 
 ```json title="Response /stocks/44977.json"
 {
-    "href": "https://api.bsale.com.pe/v1/stocks/44977.json",
+    "href": "https://api.bsale.io/v1/stocks/44977.json",
     "id": 44977,
     "quantity": 4.0,
     "quantityReserved": 0.0,
     "quantityAvailable": 4.0,
     "variant": {
-        "href": "https://api.bsale.com.pe/v1/variants/18855.json",
+        "href": "https://api.bsale.io/v1/variants/18855.json",
         "id": "18855"
     },
     "office": {
-        "href": "https://api.bsale.com.pe/v1/offices/2.json",
+        "href": "https://api.bsale.io/v1/offices/2.json",
         "id": "2"
     }
 }
@@ -150,13 +150,13 @@ En el caso de necesitar el stock de un pack, se debe filtrar por un identificado
 
 ```json 
 {
-  "href": "https://api.bsale.com.pe/v1/stocks/receptions.json",
+  "href": "https://api.bsale.io/v1/stocks/receptions.json",
   "count": 819,
   "limit": 3,
   "offset": 0,
   "items": [
     {
-      "href": "https://api.bsale.com.pe/v1/stocks/receptions/12.json",
+      "href": "https://api.bsale.io/v1/stocks/receptions/12.json",
       "id": 12,
       "admissionDate": 1371182400,
       "document": "Guía",
@@ -166,15 +166,15 @@ En el caso de necesitar el stock de un pack, se debe filtrar por un identificado
       "imagestionCcDescription": "",
       "internalDispatchId": 0,
       "office": {
-        "href": "https://api.bsale.com.pe/v1/offices/1.json",
+        "href": "https://api.bsale.io/v1/offices/1.json",
         "id": "1"
       },
       "details": {
-        "href": "https://api.bsale.com.pe/v1/stocks/receptions/12/details.json"
+        "href": "https://api.bsale.io/v1/stocks/receptions/12/details.json"
       }
     },
     {
-      "href": "https://api.bsale.com.pe/v1/stocks/receptions/13.json",
+      "href": "https://api.bsale.io/v1/stocks/receptions/13.json",
       "id": 13,
       "admissionDate": 1371182400,
       "document": "Factura",
@@ -184,15 +184,15 @@ En el caso de necesitar el stock de un pack, se debe filtrar por un identificado
       "imagestionCcDescription": "",
       "internalDispatchId": 0,
       "office": {
-        "href": "https://api.bsale.com.pe/v1/offices/1.json",
+        "href": "https://api.bsale.io/v1/offices/1.json",
         "id": "1"
       },
       "details": {
-        "href": "https://api.bsale.com.pe/v1/stocks/receptions/13/details.json"
+        "href": "https://api.bsale.io/v1/stocks/receptions/13/details.json"
       }
     },
     {
-      "href": "https://api.bsale.com.pe/v1/stocks/receptions/14.json",
+      "href": "https://api.bsale.io/v1/stocks/receptions/14.json",
       "id": 14,
       "admissionDate": 1371182400,
       "document": "Factura",
@@ -202,11 +202,11 @@ En el caso de necesitar el stock de un pack, se debe filtrar por un identificado
       "imagestionCcDescription": "",
       "internalDispatchId": 0,
       "office": {
-        "href": "https://api.bsale.com.pe/v1/offices/1.json",
+        "href": "https://api.bsale.io/v1/offices/1.json",
         "id": "1"
       },
       "details": {
-        "href": "https://api.bsale.com.pe/v1/stocks/receptions/14/details.json"
+        "href": "https://api.bsale.io/v1/stocks/receptions/14/details.json"
       }
     }
   ]
@@ -225,7 +225,7 @@ En el caso de necesitar el stock de un pack, se debe filtrar por un identificado
 
 ```json 
 {
-  "href": "https://api.bsale.com.pe/v1/stocks/receptions/12.json",
+  "href": "https://api.bsale.io/v1/stocks/receptions/12.json",
   "id": 12,
   "admissionDate": 1371182400,
   "document": "Guía",
@@ -235,11 +235,11 @@ En el caso de necesitar el stock de un pack, se debe filtrar por un identificado
   "imagestionCcDescription": "",
   "internalDispatchId": 0,
   "office": {
-    "href": "https://api.bsale.com.pe/v1/offices/1.json",
+    "href": "https://api.bsale.io/v1/offices/1.json",
     "id": "1"
   },
   "details": {
-    "href": "https://api.bsale.com.pe/v1/stocks/receptions/12/details.json"
+    "href": "https://api.bsale.io/v1/stocks/receptions/12/details.json"
   }
 }
 ```
@@ -248,44 +248,44 @@ En el caso de necesitar el stock de un pack, se debe filtrar por un identificado
 
 ```json 
 {
-  "href": "https://api.bsale.com.pe/v1/stocks/receptions/12/details.json",
+  "href": "https://api.bsale.io/v1/stocks/receptions/12/details.json",
   "count": 13,
   "limit": 25,
   "offset": 0,
   "items": [
     {
-      "href": "https://api.bsale.com.pe/v1/stocks/receptions/12/details/65.json",
+      "href": "https://api.bsale.io/v1/stocks/receptions/12/details/65.json",
       "id": 65,
       "quantity": 32.02,
       "cost": 3200,
       "variantStock": 85.55,
       "serialNumber": null,
       "variant": {
-        "href": "https://api.bsale.com.pe/v1/variant/391.json",
+        "href": "https://api.bsale.io/v1/variant/391.json",
         "id": "391"
       }
     },
     {
-      "href": "https://api.bsale.com.pe/v1/stocks/receptions/12/details/66.json",
+      "href": "https://api.bsale.io/v1/stocks/receptions/12/details/66.json",
       "id": 66,
       "quantity": 32.22,
       "cost": 3200,
       "variantStock": 185.2,
       "serialNumber": null,
       "variant": {
-        "href": "https://api.bsale.com.pe/v1/variant/388.json",
+        "href": "https://api.bsale.io/v1/variant/388.json",
         "id": "388"
       }
     },
     {
-      "href": "https://api.bsale.com.pe/v1/stocks/receptions/12/details/67.json",
+      "href": "https://api.bsale.io/v1/stocks/receptions/12/details/67.json",
       "id": 67,
       "quantity": 14.46,
       "cost": 3200,
       "variantStock": 107.84,
       "serialNumber": null,
       "variant": {
-        "href": "https://api.bsale.com.pe/v1/variant/393.json",
+        "href": "https://api.bsale.io/v1/variant/393.json",
         "id": "393"
       }
     }
@@ -298,14 +298,14 @@ En el caso de necesitar el stock de un pack, se debe filtrar por un identificado
 
 ```json 
 {
-  "href": "https://api.bsale.com.pe/v1/stocks/receptions/12/details/65.json",
+  "href": "https://api.bsale.io/v1/stocks/receptions/12/details/65.json",
   "id": 65,
   "quantity": 32.02,
   "cost": 3200,
   "variantStock": 85.55,
   "serialNumber": null,
   "variant": {
-    "href": "https://api.bsale.com.pe/v1/variant/391.json",
+    "href": "https://api.bsale.io/v1/variant/391.json",
     "id": "391"
   }
 }
@@ -350,15 +350,15 @@ Para el ingreso de stock, se puede referenciar al producto mediante `id`, o `bar
 {
   "admissionDate": 1407297600,
   "imagestionCcDescription": null,
-  "href": "https://api.bsale.com.pe/v1/stocks/receptions/831.json",
+  "href": "https://api.bsale.io/v1/stocks/receptions/831.json",
   "id": 831,
   "details": {
-    "href": "https://api.bsale.com.pe/v1/stocks/receptions/831/details.json"
+    "href": "https://api.bsale.io/v1/stocks/receptions/831/details.json"
   },
   "document": "Guía",
   "documentNumber": 123,
   "office": {
-    "href": "https://api.bsale.com.pe/v1/offices/1.json",
+    "href": "https://api.bsale.io/v1/offices/1.json",
     "id": "1"
   },
   "imagestionCctId": 0,
@@ -394,15 +394,15 @@ Se debe enviar un Json con la siguiente estructura:
 {
   "admissionDate": 1407297600,
   "imagestionCcDescription": null,
-  "href": "https://api.bsale.com.pe/v1/stocks/receptions/831.json",
+  "href": "https://api.bsale.io/v1/stocks/receptions/831.json",
   "id": 831,
   "details": {
-    "href": "https://api.bsale.com.pe/v1/stocks/receptions/831/details.json"
+    "href": "https://api.bsale.io/v1/stocks/receptions/831/details.json"
   },
   "document": "Guía",
   "documentNumber": 123,
   "office": {
-    "href": "https://api.bsale.com.pe/v1/offices/1.json",
+    "href": "https://api.bsale.io/v1/offices/1.json",
     "id": "1"
   },
   "imagestionCctId": 0,
@@ -428,54 +428,54 @@ Se debe enviar un Json con la siguiente estructura:
 
 ```json 
 {
-  "href": "https://api.bsale.com.pe/v1/stocks/consumptions.json",
+  "href": "https://api.bsale.io/v1/stocks/consumptions.json",
   "count": 591,
   "limit": 3,
   "offset": 0,
   "items": [
     {
-      "href": "https://api.bsale.com.pe/v1/stocks/consumptions/1.json",
+      "href": "https://api.bsale.io/v1/stocks/consumptions/1.json",
       "id": 1,
       "consumptionDate": 1371441600,
       "note": "traslado a los angeles",
       "imagestionCcdescription": "",
       "imagestionCenterCostId": 0,
       "office": {
-        "href": "https://api.bsale.com.pe/v1/offices/1.json",
+        "href": "https://api.bsale.io/v1/offices/1.json",
         "id": "1"
       },
       "details": {
-        "href": "https://api.bsale.com.pe/v1/stocks/consumptions/1/details.json"
+        "href": "https://api.bsale.io/v1/stocks/consumptions/1/details.json"
       }
     },
     {
-      "href": "https://api.bsale.com.pe/v1/stocks/consumptions/2.json",
+      "href": "https://api.bsale.io/v1/stocks/consumptions/2.json",
       "id": 2,
       "consumptionDate": 1375070400,
       "note": "Ajuste de Stock: Jessica Vargas",
       "imagestionCcdescription": "",
       "imagestionCenterCostId": 0,
       "office": {
-        "href": "https://api.bsale.com.pe/v1/offices/1.json",
+        "href": "https://api.bsale.io/v1/offices/1.json",
         "id": "1"
       },
       "details": {
-        "href": "https://api.bsale.com.pe/v1/stocks/consumptions/2/details.json"
+        "href": "https://api.bsale.io/v1/stocks/consumptions/2/details.json"
       }
     },
     {
-      "href": "https://api.bsale.com.pe/v1/stocks/consumptions/3.json",
+      "href": "https://api.bsale.io/v1/stocks/consumptions/3.json",
       "id": 3,
       "consumptionDate": 1376452800,
       "note": "Ajuste de Stock: Jessica Vargas",
       "imagestionCcdescription": "",
       "imagestionCenterCostId": 0,
       "office": {
-        "href": "https://api.bsale.com.pe/v1/offices/1.json",
+        "href": "https://api.bsale.io/v1/offices/1.json",
         "id": "1"
       },
       "details": {
-        "href": "https://api.bsale.com.pe/v1/stocks/consumptions/3/details.json"
+        "href": "https://api.bsale.io/v1/stocks/consumptions/3/details.json"
       }
     }
   ]
@@ -493,18 +493,18 @@ Se debe enviar un Json con la siguiente estructura:
 
 ```json 
 {
-  "href": "https://api.bsale.com.pe/v1/stocks/consumptions/1.json",
+  "href": "https://api.bsale.io/v1/stocks/consumptions/1.json",
   "id": 1,
   "consumptionDate": 1371441600,
   "note": "traslado a los angeles",
   "imagestionCcdescription": "",
   "imagestionCenterCostId": 0,
   "office": {
-    "href": "https://api.bsale.com.pe/v1/offices/1.json",
+    "href": "https://api.bsale.io/v1/offices/1.json",
     "id": "1"
   },
   "details": {
-    "href": "https://api.bsale.com.pe/v1/stocks/consumptions/1/details.json"
+    "href": "https://api.bsale.io/v1/stocks/consumptions/1/details.json"
   }
 }
 ```
@@ -513,30 +513,30 @@ Se debe enviar un Json con la siguiente estructura:
 
 ```json 
 {
-  "href": "https://api.bsale.com.pe/v1/stocks/consumptions/1/details.json",
+  "href": "https://api.bsale.io/v1/stocks/consumptions/1/details.json",
   "count": 2,
   "limit": 25,
   "offset": 0,
   "items": [
     {
-      "href": "https://api.bsale.com.pe/v1/stocks/consumptions/1/details/1.json",
+      "href": "https://api.bsale.io/v1/stocks/consumptions/1/details/1.json",
       "id": 1,
       "quantity": 36.78,
       "cost": 3200,
       "variantStock": 42.2,
       "variant": {
-        "href": "https://api.bsale.com.pe/v1/variant/355.json",
+        "href": "https://api.bsale.io/v1/variant/355.json",
         "id": "355"
       }
     },
     {
-      "href": "https://api.bsale.com.pe/v1/stocks/consumptions/2/details/2.json",
+      "href": "https://api.bsale.io/v1/stocks/consumptions/2/details/2.json",
       "id": 2,
       "quantity": 78.64,
       "cost": 1311.08850457782,
       "variantStock": 106.56,
       "variant": {
-        "href": "https://api.bsale.com.pe/v1/variant/388.json",
+        "href": "https://api.bsale.io/v1/variant/388.json",
         "id": "388"
       }
     }
@@ -549,13 +549,13 @@ Se debe enviar un Json con la siguiente estructura:
 
 ```json 
 {
-  "href": "https://api.bsale.com.pe/v1/stocks/consumptions/1/details/1.json",
+  "href": "https://api.bsale.io/v1/stocks/consumptions/1/details/1.json",
   "id": 1,
   "quantity": 36.78,
   "cost": 3200,
   "variantStock": 42.2,
   "variant": {
-    "href": "https://api.bsale.com.pe/v1/variant/355.json",
+    "href": "https://api.bsale.io/v1/variant/355.json",
     "id": "355"
   }
 }
@@ -575,7 +575,7 @@ Es posible solicitar la creación de nuevos tipos de consumo, a ayuda@bsale.app
 
 ```json 
 {
-    "href": "https://api.bsale.com.pe/v1/stock_consumption_types.json",
+    "href": "https://api.bsale.io/v1/stock_consumption_types.json",
     "count": 10,
     "limit": 25,
     "offset": 0,
@@ -647,16 +647,16 @@ Para el consumo de stock, se puede referenciar al producto mediante `id`, o `bar
 {
   "office": {
     "id": "1",
-    "href": "https://api.bsale.com.pe/v1/offices/1.json"
+    "href": "https://api.bsale.io/v1/offices/1.json"
   },
   "imagestionCenterCostId": null,
   "details": {
-    "href": "https://api.bsale.com.pe/v1/stocks/consumptions/593/details.json"
+    "href": "https://api.bsale.io/v1/stocks/consumptions/593/details.json"
   },
   "note": "prueba api",
   "consumptionDate": 1407297600,
   "imagestionCcdescription": null,
   "id": 593,
-  "href": "https://api.bsale.com.pe/v1/stocks/consumptions/593.json"
+  "href": "https://api.bsale.io/v1/stocks/consumptions/593.json"
 }
 ```

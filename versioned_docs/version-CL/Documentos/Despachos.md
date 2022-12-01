@@ -79,6 +79,7 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
 - **officeid**, Permite filtrar por sucursal.
 - **shippingtypeid**, filtra por documento de referencia.
 - **state**, boolean (0 o 1) indica si los documentos están activos(0) inactivos (1).
+- **documentid**, id documento guía de despacho
   
 #### Ejemplos
 - `GET /v1/shippings.json?limit=10&offset=0`

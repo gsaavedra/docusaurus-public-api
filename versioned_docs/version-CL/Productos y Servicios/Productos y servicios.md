@@ -365,6 +365,12 @@ Se debe enviar un Json con la siguiente estructura.
 - **classification**, indica la clase del producto 0 es producto, 1 es servicio (Integer)
 - **stockControl**, indica si el producto controlara stock No(0) o Si (1) (Boolean).
 - **productTypeId**, Id del tipo de producto (Integer)
+- **taxes**, Arreglo que referencia los [id's de impuesto](/CL/impuestos#get-lista-de-impuestos) asociados al producto.
+
+:::tip
+Si no se definen impuestos en la creación del producto, se asignarán los configurados por defecto en Bsale.
+:::
+
 #### Respuesta
 ```json
 {

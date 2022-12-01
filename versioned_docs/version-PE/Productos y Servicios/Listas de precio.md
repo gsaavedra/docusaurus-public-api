@@ -24,17 +24,17 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
 
 ```js title="Response /price_lists/3.json"
 {
-  "href": "https://api.bsale.com.pe/v1/price_lists/3.json",
+  "href": "https://api.bsale.io/v1/price_lists/3.json",
   "id": "3",
   "name": "LISTA USD",
   "description": null,
   "state": 0,
   "coin": {
-    "href": "https://api.bsale.com.pe/v1/coins/3.json",
+    "href": "https://api.bsale.io/v1/coins/3.json",
     "id": "3"
   },
   "details": {
-    "href": "https://api.bsale.com.pe/v1/price_lists/3/details.json"
+    "href": "https://api.bsale.io/v1/price_lists/3/details.json"
   }
 }
 ```
@@ -50,7 +50,7 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
 | **details** | nodo que indica los detalles de la lista de precio. | |
 
 ## GET listas de precio
-- GET `/v1/price_lists.jso` retornará todas las listas de precio.
+- GET `/v1/price_lists.json` retornará todas las listas de precio.
 
 #### Parámetros
 - **limit**, limita la cantidad de items de una respuesta JSON, por defecto el limit es 25, el máximo permitido es 50.
@@ -70,51 +70,51 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
 
 ```json title="Response /price_lists.json "
 {
-  "href": "https://api.bsale.com.pe/v1/price_lists.json",
+  "href": "https://api.bsale.io/v1/price_lists.json",
   "count": 3,
   "limit": 25,
   "offset": 0,
   "items": [
     {
-      "href": "https://api.bsale.com.pe/v1/price_lists/1.json",
+      "href": "https://api.bsale.io/v1/price_lists/1.json",
       "id": "1",
       "name": "Lista Base",
       "description": "",
       "state": 0,
       "coin": {
-        "href": "https://api.bsale.com.pe/v1/coins/1.json",
+        "href": "https://api.bsale.io/v1/coins/1.json",
         "id": "1"
       },
       "details": {
-        "href": "https://api.bsale.com.pe/v1/price_lists/1/details.json"
+        "href": "https://api.bsale.io/v1/price_lists/1/details.json"
       }
     },
     {
-      "href": "https://api.bsale.com.pe/v1/price_lists/2.json",
+      "href": "https://api.bsale.io/v1/price_lists/2.json",
       "id": "2",
-      "name": "Lista UF",
+      "name": "En SOLES",
       "description": "",
       "state": 0,
       "coin": {
-        "href": "https://api.bsale.com.pe/v1/coins/2.json",
+        "href": "https://api.bsale.io/v1/coins/2.json",
         "id": "2"
       },
       "details": {
-        "href": "https://api.bsale.com.pe/v1/price_lists/2/details.json"
+        "href": "https://api.bsale.io/v1/price_lists/2/details.json"
       }
     },
     {
-      "href": "https://api.bsale.com.pe/v1/price_lists/3.json",
+      "href": "https://api.bsale.io/v1/price_lists/3.json",
       "id": "3",
       "name": "LISTA USD",
       "description": null,
       "state": 0,
       "coin": {
-        "href": "https://api.bsale.com.pe/v1/coins/3.json",
+        "href": "https://api.bsale.io/v1/coins/3.json",
         "id": "3"
       },
       "details": {
-        "href": "https://api.bsale.com.pe/v1/price_lists/3/details.json"
+        "href": "https://api.bsale.io/v1/price_lists/3/details.json"
       }
     }
   ]
@@ -132,17 +132,17 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
 
 ```json title="Response /price_lists/3.json"
 {
-  "href": "https://api.bsale.com.pe/v1/price_lists/3.json",
+  "href": "https://api.bsale.io/v1/price_lists/3.json",
   "id": "3",
   "name": "LISTA USD",
   "description": null,
   "state": 0,
   "coin": {
-    "href": "https://api.bsale.com.pe/v1/coins/3.json",
+    "href": "https://api.bsale.io/v1/coins/3.json",
     "id": "3"
   },
   "details": {
-    "href": "https://api.bsale.com.pe/v1/price_lists/3/details.json"
+    "href": "https://api.bsale.io/v1/price_lists/3/details.json"
   }
 }
 ```
@@ -175,53 +175,53 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
 
 ```json title="Response /price_lists/1/details.json"
 {
-  "href": "https://api.bsale.com.pe/v1/price_lists/1/details.json",
+  "href": "https://api.bsale.io/v1/price_lists/1/details.json",
   "count": 7634,
   "limit": 4,
   "offset": 0,
   "items": [
     {
-      "href": "https://api.bsale.com.pe/v1/price_lists/1/details/663.json",
+      "href": "https://api.bsale.io/v1/price_lists/1/details/663.json",
       "id": 663,
       "variantValue": 4590,
       "variantValueWithTaxes": 5462,
       "variant": {
-        "href": "https://api.bsale.com.pe/v1/variant/388.json",
+        "href": "https://api.bsale.io/v1/variant/388.json",
         "id": "388"
       }
     },
     {
-      "href": "https://api.bsale.com.pe/v1/price_lists/1/details/681.json",
+      "href": "https://api.bsale.io/v1/price_lists/1/details/681.json",
       "id": 681,
       "variantValue": 25000.23,
       "variantValueWithTaxes": 29750,
       "variant": {
-        "href": "https://api.bsale.com.pe/v1/variant/407.json",
+        "href": "https://api.bsale.io/v1/variant/407.json",
         "id": "407"
       }
     },
     {
-      "href": "https://api.bsale.com.pe/v1/price_lists/1/details/683.json",
+      "href": "https://api.bsale.io/v1/price_lists/1/details/683.json",
       "id": 683,
       "variantValue": 10000,
       "variantValueWithTaxes": 11900,
       "variant": {
-        "href": "https://api.bsale.com.pe/v1/variant/426.json",
+        "href": "https://api.bsale.io/v1/variant/426.json",
         "id": "426"
       }
     },
     {
-      "href": "https://api.bsale.com.pe/v1/price_lists/1/details/689.json",
+      "href": "https://api.bsale.io/v1/price_lists/1/details/689.json",
       "id": 689,
       "variantValue": 10000,
       "variantValueWithTaxes": 11900,
       "variant": {
-        "href": "https://api.bsale.com.pe/v1/variant/460.json",
+        "href": "https://api.bsale.io/v1/variant/460.json",
         "id": "460"
       }
     }
   ],
-  "next": "https://api.bsale.com.pe/v1/price_lists/1/details.json?limit=4&offset=4"
+  "next": "https://api.bsale.io/v1/price_lists/1/details.json?limit=4&offset=4"
 }
 ```
 - **href**, url del detalle de la lista de precio (String).
@@ -235,12 +235,12 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
   
 ```json title="Response /price_lists/1/details/663.json"
 {
-  "href": "https://api.bsale.com.pe/v1/price_lists/1/details/663.json",
+  "href": "https://api.bsale.io/v1/price_lists/1/details/663.json",
   "id": 663,
   "variantValue": 4590,
   "variantValueWithTaxes": 5462,
   "variant": {
-    "href": "https://api.bsale.com.pe/v1/variant/388.json",
+    "href": "https://api.bsale.io/v1/variant/388.json",
     "id": "388"
   }
 }
@@ -272,11 +272,11 @@ Se debe enviar un Json con la siguiente estructura:
 #### Respuesta
 ```json
 {
-  "href": "https://api.bsale.com.pe/v1/price_lists/19/details/1412.json",
+  "href": "https://api.bsale.io/v1/price_lists/19/details/1412.json",
   "variantValue": 2000,
   "variantValueWithTaxes": 2380,
   "variant": {
-    "href": "https://api.bsale.com.pe/v1/variant/351.json",
+    "href": "https://api.bsale.io/v1/variant/351.json",
     "id": "351"
   },
   "id": 1412

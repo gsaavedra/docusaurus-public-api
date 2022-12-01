@@ -95,7 +95,7 @@ Cada vez que en Bsale se ejecuta una acción sobre la información asociada a la
   "resourceId": "7079",
   "topic": "price",
   "action": "put",
-  "officeId": "2",
+  "priceListId": "2",
   "send": 1503500856
 }
 ```
