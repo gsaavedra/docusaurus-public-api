@@ -40,7 +40,7 @@ Para autenticar una petición se utiliza un token de acceso, el cual deberá aco
 
 :::tip
 
-Lée sobre cómo obtener tu token de acceso. 👉 [Ir](/primeros-pasos#token-producción).
+Lée sobre cómo obtener tu token de acceso. 👉 [Ir](/CL/primeros-pasos#token-producción).
 
 :::
 
@@ -179,7 +179,7 @@ Todos los mensajes de error entregan un código de error y un mensaje descriptiv
 <details>
 	<summary>Invalid price list</summary>
     <div>
-        <div><b>Descripción:</b> Verifica la lista de precios que está referenciando, debe existir y tener estado activo</div>
+        <div><b>Descripción:</b> Verifica la lista de precios que estas referenciando, debe existir y tener estado activo.</div>
 <div><b>Respuesta:</b> <code>"error": "invalid price list"</code></div>
     </div>
 </details>
@@ -187,7 +187,7 @@ Todos los mensajes de error entregan un código de error y un mensaje descriptiv
 
 
 <details>
-	<summary>"code" is out of range for ActiveRecord::Type::Integer with limit 4</summary>
+	<summary>"code" is out of range for ActiveRecord::Type::Integer with limit </summary>
     <div>
         <div><b>Descripción:</b> Verifica que el code que estás usando exista en Bsale o tenga estado 0</div>
 <div><b>Respuesta:</b> <code>"error":""code" is out of range for ActiveRecord::Type::Integer with limit 4"</code></div>
@@ -279,7 +279,7 @@ Todos los mensajes de error entregan un código de error y un mensaje descriptiv
 <details>
 	<summary>Invalid exchange rate</summary>
     <div>
-        <div><b>Descripción:</b> Verifica la lista de precios asignada a la sucursal</div>
+        <div><b>Descripción:</b> Verifica la lista de precios enviada (priceListId) o la asignada por defecto a la sucursal en caso de no enviar.</div>
 <div><b>Respuesta:</b> <code>"error":"invalid exchange rate"</code></div>
     </div>
 </details>
@@ -458,6 +458,14 @@ Todos los mensajes de error entregan un código de error y un mensaje descriptiv
     </div>
 </details>
 
+<details>
+	<summary>closed box</summary>
+    <div>
+        <div><b>Descripción:</b> El documento que estás intentando eliminar, pertenece a una caja cerrada. Debes abrir caja del día de generación del documento y reintentar.</div>
+<div><b>Respuesta:</b> <code>"error": "closed box"</code></div>
+    </div>
+</details>
+
 ### 500
 <details>
 	<summary>The requested resource is not available</summary>
@@ -466,3 +474,5 @@ Todos los mensajes de error entregan un código de error y un mensaje descriptiv
 <div><b>Respuesta:</b> <code>"error": "The requested resource is not available"</code></div>
     </div>
 </details>
+
+
