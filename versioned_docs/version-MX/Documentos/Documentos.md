@@ -6,10 +6,10 @@ slug: /documentos
 ---
 
 # Documentos
-Listar documentos generados en Bsale, del tipo venta, pre-venta, despachos, etc. Se puede obtener detalles, referencias, datos generales, etc. 
+Listar documentos generados en Bsale, del tipo venta, pre-venta, envíos, etc. Se puede obtener detalles, referencias, datos generales, etc. 
 
 :::info
-**Crear documentos** del tipo venta o documentos asociados al proceso de venta (notas de venta, cotizaciones, etc). 
+**Crear documentos** del tipo venta (tickets, facturas) o documentos asociados al proceso de venta (notas de venta, cotizaciones, etc). 
 
 :::
 
@@ -170,7 +170,6 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
 - `GET /v1/documents.json?expand=[document_types,client,office,details,payments]`
 - `GET /v1/documents.json?emissiondate=1309478400&-expirationdate=1309478400&state=0`
 - `GET /v1/documents.json?emissiondaterange=[1414800000,1417391990]`
-- `GET /v1/documents.json?referencecode=801`
 - `GET /v1/documents.json?referencenumber=123`
 - `GET /v1/documents.json?referencecode=801&referencenumber=123`
 - `GET /v1/documents.json?detailid=5350`
@@ -278,7 +277,6 @@ Entrega los costos asociados a una venta solo si los productos fueron despachado
 #### Parámetros
 - **documentid**, filtra por el id del documento.
 - **number**, filtra documentos por el folio.
-- **codesii**, filtra documentos por el código tributario.
 
 #### Ejemplos
 - `GET /v1/documents/costs.json?documentid=145071`
@@ -551,7 +549,8 @@ Para crear un documento de venta ya sea electrónico (Factura y Boleta Electrón
   "priceListId": 18,
   "emissionDate": 1407715200,
   "expirationDate": 1407715200,
-  "declareSii": 1
+  "declare": 1,
+  "cfdiUse": 612
 }
 ```
 - **documentTypeId**, [Id del tipo de documento](/MX/tipos-de-documentos) que indicara si es factura, boleta, nota de venta etc. (Integer).
@@ -559,6 +558,9 @@ Para crear un documento de venta ya sea electrónico (Factura y Boleta Electrón
 - **priceListId**, [Id de la lista de precio](/MX/listas-de-precio) utilizada por el documento, si no es especificada se utilizara la lista de precio por defecto de la sucursal (Integer).
 - **emissionDate**, Fecha de emisión del documento (Integer) (no se debe aplicar zona horaria, solo considerar la fecha).
 - **expirationDate**, Fecha vencimiento del documento (Integer) (no se debe aplicar zona horaria, solo considerar la fecha).
+- **declare**, Si se desea declarar el documento ante SAT se envía 1, en caso contrario un 0 (Boolean).
+- **cdfiUse**, Código uso cfdi del documento a generar (String).
+
 
 ### Vendedor
 Es posible que necesites asociar un vendedor diferente al que hace la petición para crear el documento, para eso debes enviar el atributo `sellerId`, con el `id` vendedor (usuario) en Bsale.
@@ -602,27 +604,30 @@ En algunos documentos no es necesario agregar el cliente como en el caso de la b
 ```json 
 {
   "client": {
-    "code": "98765432-1",
+    "code": "XAXX010101999",
     "city": "Capital del Oeste",
     "company": "Capsule Corp",
     "municipality": "Capital del Oeste",
     "activity": "Development and research",
     "address": "Hoi Poi #750",
-    "email": "dr@brief.cl",
-    "companyOrPerson": 1
+    "email": "dr@brief.mx",
+    "postalCode": "10740",
+    "regime": "612"
   }
 }
 ```
-- **code**, Identificador del cliente (String).
+- **code**, RFC del cliente (String).
 - **city**, Ciudad del cliente  (String).
-- **company**, Razón social del cliente (String).
-- **municipality**, Comuna del cliente (String).
+- **company**, Nombre, denominación o razón social (String)
+- **municipality**, Colonia del cliente (String).
 - **activity**, Giro del cliente (String).
 - **address**, Dirección del cliente (String). 
 - **email**, indica el correo electronico del cliente  (String).
 - **companyOrPerson**, indica si el cliente es persona natural o empresa (0)Persona o (1)Empresa (Boolean).
 - **firstName**, Nombre de persona (String).
 - **lastName**, Apellido de persona (String).
+- **postalCode**, Código postal del cliente (String).
+- **regime**, Código régimen del cliente (String).
 
 :::tip
 Opcionalmente puedes utilizar el parámetro `clientId` si el cliente ya esta creado en Bsale y conoces su identificador.
@@ -661,6 +666,10 @@ Si necesitas que Bsale **envie el documento al correo del cliente** puedes agreg
 ```
 
 ### Detalles
+
+:::caution
+`netUnitValue` **no debe registrarse valores negativos**, si se envía será rechazado por la entidad tributaria (SAT) .
+:::
 
 ```json 
 {
@@ -703,7 +712,7 @@ Si controlas stock, puedes usar `code` o `variantId` o `barCode` para referencia
 :::
 
 #### Sin control de stock
-En el caso de solo necesitar **declarar documentos en el SII con Bsale**, el detalle tendría una estructura similar a:
+En el caso de solo necesitar **declarar documentos en el SAT con Bsale**, el detalle tendría una estructura similar a:
 ```json 
 {
    "details": [
@@ -796,7 +805,7 @@ Para usar atributos adicionales deben primero deben crearse y referenciar su id.
 :::
 
 ### Id externo (opcional)
-Se pueden enviar un id de referencia propio de su sistema para evitar duplicidad de emisión. La API buscará por el id al hacer POST de un documento, y si ya existe retornará el documento que se generó previamente en vez de generar uno nuevo.
+Se pueden enviar un id de referencia propio de su sistema para evitar duplicidad de emisión en un tipo de documento. La API buscará por el id al hacer POST de un documento, si ya existe el id en los registros del asociados a un tipo de documento, retornará el documento que se generó previamente en vez de generar uno nuevo.
 ```json 
 {
    "salesId": "AAA000012"
@@ -809,55 +818,40 @@ Se pueden enviar un id de referencia propio de su sistema para evitar duplicidad
 #### Envío
 ```json title="POST /documents.json "
 {
-  "documentTypeId": 8,
-  "officeId": 1,
-  "emissionDate": 1407715200,
-  "expirationDate": 1407715200,
-  "declareSii": 1,
-  "priceListId": 18,
-  "client": {
-    "code": "12345678-9",
-    "city": "Puerto Varas",
-    "company": "Imaginex",
-    "municipality": "comuna",
-    "activity": "giro",
-    "address": "direccion"
-  },
-  "details": [
-    {
-      "variantId": 1,
-      "netUnitValue": 53975,
-      "quantity": 1,
-      "taxId": "[1,2]",
-      "comment": "Producto 1",
-      "discount": 0
-    }
-  ],
-  "payments": [
-    {
-      "paymentTypeId": 1,
-      "amount": 70000,
-      "recordDate": 1407715200
-    }
-  ],
-  "references": [
-    {
-      "number": 123,
-      "referenceDate": 1407715200,
-      "reason": "Orden de Compra 123",
-      "codeSii": 801
-    }
-  ],
-  "dynamicAttributes": [
-    {
-      "description": "098 codigo servicio",
-      "dynamicAttributeId": 17
+    "documentTypeId": 5,
+    "officeId": 1,
+    "emissionDate": 1674518400,
+    "expirationDate": 1677196800,
+    "declare": 1,
+    "priceListId": 1,
+    "client": {
+        "code": "CACX7600101P8",
+        "company": "XOCHILT CASAS CHAVEZ",
+        "activity": "Giro Informática",
+        "municipality": "Colonia",
+        "city": "Ciudad",
+        "address": "Dirección",
+        "email": "api@bsale.com.mx",
+        "postalCode": "10740",
+        "regime": "612"
     },
-    {
-      "description": "Observacion nomal, sin anotaciones",
-      "dynamicAttributeId": 18
-    }
-  ]
+    "cfdiUse": "CP01",
+    "details": [
+        {
+            "variantId": 15,
+            "netUnitValue": 86.210000,
+            "quantity": 10,
+            "taxId": "[1]",
+            "discount": 0
+        }
+    ],
+    "payments": [
+        {
+            "recordDate": 1566479491,
+            "amount": 1000.03600000,
+            "paymentTypeId": 1
+        }
+    ]
 }
 ```
 

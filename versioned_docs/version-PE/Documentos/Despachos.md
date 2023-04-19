@@ -8,12 +8,12 @@ slug: /documentos/despachos
 
 # Despacho
 
-Generación de documentos tipo despacho. _(ej Guías de despacho electrónicas)_, listar despachos generados, detalles incluidos en el despacho. .
+Generación de documentos tipo despacho. _(ej Guías de remisión electrónicas)_, listar despachos generados, detalles incluidos en el despacho. .
 
 Cómo funciona la interfaz de Bsale, mira éstos videos:
 
-- Creación de una guía de despacho [Ver](https://youtu.be/XBAd_W8m_FI) 
-- Creación de una guía de despacho a partir de otro documento [Ver](https://youtu.be/G6LMsLwv7v0)
+- Creación de una guía de remisión [Ver](https://youtu.be/XBAd_W8m_FI) 
+- Creación de una guía de remisión a partir de otro documento [Ver](https://youtu.be/G6LMsLwv7v0)
 
 :::info
 Un documento del tipo despacho, siempre genera una salida de stock (cuando se controla stock)
@@ -77,9 +77,9 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
 - **expand**, permite expandir instancias y colecciones para traer relaciones en una sola petición.
 - **shippingdate**, Permite filtrar por fecha de devolución.
 - **officeid**, Permite filtrar por sucursal.
-- **shippingtypeid**, filtra por documento de referencia.
+- **shippingtypeid**, filtra por tipo de despacho
 - **state**, boolean (0 o 1) indica si los documentos están activos(0) inactivos (1).
-- **documentid**, id documento guía de despacho
+- **documentid**, id documento guía de remisión
   
 #### Ejemplos
 - `GET /v1/shippings.json?limit=10&offset=0`
@@ -255,6 +255,10 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
 
 Para crear un documento del tipo despacho (manual o electrónico), se debe enviar un JSON con la siguiente estructura:
 
+:::caution
+La **generación de documentos de remisión** está en fase de pruebas, por lo que su uso debe ser notificado a ayuda@bsale.app para mantener su monitoreo y seguimiento.
+:::
+
 ### Referencias y fechas
 
 ```json
@@ -262,10 +266,10 @@ Para crear un documento del tipo despacho (manual o electrónico), se debe envia
   "documentTypeId": 20,
   "officeId": 1,
   "priceListId": 18,
-  "emissionDate": 1407715200,
+  "emissionDate": 1603670400,
 }
 ```
-- **documentTypeId**, Id del tipo de documento que indicara si es factura, boleta, nota de venta etc. (Integer).
+- **documentTypeId**, Id del tipo de documento, del tipo despacho. (Integer).
 - **officeId**, Id de la sucursal donde se emite el documento, si no es especificada el documento quedara asignado a la sucursal por defecto del sistema (Integer).
 - **priceListId**, Id de la lista de precio utilizada por el documento, si no es especificada se utilizara la lista de precio por defecto de la sucursal (Integer).
 - **emissionDate**, Fecha de emisión del documento (Integer) (no se debe aplicar zona horaria, solo considerar la fecha).
@@ -273,10 +277,6 @@ Para crear un documento del tipo despacho (manual o electrónico), se debe envia
 - **municipality**, Comuna de despacho (String) 
 - **address**, Dirección de despacho (String)
 - **recipient**, Nombre quien recepciona despacho (String)
-
-:::note
-Opcionalmente puedes utilizar el parámetro **codeSii** en vez de **documentTypeId** si conoces el código tributario del documento.
-:::
 
 :::info
 Se deben enviar los datos de dirección del cliente como direcciones del despacho
@@ -303,7 +303,7 @@ Si se desea generar una guía a partir de otro documento, se debe enviar el iden
 ### Traslado interno
 Si se desea generar una guía de traslado interno, se debe agregar al envío
 
-```json "
+```json 
 {
  "officeId": 1,
  "destinationOfficeId":3,
@@ -315,18 +315,16 @@ Si se desea generar una guía de traslado interno, se debe agregar al envío
 - **destinationOfficeId**, Id sucursal destino
 - **shippingTypeId**, Id tipo de despacho
 
-### Ejemplo JSON
-
 #### Envío
-```json title="POST /shippings.json "
+```json title="POST /shippings.json"
 {
   "documentTypeId": 7,
   "officeId": 1,
-  "emissionDate": 1462527931,
+  "emissionDate": 1603670400,
   "shippingTypeId": 6,
-  "municipality": "Puerto Varas",
-  "city": "Puerto Varas",
-  "address": "la quebrada 1005",
+  "municipality": "Lima",
+  "city": "Lima",
+  "address": "Miraflores",
   "declareSii": 1,
   "recipient": "Edison Packard",
   "details": [
@@ -337,27 +335,26 @@ Si se desea generar una guía de traslado interno, se debe agregar al envío
     }
   ],
   "client": {
-    "code": "1-7",
-    "municipality": "Puerto Montt",
+    "code": "123456789",
+    "municipality": "Lima",
     "activity": "Arriendo de maquinaria pesada",
     "company": "Maquinarías Express",
-    "city": "PUERTO MONTT",
-    "email": "apidespachos@bsale.cl",
+    "city": "Lima",
+    "email": "apidespachos@bsale.com.pe",
     "address": "Los Alamos #122"
   }
 }
 ```
 
 #### Respuesta
-
 ```json title="201 Response /shippings.json "
 {
   "href": "https://api.bsale.io/v1/shippings/1554.json",
   "id": 1554,
-  "shippingDate": 1576454400,
-  "address": "la quebrada 1005",
-  "municipality": "Puerto Varas",
-  "city": "Puerto Varas",
+  "shippingDate": 1603670400,
+  "address": "Miraflores 1005",
+  "municipality": "Lima",
+  "city": "Lima",
   "recipient": "Edison Packard",
   "state": 0,
   "office": {
@@ -381,3 +378,167 @@ Si se desea generar una guía de traslado interno, se debe agregar al envío
   }
 }
 ```
+
+### Tipo de transporte externo
+Si se desea generar una guía de tipo transporte externo, se debe agregar al envío el nodo de atributos dinámicos (dynamicAttributes).
+
+
+#### Envío
+```json title="POST /shippings.json "
+"dynamicAttributes": [
+    {
+        "alias": "shipmentTransportModeCode",
+        "values": [
+            "01"
+        ]
+    },
+    {
+        "alias": "shipmentCarrierCompanyName",
+        "values": [
+            "SED"
+        ]
+    },
+    {
+        "alias": "shipmentCarrierCode",
+        "values": [
+            "20538856674"
+        ]
+    },
+    {
+        "alias": "shipmentStartDate",
+        "values": [
+            "2023-04-12"
+        ]
+    },
+    {
+        "alias": "shipmentOriginAddressDescription",
+        "values": [
+            "Av Gral Diez Canseco Nro 527 "
+        ]
+    },
+    {
+        "alias": "shipmentOriginAddressId",
+        "values": [
+            "010101"
+        ]
+    },
+    {
+        "alias": "shipmentDeliveryAddressId",
+        "values": [
+            "010102"
+        ]
+    },
+    {
+        "alias": "shipmentGrossWeightMeasure",
+        "values": [
+            "3"
+        ]
+    },
+]
+
+```
+### Tipo de transporte privado
+Si se desea generar una guía de tipo transporte privado, se debe agregar al envío el nodo de atributos dinámicos (dynamicAttributes).
+
+#### Envío
+```json title="POST /shippings.json "
+"dynamicAttributes": [
+    {
+        "alias": "shipmentTransportModeCode",
+        "values": [
+            "02"
+        ]
+    },
+    {
+        "alias": "shipmentCarrierCompanyName",
+        "values": [
+            "SED"
+        ]
+    },
+    {
+        "alias": "shipmentCarrierDriverCode",
+        "values": [
+            "20538856674"
+        ]
+    },
+    {
+        "alias": "shipmentCarrierDriverCodeType",
+        "values": [
+            "1"
+        ]
+    },
+    {
+        "alias": "shipmentCarrierPlateId",
+        "values": [
+            "HFPD19"
+        ]
+    },
+    {
+        "alias": "shipmentStartDate",
+        "values": [
+            "2023-04-12"
+        ]
+    },
+    {
+        "alias": "shipmentOriginAddressDescription",
+        "values": [
+            "Av Gral Diez Canseco Nro 527 "
+        ]
+    },
+    {
+        "alias": "shipmentOriginAddressId",
+        "values": [
+            "010101"
+        ]
+    },
+    {
+        "alias": "shipmentDeliveryAddressId",
+        "values": [
+            "010102"
+        ]
+    },
+    {
+        "alias": "shipmentGrossWeightMeasure",
+        "values": [
+            "3"
+        ]
+    },
+    {
+        "alias": "shipmentCarrierCompanySurname",
+        "values": [
+            "surname"
+        ]
+    },
+    {
+        "alias": "shipmentCarrierCompanyId",
+        "values": [
+            "123456789"
+        ]
+    }
+]
+
+```
+
+- **dynamicAttributes**, atributos dinámicos de despacho (array)
+- **alias**,  Corresponde al alias del atributo (string)
+- **values**, Corresponde al valor del alias (array)
+
+#### Parámetros de alias
+- **shipmentTransportModeCode**, Modo de transporte
+- **shipmentCarrierCompanyName**, Nombre de transportista
+- **shipmentCarrierCode**, Id empresa de transporte
+- **shipmentCarrierDriverCodeType**, Id Conductor
+- **shipmentCarrierPlateId**, Número de placa
+- **shipmentStartDate**, Fecha de inicio
+- **shipmentOriginAddressDescription**, Dirección de origen
+- **shipmentGrossWeightMeasure**, Peso bruto total KG
+- **shipmentCarrierCompanySurname**, Apellidos del conductor
+- **shipmentSupplierCodeType**, Apellidos del conductor
+- **shipmentSupplierCode**, Id del proveedor
+- **shipmentSupplierName**, Nombre del proveedor
+- **shipmentCarrierCompanyId**, Número licencia del conductor
+- **shipmentOriginAddressId**, Código de ubigeo de origen
+- **shipmentDeliveryAddressId**, Código de ubigeo de destino
+- **buyerCodeType**, Tipo id del comprador
+- **buyerCode**, Id del comprador
+- **buyerName**, Nombre del comprador

@@ -1,5 +1,5 @@
 ---
-sidebar_position: 10
+sidebar_position: 9
 title: Documentos
 description: Crear, editar y listar documentos
 slug: /documentos
@@ -897,6 +897,10 @@ Si necesitas que Bsale **envie el documento al correo del cliente** puedes agreg
 
 ### Detalles
 
+:::caution
+`netUnitValue` **no debe registrarse valores negativos**, si se envía será rechazado por la entidad tributaria (SII).
+:::
+
 ```json 
 {
    "details": [
@@ -1076,7 +1080,7 @@ Para usar atributos adicionales deben primero deben crearse y referenciar su id.
 :::
 
 ### Id externo (opcional)
-Se pueden enviar un id de referencia propio de su sistema para evitar duplicidad de emisión. La API buscará por el id al hacer POST de un documento, y si ya existe retornará el documento que se generó previamente en vez de generar uno nuevo.
+Se pueden enviar un id de referencia propio de su sistema para evitar duplicidad de emisión en un tipo de documento. La API buscará por el id al hacer POST de un documento, si ya existe el id en los registros del asociados a un tipo de documento, retornará el documento que se generó previamente en vez de generar uno nuevo.
 ```json 
 {
    "salesId": "AAA000012"

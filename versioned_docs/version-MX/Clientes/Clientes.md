@@ -14,7 +14,7 @@ Cómo funciona la interfaz de Bsale, mira éstos videos:
 - Gestión de clientes [Ver](https://www.youtube.com/watch?v=j5UE9VjaY2w) 
 
 :::info
-El RUT, se almacena en el `code`, es importante que valides el identificador antes de enviar.
+El RFC, se almacena en el `code`, es importante que valides el identificador antes de enviar.
 :::
 
 ## Estructura JSON
@@ -63,7 +63,7 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
 | **id**   | identificador único del clientes   | Integer |
 | **firstName** | nombre del cliente | String |
 | **lastName** | apellido del cliente | String |
-| **code** | rut del cliente | String |
+| **code** | RFC del cliente | String |
 | **phone** | teléfono del cliente | String |
 | **company** | empresa del cliente | String |
 | **note** | una descripción del cliente | String |
@@ -93,7 +93,7 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
 - **offset**, permite paginar los items de una respuesta JSON, por defecto el offset es 0.
 - **fields**, solo devolver atributos específicos de un recurso
 - **expand**, permite expandir instancias y colecciones para traer relaciones en una sola petición.
-- **code**, Permite filtrar por rut del cliente.
+- **code**, Permite filtrar por RFC del cliente.
 - **firstname**, filtra los clientes por nombre.
 - **lastname**, filtra los clientes por apellido.
 - **email**, filtra los clientes por email.
@@ -105,7 +105,7 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
 - `GET /v1/clients.json?limit=10&offset=0`
 - `GET /v1/clients.json?fields=[firstname,lastname]`
 - `GET /v1/clients.json?state=0`
-- `GET /v1/clients.json?code=12345678-9`
+- `GET /v1/clients.json?code=XAXX010101000`
 - `GET /v1/clients.json?paymenttypeid=1`
 - `GET /v1/clients.json?expand=[contacts,attributes,payment_type]`
 
@@ -122,7 +122,7 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
       "id": 65,
       "firstName": "a",
       "lastName": "sa",
-      "code": "92.341.000-7",
+      "code": "XAXX010101000",
       "phone": "",
       "company": "a sa",
       "note": "",
@@ -156,7 +156,7 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
       "id": 102,
       "firstName": "Adriana",
       "lastName": "Talhouk",
-      "code": "",
+      "code": "XAXX010101000",
       "phone": "",
       "company": "Adriana Talhouk",
       "note": null,
@@ -204,7 +204,7 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
   "id": 80,
   "firstName": "juanito",
   "lastName": "mena",
-  "code": "",
+  "code": "XAXX010101000",
   "phone": "",
   "company": "juanito mena",
   "note": null,
@@ -299,7 +299,7 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
       "firstName": "Andres",
       "lastName": "Villanueva",
       "phone": "2220936",
-      "email": "a.villanueva@gmail.cl"
+      "email": "a.villanueva@gmail.com"
     },
     {
       "href": "https://api.bsale.io/v1/clients/4/contacts/32.json",
@@ -307,7 +307,7 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
       "firstName": "Juana ",
       "lastName": "Jeldres",
       "phone": "2220928",
-      "email": "recepcion@gmail.cl"
+      "email": "recepcion@gmail.com"
     }
   ]
 }
@@ -508,9 +508,9 @@ Para crear un cliente, se debe enviar un JSON con la siguiente estructura:
   "firstName": "Armando",
   "company": "Particular",
   "address": "Los trigales 372",
-  "email": "armando@paredes.cl",
+  "email": "armando@paredes.mx",
   "twitter": "",
-  "code": "98765432-1"
+  "code": "XAXX010101000"
 }
 ```
  
@@ -532,9 +532,9 @@ Si se desean crear atributos especiales para el cliente se debe enviar la siguie
   "firstName": "Marcela",
   "company": "Particular",
   "address": "Los trigales 372",
-  "email": "mmunoz@.email.cl",
+  "email": "mmunoz@bsale.com.mx",
   "twitter": "",
-  "code": "2-7",
+  "code": "XAXX010101000",
   "dynamicAttributes": [
     {
       "description": "21/03/1983",
@@ -569,7 +569,7 @@ Si se desean crear atributos especiales para el cliente se debe enviar la siguie
   "hasCredit": 1,
   "facebook": "",
   "company": "Particular",
-  "code": "2-7",
+  "code": "XAXX010101000",
   "href": "https://api.bsale.io/v1/clients/67.json"
 }
 ```
@@ -589,9 +589,39 @@ Si el cliente es extranjero se debe enviar el atributo `isForeigner` en **1**, p
   }
 }
 ```
-:::tip
-Si envías `isForeigner` con valor 1, Bsale generará un rut **55555555-5** por defecto. Si necesitas que la representación visual del documento indique un DNI, NIT, NIF etc Puedes enviar el adicionalmente el `code` de cliente con su valor.
-:::
+
+#### Cliente persona moral
+Si el cliente es persona moral, se debe enviar el cliente de la siguiente manera
+```json 
+    "client": {
+        "code": "CACX7605101P8",
+        "company": "XOCHILT CASAS CHAVEZ",
+        "activity": "Giro Informática",
+        "municipality": "Colonia cliente",
+        "city": "Ciudad cliente",
+        "address": "Dirección cliente",
+        "email": "api@bsale.com.mx",
+        "postalCode": "10740",
+        "regime": "612"
+    },
+
+```
+
+#### Cliente persona física
+Si el cliente es persona física, se debe enviar el cliente de la siguiente manera
+```json 
+    "client": {
+        "code": "CACX7605101P8",
+        "municipality": "Colonia cliente",
+        "city": "Ciudad cliente",
+        "address": "Dirección cliente",
+        "firstName": "Andés",
+        "lastName": "León",
+        "email": "api@bsale.cl",
+        "postalCode": "10740",
+        "regime": "612"
+    },
+```
 
 ## PUT un cliente
 - PUT `/v1/clients/67.json` 
@@ -615,7 +645,7 @@ Se debe enviar un Json con la siguiente estructura
   "firstName": "Marcela",
   "company": "Particular",
   "address": "Los trigales 372",
-  "email": "mmunoz@.email.cl",
+  "email": "mmunoz@bsale.com.mx",
   "twitter": "",
   "accumulatePoints": 1,
   "priceListId": 0
@@ -646,7 +676,7 @@ Se debe enviar un Json con la siguiente estructura
   "hasCredit": 1,
   "facebook": "",
   "company": "Particular",
-  "code": "2-7",
+  "code": "XAXX010101000",
   "href": "https://api.bsale.io/v1/clients/67.json"
 }
 ```
@@ -665,7 +695,7 @@ El cliente no estará visible mediante interfaz y tendrá un `state` 99. Sus doc
   "id": 30,
   "firstName": "Andres",
   "lastName": "Vasquez",
-  "code": "1-9",
+  "code": "XAXX010101000",
   "phone": "220800",
   "company": "Servicios varios",
   "note": "",

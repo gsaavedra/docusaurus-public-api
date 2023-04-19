@@ -1,7 +1,7 @@
 ---
 sidebar_position: 30
 title: Clientes
-description: Crear, editar y listar clientes
+description: Crear, editar y listar clientes.
 slug: /clientes
 ---
 
@@ -656,7 +656,7 @@ Se debe enviar un Json con la siguiente estructura
 Cambia el estado del cliente
 
 :::danger
-El cliente no estará visible mediante interfaz y tendrá un `state` 99. Sus documentos asociado **NO** se eliminarán.
+El cliente no estará visible mediante interfaz y tendrá un `state` 99. Sus documentos asociados **NO** se eliminarán.
 :::
 
 ```json
