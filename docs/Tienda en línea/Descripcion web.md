@@ -31,15 +31,18 @@ Listar productos y servicios que se contengan en la tienda en línea de Bsale.
 | **width**|  Peso del producto web | Float |
 | **depth**| Profundidad el producto web | Float |
 | **lenght**| Largo del producto web | Float |
-| **baseInfo**|  Nodo que entrega información del producto   | String  /Hash | 
-| **variant**|  Nodo que entrega información de la variante del producto  |String / Array|
-|**relatedVariants**| Nodo que entrega la infromación de variantes relacionadas al producto |String|Array| 
+| **baseInfo**|  Nodo que entrega información del producto   | String  / Json |
+| **variant**| Nodo que entrega la infromación de la variante por defecto |Json| 
+| **variants**|  Nodo que entrega información de la variante del producto  |String / Array|
+| **relatedVariants**| Nodo que entrega la infromación de variantes relacionadas al producto |String|Array| 
 | **discounts**|  Nodo que indica los descuentos asociados |String / Array | 
 | **stocks**|  Nodo que indica el stock del producto web | String / Array| 
 | **order**|   Posición del producto web | Integer |
 | **totalStock**|   Stock total del producto web | Integer |
-| **collections**| Nodo que indica las colecciones asociadas al producto web | String / Array|
-|**brand**| Nodo que muestra la marca asociada al producto | String / Array | 
+| **collections**| Nodo que indica las colecciones donde el producto está publicado| String / Array|
+| **brand**| Nodo que muestra la marca asociada al producto | String / Array |
+| **order**| Nodo que indica el orden de despliegue del producto dentro de la colección |Integer|
+| **link**|Nodo sociado a la URL donde está publicado|String|
 
 ## GET lista de productos y sus descripciones web
 
@@ -47,7 +50,7 @@ Listar productos y servicios que se contengan en la tienda en línea de Bsale.
 
 #### Expanders
 
-Esto son parámetros que permiten que  un determinado nodo se muestre con sus detalles expandidos.
+Parámetros que permiten que  un determinado nodo se muestre con sus detalles expandidos. Estos deben ser agregados de dentro del atributo expand. Ej: (`expand=[variantsInfo, variant.salePrice, variant.stock]`)
 
 - **descriptions**, permite desplegar el detalle de las descricciones asociadas  a un determinado producto, además de la descripción por defecto.
 - **productType**, permite desplegar el tipo de producto y sus características.
