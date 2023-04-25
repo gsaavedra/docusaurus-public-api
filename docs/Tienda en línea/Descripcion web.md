@@ -17,27 +17,29 @@ Listar productos y servicios que se contengan en la tienda en línea de Bsale.
 | **idVariantDefault**|   Id variante por defecto del producto | Integer |
 | **urlSlug**|  URL slug del producto | String |
 | **name**|   Nombre del producto web | String |
-| **description**|   descripción del producto | String |
+| **description**|   Descripción del producto | String |
 | **descriptions**|   Nodo que indica las descripciones del producto | String |
-| **displayNotice**|  Texto adicional del producto | String | 
-| **state**|  estado del producto activo(0) o inactivo (1) | Boolean | 
-| **mkProductType**|  | Integer || Integer | Tipo de producto web | String |
-| **productType**|  Nodo que indica el tipo de producto  | | 
-| **productTaxes**|  Nodo que indica el/los impuesto del producto  | | 
-| **urlImg**|   URL imagen producto (asociado a la variante por defecto) | String |
+| **displayNotice**|  Texto adicional para destacar para destacar | String | 
+| **state**|  Estado del producto activo(0) o inactivo (1) | Boolean | 
+| **mkProductType**| Nodo que indica el tipo de producto(normal o virtual) | String |
+| **productType**|  Nodo que indica el Id del tipo de producto  | Integer | 
+| **productTaxes**|  Nodo que indica el/los impuesto del producto  | String/Array| 
+| **urlImg**|   Lista de URL imagen producto (asociado a la variante por defecto) | String/Array |
 | **pictures**|  Nodo que indica las imágenes asociados al producto web | String |
-| **urlVideo**|   Url video del producto web  | | 
-| **shippingUnit**|  Unidad  | | 
+| **urlVideo**|   Url video del producto web  | String| 
+| **shippingUnit**|  Unidad de medida para el despacho  | String | 
 | **width**|  Peso del producto web | Float |
 | **depth**| Profundidad el producto web | Float |
 | **lenght**| Largo del producto web | Float |
-| **baseInfo**|  Nodo que entrega información del producto   | | 
-| **variant**|  Nodo que entrega información de la variante del producto  | | 
-| **discounts**|  Nodo que indica los descuentos asociados | | 
-| **stocks**|  Nodo que indica el stock del producto web | | 
+| **baseInfo**|  Nodo que entrega información del producto   | String  /Hash | 
+| **variant**|  Nodo que entrega información de la variante del producto  |String / Array|
+|**relatedVariants**| Nodo que entrega la infromación de variantes relacionadas al producto |String|Array| 
+| **discounts**|  Nodo que indica los descuentos asociados |String / Array | 
+| **stocks**|  Nodo que indica el stock del producto web | String / Array| 
 | **order**|   Posición del producto web | Integer |
 | **totalStock**|   Stock total del producto web | Integer |
-| **collections**| Nodo que indica las colecciones asociadas al producto web | | 
+| **collections**| Nodo que indica las colecciones asociadas al producto web | String / Array|
+|**brand**| Nodo que muestra la marca asociada al producto | String / Array | 
 
 ## GET lista de productos y sus descripciones web
 
