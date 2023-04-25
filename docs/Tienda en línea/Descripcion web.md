@@ -45,6 +45,8 @@ Listar productos y servicios que se contengan en la tienda en línea de Bsale.
 
 #### Expanders
 
+Esto son parámetros que permiten que  un determinado nodo se muestre con sus detalles expandidos.
+
 - **descriptions**, permite desplegar el detalle de las descricciones asociadas  a un determinado producto, además de la descripción por defecto.
 - **productType**, permite desplegar el tipo de producto y sus características.
 - **productTaxes**, permite desplegar los impuestos asociados al producto. Es importante notar que los precios que se despliegan ya contienen estos impuestos.
@@ -59,13 +61,12 @@ Listar productos y servicios que se contengan en la tienda en línea de Bsale.
 - **variant.stock**, permite desplegar el stock asociada a cada variante, disponible en cada sucursal. Esto se puede filtrar por "storeId" el cual debe agregarse como parámetro.
 - **variantShipping**, retorla la lista de los volúmenes y pesos de las variantes asociadas al producto.
 - **collections**, permite desplegar las especicifaciones de las colecciones en las cuales el productos se encuentra publicado.
-- **brand**, permite desplegar la infromación de la marca asociada al producto y su descripción web.
-- 
+- **brand**, permite desplegar la infromación de la marca asociada al producto y su descripción web
 
-#### Parámetros y filtros
+#### Parámetros
+
 - **limit**, limita la cantidad de items de una respuesta JSON, por defecto el limit es 25, el máximo permitido es 50.
 - **offset**, permite paginar los items de una respuesta JSON, por defecto el offset es 0.
-- **limit**, limita la cantidad de items de una respuesta JSON, por defecto el limit es 25, el máximo permitido es 50.
 - **productWfId**, permite filtrar por  el Id del producto web, es decir por el Id de su descripción.
 - **productId**, permite filtrar por el Id del producto.
 - **collId**, permite filtar por coleccion id.
@@ -81,7 +82,7 @@ Listar productos y servicios que se contengan en la tienda en línea de Bsale.
 - **allVariantStates**, este filtro permite que, si es que se ha expandido para que desplieguen las variantes,  se muestren todas independientemente si estas están o no activas. El valor que espera es 1.
 
 #### Ejemplos
-- `GET v2/products/list/market_info.json?&expand=[variantsInfo, variant.salePrice, variant.stock]&storeId=1&limit=50&priceListId=6`
+- GET ` v2/products/list/market_info.json?&expand=[variantsInfo, variant.salePrice, variant.stock]&storeId=1&limit=50&priceListId=6`
 
 
 ## GET descripciones web
