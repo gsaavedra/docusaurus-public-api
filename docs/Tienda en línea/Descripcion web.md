@@ -90,6 +90,354 @@ Parámetros que permiten que  un determinado nodo se muestre con sus detalles ex
 - GET ` v2/products/list/market_info.json?&expand=[variantsInfo, variant.salePrice, variant.stock]&storeId=1&limit=50&priceListId=6`
 
 
+```Json
+{
+    "code": "200",
+    "href": "https://api.bsale.io//v3/products/markets/info.json?&expand=[variantsInfo, variant.salePrice, collections, descriptions]&storeId=1&priceListId=6&store_id=1",
+    "count": 357,
+    "limit": 1,
+    "offset": 0,
+    "data": [
+        {
+            "id": 5,
+            "productId": 195,
+            "idVariantDefault": 498,
+            "urlSlug": "almendra-natural",
+            "name": "Almendra Natural",
+            "description": "<h3>Semillas de temporada, cultivadas en nuestros campos. Ricas e ideales para cocinar, compartir o comer como snack.</h3>",
+            "descriptions": [],
+            "displayNotice": "",
+            "state": 1,
+            "mkProductType": "normal",
+            "productType": {
+                "id": 2,
+                "href": "https://api.bsale.io/v2/product_types/2.json"
+            },
+            "productTaxes": {
+                "href": "https://api.bsale.io/v3/products/195/product_taxes.json"
+            },
+            "urlImg": "https://dojiw2m9tvv09.cloudfront.net/4210/product/12780.png",
+            "pictures": {
+                "href": "https://api.bsale.io/v3/products/195/product_images.json"
+            },
+            "urlVideo": null,
+            "shippingUnit": 1,
+            "width": 0,
+            "depth": 0,
+            "length": 0,
+            "baseInfo": null,
+            "variants": [
+                {
+                    "id": 109,
+                    "productId": 195,
+                    "description": "1kg",
+                    "unlimitedStock": 0,
+                    "allowNegativeStock": 0,
+                    "showInEcommerce": 1,
+                    "state": 0,
+                    "barCode": "1575388264",
+                    "code": "1575388264",
+                    "imagestionCenterCost": 0,
+                    "imagestionAccount": 0,
+                    "imagestionConceptCod": 0,
+                    "imagestionProyectCod": 0,
+                    "imagestionCategoryCod": 0,
+                    "imagestionProductId": 0,
+                    "serialNumber": 0,
+                    "prestashopCombinationId": 0,
+                    "prestashopValueId": 0,
+                    "prestashopSync": 0,
+                    "booticValueId": 0,
+                    "booticSync": 0,
+                    "attributeValues": [],
+                    "prices": [],
+                    "salePrices": {
+                        "price": "10882.0",
+                        "finalPrice": "12950.0",
+                        "fpWithoutDiscount": "12950.0",
+                        "taxPrice": "2068.0",
+                        "taxDiscountPrice": "2068.0",
+                        "netDiscountPrice": "10882.0"
+                    },
+                    "discounts": {
+                        "href": "https://api.bsale.io/v2/variants/109/discounts.json"
+                    },
+                    "stockInfo": {
+                        "href": "https://api.bsale.io/v2/stocks.json?variant=109"
+                    },
+                    "href": "https://api.bsale.io/v2/variants/109.json",
+                    "integration": {
+                        "meli": "25221674761",
+                        "google_shopping": "[]",
+                        "facebook_shopping": "[{\"id\": \"4210_93\", \"mk_id\": \"3\"}]"
+                    },
+                    "variantMarket": {},
+                    "shipping": {
+                        "href": "https://api.bsale.io/v3/products/markets/info.json?product_id=195&expand=shipping"
+                    }
+                },
+                {
+                    "id": 498,
+                    "productId": 195,
+                    "description": "400g",
+                    "unlimitedStock": 0,
+                    "allowNegativeStock": 0,
+                    "showInEcommerce": 1,
+                    "state": 0,
+                    "barCode": "7804654580498",
+                    "code": "1450283275",
+                    "imagestionCenterCost": 0,
+                    "imagestionAccount": 0,
+                    "imagestionConceptCod": 0,
+                    "imagestionProyectCod": 0,
+                    "imagestionCategoryCod": 0,
+                    "imagestionProductId": 0,
+                    "serialNumber": 0,
+                    "prestashopCombinationId": 0,
+                    "prestashopValueId": 0,
+                    "prestashopSync": 0,
+                    "booticValueId": 0,
+                    "booticSync": 0,
+                    "attributeValues": [],
+                    "prices": [],
+                    "salePrices": {
+                        "price": "5252.0",
+                        "finalPrice": "6250.0",
+                        "fpWithoutDiscount": "6250.0",
+                        "taxPrice": "998.0",
+                        "taxDiscountPrice": "998.0",
+                        "netDiscountPrice": "5252.0"
+                    },
+                    "discounts": {
+                        "href": "https://api.bsale.io/v2/variants/498/discounts.json"
+                    },
+                    "stockInfo": {
+                        "href": "https://api.bsale.io/v2/stocks.json?variant=498"
+                    },
+                    "href": "https://api.bsale.io/v2/variants/498.json",
+                    "integration": {
+                        "google_shopping": "[{\"id\": \"online:es:CL:1450283275\", \"mk_id\": \"4\"}]",
+                        "facebook_shopping": "[{\"id\": \"4210_93\", \"mk_id\": \"3\"}]"
+                    },
+                    "variantMarket": {},
+                    "shipping": {
+                        "href": "https://api.bsale.io/v3/products/markets/info.json?product_id=195&expand=shipping"
+                    }
+                }
+            ],
+            "relatedVariants": {
+                "href": "https://api.bsale.io/v3/products/195/variants.json"
+            },
+            "collections": [
+                {
+                    "id": 9,
+                    "name": "Semillas",
+                    "urlSlug": "Semillas",
+                    "state": 0,
+                    "description": null,
+                    "image": null,
+                    "lyId": null,
+                    "mkId": 1,
+                    "tdId": null,
+                    "integration": null,
+                    "href": "https://api.bsale.io/v2/collections/9.json"
+                },
+                {
+                    "id": 18,
+                    "name": "Todos los productos",
+                    "urlSlug": "todos-los-productos",
+                    "state": 0,
+                    "description": null,
+                    "image": null,
+                    "lyId": null,
+                    "mkId": 1,
+                    "tdId": null,
+                    "integration": null,
+                    "href": "https://api.bsale.io/v2/collections/18.json"
+                },
+                {
+                    "id": 28,
+                    "name": "Semillas",
+                    "urlSlug": "Semillas",
+                    "state": 1,
+                    "description": null,
+                    "image": null,
+                    "lyId": null,
+                    "mkId": 2,
+                    "tdId": null,
+                    "integration": {
+                        "meli": "MLC1425"
+                    },
+                    "href": "https://api.bsale.io/v2/collections/28.json"
+                },
+                {
+                    "id": 46,
+                    "name": "MÁS VENDIDOS",
+                    "urlSlug": "mas-vendidos",
+                    "state": 1,
+                    "description": null,
+                    "image": null,
+                    "lyId": null,
+                    "mkId": 3,
+                    "tdId": null,
+                    "integration": null,
+                    "href": "https://api.bsale.io/v2/collections/46.json"
+                },
+                {
+                    "id": 51,
+                    "name": "Semillas",
+                    "urlSlug": "Semillas",
+                    "state": 1,
+                    "description": null,
+                    "image": null,
+                    "lyId": null,
+                    "mkId": 3,
+                    "tdId": null,
+                    "integration": {
+                        "facebook_shopping": ""
+                    },
+                    "href": "https://api.bsale.io/v2/collections/51.json"
+                },
+                {
+                    "id": 77,
+                    "name": "Semillas",
+                    "urlSlug": "Semillas",
+                    "state": 0,
+                    "description": null,
+                    "image": null,
+                    "lyId": null,
+                    "mkId": 4,
+                    "tdId": null,
+                    "integration": {
+                        "google_shopping": "{ \"product_type\": \"food > helthy > comida saludable\"}"
+                    },
+                    "href": "https://api.bsale.io/v2/collections/77.json"
+                },
+                {
+                    "id": 83,
+                    "name": "Semillas",
+                    "urlSlug": "Semillas",
+                    "state": 1,
+                    "description": null,
+                    "image": null,
+                    "lyId": null,
+                    "mkId": 4,
+                    "tdId": null,
+                    "integration": {
+                        "google_shopping": "{ \"product_type\": \"frutos secos > frutos secos\"}"
+                    },
+                    "href": "https://api.bsale.io/v2/collections/83.json"
+                },
+                {
+                    "id": 90,
+                    "name": "CANAL TRADICIONAL",
+                    "urlSlug": "canal-tradicional",
+                    "state": 1,
+                    "description": null,
+                    "image": null,
+                    "lyId": null,
+                    "mkId": 3,
+                    "tdId": null,
+                    "integration": null,
+                    "href": "https://api.bsale.io/v2/collections/90.json"
+                },
+                {
+                    "id": 92,
+                    "name": "Google Shooping",
+                    "urlSlug": "google-shooping",
+                    "state": 0,
+                    "description": null,
+                    "image": null,
+                    "lyId": null,
+                    "mkId": 3,
+                    "tdId": null,
+                    "integration": {
+                        "default": "false",
+                        "google_shopping": "{ \"product_type\": \">alimentos\"}"
+                    },
+                    "href": "https://api.bsale.io/v2/collections/92.json"
+                },
+                {
+                    "id": 93,
+                    "name": "FACEBOOK",
+                    "urlSlug": "facebook",
+                    "state": 1,
+                    "description": null,
+                    "image": null,
+                    "lyId": null,
+                    "mkId": 3,
+                    "tdId": null,
+                    "integration": {
+                        "default": "false",
+                        "facebook_shopping": "{\"url\": \"https://s3.amazonaws.com/bsalemarket/facebook_xml/4210/93_4210.xml\"}"
+                    },
+                    "href": "https://api.bsale.io/v2/collections/93.json"
+                },
+                {
+                    "id": 96,
+                    "name": "CYBER DESPENSA",
+                    "urlSlug": "cyber-despensa",
+                    "state": 1,
+                    "description": null,
+                    "image": null,
+                    "lyId": null,
+                    "mkId": 3,
+                    "tdId": null,
+                    "integration": null,
+                    "href": "https://api.bsale.io/v2/collections/96.json"
+                },
+                {
+                    "id": 52,
+                    "name": "Frutos Secos",
+                    "urlSlug": "frutos-secos",
+                    "state": 1,
+                    "description": null,
+                    "image": null,
+                    "lyId": null,
+                    "mkId": 3,
+                    "tdId": null,
+                    "integration": null,
+                    "href": "https://api.bsale.io/v2/collections/52.json"
+                }
+            ],
+            "brand": {
+                "href": "https://api.bsale.io/v3/products/195/brand.json"
+            },
+            "variantShipping": {
+                "href": "https://api.bsale.io/v3/products/market_info/5/variant_shipping.json"
+            },
+            "discounts": null,
+            "stocks": {
+                "href": "https://api.bsale.io/v2/stocks.json?product=195"
+            },
+            "integration": {
+                "order_by": 0,
+                "meli-331147323": "MLC462192526"
+            },
+            "variant": {
+                "id": 498,
+                "price": null,
+                "description": null,
+                "finalPrice": null,
+                "unlimitedStock": null,
+                "allowDecimal": null,
+                "allowNegativeStock": null,
+                "code": "1450283275",
+                "integrations": null,
+                "discount": {
+                    "percent": null,
+                    "minimumQuantity": null
+                }
+            },
+            "order": 10,
+            "link": "product/almendra-natural"
+        }
+    ],
+    "next": "https://api.bsale.io//v3/products/markets/info.json?limit=1&offset=1&expand=[variantsInfo, variant.salePrice, collections, descriptions]&storeId=1&priceListId=6&store_id=1"
+}
+```
+
+
 ## GET descripciones web
 - GET ` /v1/markets/:idMarket/products/market_info.json` retornará las descripciones de productos publicados en el ecommerce
 
