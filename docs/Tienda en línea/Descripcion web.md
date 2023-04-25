@@ -438,7 +438,7 @@ Parámetros que permiten que  un determinado nodo se muestre con sus detalles ex
 ```
 
 
-## GET Descripciones por e-commerce web
+## GET Descripciones web por tienda
 - GET ` /v1/markets/:idMarket/products/market_info.json` retornará la lista de descripciones de productos publicados en  un e-commerce en particular. Retorna un esquema resumen de la descripción.
 
 #### Parámetros
