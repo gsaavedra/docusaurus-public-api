@@ -39,11 +39,11 @@ Listar productos y servicios que se contengan en la tienda en línea de Bsale.
 | **totalStock**|   Stock total del producto web | Integer |
 | **collections**| Nodo que indica las colecciones asociadas al producto web | | 
 
-## GET lista de productps y sus descripciones web
+## GET lista de productos y sus descripciones web
 
 - GET `/v2/products/list/market_info.json` retornará la lista de todos los productos y sus descripciones web, incluyendo la lista de variantes.
 
-### Expanders
+#### Expanders
 
 - **descriptions**, permite desplegar el detalle de las descricciones asociadas  a un determinado producto, además de la descripción por defecto.
 - **productType**, permite desplegar el tipo de producto y sus características.
@@ -62,7 +62,7 @@ Listar productos y servicios que se contengan en la tienda en línea de Bsale.
 - **brand**, permite desplegar la infromación de la marca asociada al producto y su descripción web.
 - 
 
-### Parámetros y filtros
+#### Parámetros y filtros
 - **limit**, limita la cantidad de items de una respuesta JSON, por defecto el limit es 25, el máximo permitido es 50.
 - **offset**, permite paginar los items de una respuesta JSON, por defecto el offset es 0.
 - **limit**, limita la cantidad de items de una respuesta JSON, por defecto el limit es 25, el máximo permitido es 50.
