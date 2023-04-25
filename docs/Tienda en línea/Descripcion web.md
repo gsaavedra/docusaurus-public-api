@@ -46,7 +46,7 @@ Listar productos y servicios que se contengan en la tienda en línea de Bsale.
 
 ## GET lista de productos y sus descripciones web
 
-- GET `/v2/products/list/market_info.json` retornará la lista de todos los productos y sus descripciones web, incluyendo la lista de variantes.
+- GET `/v2/products/list/market_info.json` retornará la lista de todos los productos y sus descripciones web.
 
 #### Expanders
 
