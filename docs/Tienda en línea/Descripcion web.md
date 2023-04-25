@@ -438,8 +438,8 @@ Parámetros que permiten que  un determinado nodo se muestre con sus detalles ex
 ```
 
 
-## GET descripciones web
-- GET ` /v1/markets/:idMarket/products/market_info.json` retornará las descripciones de productos publicados en el ecommerce
+## GET Descripciones por e-commerce web
+- GET ` /v1/markets/:idMarket/products/market_info.json` retornará la lista de descripciones de productos publicados en  un e-commerce en particular. Retorna un esquema resumen de la descripción.
 
 #### Parámetros
 - **limit**, limita la cantidad de items de una respuesta JSON, por defecto el limit es 25, el máximo permitido es 50.
