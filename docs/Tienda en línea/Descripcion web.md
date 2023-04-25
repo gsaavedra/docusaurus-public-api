@@ -39,6 +39,51 @@ Listar productos y servicios que se contengan en la tienda en línea de Bsale.
 | **totalStock**|   Stock total del producto web | Integer |
 | **collections**| Nodo que indica las colecciones asociadas al producto web | | 
 
+## GET lista de productps y sus descripciones web
+
+- GET `/v2/products/list/market_info.json` retornará la lista de todos los productos y sus descripciones web, incluyendo la lista de variantes.
+
+### Expanders
+
+- **descriptions**, permite desplegar el detalle de las descricciones asociadas  a un determinado producto, además de la descripción por defecto.
+- **productType**, permite desplegar el tipo de producto y sus características.
+- **productTaxes**, permite desplegar los impuestos asociados al producto. Es importante notar que los precios que se despliegan ya contienen estos impuestos.
+- **images**, permite desplegar la lista de las imágenes asociadas al producto.
+- **baseInfo**, permite desplegar la infromación base del producto, esta complementa a la descripción web del mismo.
+- **stockInfo**, despliega la infromación del stock del producto en las diferentes sucursales. Se puede filtrar  agregando el parámetro "storeId", El stock devuelto es el de la sumaroria de las variantes que  componen el producto
+- **variantsInfo**, permite  desplegar la infromación asociada a las variantes que componen eel producto.
+- **relatedVariants**, permite desplegar las variantes que están definidas como variantes relacionadas al producto.
+- **attributeValues**, permite desplegar los atributos dinámicos de la variante, es decir la lista de los atributos definidos por el usuario y que complementan la infromación base del mismo.
+- **variant.salePrice**, permite desplegar  los precios de venta de cada una de las variantes asociadas al un producto. Es importante que en los parámetros de debe agregar "priceListId"
+- **variant.discount**, permite desplegar los descuentos asociados a cada variante.
+- **variant.stock**, permite desplegar el stock asociada a cada variante, disponible en cada sucursal. Esto se puede filtrar por "storeId" el cual debe agregarse como parámetro.
+- **variantShipping**, retorla la lista de los volúmenes y pesos de las variantes asociadas al producto.
+- **collections**, permite desplegar las especicifaciones de las colecciones en las cuales el productos se encuentra publicado.
+- **brand**, permite desplegar la infromación de la marca asociada al producto y su descripción web.
+- 
+
+### Parámetros y filtros
+- **limit**, limita la cantidad de items de una respuesta JSON, por defecto el limit es 25, el máximo permitido es 50.
+- **offset**, permite paginar los items de una respuesta JSON, por defecto el offset es 0.
+- **limit**, limita la cantidad de items de una respuesta JSON, por defecto el limit es 25, el máximo permitido es 50.
+- **productWfId**, permite filtrar por  el Id del producto web, es decir por el Id de su descripción.
+- **productId**, permite filtrar por el Id del producto.
+- **collId**, permite filtar por coleccion id.
+- **code**, permite filtrar por el SKU de una variante, lo cual retorna el productos y todas las variantes de este.
+- **productWebType**, permite filtrar los productos asociados a un determinado tipo
+- **urlSlug**, permite filtrar por el Slug del producto
+- **name**, Permite filtrar por el nombre del producto (se debe tener precente que es una igualdad)
+- **prodArray**, Permite filtrar una lista de productos cuyos Id se encuentren en un arreglo de Id's.
+- **storeId**, si es que se solicita una expanción del stock del producto se puede filtrar por el Id de una determianda sucursal
+- **offices**, si es que se solicita una expanción sel stock del producto se puede filtrar por una arreglo de Store Id's
+- **priceListId**, si es que se se solicitó una expanción  del precio de las variantes es **mandatorio** indicar el Id de la lista de precio
+- **allVariantShows**, este filtro permite que, si es que se ha expandido para que desplieguen las variantes,  se muestren todas las variantes independientemente si están o no marcadas para ser desplegadas en el e-commerce. El valor que espera es 1.
+- **allVariantStates**, este filtro permite que, si es que se ha expandido para que desplieguen las variantes,  se muestren todas independientemente si estas están o no activas. El valor que espera es 1.
+
+#### Ejemplos
+- `GET v2/products/list/market_info.json?&expand=[variantsInfo, variant.salePrice, variant.stock]&storeId=1&limit=50&priceListId=6`
+
+
 ## GET descripciones web
 - GET ` /v1/markets/:idMarket/products/market_info.json` retornará las descripciones de productos publicados en el ecommerce
 
@@ -46,7 +91,6 @@ Listar productos y servicios que se contengan en la tienda en línea de Bsale.
 - **limit**, limita la cantidad de items de una respuesta JSON, por defecto el limit es 25, el máximo permitido es 50.
 - **offset**, permite paginar los items de una respuesta JSON, por defecto el offset es 0.
 - **limit**, limita la cantidad de items de una respuesta JSON, por defecto el limit es 25, el máximo permitido es 50.
-- **offset**, permite paginar los items de una respuesta JSON, por defecto el offset es 0.
 - **collId**, permite filtar por coleccion id.
 - **accessorieId**, Permite filtrar por id de accesorio relacionado al producto
 - **productWfId**, permite filtrar por producto web id.
