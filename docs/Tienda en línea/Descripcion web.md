@@ -44,7 +44,7 @@ Listar productos y servicios que se contengan en la tienda en línea de Bsale.
 | **order**| Nodo que indica el orden de despliegue del producto dentro de la colección |Integer|
 | **link**|Nodo sociado a la URL donde está publicado|String|
 
-## GET lista de productos y sus descripciones web
+## GET Lista de descripciones web
 
 - GET `/v2/products/list/market_info.json` retornará la lista de todos los productos y sus descripciones web.
 
