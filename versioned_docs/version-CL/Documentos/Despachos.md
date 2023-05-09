@@ -8,7 +8,7 @@ slug: /documentos/despachos
 
 # Despacho
 
-Generación de documentos tipo despacho. _(ej Guías de despacho electrónicas)_, listar despachos generados, detalles incluidos en el despacho. .
+Generación de documentos tipo despacho. _(ej Guías de despacho electrónicas)_, listar despachos generados, detalles incluidos en el despacho.
 
 Cómo funciona la interfaz de Bsale, mira éstos videos:
 

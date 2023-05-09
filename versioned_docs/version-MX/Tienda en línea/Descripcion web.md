@@ -38,15 +38,282 @@ Listar productos y servicios que se contengan en la tienda en línea de Bsale.
 | **order**|   Posición del producto web | Integer |
 | **totalStock**|   Stock total del producto web | Integer |
 | **collections**| Nodo que indica las colecciones asociadas al producto web | | 
+| **brand**| Nodo que muestra la marca asociada al producto | String / Array |
+| **order**| Nodo que indica el orden de despliegue del producto dentro de la colección |Integer|
+| **link**|Nodo sociado a la URL donde está publicado|String|
 
-## GET descripciones web
-- GET ` /v1/markets/:idMarket/products/market_info.json` retornará las descripciones de productos publicados en el ecommerce
+## GET lista de descripciones web
+
+- GET `/v2/products/list/market_info.json` retornará la lista de todos los productos y sus descripciones web.
+
+#### Expanders
+Parámetros que permiten que un determinado nodo se expanda. 
+
+:::info
+Estos deben ser agregados de dentro del atributo expand. Ej: (`expand=[variantsInfo,variant.salePrice,variant.stock]`)
+:::
+
+- **descriptions**, permite desplegar el detalle de las descripciones asociadas a un determinado producto, además de la descripción por defecto.
+- **productType**, permite desplegar el tipo de producto y sus características.
+- **productTaxes**, permite desplegar los impuestos asociados al producto. Es importante notar que los precios que se despliegan ya contienen estos impuestos.
+- **images**, permite desplegar la lista de las imágenes asociadas al producto.
+- **baseInfo**, permite desplegar la información base del producto, esta complementa a la descripción web del mismo.
+- **variantsInfo**, permite  desplegar la infromación asociada a las variantes que componen el producto.
+- **relatedVariants**, permite desplegar las variantes que están definidas como variantes relacionadas al producto.
+- **attributeValues**, permite desplegar los atributos dinámicos de la variante, es decir la lista de los atributos definidos por el usuario y que complementan la infromación base del mismo.
+- **variant.salePrice**, permite desplegar  los precios de venta de cada una de las variantes asociadas al un producto. Es importante que en los parámetros de debe agregar `priceListId`
+- **variant.discount**, permite desplegar los descuentos asociados a cada variante.
+- **variant.stock**, permite desplegar el stock asociada a cada variante, disponible en cada sucursal. Esto se puede filtrar por `storeId` el cual debe agregarse como parámetro.
+- **variantShipping**, retorna la lista de los volúmenes y pesos de las variantes asociadas al producto.
+- **collections**, permite desplegar las especicifaciones de las colecciones en las cuales el productos se encuentra publicado.
+- **brand**, permite desplegar la infromación de la marca asociada al producto y su descripción web
 
 #### Parámetros
-- **limit**, limita la cantidad de items de una respuesta JSON, por defecto el limit es 25, el máximo permitido es 50.
-- **offset**, permite paginar los items de una respuesta JSON, por defecto el offset es 0.
-- **limit**, limita la cantidad de items de una respuesta JSON, por defecto el limit es 25, el máximo permitido es 50.
-- **offset**, permite paginar los items de una respuesta JSON, por defecto el offset es 0.
+
+- **limit**, limita la cantidad de ítems de una respuesta JSON, por defecto el limit es 25, el máximo permitido es 50.
+- **offset**, permite paginar los ítems de una respuesta JSON, por defecto el offset es 0.
+- **productWfId**, permite filtrar por  el Id del producto web, es decir por el Id de su descripción.
+- **productId**, permite filtrar por el Id del producto.
+- **collId**, permite filtar por coleccion id.
+- **code**, permite filtrar por el SKU de una variante, lo cual retorna el productos y todas las variantes de este.
+- **productWebType**, permite filtrar los productos asociados a un determinado tipo
+- **urlSlug**, permite filtrar por el Slug del producto
+- **name**, Permite filtrar por el nombre del producto (se debe tener presente que es una igualdad)
+- **prodArray**, Permite filtrar una lista de productos cuyos Id se encuentren en un arreglo de Id's.
+- **storeId**, si es que se solicita una expanción del stock del producto se puede filtrar por el Id de una determianda sucursal
+- **offices**, si es que se solicita una expanción sel stock del producto se puede filtrar por una arreglo de Store Id's
+- **priceListId**, si es que se se solicitó una expanción  del precio de las variantes es **mandatorio** indicar el Id de la lista de precio
+- **allVariantShows**, este filtro permite que, si es que se ha expandido para que desplieguen las variantes, se muestren todas las variantes independientemente si están o no marcadas para ser desplegadas en el e-commerce. El valor que espera es 1.
+- **allVariantStates**, este filtro permite que, si es que se ha expandido para que desplieguen las variantes, se muestren todas independientemente si estas están o no activas. El valor que espera es 1.
+
+#### Ejemplos
+- GET `v2/products/list/market_info.json?&expand=[variantsInfo,variant.salePrice,variant.stock]&storeId=1&limit=50&priceListId=6`
+
+
+```json
+{
+    "code": "200",
+    "href": "https://api.bsale.io/v3/products/markets/info.json?&expand=[variantsInfo,variant.salePrice, collections, descriptions]&storeId=1&priceListId=6&store_id=1",
+    "count": 357,
+    "limit": 1,
+    "offset": 0,
+    "data": [
+        {
+            "id": 5,
+            "productId": 195,
+            "idVariantDefault": 498,
+            "urlSlug": "almendra-natural",
+            "name": "Almendra Natural",
+            "description": "<h3>Semillas de temporada, cultivadas en nuestros campos. Ricas e ideales para cocinar, compartir o comer como snack.</h3>",
+            "descriptions": [],
+            "displayNotice": "",
+            "state": 1,
+            "mkProductType": "normal",
+            "productType": {
+                "id": 2,
+                "href": "https://api.bsale.io/v2/product_types/2.json"
+            },
+            "productTaxes": {
+                "href": "https://api.bsale.io/v3/products/195/product_taxes.json"
+            },
+            "urlImg": "https://dojiw2m9tvv09.cloudfront.net/4210/product/12780.png",
+            "pictures": {
+                "href": "https://api.bsale.io/v3/products/195/product_images.json"
+            },
+            "urlVideo": null,
+            "shippingUnit": 1,
+            "width": 0,
+            "depth": 0,
+            "length": 0,
+            "baseInfo": null,
+            "variants": [
+                {
+                    "id": 109,
+                    "productId": 195,
+                    "description": "1kg",
+                    "unlimitedStock": 0,
+                    "allowNegativeStock": 0,
+                    "showInEcommerce": 1,
+                    "state": 0,
+                    "barCode": "1575388264",
+                    "code": "1575388264",
+                    "imagestionCenterCost": 0,
+                    "imagestionAccount": 0,
+                    "imagestionConceptCod": 0,
+                    "imagestionProyectCod": 0,
+                    "imagestionCategoryCod": 0,
+                    "imagestionProductId": 0,
+                    "serialNumber": 0,
+                    "prestashopCombinationId": 0,
+                    "prestashopValueId": 0,
+                    "prestashopSync": 0,
+                    "booticValueId": 0,
+                    "booticSync": 0,
+                    "attributeValues": [],
+                    "prices": [],
+                    "salePrices": {
+                        "price": "10882.0",
+                        "finalPrice": "12950.0",
+                        "fpWithoutDiscount": "12950.0",
+                        "taxPrice": "2068.0",
+                        "taxDiscountPrice": "2068.0",
+                        "netDiscountPrice": "10882.0"
+                    },
+                    "discounts": {
+                        "href": "https://api.bsale.io/v2/variants/109/discounts.json"
+                    },
+                    "stockInfo": {
+                        "href": "https://api.bsale.io/v2/stocks.json?variant=109"
+                    },
+                    "href": "https://api.bsale.io/v2/variants/109.json",
+                    "integration": {
+                        "meli": "25221674761",
+                        "google_shopping": "[]",
+                        "facebook_shopping": "[{\"id\": \"4210_93\", \"mk_id\": \"3\"}]"
+                    },
+                    "variantMarket": {},
+                    "shipping": {
+                        "href": "https://api.bsale.io/v3/products/markets/info.json?product_id=195&expand=shipping"
+                    }
+                },
+                {
+                    "id": 498,
+                    "productId": 195,
+                    "description": "400g",
+                    "unlimitedStock": 0,
+                    "allowNegativeStock": 0,
+                    "showInEcommerce": 1,
+                    "state": 0,
+                    "barCode": "7804654580498",
+                    "code": "1450283275",
+                    "imagestionCenterCost": 0,
+                    "imagestionAccount": 0,
+                    "imagestionConceptCod": 0,
+                    "imagestionProyectCod": 0,
+                    "imagestionCategoryCod": 0,
+                    "imagestionProductId": 0,
+                    "serialNumber": 0,
+                    "prestashopCombinationId": 0,
+                    "prestashopValueId": 0,
+                    "prestashopSync": 0,
+                    "booticValueId": 0,
+                    "booticSync": 0,
+                    "attributeValues": [],
+                    "prices": [],
+                    "salePrices": {
+                        "price": "5252.0",
+                        "finalPrice": "6250.0",
+                        "fpWithoutDiscount": "6250.0",
+                        "taxPrice": "998.0",
+                        "taxDiscountPrice": "998.0",
+                        "netDiscountPrice": "5252.0"
+                    },
+                    "discounts": {
+                        "href": "https://api.bsale.io/v2/variants/498/discounts.json"
+                    },
+                    "stockInfo": {
+                        "href": "https://api.bsale.io/v2/stocks.json?variant=498"
+                    },
+                    "href": "https://api.bsale.io/v2/variants/498.json",
+                    "integration": {
+                        "google_shopping": "[{\"id\": \"online:es:CL:1450283275\", \"mk_id\": \"4\"}]",
+                        "facebook_shopping": "[{\"id\": \"4210_93\", \"mk_id\": \"3\"}]"
+                    },
+                    "variantMarket": {},
+                    "shipping": {
+                        "href": "https://api.bsale.io/v3/products/markets/info.json?product_id=195&expand=shipping"
+                    }
+                }
+            ],
+            "relatedVariants": {
+                "href": "https://api.bsale.io/v3/products/195/variants.json"
+            },
+            "collections": [
+                {
+                    "id": 9,
+                    "name": "Semillas",
+                    "urlSlug": "Semillas",
+                    "state": 0,
+                    "description": null,
+                    "image": null,
+                    "lyId": null,
+                    "mkId": 1,
+                    "tdId": null,
+                    "integration": null,
+                    "href": "https://api.bsale.io/v2/collections/9.json"
+                },
+                {
+                    "id": 18,
+                    "name": "Todos los productos",
+                    "urlSlug": "todos-los-productos",
+                    "state": 0,
+                    "description": null,
+                    "image": null,
+                    "lyId": null,
+                    "mkId": 1,
+                    "tdId": null,
+                    "integration": null,
+                    "href": "https://api.bsale.io/v2/collections/18.json"
+                },
+                {
+                    "id": 96,
+                    "name": "CYBER",
+                    "urlSlug": "cyber",
+                    "state": 1,
+                    "description": null,
+                    "image": null,
+                    "lyId": null,
+                    "mkId": 3,
+                    "tdId": null,
+                    "integration": null,
+                    "href": "https://api.bsale.io/v2/collections/96.json"
+                }
+            ],
+            "brand": {
+                "href": "https://api.bsale.io/v3/products/195/brand.json"
+            },
+            "variantShipping": {
+                "href": "https://api.bsale.io/v3/products/market_info/5/variant_shipping.json"
+            },
+            "discounts": null,
+            "stocks": {
+                "href": "https://api.bsale.io/v2/stocks.json?product=195"
+            },
+            "integration": {
+                "order_by": 0,
+                "meli-331147323": "MLC462192526"
+            },
+            "variant": {
+                "id": 498,
+                "price": null,
+                "description": null,
+                "finalPrice": null,
+                "unlimitedStock": null,
+                "allowDecimal": null,
+                "allowNegativeStock": null,
+                "code": "1450283275",
+                "integrations": null,
+                "discount": {
+                    "percent": null,
+                    "minimumQuantity": null
+                }
+            },
+            "order": 10,
+            "link": "product/almendra-natural"
+        }
+    ],
+    "next": "https://api.bsale.io//v3/products/markets/info.json?limit=1&offset=1&expand=[variantsInfo,variant.salePrice,collections,descriptions]&storeId=1&priceListId=6&store_id=1"
+}
+```
+
+## GET descripciones web por tienda
+- GET ` /v1/markets/:idMarket/products/market_info.json` retornará las descripciones de productos publicados en un ecommerce
+
+#### Parámetros
+- **limit**, limita la cantidad de ítems de una respuesta JSON, por defecto el limit es 25, el máximo permitido es 50.
+- **offset**, permite paginar los ítems de una respuesta JSON, por defecto el offset es 0.
+- **limit**, limita la cantidad de ítems de una respuesta JSON, por defecto el limit es 25, el máximo permitido es 50.
+- **offset**, permite paginar los ítems de una respuesta JSON, por defecto el offset es 0.
 - **collId**, permite filtar por coleccion id.
 - **accessorieId**, Permite filtrar por id de accesorio relacionado al producto
 - **productWfId**, permite filtrar por producto web id.
@@ -151,8 +418,8 @@ Las colecciones son un conjunto de productos web asociados por un criterio basad
 :::
 
 #### Parámetros
-- **limit** limita la cantidad de items de una respuesta JSON, por defecto el limit es 25, el máximo permitido es 50.
-- **offset** permite paginar los items de una respuesta JSON, por defecto el offset es 0.
+- **limit** limita la cantidad de ítems de una respuesta JSON, por defecto el limit es 25, el máximo permitido es 50.
+- **offset** permite paginar los ítems de una respuesta JSON, por defecto el offset es 0.
 - **state** Permite filtrar sólo colecciones activas.
 - **integration** Permite obtener  las colecciones asociadla a una integración
   
@@ -284,8 +551,8 @@ Las colecciones son un conjunto de productos web asociados por un criterio basad
 - GET `/v2/products/market_info/23/pictures.json` Retornará las imagenes del producto web.
 
 #### Parámetros
-- **limit** limita la cantidad de items de una respuesta JSON, por defecto el limit es 25, el máximo permitido es 50.
-- **offset** permite paginar los items de una respuesta JSON, por defecto el offset es 0.
+- **limit** limita la cantidad de ítems de una respuesta JSON, por defecto el limit es 25, el máximo permitido es 50.
+- **offset** permite paginar los ítems de una respuesta JSON, por defecto el offset es 0.
 - **productId** id del producto (int)
 - **expand** indicar opcional para expandir nodos (String)
 

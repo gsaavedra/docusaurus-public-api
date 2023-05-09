@@ -1,12 +1,12 @@
 ---
 sidebar_position: 11
-title: Despachos
+title: Despachos (Guía de remisión)
 description: Crear, editar y listar despachos
 slug: /documentos/despachos
 ---
 
 
-# Despacho
+# Despacho (Guía de remisión)
 
 Generación de documentos tipo despacho. _(ej Guías de remisión electrónicas)_, listar despachos generados, detalles incluidos en el despacho. .
 

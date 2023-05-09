@@ -39,17 +39,17 @@ const config = {
           versions: {
             CL: {
               banner: "none",
-              label: '⚪ CL',
+              label: '📄 CL',
               badge: true,
               path: '/CL',
             },
             PE: {
               banner: "none",
-              label: '⚪ PE',
+              label: '📄 PE',
             },
             MX: {
-              label: '⚪ MX',
-              banner: "unmaintained"
+              label: '📄 MX',
+              banner: "none"
             }
           }
           // Please change this to your repo.
@@ -80,7 +80,7 @@ const config = {
          {
             to: '/faq',
             position: 'left',
-            label: 'faq',
+            label: '📃 faq',
           },
           {
             type: 'docsVersionDropdown',
