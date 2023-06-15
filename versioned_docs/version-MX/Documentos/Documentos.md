@@ -534,11 +534,7 @@ Retorna los [atributos dinámicos](/MX/atributos-dinamicos) asociados al documen
 ## POST un documento
 - POST `/v1/documents.json`
 
-:::note
-La generación de documentos sólo se soportan documentos no electrónicos
-:::
-
-Para crear un documento de venta ya sea electrónico (Factura y Boleta Electrónica) o no (Nota de venta, Factura y Boleta manual), se debe enviar un JSON con la siguiente estructura:
+Para crear un documento de venta ya sea electrónico (ej Factura) o no (ej ticket), se debe enviar un JSON con la siguiente estructura:
 
 ### Referencias y fechas
 

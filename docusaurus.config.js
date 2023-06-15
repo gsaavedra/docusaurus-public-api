@@ -55,6 +55,10 @@ const config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
         },
+        gtag: {
+          trackingID: 'G-999X9XX9XX',
+          anonymizeIP: true,
+        },
         blog: {
           showReadingTime: false,
           // Please change this to your repo.
