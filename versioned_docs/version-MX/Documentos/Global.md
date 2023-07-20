@@ -1,7 +1,7 @@
 ---
 sidebar_position: 10
 title: Factura Global
-description: Crear, editar y listar documentos
+description: Crear y listar facturas globales
 slug: /factura-global
 ---
 
@@ -436,6 +436,7 @@ La generación de una factura global, consta de dos partes:
 - **emissionDate**, Fecha de emisión del documento (Integer) (no se debe aplicar zona horaria, solo considerar la fecha).
 - **declare**, Si se desea declarar el documento ante SAT se envía 1, en caso contrario un 0 (Boolean).
 - **cfdiUse**, Código uso cfdi del documento a generar (String).
+- **cfdiPaymentTypeCode**, Código de forma de pago (String).
 - **cfdiOrigin**, Origen de cfdi, servirá para identificar el origen. Se visualiza en reportes. (Integer)
 - **globalCfdiPeriodicity**, Periodicidad del cfdi (Integer)
   - 1, diaria. 
@@ -491,18 +492,14 @@ Para la emisión de una factura global el cliente es `PUBLICO GENERAL`, Bsale ti
 Se pueden especificar los pagos asociados al documento, se requiere un nodo similar a:
 ```json 
 {
-    "payments": [
-        {
-            "paymentTypeId": 1,
-            "amount": 233.26,
-            "recordDate": 1677706909
-        }
-    ]
+    "cfdiPaymentTypeCode": "03",
 }
 ```
-- **paymentTypeId**, [Id de la forma de pago](/MX/formas-de-pago) utilizada en el pago del documento (Integer).
-- **amount**, monto del pago del documento (Integer).
-- **recordDate**, Fecha en la cual se realizo el pago del documento, se envía en formato GMT (Integer).
+- **cfdiPaymentTypeCode**, Código de la forma de pago SAT
+
+:::info
+La factura global sólo defina una forma de pago asociada al documento
+:::
 
 ### Ejemplo JSON
 
@@ -513,6 +510,7 @@ Se pueden especificar los pagos asociados al documento, se requiere un nodo simi
     "officeId": 1,
     "emissionDate": 1685318400,
     "cfdiUse": "CP01",
+    "cfdiPaymentTypeCode": "03",
     "cfdiOrigin": "1",
     "globalCfdiPeriodicity": 1,
     "globalCfdiMonth": 5,
@@ -530,13 +528,6 @@ Se pueden especificar los pagos asociados al documento, se requiere un nodo simi
             "quantity": 1,
             "comment": "Factura global",
             "taxId": "[2]"
-        }
-    ],
-    "payments": [
-        {
-            "paymentTypeId": 1,
-            "amount": 233.26,
-            "recordDate": 1677706909
         }
     ]
 }

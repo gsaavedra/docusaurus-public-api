@@ -22,7 +22,7 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
   "href": "https://api.bsale.io/v1/taxes/1.json",
   "id": 1,
   "name": "IVA",
-  "percentage": "19.0",
+  "percentage": "18.0",
   "forAllProducts": 0,
   "ledgerAccount": null,
   "code": "14",
@@ -56,6 +56,8 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
 - **ledgeraccount**, filtra por cuenta contable.
 - **state**, boolean (0 o 1) indica si los impuestos están activos(0) inactivos(1).
   
+
+
 #### Ejemplos
 - `GET /v1/taxes.json?limit=10&offset=0`
 - `GET /v1/taxes.json?fields=[name,percentage,state]`
@@ -71,21 +73,21 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
     {
       "href": "https://api.bsale.io/v1/taxes/2.json",
       "id": 2,
-      "name": "Exento",
+      "name": "IVA 0%",
       "percentage": "0.0",
       "forAllProducts": 1,
       "ledgerAccount": null,
-      "code": "0",
+      "code": "002",
       "state": 0
     },
     {
       "href": "https://api.bsale.io/v1/taxes/1.json",
       "id": 1,
       "name": "IVA",
-      "percentage": "19.0",
+      "percentage": "16.0",
       "forAllProducts": 0,
       "ledgerAccount": null,
-      "code": "0",
+      "code": "002",
       "state": 0
     }
   ]
@@ -99,10 +101,10 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
   "href": "https://api.bsale.io/v1/taxes/1.json",
   "id": 1,
   "name": "IVA",
-  "percentage": "19.0",
+  "percentage": "16.0",
   "forAllProducts": 0,
   "ledgerAccount": null,
-  "code": "0",
+  "code": "002",
   "state": 0
 }
 ```
