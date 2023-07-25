@@ -600,7 +600,7 @@ En algunos documentos no es necesario agregar el cliente como en el caso de la b
 ```json 
 {
   "client": {
-    "code": "XAXX010101999",
+    "code": "XA987654321",
     "city": "Capital del Oeste",
     "company": "Capsule Corp",
     "municipality": "Capital del Oeste",
@@ -648,13 +648,13 @@ Si necesitas que Bsale **envie el documento al correo del cliente** puedes agreg
 ```json 
 {
   "client": {
-    "code": "98765432-1",
+    "code": "987654321",
     "city": "Capital del Oeste",
     "company": "Capsule Corp",
     "municipality": "Capital del Oeste",
     "activity": "Development and research",
     "address": "Hoi Poi #750",
-    "email": "dr@brief.cl",
+    "email": "dr@brief.mx",
     "companyOrPerson": 1
   },
   "sendEmail": 1
@@ -855,7 +855,7 @@ Se pueden enviar un id de referencia propio de su sistema para evitar duplicidad
 
 ```json title="201 Response /documents.json "
 {
-  "urlTimbre": "http://s3.amazonaws.com/bsale/timbres/T33_F933.png",
+  "urlTimbre": "http://s3.amazonaws.com/bsale/timbres/T33_F9332.png",
   "client": {
     "href": "https://api.bsale.io/v1/clients/211.json",
     "id": "211"
@@ -870,7 +870,7 @@ Se pueden enviar un id de referencia propio de su sistema para evitar duplicidad
   },
   "urlXml": " ",
   "expirationDate": 1407643200,
-  "municipality": "puerto montt",
+  "municipality": "Morados",
   "netAmount": 53975,
   "totalAmount": 74486,
   "document_type": {
@@ -881,12 +881,12 @@ Se pueden enviar un id de referencia propio de su sistema para evitar duplicidad
   "number": 933,
   "href": "https://api.bsale.io/v1/documents/11561.json",
   "emissionDate": 1407643200,
-  "urlPdf": "http://app.bsale.cl/view/339/a1a3291afd78.pdf",
+  "urlPdf": "http://app.bsale.io/view/339/a1a3291afd78.pdf",
   "id": 11561,
   "references": {
     "href": "https://api.bsale.io/v1/documents/11561/references.json"
   },
-  "city": "puerto montt",
+  "city": "Ciudad de México",
   "state": 0
 }
 ```
@@ -895,5 +895,5 @@ Se pueden enviar un id de referencia propio de su sistema para evitar duplicidad
 
 DELETE `/v1/documents/30.json?officeId=2`, elimina un documento no electrónico
 
-- Se debe enviar la sucursal en la cual se eliminara el documento
+- Se debe enviar la sucursal en la cual se eliminará el documento requerido
 
