@@ -1,28 +1,22 @@
 ---
-id: primeros-pasos
-sidebar_position: 2
-title: Primeros pasos
-description: My document description
-slug: /primeros-pasos
+title: OAuth 2.0
+slug: /oauth
 ---
 
-# Primeros pasos
+# Accesos en producción
 
 Lo primero que debes seguir para conectarte a la API de Bsale es que puedas obtener la autorización para acceder a los recursos de esta. Esta autorización evidentemente la tendrá que dar quien tenga privilegios para ellos y sea el “dueño” de los datos.
 
-## Obtén tu token de acceso
+:::tip
 
-### Token de pruebas
-Para obtener tu `access_token` a un **ambiente de pruebas**, [crea una cuenta](https://account.bsale.dev/users/validate-email) para obtenerlo.
-
-![img alt](/img/copyToken.png)
-
-### Token producción
-Para obtener tu `access_token` y conectar un **ambiente en producción**, debes solicitar al mail ayuda@bsale.app
+Hay **2 formas** de obtener `access_token` en **producción**. _(Si buscas un token para pruebas 👉 [lée acá](/get-started))_
+- Solicitando el token por correo a ayuda@bsale.app
+- O que el usuario se autentifique en tu aplicación mediante el OAuth, que es lo que explicaremos de aqui en adelante 👇
+:::
 
 ### OAuth 2.0
 :::caution
-**Deberás implementar OAuth 2.0 cuando la integración esté lista** y desees que tus clientes conecten ambas apps sin necesidad de pedir un token por mail. 
+**Deberás implementar OAuth 2.0 cuando tu integración esté lista** y desees que tus clientes conecten ambas apps sin necesidad de pedir un token por mail. 
 :::
 #### Cómo funciona OAuth 2.0
 
@@ -64,7 +58,7 @@ Para obtener tu `access_token` y conectar un **ambiente en producción**, debes 
 Perfecto ahora que tenemos claro cómo funciona el protocolo veamos en términos específicos que debes hacer.
 Para ello vamos a dividir el proceso en 3 etapas:
 
-## Etapa I: Grant request
+### Etapa I: Grant request
 En esta etapa es en la que se valida al usuario que dará acceso a la aplicación a la cuenta. Lo primero que debes hacer es  redirigir al usuario a la pantalla de autorización:
 
 ```curl
@@ -75,9 +69,9 @@ Esta llamada debe contener  3 parámetros:
 
 - **app_id** Corresponde  al ID de la aplicación, el cual lo obtienes al registrarla.
 - **redirect_uri** URL al cual se redireccionará  una vez que el usuario autorice.
-- **client_code** Corresponde al código que identifica la instancia, en Perú por ejemplo será el RUC y en Chile el RUT.
+- **client_code** Corresponde al código que identifica la instancia productiva en Bsale. RUT, RUC o RFC.
   
-![img alt](/img/loginOauth.png)
+![img alt](/img/loginOauth2.png)
 
 En esta pantalla el usuario que aprobará deberá loguearse con sus credenciales de Bsale
 
@@ -85,9 +79,9 @@ En esta pantalla el usuario que aprobará deberá loguearse con sus credenciales
 Si las credenciales son correctas el usuario será dirigido a una pantalla donde podrá autorizar el acceso de  la aplicación a los recursos de la empresa o instancia.
 :::
 
-![img alt](/img/authOauth.png)
+![img alt](/img/authOauth2.png)
 
-## Etapa II: Authorization Grant
+### Etapa II: Authorization Grant
 Luego que el usuario autorizó a la aplicación , este será redirigido a la URL que se definió en el parámetro `redirect_uri` y se le concatenará un el código de autorización, el cual podrá usar la aplicación para solicitar su token.
 
 ```curl
@@ -96,7 +90,7 @@ https://ejemplo/v1/oauth/test/?code=xxxx
 Donde
 - **code** código de autorización para ser utilizado en la solicitud de obtención del token.
 
-## Etapa III: Request Access Token
+### Etapa III: Request Access Token
 Excelente ya casi hemos terminado. Ahora   el servidor de autorización te mandó concatenada en tu URL el código el cual podrás utilizar para solicitar el token de acceso.
 
 Con este código deberás hacer una última llamada a la API de autorización mediante un request a :
@@ -128,5 +122,9 @@ Un ejemplo de respuesta sería:
    }
 }
 ```
-
 Y como respuesta tendrás el `access_token` que servirá para autentificar las peticiones a la API
+
+:::danger
+Para solicitar tu **app_id** y utilizar **OAuth**, deberás completar [**este formulario de google**](https://forms.gle/Ucjd6aEb4jY6t89r7). Y te responderemos con las credenciales necesarias para utilizar el servicio y autentificar nuevos clientes de forma mas simple.
+
+:::

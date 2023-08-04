@@ -1042,24 +1042,24 @@ Se pueden enviar un id de referencia propio de su sistema para evitar duplicidad
 {
   "documentTypeId": 8,
   "officeId": 1,
-  "emissionDate": 1407715200,
+  "emissionDate": 1629417600,
   "expirationDate": 1407715200,
   "declare": 1,
   "priceListId": 18,
   "client": {
-    "code": "12345678-9",
-    "city": "Puerto Varas",
-    "company": "Imaginex",
-    "municipality": "comuna",
-    "activity": "giro",
-    "address": "direccion"
+    "code": "20608150091",
+    "address": "CAL. DANIEL ALCIDES CARRION NRO. 111 URB. AMERICA",
+    "district": "MIRAFLORES",
+    "city": "LIMA",
+    "company": "SERVICIOS PERUANOS DE FANTASÍA SOCIEDAD ANONIMA CERRADA",
+    "activity": "Venta al por mayor partes y piezas electrónicos"
   },
   "details": [
     {
       "variantId": 1,
-      "netUnitValue": 53975,
+      "netUnitValue": 0.85,
       "quantity": 1,
-      "taxId": "[1,2]",
+      "taxId": "[1]",
       "comment": "Producto 1",
       "discount": 0
     }
@@ -1067,8 +1067,8 @@ Se pueden enviar un id de referencia propio de su sistema para evitar duplicidad
   "payments": [
     {
       "paymentTypeId": 1,
-      "amount": 70000,
-      "recordDate": 1407715200
+      "amount": 1.0,
+      "recordDate": 1629417600
     }
   ],
   "references": [
@@ -1085,7 +1085,7 @@ Se pueden enviar un id de referencia propio de su sistema para evitar duplicidad
       "dynamicAttributeId": 17
     },
     {
-      "description": "Observacion nomal, sin anotaciones",
+      "description": "Observacion normal, sin anotaciones",
       "dynamicAttributeId": 18
     }
   ]
@@ -1096,39 +1096,80 @@ Se pueden enviar un id de referencia propio de su sistema para evitar duplicidad
 
 ```json title="201 Response /documents.json "
 {
-  "urlTimbre": "http://s3.amazonaws.com/bsale/timbres/T33_F933.png",
-  "client": {
-    "href": "https://api.bsale.io/v1/clients/211.json",
-    "id": "211"
-  },
-  "address": "direccion valida",
-  "token": "a1a3291afd78",
-  "userId": 1,
-  "exemptAmount": 0,
-  "office": {
-    "href": "https://api.bsale.io/v1/offices/1.json",
-    "id": "1"
-  },
-  "urlXml": " ",
-  "expirationDate": 1407643200,
-  "municipality": "puerto montt",
-  "netAmount": 53975,
-  "totalAmount": 74486,
-  "document_type": {
-    "href": "https://api.bsale.io/v1/document_types/8.json",
-    "id": "8"
-  },
-  "taxAmount": 20511,
-  "number": 933,
-  "href": "https://api.bsale.io/v1/documents/11561.json",
-  "emissionDate": 1407643200,
-  "urlPdf": "http://app.bsale.cl/view/339/a1a3291afd78.pdf",
-  "id": 11561,
-  "references": {
-    "href": "https://api.bsale.io/v1/documents/11561/references.json"
-  },
-  "city": "puerto montt",
-  "state": 0
+    "href": "https://api.bsale.io/v1/documents/1.json",
+    "id": 1,
+    "emissionDate": 1629417600,
+    "expirationDate": 1629417600,
+    "generationDate": 1629472463,
+    "number": 1,
+    "serialNumber": "T001-1",
+    "trackingNumber": "CPE1629472464294C888820608153391",
+    "totalAmount": 1.0,
+    "netAmount": 0.85,
+    "taxAmount": 0.15,
+    "exemptAmount": 0.0,
+    "notExemptAmount": 0.85,
+    "exportTotalAmount": 0.0,
+    "exportNetAmount": 0.0,
+    "exportTaxAmount": 0.0,
+    "exportExemptAmount": 0.0,
+    "commissionRate": 0.0,
+    "commissionNetAmount": 0.0,
+    "commissionTaxAmount": 0.0,
+    "commissionTotalAmount": 0.0,
+    "percentageTaxWithheld": 0.0,
+    "purchaseTaxAmount": 0.0,
+    "purchaseTotalAmount": 0.0,
+    "address": "CAL. DANIEL CARRION NRO. 111 URB. AMERICA",
+    "district": "MIRAFLORES",
+    "city": "LIMA",
+    "stamp": "https://s3.amazonaws.com/bsale/8888/timbres/00f31e00cbf39.png",
+    "urlPublicView": "https://app2.bsale.com.pe/view/8888/00f31e00cbf39?sfd=99",
+    "urlPdf": "https://app2.bsale.com.pe/view/8888/00f31e00cbf39.pdf?sfd=99",
+    "urlPublicViewOriginal": "https://app2.bsale.com.pe/view/8888/00f31e00cbf39",
+    "urlPdfOriginal": "https://app2.bsale.com.pe/view/8888/00f31e00cbf39.pdf",
+    "token": "00f31e00cbf39",
+    "state": 0,
+    "commercialState": 0,
+    "urlXml": "https://bsale.s3.amazonaws.com/8888/cpe/CPE1672464294C8888206081.zip",
+    "salesId": null,
+    "informed": 0,
+    "responseMsg": "El Comprobante  numero T001-1, ha sido aceptado",
+    "document_type": {
+        "href": "https://api.bsale.io/v1/document_types/7.json",
+        "id": "7"
+    },
+    "client": {
+        "href": "https://api.bsale.io/v1/clients/2.json",
+        "id": "2"
+    },
+    "office": {
+        "href": "https://api.bsale.io/v1/offices/1.json",
+        "id": "1"
+    },
+    "user": {
+        "href": "https://api.bsale.io/v1/users/2.json",
+        "id": "2"
+    },
+    "coin": {
+        "href": "https://api.bsale.io/v1/coins/1.json",
+        "id": "1"
+    },
+    "references": {
+        "href": "https://api.bsale.io/v1/documents/1/references.json"
+    },
+    "document_taxes": {
+        "href": "https://api.bsale.io/v1/documents/1/document_taxes.json"
+    },
+    "details": {
+        "href": "https://api.bsale.io/v1/documents/1/details.json"
+    },
+    "sellers": {
+        "href": "https://api.bsale.io/v1/documents/1/sellers.json"
+    },
+    "attributes": {
+        "href": "https://api.bsale.io/v1/documents/1/attributes.json"
+    }
 }
 ```
 

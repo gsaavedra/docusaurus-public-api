@@ -75,16 +75,30 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       navbar: {
-        title: 'Inicio',
         logo: {
           alt: 'logo',
           src: 'img/logo.svg',
         },
         items: [
+          {
+            to: '/get-started',
+            position: 'left',
+            label: 'Primeros Pasos',
+          },
+          {
+            to: '/oauth',
+            position: 'left',
+            label: 'OAuth',
+          },
          {
             to: '/faq',
-            position: 'left',
-            label: '📃 faq',
+            position: 'right',
+            label: '📖 faq',
+          },
+          {
+            to: '/changelog',
+            position: 'right',
+            label: '📢 Changelog',
           },
           {
             type: 'docsVersionDropdown',
@@ -106,7 +120,7 @@ const config = {
             items: [
               {
                 label: 'Primeros pasos',
-                to: '/CL/primeros-pasos',
+                to: '/CL/first-steps',
               },
              // {
               //  label: 'Casos de uso',

@@ -140,6 +140,12 @@ https://courier.bsale.io
 - **description**, descripción del detalle (String)
 - **stateId**, id del estado (Integer)
 
+:::tip
+
+El **id** sólo lo obtendrás en el evento notificación que te llegue desde el webhook y se notifica como `resourceId`.
+
+:::
+
 #### Estados del despacho
 :::note
 - **1** Por retirar (Listo para despacho)

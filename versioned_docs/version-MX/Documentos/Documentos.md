@@ -816,8 +816,7 @@ Se pueden enviar un id de referencia propio de su sistema para evitar duplicidad
 {
     "documentTypeId": 5,
     "officeId": 1,
-    "emissionDate": 1674518400,
-    "expirationDate": 1677196800,
+    "emissionDate": 1690848000,
     "declare": 1,
     "priceListId": 1,
     "client": {
@@ -825,8 +824,9 @@ Se pueden enviar un id de referencia propio de su sistema para evitar duplicidad
         "company": "XOCHILT CASAS CHAVEZ",
         "activity": "Giro Informática",
         "municipality": "Colonia",
-        "city": "Ciudad",
-        "address": "Dirección",
+        "city": "Ciudad de Méxic",
+        "district": "Juarez",
+        "address": "Varsovia No. 1000",
         "email": "api@bsale.com.mx",
         "postalCode": "10740",
         "regime": "612"
@@ -835,16 +835,16 @@ Se pueden enviar un id de referencia propio de su sistema para evitar duplicidad
     "details": [
         {
             "variantId": 15,
-            "netUnitValue": 86.210000,
-            "quantity": 10,
+            "netUnitValue": 6974.13,
+            "quantity": 1,
             "taxId": "[1]",
             "discount": 0
         }
     ],
     "payments": [
         {
-            "recordDate": 1566479491,
-            "amount": 1000.03600000,
+            "recordDate": 1690848000,
+            "amount": 8090,
             "paymentTypeId": 1
         }
     ]
@@ -855,45 +855,91 @@ Se pueden enviar un id de referencia propio de su sistema para evitar duplicidad
 
 ```json title="201 Response /documents.json "
 {
-  "urlTimbre": "http://s3.amazonaws.com/bsale/timbres/T33_F9332.png",
-  "client": {
-    "href": "https://api.bsale.io/v1/clients/211.json",
-    "id": "211"
-  },
-  "address": "direccion valida",
-  "token": "a1a3291afd78",
-  "userId": 1,
-  "exemptAmount": 0,
-  "office": {
-    "href": "https://api.bsale.io/v1/offices/1.json",
-    "id": "1"
-  },
-  "urlXml": " ",
-  "expirationDate": 1407643200,
-  "municipality": "Morados",
-  "netAmount": 53975,
-  "totalAmount": 74486,
-  "document_type": {
-    "href": "https://api.bsale.io/v1/document_types/8.json",
-    "id": "8"
-  },
-  "taxAmount": 20511,
-  "number": 933,
-  "href": "https://api.bsale.io/v1/documents/11561.json",
-  "emissionDate": 1407643200,
-  "urlPdf": "http://app.bsale.io/view/339/a1a3291afd78.pdf",
-  "id": 11561,
-  "references": {
-    "href": "https://api.bsale.io/v1/documents/11561/references.json"
-  },
-  "city": "Ciudad de México",
-  "state": 0
+    "href": "https://api.bsale.io/v1/documents/9241.json",
+    "id": 9241,
+    "emissionDate": 1690848000,
+    "expirationDate": 1690848000,
+    "generationDate": 1690936236,
+    "number": 3409,
+    "serialNumber": "0000-3409",
+    "trackingNumber": "",
+    "totalAmount": 8090.0,
+    "netAmount": 6974.137931,
+    "taxAmount": 1115.862069,
+    "exemptAmount": 0.0,
+    "notExemptAmount": 6974.137931,
+    "exportTotalAmount": 0.0,
+    "exportNetAmount": 0.0,
+    "exportTaxAmount": 0.0,
+    "exportExemptAmount": 0.0,
+    "commissionRate": 0.0,
+    "commissionNetAmount": 0.0,
+    "commissionTaxAmount": 0.0,
+    "commissionTotalAmount": 0.0,
+    "percentageTaxWithheld": 0.0,
+    "purchaseTaxAmount": 0.0,
+    "purchaseTotalAmount": 0.0,
+    "address": "Varsovia No. 1000",
+    "district": "Juarez",
+    "city": "Ciudad de México",
+    "stamp": "https://s3.amazonaws.com/bsale/8888/timbres/00816afe6b0.png",
+    "urlPublicView": "https://app2.bsale.com.mx/view/8888/00816afe6b0?sfd=99",
+    "urlPdf": "https://app2.bsale.com.mx/view/8888/00816afe6b0.pdf?sfd=99",
+    "urlPublicViewOriginal": "https://app2.bsale.com.mx/view/8888/00816afe6b0",
+    "urlPdfOriginal": "https://app2.bsale.com.mx/view/8888/00816afe6b0.pdf",
+    "token": "00816afe6b0",
+    "state": 0,
+    "commercialState": 0,
+    "urlXml": "https://bsale.s3.amazonaws.com/8888/cfdi/64c9a3adb163e8b2316bded3.xml",
+    "salesId": null,
+    "informed": 0,
+    "responseMsg": null,
+    "document_type": {
+        "href": "https://api.bsale.io/v1/document_types/5.json",
+        "id": "5"
+    },
+    "client": {
+        "href": "https://api.bsale.io/v1/clients/30.json",
+        "id": "30"
+    },
+    "office": {
+        "href": "https://api.bsale.io/v1/offices/1.json",
+        "id": "1"
+    },
+    "user": {
+        "href": "https://api.bsale.io/v1/users/2.json",
+        "id": "2"
+    },
+    "coin": {
+        "href": "https://api.bsale.io/v1/coins/1.json",
+        "id": "1"
+    },
+    "references": {
+        "href": "https://api.bsale.io/v1/documents/9241/references.json"
+    },
+    "document_taxes": {
+        "href": "https://api.bsale.io/v1/documents/9241/document_taxes.json"
+    },
+    "details": {
+        "href": "https://api.bsale.io/v1/documents/9241/details.json"
+    },
+    "sellers": {
+        "href": "https://api.bsale.io/v1/documents/9241/sellers.json"
+    },
+    "attributes": {
+        "href": "https://api.bsale.io/v1/documents/9241/attributes.json"
+    }
 }
 ```
 
 ## DELETE un documento
 
-DELETE `/v1/documents/30.json?officeId=2`, elimina un documento no electrónico
+DELETE `/v1/documents/:id.json?officeId=2`, elimina un documento no electrónico
 
-- Se debe enviar la sucursal en la cual se eliminará el documento requerido
+- **id**, id del documento en Bsale
 
+:::tip
+
+Se debe enviar **la sucursal** `officeId` en la cual se eliminará el documento requerido
+
+:::

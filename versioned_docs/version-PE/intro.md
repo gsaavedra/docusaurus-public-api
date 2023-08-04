@@ -1,132 +1,153 @@
 ---
 id: primeros-pasos
 sidebar_position: 2
-title: Primeros pasos
-description: Primeros pasos para interactuar con la API de Bsale
-slug: /primeros-pasos
+title: Introducción
+description: Primeros pasos para interactuar con la API de Bsale PE
+slug: /first-steps
 ---
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
-# Primeros pasos
+👋 ¡Te damos la bienvenida a la documentación de la **API Perú**! 
 
-Lo primero que debes seguir para conectarte a la API de Bsale es que puedas obtener la autorización para acceder a los recursos de esta. Esta autorización evidentemente la tendrá que dar quien tenga privilegios para ellos y sea el “dueño” de los datos.
 
-## Obtén tu token de acceso
+Esta página te ayudará a iniciar con nuestra API así puedas orientarte en los distintos endpoints que se encuentran a tu disposición. Comencemos con esta guía rápida.
 
-### Token de pruebas
-Para obtener tu `access_token` a un **ambiente de pruebas**, [crea una cuenta](https://account.bsale.dev/users/create) para obtenerlo.
-
-![img alt](/img/copyToken.png)
-
-### Token producción
-Para obtener tu `access_token` y conectar un **ambiente en producción**, debes solicitar al mail ayuda@bsale.app.
-
-### OAuth 2.0
-:::caution
-**Deberás implementar OAuth 2.0 cuando la integración esté lista** y desees que tus clientes conecten ambas apps sin necesidad de pedir un token por mail. 
+### Navegación
+El **menú lateral izquierdo** te servirá como guía general para encontrar la documentación según el recurso necesites trabajar. 
+Cada sección tendrá un **menú lateral derecho**, que te mostrará las partes que componen el recurso.
+:::tip
+También puedes consultar nuestras [**preguntas frecuentes**](/faq) y [**listado de errores**](/faq#400).
 :::
-#### Cómo funciona OAuth 2.0
 
-<details>
-  <summary>Un poco de historia 🎓 </summary>
-  <div>
-    <div>OAuth es un estándar abierto que permite la autorización segura mediante el uso de un API. En la actualidad se usa desde octubre de 2012, en su versión OAuth 2.0 donde sus principales mejoras son que ahora proporciona flujos de autorización para aplicaciones web, de escritorio, teléfonos móviles. Actualmente servicios como Google, Facebook, Azure Active Directory, Github solo admiten el protocolo OAuth 2.0.<br/>
-    Recordemos que OAuth 2.0 es realmente un framework de autorización, que lo que hace es permitir que las aplicaciones obtengan acceso limitado a las cuentas de usuario de algunos servicios como la API de Bsale. Su funcionamiento básicamente consiste en delegar el permiso de autenticación del usuario al servicio que gestiona dichas cuentas, de modo que es el propio servicio, quien otorga acceso a las aplicaciones de terceros
-    </div>
-    <br/>
-    <details>
-      <summary>
-        Este protocolo cuenta con <b>3 componentes básicos</b> que interactúan en el proceso de autorización:
-      </summary>
-      <div><table>
-<tbody>
-  <tr>
-    <td><b>Cliente</b></td>
-    <td>Es la aplicación que quiere acceder a un a instancia de Bsale, mediante el “consumo” de los “Endpoints” contenidos en la API de BSale</td>
-  </tr>
-  <tr>
-    <td><b>Usuario</b></td>
-    <td>El usuario es quien autoriza a la aplicación a acceder a  su instancia, mediante una pantalla en el mismo Bsale. Es importante tener presente que el usuario deberá loguearse en Bsale, para dar esta autorización.</td>
-  </tr>
-  <tr>
-    <td><b>Servidor</b></td>
-    <td>El servidor de autorización recibe las peticiones de acceso de aplicaciones que desean usar el inicio de sesión Bsale. Este servidor se encarga de verificar la identidad del usuario y del servicio que solicita acceso, permitiendo o denegando la solicitud, luego de lo cual enviará al solicitante un código de autorización, con el cual podrá solicitar el token de acceso definitivo</td>
-  </tr>
-</tbody>
-</table>
-      </div>
-    </details>
-  </div>
-</details>
+### Autentificación
+Si leíste los [**primeros pasos**](/get-started)📎 sabrás que todos los requests deberán ser autentificados mediante un `access_token`, este token debe indicarse en la cabecera de la petición.
 
+### Peticiones
+Las peticiones son `HTTP REST` por lo que se debe especificar el **método** que se va a utilizar, junto al método se debe enviar en la cabecera de la petición el token de acceso que permite la autenticación en la API.
+- **GET**, para obtener información de un recurso.
+- **POST**, para crear un recurso.
+- **PUT**, para modificar un recurso.
+- **DELETE**, para eliminar un recurso.
 
-## Obtener accesos como aplicación
+### Ejemplo
+El envío es simple, este es un ejemplo de la generación de una factura electrónica. La **documentación completa** la encuentras en su sección correspondiente, [**"Documentos > Post un documento"**](/PE/documentos)
 
-Perfecto ahora que tenemos claro cómo funciona el protocolo veamos en términos específicos que debes hacer.
-Para ello vamos a dividir el proceso en 3 etapas:
+<Tabs className="unique-tabs">
+  <TabItem value="Request">
 
-## Etapa I: Grant request
-En esta etapa es en la que se valida al usuario que dará acceso a la aplicación a la cuenta. Lo primero que debes hacer es  redirigir al usuario a la pantalla de autorización:
-
-```curl
-https://oauth.bsale.io/login?app_id=xxx&redirect_uri=https://xxxxx&client_code=xxxxx
+  ```js
+{
+    "documentTypeId": 85,
+    "officeId": 1,
+    "emissionDate": 1686614400,
+    "client": {
+        "code": "987654321",
+        "city": "Capital del Oeste",
+        "company": "Capsule Corp",
+        "municipality": "Capital del Oeste",
+        "activity": "Development and research",
+        "address": "Hoi Poi #750",
+        "email": "dr@brief.pe"
+    },
+    "details": [
+        {
+            "netUnitValue": 9900,
+            "quantity": 1,
+            "taxId": "[1]",
+            "discount": 0,
+            "comment": "product example"
+        }
+    ]
+}
 ```
 
-Esta llamada debe contener  3 parámetros:
+  </TabItem>
+  <TabItem value="Response">
 
-- **app_id** Corresponde  al ID de la aplicación, el cual lo obtienes al registrarla.
-- **redirect_uri** URL al cual se redireccionará  una vez que el usuario autorice.
-- **client_code** Corresponde al código que identifica la instancia, en Perú por ejemplo será el RUC y en Chile el RUT.
+  ```js 
+{
+    "href": "https://api.bsale.io/v1/documents/47121.json",
+    "id": 47121,
+    "emissionDate": 1686614400,
+    "expirationDate": 1686614400,
+    "generationDate": 1691003759,
+    "number": 12437,
+    "serialNumber": "F001-12437",
+    "trackingNumber": null,
+    "totalAmount": 11682.0,
+    "netAmount": 9900.0,
+    "taxAmount": 1782.0,
+    "exemptAmount": 0.0,
+    "exportTotalAmount": 0.0,
+    "exportNetAmount": 0.0,
+    "exportTaxAmount": 0.0,
+    "exportExemptAmount": 0.0,
+    "commissionRate": 0.0,
+    "commissionNetAmount": 0.0,
+    "commissionTaxAmount": 0.0,
+    "commissionTotalAmount": 0.0,
+    "percentageTaxWithheld": 0.0,
+    "purchaseTaxAmount": 0.0,
+    "purchaseTotalAmount": 0.0,
+    "address": "Hoi Poi #750",
+    "district": "Capital del Oeste",
+    "city": "Capital del Oeste",
+    "stamp": null,
+    "urlPublicView": "https://app2.bsale.com.pe/view/18618/23d6ec33120b?sfd=99",
+    "urlPdf": "https://app2.bsale.com.pe/view/18618/23d6ec33120b.pdf?sfd=99",
+    "urlPublicViewOriginal": "https://app2.bsale.com.pe/view/18618/23d6ec33120b",
+    "urlPdfOriginal": "https://app2.bsale.com.pe/view/18618/23d6ec33120b.pdf",
+    "token": "23d6ec33120b",
+    "state": 0,
+    "commercialState": 0,
+    "urlXml": null,
+    "salesId": null,
+    "informed": 2,
+    "responseMsg": null,
+    "document_type": {
+        "href": "https://api.bsale.io/v1/document_types/85.json",
+        "id": "85"
+    },
+    "client": {
+        "href": "https://api.bsale.io/v1/clients/20923.json",
+        "id": "20923"
+    },
+    "office": {
+        "href": "https://api.bsale.io/v1/offices/1.json",
+        "id": "1"
+    },
+    "user": {
+        "href": "https://api.bsale.io/v1/users/224.json",
+        "id": "224"
+    },
+    "coin": {
+        "href": "https://api.bsale.io/v1/coins/1.json",
+        "id": "1"
+    },
+    "references": {
+        "href": "https://api.bsale.io/v1/documents/47121/references.json"
+    },
+    "document_taxes": {
+        "href": "https://api.bsale.io/v1/documents/47121/document_taxes.json"
+    },
+    "details": {
+        "href": "https://api.bsale.io/v1/documents/47121/details.json"
+    },
+    "sellers": {
+        "href": "https://api.bsale.io/v1/documents/47121/sellers.json"
+    },
+    "attributes": {
+        "href": "https://api.bsale.io/v1/documents/47121/attributes.json"
+    }
+}
+```
   
-![img alt](/img/loginOauth.png)
+  </TabItem>
+</Tabs>
 
-En esta pantalla el usuario que aprobará deberá loguearse con sus credenciales de Bsale
 
-:::info
-Si las credenciales son correctas el usuario será dirigido a una pantalla donde podrá autorizar el acceso de  la aplicación a los recursos de la empresa o instancia.
-:::
+### Ayuda
 
-![img alt](/img/authOauth.png)
-
-## Etapa II: Authorization Grant
-Luego que el usuario autorizó a la aplicación , este será redirigido a la URL que se definió en el parámetro `redirect_uri` y se le concatenará un el código de autorización, el cual podrá usar la aplicación para solicitar su token.
-
-```curl
-https://ejemplo/v1/oauth/test/?code=xxxx
-```
-Donde
-- **code** código de autorización para ser utilizado en la solicitud de obtención del token.
-
-## Etapa III: Request Access Token
-Excelente ya casi hemos terminado. Ahora   el servidor de autorización te mandó concatenada en tu URL el código el cual podrás utilizar para solicitar el token de acceso.
-
-Con este código deberás hacer una última llamada a la API de autorización mediante un request a :
-
-- POST `https://oauth.bsale.io/gateway/oauth_response.json`
-
-**Body**
-```json
-{
-    "code": "4be422802a2f9976da1f6947e04fac437f1bce91f",
-    "usrToken": "xxxxxxx",
-    "appId": "xxxx"
-}
-```
-**Donde**
-- **code** Corresponde al código de autorización que te llegó en el redireccionamiento.
-- **usrToken** Corresponde al token  del integrador (se asigna cuando uno de inscribe como integrador).
-- **appId** Identificador único de la aplicación que quiere acceder
-
-Un ejemplo de respuesta sería:
-
-```json
-{
-   "code": 200,
-   "data": {
-       "accessToken": "xxxx",
-       "clientName": "Bsale test",
-       "clientCode": "88888888-8"
-   }
-}
-```
-
-Y como respuesta tendrás el `access_token` que servirá para autentificar las peticiones a la API
+- Si necesitas aprender como trabaja Bsale de forma general puedes revisar [**nuestra base de conocimiento**](https://ayuda.bsale.com.pe/support/home).
+- Si tienes una duda puedes comunicarte con nosotros ingresando a la comunidad de [**slack**](https://bsaledev.slack.com/join/shared_invite/zt-1h1cqt05g-fqnTiREZYN8g47gf~caO5w#/shared-invite/email) 👋

@@ -454,18 +454,18 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
 ]
 ```
 ## GET documentos de venta
-- GET `/v1/payments/purchases.json` retornará los documentos asociados al cliente.
+- GET `/v1/clients/purchases.json` retornará los documentos asociados al cliente.
 
 #### Parámetros
 - **clientid**, Permite filtrar por id del cliente.
 - **code**, Permite filtrar por rut del cliente.
   
 #### Ejemplos
-- `GET /v1/payments/purchases.json?code=7513098-8`
-- `GET /v1/payments/purchases.json?clientid=7`
+- `GET /v1/clients/purchases.json?code=7513098-8`
+- `GET /v1/clients/purchases.json?clientid=7`
 
 
-```json title="Response /payments/purchases.json"
+```json title="Response /clients/purchases.json"
 {
   "href": "https://api.bsale.io/v1/documents.json",
   "count": 43,

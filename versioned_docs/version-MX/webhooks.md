@@ -12,7 +12,7 @@ slug: /webhooks
 [Webhooks de cambios de stock]: productos-y-servicios/webhooks#notificación-de-stock  "ir a referencia"
 [Webhooks de documentos pagados]: formas-de-pago/webhooks  "ir a referencia"
 
-# Bsale webkooks
+# Bsale webhooks
 
 El equipo de Bsale ha puesto a disposición de la comunidad de desarrolladores un conjunto de notificaciones o Webhooks, la cual permite que puedas estar informado cuando en Bsale se ejecuten determinadas acciones, como la **creación de un documento**, la **creación de un producto**, la **actualización del stock**, **sus precios** etc. Esto evitará que tengas que estar preguntando cada cierto tiempo si algo ha cambiado en Bsale. Estas notificaciones o "callback´s", son informadas mediante webhooks o también conocidos como `user-defined HTTP callbacks`, a mediante un `POST` a una URL que configures para ello. De esta manera por ejemplo cada vez que en Bsale se cree un nuevo documento, te avisaremos mediante una llamada `POST` a la URL que definiste, con una estructura `JSON` que contiene la información que te permitirá obtener el documento creado.
 
@@ -54,7 +54,7 @@ Algunas notificaciones contendrán estructuras JSON con campos extras como por e
 
 
 ## Solicitar activación
-Para solicitar la activación, puedes escribirnos a ayuda@bsale.app indicandonos la URL y el rut o cpnId de empresa a activar.
+Para solicitar la activación, puedes escribirnos a ayuda@bsale.app indicandonos la URL y el RFC o cpnId de empresa a activar.
 
 :::note
 
