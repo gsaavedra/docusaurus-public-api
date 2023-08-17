@@ -590,7 +590,7 @@ Si el cliente es extranjero se debe enviar el atributo `isForeigner` en **1**, p
 }
 ```
 :::tip
-Si envías `isForeigner` con valor 1, Bsale generará un rut **55555555-5** por defecto. Si necesitas que la representación visual del documento indique un DNI, NIT, NIF etc Puedes enviar el adicionalmente el `code` de cliente con su valor.
+Los clientes marcados como extranjeros (`isForeigner`) se declararán con el DNI, NIT, PASAPORTE o identificador ingresado en el atributo `code`. Si el dato ingresado supera los 8 digitos sólo se enviarán los últimos 8 digitos registrados.
 :::
 
 ## PUT un cliente

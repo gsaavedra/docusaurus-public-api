@@ -46,17 +46,17 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
   "purchaseTotalAmount": 0,
   "urlTimbre": null,
   "ted": null,
-  "urlPublicView": "http://app2.bsale.cl/view/2/a2d9b4da5128?sfd=99",
-  "urlPdf": "http://app2.bsale.cl/view/2/a2d9b4da5128.pdf?sfd=99",
-  "urlPublicViewOriginal": "http://app2.bsale.cl/view/2/a2d9b4da5128",
-  "urlPdfOriginal": "http://app2.bsale.cl/view/2/a2d9b4da5128.pdf",
+  "urlPublicView": "http://app2.bsale.io/view/2/a2d9b4da5128?sfd=99",
+  "urlPdf": "http://app2.bsale.io/view/2/a2d9b4da5128.pdf?sfd=99",
+  "urlPublicViewOriginal": "http://app2.bsale.io/view/2/a2d9b4da5128",
+  "urlPdfOriginal": "http://app2.bsale.io/view/2/a2d9b4da5128.pdf",
   "token": "a2d9b4da5128",
   "state": 0,
   "userId": 2,
   "urlXml": null,
-  "address": null,
-  "municipality": null,
-  "city": null,
+  "address": "INSURGENTES NORTE  123",
+  "district": "ÁLVARO OBREGÓN",
+  "city": "SAN ÁNGEL",
   "informed": 1,
   "responseMsg": null,
   "document_type": {
@@ -123,10 +123,10 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
 |  **token**   | token único del documento        | String        |
 |  **state**   | estado del documento indica si el documento esta activo(0) o inactivo (1)         | Boolean        |
 |  **urlXml**   | respaldo del documento electrónico         | String        |
-|  **address**   | dirección del documento        | String        |
-|  **municipality**   | comuna del documento        | String        |
-|  **city**   | ciudad del documento        | String        |
-|  **informed**   | indica si el documento fue informado, 0 es correcto, 1 es enviado, 2 es rechazado        | Integer        |
+|  **address**   | dirección del cliente        | String        |
+|  **district**   | Colonia del cliente        | String        |
+|  **city**   | ciudad del cliente        | String        |
+|  **informed**   | indica si el documento fue informado al SAT, **0 es correcto, 1 es enviado, 2 es rechazado**       | Integer        |
 | **responseMsg**   | respuesta de la declaración del documento, en caso de ser electrónico        | String        |
 | **document_type**   | nodo que indica el tipo del documento al cual pertenece el documento.        | Text        |
 | **client**   | nodo que indica el cliente al cual se le emitió el documento.        | Text        |
@@ -210,16 +210,16 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
   "purchaseTotalAmount": 0,
   "urlTimbre": null,
   "ted": null,
-  "urlPublicView": "http://app2.bsale.cl/view/2/f806d6a6ae73?sfd=99",
-  "urlPdf": "http://app2.bsale.cl/view/2/f806d6a6ae73.pdf?sfd=99",
-  "urlPublicViewOriginal": "http://app2.bsale.cl/view/2/f806d6a6ae73",
-  "urlPdfOriginal": "http://app2.bsale.cl/view/2/f806d6a6ae73.pdf",
+  "urlPublicView": "http://app2.bsale.io/view/2/f806d6a6ae73?sfd=99",
+  "urlPdf": "http://app2.bsale.io/view/2/f806d6a6ae73.pdf?sfd=99",
+  "urlPublicViewOriginal": "http://app2.bsale.io/view/2/f806d6a6ae73",
+  "urlPdfOriginal": "http://app2.bsale.io/view/2/f806d6a6ae73.pdf",
   "token": "f806d6a6ae73",
   "state": 0,
   "urlXml": null,
   "address": "San Francisco 402, jj perez 7248",
-  "municipality": "Santiago",
-  "city": "Santiago",
+  "district": "ÁLVARO OBREGÓN",
+  "city": "SAN ÁNGEL",
   "informed": 2,
   "responseMsg": null,
   "document_type": {
@@ -499,7 +499,7 @@ Entrega los costos asociados a una venta solo si los productos fueron despachado
 - GET `/v1/documents/9682/attributes.json` 
 
 :::info
-Retorna los [atributos dinámicos](/MX/atributos-dinamicos) asociados al documento, **no electrónicos**.
+Retorna los [atributos dinámicos](/MX/atributos-dinamicos) asociados al documento.
 :::
 
 ```json title="Response /documents/9682/attributes.json "
@@ -559,7 +559,7 @@ Para crear un documento de venta ya sea electrónico (ej Factura) o no (ej ticke
 
 
 ### Vendedor
-Es posible que necesites asociar un vendedor diferente al que hace la petición para crear el documento, para eso debes enviar el atributo `sellerId`, con el `id` vendedor (usuario) en Bsale.
+Es posible que necesites asociar un vendedor diferente al que hace la petición para crear el documento, para eso debes enviar el atributo `sellerId`, con el `id` vendedor [(Usuario)](/MX/usuarios) en Bsale.
 ```json 
 {
    "sellerId": 5
@@ -603,7 +603,7 @@ En algunos documentos no es necesario agregar el cliente como en el caso de la b
     "code": "XA987654321",
     "city": "Capital del Oeste",
     "company": "Capsule Corp",
-    "municipality": "Capital del Oeste",
+    "district": "Capital del Oeste",
     "activity": "Development and research",
     "address": "Hoi Poi #750",
     "email": "dr@brief.mx",
@@ -612,10 +612,11 @@ En algunos documentos no es necesario agregar el cliente como en el caso de la b
   }
 }
 ```
+
 - **code**, RFC del cliente (String).
 - **city**, Ciudad del cliente  (String).
 - **company**, Nombre, denominación o razón social (String)
-- **municipality**, Colonia del cliente (String).
+- **district**, Colonia del cliente (String).
 - **activity**, Giro del cliente (String).
 - **address**, Dirección del cliente (String). 
 - **email**, indica el correo electronico del cliente  (String).
@@ -651,7 +652,7 @@ Si necesitas que Bsale **envie el documento al correo del cliente** puedes agreg
     "code": "987654321",
     "city": "Capital del Oeste",
     "company": "Capsule Corp",
-    "municipality": "Capital del Oeste",
+    "district": "Capital del Oeste",
     "activity": "Development and research",
     "address": "Hoi Poi #750",
     "email": "dr@brief.mx",
@@ -823,9 +824,8 @@ Se pueden enviar un id de referencia propio de su sistema para evitar duplicidad
         "code": "CACX7600101P8",
         "company": "XOCHILT CASAS CHAVEZ",
         "activity": "Giro Informática",
-        "municipality": "Colonia",
+        "district": "Colonia",
         "city": "Ciudad de Méxic",
-        "district": "Juarez",
         "address": "Varsovia No. 1000",
         "email": "api@bsale.com.mx",
         "postalCode": "10740",

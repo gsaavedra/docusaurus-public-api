@@ -21,10 +21,10 @@ Para consumir el recurso de la instancia, se debe usar `https://credential.bsale
 ```json
 {
   "id": 129577,
-  "code":"98765432-1",
+  "code":"987654321",
   "name": "Empresa Bsale Demo SA",
   "state": 0,
-  "country": "CL",
+  "country": "MX",
   "trial": 0,
   "trialEnd": 1493335314
 }

@@ -10,7 +10,7 @@ slug: /impuestos
 Listar impuestos creados en Bsale. 
 
 :::info
-Para usar los impuestos creados, usar el nodo taxId o taxes en el envío del documento.
+Para usar los impuestos creados, usar el nodo `taxId` o `taxes` en el envío del documento.
 :::
 
 ## Estructura JSON
