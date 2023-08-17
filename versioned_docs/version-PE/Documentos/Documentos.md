@@ -259,6 +259,7 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
   }
 }
 ```
+
 ## Resúmenes
 ### GET resumen de documentos emitidos
 - GET `/v1/documents/summary.json` retorna resumen de documentos.
@@ -502,10 +503,9 @@ Entrega los costos asociados a una venta solo si los productos fueron despachado
 - GET `/v1/documents/11561/references.json` retorna referencias del documento.
 
 :::info
-
 Retorna sólo referencias electrónicas (**XML**).
-
 :::
+
 ```json title="Response /documents/4139/references.json "
 {
   "href": "https://api.bsale.io/v1/documents/4139/references.json",
@@ -696,6 +696,7 @@ Si se necesita generar una **factura de exportación**, se deben enviar valores 
         {
             "netUnitValue": 7.5,
             "quantity": 1,
+            "taxId": "[3]",
             "comment": "fish fillet- trout (Oncorhynchus mykiss) code:877363655355CL",
             "discount": 0,
             "exportNetAmount": 7.5,
@@ -705,7 +706,8 @@ Si se necesita generar una **factura de exportación**, se deben enviar valores 
         {
             "netUnitValue": 25.1,
             "quantity": 1,
-            "comment": "Despacho",
+            "taxId": "[3]",
+            "comment": "operational expenses code:844363545355CL",
             "discount": 0,
             "exportNetAmount": 25.1,
             "exportTaxAmount": 0,
@@ -740,7 +742,8 @@ Si se necesita generar una **factura de exportación**, se deben enviar valores 
 - **totalPackages**, paquetes totales
 
 :::tip
-En el ejemplo se usa `clientId` para asociar un cliente. En caso de crearlo desde el documento, como **cliente extranjero**, mira [esta referencia](/PE/clientes#cliente-extranjero).
+- En el ejemplo se usa `clientId` para asociar un cliente. En caso de crearlo desde el documento, como **cliente extranjero**, mira [esta referencia](/PE/clientes#cliente-extranjero).
+- La instancia de Bsale que genere el documento de exportación deberá tener creado el impuesto para Exportación **codigo 9995**, el ejemplo sólo referencia el uso del impuesto suponiendo que tiene el id 3.
 :::
 
 ### Vendedor
@@ -785,13 +788,13 @@ En algunos documentos no es necesario agregar el cliente como en el caso de la b
 ```json 
 {
   "client": {
-    "code": "98765432-1",
+    "code": "10606119111",
     "city": "Capital del Oeste",
     "company": "Capsule Corp",
     "municipality": "Capital del Oeste",
     "activity": "Development and research",
     "address": "Hoi Poi #750",
-    "email": "dr@brief.cl",
+    "email": "dr@brief.com.pe",
     "companyOrPerson": 1
   }
 }
@@ -830,13 +833,13 @@ Si necesitas que Bsale **envie el documento al correo del cliente** puedes agreg
 ```json 
 {
   "client": {
-    "code": "98765432-1",
+    "code": "10606119111",
     "city": "Capital del Oeste",
     "company": "Capsule Corp",
     "municipality": "Capital del Oeste",
     "activity": "Development and research",
     "address": "Hoi Poi #750",
-    "email": "dr@brief.cl",
+    "email": "dr@brief.com.pe",
     "companyOrPerson": 1
   },
   "sendEmail": 1
@@ -905,8 +908,9 @@ En el caso de solo necesitar **declarar documentos en el SUNAT con Bsale**, el d
 
 ### Impuestos
 :::caution
-Es **muy importante** que se envíen los impuestos por cada detalle, de lo contrario el detalle del documento saldrá exento.
+Es **muy importante** que se envíen los impuestos por cada detalle.
 :::
+
 #### Referencia por id
 Puedes usar el arreglo `taxId` para referenciar los id's de impuestos configurados en Bsale
 ```json 
@@ -1177,5 +1181,5 @@ Se pueden enviar un id de referencia propio de su sistema para evitar duplicidad
 
 DELETE `/v1/documents/30.json?officeId=2`, elimina un documento no electrónico
 
-- Se debe enviar la sucursal en la cual se eliminara el documento
+- Se debe enviar la sucursal en la cual se eliminará el documento.
 
