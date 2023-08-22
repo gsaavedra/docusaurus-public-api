@@ -17,6 +17,7 @@ Todos los mensajes de error entregan un código de error y un mensaje descriptiv
 | **403**      | _Forbidden_     | No tiene autorización para acceder al recurso solicitado     |
 | **404**      | _Not Found _   | Recurso solicitado no pudo ser encontrado     |
 | **405**      | _Method Not Allowed_     | El método o acción solicitada no está permitida en el recurso     |
+| **429**      | _Too Many Requests_   | La solicitud no fue aceptada porque la solicitud ha excedido el límite (3.000 request x 300 segundos)     |
 | **500**      | _Internal Server Error_     | Ocurrió un error no esperado en el servidor que procesa la petición   |
 | **502**      | _Unknown Error_     | Un error no manejado por la API  |
 

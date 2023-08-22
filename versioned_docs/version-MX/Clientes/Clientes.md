@@ -32,7 +32,7 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
       "href": "https://api.bsale.io/v1/clients/2.json",
       "id": 2,
       "firstName": "Francisco",
-      "lastName": "Pullnm",
+      "lastName": "Pullnom",
       "email": "fpull@gmail.com",
       "state": 0,
       "office": {
@@ -120,12 +120,11 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
     {
       "href": "https://api.bsale.io/v1/clients/65.json",
       "id": 65,
-      "firstName": "a",
-      "lastName": "sa",
+      "firstName": "Público en",
+      "lastName": "General",
       "code": "XAXX010101000",
       "phone": "",
-      "company": "a sa",
-      "note": "",
+      "company": "",
       "facebook": "",
       "twitter": "",
       "hasCredit": 1,
@@ -133,7 +132,7 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
       "state": 1,
       "activity": "Sin Giro",
       "city": "",
-      "municipality": "",
+      "district": "",
       "address": "",
       "companyOrPerson": 0,
       "points": 0,
@@ -167,7 +166,7 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
       "state": 0,
       "activity": "Sin Giro",
       "city": "",
-      "municipality": "",
+      "district": "",
       "address": "",
       "companyOrPerson": 0,
       "points": 0,
@@ -200,39 +199,53 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
 
 ```json title="Response /clients/80.json"
 {
-  "href": "https://api.bsale.io/v1/clients/80.json",
-  "id": 80,
-  "firstName": "juanito",
-  "lastName": "mena",
-  "code": "XAXX010101000",
-  "phone": "",
-  "company": "juanito mena",
-  "note": null,
-  "facebook": null,
-  "twitter": "",
-  "hasCredit": 1,
-  "maxCredit": "10000.0",
-  "state": 0,
-  "activity": "Sin Giro",
-  "city": "",
-  "municipality": "",
-  "address": "",
-  "companyOrPerson": 0,
-  "points": 113000,
-  "pointsUpdated": 1437577975,
-  "accumulatePoints": 1,
-  "sendDte": 0,
-  "prestashopClienId": 0,
-  "contacts": {
-    "href": "https://api.bsale.io/v1/clients/80/contacts.json"
-  },
-  "attributes": {
-    "href": "https://api.bsale.io/v1/clients/80/attributes.json"
-  },
-  "addresses": {
-    "href": "https//api.bsale.io/v1/clients/80/addresses.json"
-  }
-}
+            "href": "https://api.bsale.io/v1/clients/2.json",
+            "id": 2,
+            "firstName": "NATALIA LILIANA",
+            "lastName": "MURO MURO",
+            "email": "el@cor.reo",
+            "code": "NATL009113WM0",
+            "phone": "5527011110",
+            "company": "LILIA NATALY VACA TAPIA",
+            "note": "",
+            "facebook": "",
+            "twitter": "",
+            "hasCredit": 1,
+            "maxCredit": 99999990.0,
+            "state": 0,
+            "activity": ".",
+            "city": "MONTERREY",
+            "commerciallyBlocked": 0,
+            "district": "MONTERREY",
+            "address": "PRO FRANCIA NRO 123",
+            "postal_code": "54190",
+            "companyOrPerson": 0,
+            "accumulatePoints": 1,
+            "points": 0.0,
+            "pointsUpdated": "",
+            "sendDte": 0,
+            "isForeigner": 0,
+            "prestashopClienId": 0,
+            "createdAt": 1668115263,
+            "updatedAt": 1668115263,
+            "payment_type": {
+                "href": "https://api.bsale.io/v1/payment_types/1.json",
+                "id": "1"
+            },
+            "price_list": {
+                "href": "https://api.bsale.io/v1/price_lists/1.json",
+                "id": "1"
+            },
+            "contacts": {
+                "href": "https://api.bsale.io/v1/clients/2/contacts.json"
+            },
+            "attributes": {
+                "href": "https://api.bsale.io/v1/clients/2/attributes.json"
+            },
+            "addresses": {
+                "href": "https://api.bsale.io/v1/clients/2/addresses.json"
+            }
+        }
 ```
 ## GET atributos de un cliente
 - GET `/v1/clients/796/attributes.json` Retornará los atributos asociados al cliente.
@@ -259,13 +272,13 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
     {
       "href": "https://api.bsale.io/v1/dynamic_attributes/73.json",
       "id": 73,
-      "name": "wefcqwrevgrqebvqerbv",
+      "name": "Incluir en listas",
       "value": ""
     },
     {
       "href": "https://api.bsale.io/v1/dynamic_attributes/76.json",
       "id": 76,
-      "name": "Número Cliente",
+      "name": "Número Cliente interno",
       "value": ""
     }
   ]
@@ -384,7 +397,7 @@ Para crear un contacto de cliente, se debe enviar un JSON con la siguiente estru
       "addressName": "SUC 1",
       "address": "SOTERO SANZ 100",
       "city": "STGO",
-      "municipality": "PROVIDENCIA",
+      "district": "ECATEPEC",
       "state": 0
     },
     {
@@ -393,7 +406,7 @@ Para crear un contacto de cliente, se debe enviar un JSON con la siguiente estru
       "addressName": "SUC 2",
       "address": "PEDRO DE VALDIVIA 200",
       "city": "STGO",
-      "municipality": "PROVIDENCIA",
+      "district": "LAS FUENTES ECATEPEC",
       "state": 0
     }
   ]
@@ -408,8 +421,8 @@ Para crear un contacto de cliente, se debe enviar un JSON con la siguiente estru
   "id": 8,
   "addressName": "SUC 1",
   "address": "SOTERO SANZ 100",
-  "city": "STGO",
-  "municipality": "PROVIDENCIA",
+  "city": "CDMX",
+  "district": "MONTERREY",
   "state": 0
 }
 ```
@@ -425,8 +438,8 @@ Para crear una dirección de cliente, se debe enviar un JSON con la siguiente es
 {
   "addressName": "SUC 3",
   "address": "NUNCIO MONSEÑOR SOTERO SANZ 100, OF. 401",
-  "city": "STGO",
-  "municipality": "PROVIDENCIA"
+  "city": "CDMX",
+  "district": "MONTERREY",
 }
 ```
 ##### Respuesta
@@ -436,8 +449,8 @@ Para crear una dirección de cliente, se debe enviar un JSON con la siguiente es
   "id": 6,
   "addressName": "SUC 3",
   "address": "NUNCIO MONSEÑOR SOTERO SANZ 100, OF. 401",
-  "city": "STGO",
-  "municipality": "PROVIDENCIA",
+  "city": "CDMX",
+  "district": "MONTERREY",
   "state": 0
 }
 ```
@@ -453,8 +466,8 @@ Se debe enviar un Json con la siguiente estructura
 {
   "addressName": "SUC 4",
   "address": "OF. 401",
-  "city": "STGO",
-  "municipality": "PROVIDENCIA"
+  "city": "CDMX",
+  "district": "MONTERREY",
 }
 ```
 #### Respuesta
@@ -464,8 +477,8 @@ Se debe enviar un Json con la siguiente estructura
   "id": 6,
   "addressName": "SUC 4",
   "address": "OF. 401",
-  "city": "STGO",
-  "municipality": "PROVIDENCIA",
+  "city": "CDMX",
+  "district": "MONTERREY",
   "state": 0
 }
 ```
@@ -480,8 +493,8 @@ Se debe enviar un Json con la siguiente estructura
   "id": 6,
   "addressName": "SUC 4",
   "address": "OF. 401",
-  "city": "STGO",
-  "municipality": "PROVIDENCIA",
+  "city": "CDMX",
+  "district": "MONTERREY",
   "state": 1
 }
 ```
@@ -496,10 +509,10 @@ Para crear un cliente, se debe enviar un JSON con la siguiente estructura:
 ```json
 {
   "facebook": "",
-  "municipality": "Las Condes",
+  "district": "CDMX",
   "phone": "66287196",
   "activity": "Venta de ropa",
-  "city": "Santiago",
+  "city": "CDMX",
   "maxCredit": 100000,
   "hasCredit": 1,
   "accumulatePoints": 1,
@@ -520,10 +533,10 @@ Si se desean crear atributos especiales para el cliente se debe enviar la siguie
 ```json
 {
   "facebook": "",
-  "municipality": "Las Condes",
+  "district": "CDMX",
   "phone": "66287196",
   "activity": "Venta de ropa",
-  "city": "Santiago",
+  "city": "CDMX",
   "maxCredit": 100000,
   "hasCredit": 1,
   "accumulatePoints": 1,
@@ -551,12 +564,12 @@ Si se desean crear atributos especiales para el cliente se debe enviar la siguie
   "address": "Los trigales 372",
   "lastName": "Muñoz",
   "sendDte": 0,
-  "city": "Santiago",
+  "city": "CDMX",
   "state": 0,
   "twitter": "",
   "firstName": "Marcela",
   "id": 67,
-  "municipality": "Las Condes",
+  "district": "CDMX",
   "maxCredit": 100000,
   "accumulatePoints": 1,
   "note": "Cliente premiun",
@@ -581,7 +594,7 @@ Si el cliente es extranjero se debe enviar el atributo `isForeigner` en **1**, p
   "client": {
     "city": "Hawai",
     "company": "Mountain Apple Company Inc",
-    "municipality": "Honolulu",
+    "district": "Honolulu",
     "activity": "Musician",
     "address": "izhawaii dot com #100 street",
     "email": "Israel@Kamakawiwo.ole",
@@ -597,7 +610,7 @@ Si el cliente es persona moral, se debe enviar el cliente de la siguiente manera
         "code": "CACX7605101P8",
         "company": "XOCHILT CASAS CHAVEZ",
         "activity": "Giro Informática",
-        "municipality": "Colonia cliente",
+        "district": "Colonia cliente",
         "city": "Ciudad cliente",
         "address": "Dirección cliente",
         "email": "api@bsale.com.mx",
@@ -612,7 +625,7 @@ Si el cliente es persona física, se debe enviar el cliente de la siguiente mane
 ```json 
     "client": {
         "code": "CACX7605101P8",
-        "municipality": "Colonia cliente",
+        "district": "Colonia cliente",
         "city": "Ciudad cliente",
         "address": "Dirección cliente",
         "firstName": "Andés",
@@ -634,10 +647,10 @@ Se debe enviar un Json con la siguiente estructura
 {
   "id": "67",
   "facebook": "",
-  "municipality": "Puerto Montt",
+  "district": "ROMA NORTE",
   "phone": "66287196",
   "activity": "Venta de ropa",
-  "city": "Puerto Montt",
+  "city": "CIUDAD DE MEXICO",
   "maxCredit": 100000,
   "hasCredit": 1,
   "lastName": "Muñoz",
@@ -658,12 +671,12 @@ Se debe enviar un Json con la siguiente estructura
   "address": "Los trigales 372",
   "lastName": "Muñoz",
   "sendDte": 0,
-  "city": "Puerto Montt",
+  "city": "CIUDAD DE MEXICO",
   "state": 0,
   "twitter": "",
   "firstName": "Marcela",
   "id": 67,
-  "municipality": "Puerto Montt",
+  "district": "ROMA NORTE",
   "maxCredit": 100000,
   "accumulatePoints": 1,
   "note": "Cliente premiun",
@@ -705,8 +718,8 @@ El cliente no estará visible mediante interfaz y tendrá un `state` 99. Sus doc
   "maxCredit": "9100",
   "state": 1,
   "activity": "",
-  "city": "Puerto Montt",
-  "municipality": "Puerto Montt",
+  "city": "CIUDAD DE MEXICO",
+  "district": "ROMA NORTE",
   "address": "Avda. Diego Portales 100",
   "companyOrPerson": 1,
   "sendDte": 0,
