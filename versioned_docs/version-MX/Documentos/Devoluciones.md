@@ -256,7 +256,6 @@ Para crear una devolución y su respectiva nota da crédito se debe enviar un JS
 - **motive**, Indica el motivo de la devolución (String).
 - **declare**, Si se desea declarar el documento al Servicio de impuestos internos se envía 1, en caso contrario un 0 (Boolean).
 - **priceAdjustment**, Si la devolución corresponde a un ajuste de precio de los productos se envía **1**, en caso contrario 0 (Boolean).
-- **editTexts**, Si la devolución corresponde a una corrección de texto (por forma) se envía **1**, en caso contrario 0 (Boolean).
 - **type**, Indica como se va a devolver el dinero del documento, **0** para devolución dinero, **1** para forma pago nueva venta, **2** para abono linea de crédito (Condonación), **3** para otra devolución (Integer).
 
 ### Cliente de una devolución
@@ -288,7 +287,7 @@ Para le generación de devoluciones, el cliente es obligatorio. Si el documento 
 
 
 ### Detalles de la devolución
-#### Tres clases de la devolución
+#### Tipos de una devolución
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -296,9 +295,6 @@ import TabItem from '@theme/TabItem';
 <Tabs>
   <TabItem value="quant" label="Ajustar precios" default>
         Si se desea crear una devolución para ajustar el precio de los productos, se debe enviar el editTexts en 0 y el priceAdjustment en 1, ademas de enviar en el nodo details solo los detalles que van a cambiar de precio del documento original (quantity = 0, unitValue = nuevo precio)
-  </TabItem>
-  <TabItem value="price" label="Editar textos">
-      Si se desea crear una devolución para corregir información, se debe enviar el editTexts en 1 y el priceAdjustment en 0, ademas de enviar en el nodo details todos los detalles originales del documento (quantity = 0, unitValue = 0).
   </TabItem>
   <TabItem value="texts" label="Devolver cantidades">
     Si se desea crear una devolución solo para retornar productos, se debe enviar el editTexts en 0 y el priceAdjustment en 0, ademas de enviar en el nodo details solo los detalles que van a cambiar de cantidad del documento original (quantity = nueva cantidad, unitValue = 0).

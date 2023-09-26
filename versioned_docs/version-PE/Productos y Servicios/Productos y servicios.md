@@ -365,6 +365,8 @@ Se debe enviar un Json con la siguiente estructura.
 - **classification**, indica la clase del producto 0 es producto, 1 es servicio (Integer)
 - **stockControl**, indica si el producto controlara stock No(0) o Si (1) (Boolean).
 - **productTypeId**, Id del tipo de producto (Integer)
+- **serialNumber**, indica si el producto controla o no series. No (0) o Si (1) (Integer)
+- **isLot**, indica si la serie se podrá repetir. No (0) o Si (1) (Integer)
 - **taxes**, Arreglo que referencia los [id's de impuesto](/PE/impuestos#get-lista-de-impuestos) asociados al producto.
 
 :::tip

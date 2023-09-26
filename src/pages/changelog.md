@@ -4,6 +4,17 @@ slug: /changelog
 ---
 
 # Liberaciones disponibles
+## 09/2023
+- Ajuste rate-limit 10 requests por segundo.
+- Validación cupo máximo de crédito en ventas
+- Validación `PUT` clientes con estado distinto de 0
+- Soporte a consumo de stock a variantes que usen series.
+- Soporte a lectura de tickets asociados a una Factura Global 🇲🇽.
+
+## 08/2023
+- Soporte a estados de despachos entre sucursales `shippings.json`.
+- Soporte a Cancelaciones Facturas Globales 🇲🇽.
+- Soporte a Devoluciones factura electrónica 🇲🇽.
 
 ## 07/2023
 - Soporte bajas de documentos 🇵🇪.
@@ -18,10 +29,10 @@ slug: /changelog
 - Soporte Boleta de anticipo 🇵🇪.
 - Soporte a Documentos con forma de Pago Detracción 🇵🇪.
 - Soporte `consumptionTypeId` en consumos.
-- Soporte `POST` y `PUT` series en endpoint `products.json`.
+- Soporte `POST` `PUT` series en endpoint `products.json`.
 
 ## 03/2023
-- Soporte Cancelaciones 🇲🇽.
+- Soporte Cancelaciones Facturas electrónicas 🇲🇽.
 - Soporte generación factura global 🇲🇽.
 
 ## 11/2022

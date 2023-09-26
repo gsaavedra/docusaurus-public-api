@@ -392,60 +392,71 @@ Considera que un checkout está relacionado a un documento pre-venta. Osea, debe
 
 Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente estructura:
 
-```js title="Response /checkout/43.json"
+```js title="Response /checkout/:id.json"
 {
-  "code": 200,
-  "data": {
-    "id": 43,
-    "token": "628699ed3b62ddc5cc8fa71204b39384a9281556",
-    "clientName": "Usuario",
-    "clientLastName": "Pruebas",
-    "clientEmail": "test@imaginex.cl",
-    "clientPhone": "+560000010",
-    "id_tipo_documento_tributario": 1,
-    "clientCountry": "Chile",
-    "clientState": "Región Metropolitana",
-    "extrasUserData": {
-      "user_rut": "11111111-9",
-      "razon_social": "Rzon Social",
-      "giro_cliente": "Gro Cliente",
-      "direccion": "Dirección",
-      "ciudad": "Ciudad",
-      "comuna": "Comuna"
-    },
-    "clientStreet": "las condes",
-    "clientCityZone": "Las Condes",
-    "clientPostcode": "5220000",
-    "clientBuildingNumber": "123",
-    "cartId": 43,
-    "cartDetails": [
-      "https://api.bsale.io/v1/cart/43/detail.json"
+    "code": 200,
+    "href": "https://api.bsale.io/v1/checkout.json",
+    "count": 853,
+    "limit": 1,
+    "offset": 0,
+    "data": [
+        {
+            "id": 1,
+            "token": "3e6b66eafe74dbf190ca411de27dc52bc3d6ed3e",
+            "clientName": "usuario ",
+            "clientLastName": "de pruebas",
+            "clientEmail": "test@imaginex.cl",
+            "clientPhone": "91111111",
+            "id_tipo_documento_tributario": 22,
+            "clientCountry": "Chile",
+            "clientState": "Región Metropolitana",
+            "dynamicAttributes": [],
+            "extrasUserData": {
+                "user_rut": "",
+                "razon_social": "",
+                "giro_cliente": "",
+                "direccion": "",
+                "ciudad": "",
+                "comuna": ""
+            },
+            "clientStreet": "monseñor sotero sanz 100",
+            "clientCityZone": "Providencia",
+            "clientPostcode": "",
+            "clientBuildingNumber": "",
+            "cartId": 2,
+            "cartDetails": [
+                "https://api.bsale.io/v1/cart/2/detail.json"
+            ],
+            "spcId": 87942,
+            "ptId": 1,
+            "createAt": 1585674751,
+            "shippingCost": 3915.0048,
+            "isMafs": 0,
+            "discountCost": 0,
+            "active": 1,
+            "shippingComment": "",
+            "totalCart": 9990,
+            "pickStoreId": 0,
+            "id_venta_documento_tributario": 0,
+            "storeId": 1,
+            "storeName": "Casa Matriz",
+            "marketId": 1,
+            "isService": 0,
+            "withdrawStore": 0,
+            "payProcess": "fail",
+            "stName": "Envíos Día Hábil Siguiente",
+            "total": 13905.0048,
+            "clientId": 14,
+            "url": "https://api.bsale.io/v1/checkout/1.json",
+            "orderStatus": 0,
+            "currency": {
+                "decimals": 2,
+                "symbol": "$",
+                "decimalSeparator": ","
+            }
+        }
     ],
-    "spcId": 2,
-    "ptId": 2,
-    "payUrl": "https://bcash.bsalemarket.com/bank/v1",
-    "createAt": 1586794547,
-    "shippingCost": 0,
-    "isMafs": 0,
-    "discountCost": 0,
-    "active": 1,
-    "shippingComment": "Entrega en portería o llamar al número de referencia",
-    "totalCart": 29990,
-    "pickStoreId": 0,
-    "id_venta_documento_tributario": 9,
-    "documentNumber": 4,
-    "documentToken": "58fa1b313e09",
-    "storeId": 1,
-    "marketId": 1,
-    "isService": 0,
-    "withdrawStore": 0,
-    "payProcess": "for_validate",
-    "ptName": "Transferencia Bancaria",
-    "stName": "Envios durante el día (Ver condiciones)",
-    "total": 29990,
-    "url": "https://api.bsale.io/v1/checkout/43.json",
-    "orderStatus": 0
-  }
+    "next": "https://api.bsale.io/v1/checkout.json?limit=1&offset=1"
 }
 ```
 
@@ -466,6 +477,7 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
 | **clientCityZone**   | Comuna del cliente | Integer |
 | **clientPostcode**   | Código postal del cliente | Integer |
 | **clientBuildingNumber**   | Numero de dirección del cliente | Integer |
+| **stName**   | Nombre del tipo de despacho | String |
 | **cartId**   | Id del carro | Integer |
 | **cartDetails**   | Detalle del carro | |
 | **spcId**   | Id del costo del shipping | Integer |
@@ -484,11 +496,13 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
 | **storeId**   | Oficina que se genera el documento tributario| Integer |
 | **marketId**   | Id del market | Integer |
 | **isService**   | Indica si todos los producto del checkout son servicios | Integer |
-| **payProcess**   | Proceso del pedido | Integer |
+| **payProcess**   | Estado de pago: fail (_pedido anulado_), for_validate (_transferencia_), success (_pagado_) | Integer |
 | **payError**   | Código de error | Integer |
 | **payResponse**   | Mensaje de error del medio de pago | Integer |
 | **integrationDetail**   | Url de integración del sistema | String |
 | **url**   | Url del checkout | String |
+| **orderStatus**   | Estado del despacho (**0**, listo para despacho. **6** despachado y **7** entregado.) | Integer |
+| **currency**   | Información de la moneda utilizada |  |
 
 ### GET listar checkout's
 - GET `/v1/markets/checkout/list.json` retornará todos los checkout's creados.
@@ -621,7 +635,7 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
       "isService": 0,
       "withdrawStore": 0,
       "payProcess": "success",
-      "stName": "INICIAL",
+      "stName": "Envíos rápidos",
       "total": 52990,
       "clientId": 24,
       "url": "https://api.bsale.io/v1/checkout/4.json",
@@ -751,7 +765,6 @@ Para crear una variante, se debe enviar un JSON con la siguiente estructura:
 }
 ```
 - **token**, Si no viene lo crea.
-- **id_venta_documento_tributario**, Si viene valida que exista.
 - **cartId**, Si no viene lo crea, Si viene valida que exista .
 - **cartDetails**, Utiliza las reglas del carro.
 - **spcId**, Si viene valida que exista .
