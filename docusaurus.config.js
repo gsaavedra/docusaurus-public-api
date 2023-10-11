@@ -8,16 +8,16 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 const config = {
   title: 'Documentación API Bsale',
   tagline: 'Conoce nuestras documentaciones para el desarrollo de integraciones.',
-  url: 'https://docs.bsale.dev',
-  baseUrl: '/',
+  url: 'https://EstebanBah.github.io',
+  baseUrl: '/docusaurus-public-api/',
   onBrokenLinks: 'ignore',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'gmontero', // Usually your GitHub org/user name.
-  projectName: 'docusaurus-api-doc-ext', // Usually your repo name.
+  organizationName: 'EstebanBah', // Usually your GitHub org/user name.
+  projectName: 'docusaurus-public-api', // Usually your repo name.
 
   // Even if you don't use internalization, you can use this field to set useful
   // metadata like html lang. For example, if your site is Chinese, you may want
@@ -39,25 +39,21 @@ const config = {
           versions: {
             CL: {
               banner: "none",
-              label: '📄 CL',
+              label: '🌎 CL',
               badge: true,
               path: '/CL',
             },
             PE: {
               banner: "none",
-              label: '📄 PE',
+              label: '🌎 PE',
             },
             MX: {
-              label: '📄 MX',
-              banner: "none"
+              label: '🌎 MX',
+              banner: "unmaintained"
             }
           }
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-        },
-        gtag: {
-          trackingID: 'G-368177980',
-          anonymizeIP: true,
         },
         blog: {
           showReadingTime: false,
@@ -75,13 +71,14 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       navbar: {
+        title: 'Inicio',
         logo: {
           alt: 'logo',
           src: 'img/logo.svg',
         },
         items: [
           {
-            to: '/get-started',
+            to: '/primeros-pasos',
             position: 'left',
             label: 'Primeros Pasos',
           },
@@ -92,13 +89,13 @@ const config = {
           },
          {
             to: '/faq',
-            position: 'right',
-            label: '📖 faq',
+            position: 'left',
+            label: 'faq',
           },
           {
             to: '/changelog',
             position: 'right',
-            label: '📢 Changelog',
+            label: 'Changelog',
           },
           {
             type: 'docsVersionDropdown',
@@ -120,12 +117,12 @@ const config = {
             items: [
               {
                 label: 'Primeros pasos',
-                to: '/CL/first-steps',
+                to: '/CL/primeros-pasos',
               },
-             // {
-              //  label: 'Casos de uso',
-              //  to: '/blog',
-             // },
+              {
+                label: 'Casos de uso',
+                to: '/blog',
+              },
             ],
           },
           {
