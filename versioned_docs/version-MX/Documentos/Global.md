@@ -409,6 +409,97 @@ Permite obtener las facturas generadas por el facturador global. Obtiene por def
 }
 ```
 
+## GET factura global
+- GET `/v2/documents/ticket_invoice/global/821/tickets.json` Obtiene listado de tickets asociados a una factura globale
+
+#### Respuesta
+```js title="Response /ticket_invoice/global/821/tickets.json"
+{
+    "href": "https://api.bsale.io/v1/ticket_invoice/global/821/tickets.json",
+    "count": 3,
+    "limit": 25,
+    "offset": 0,
+    "items": [
+        {
+            "documentId": 816,
+            "numDoc": 415,
+            "documentStatus": 0,
+            "commercialStatus": 0,
+            "docGenerationDate": 1696254748,
+            "netAmount": 7954,
+            "exemptAmount": 7954,
+            "taxAmount": 0,
+            "totalAmount": 7954,
+            "documentToken": "67444fd48963",
+            "documentType": 10,
+            "idClient": 0,
+            "idOffice": 1,
+            "urlPublicDocument": "https://gama.bsale.com.mx/view/8888/67664fd48963",
+            "vdtExtra": {
+                "serialNumber": "0000",
+                "fullSerialNumber": "0000-415"
+            },
+            "period": 1,
+            "informed": 2,
+            "expirationDate": 1696204800,
+            "emissionDate": 1696204800,
+            "cpnId": 8888
+        },
+        {
+            "documentId": 817,
+            "numDoc": 416,
+            "documentStatus": 0,
+            "commercialStatus": 0,
+            "docGenerationDate": 1696278241,
+            "netAmount": 100,
+            "exemptAmount": 100,
+            "taxAmount": 0,
+            "totalAmount": 100,
+            "documentToken": "61f215442299",
+            "documentType": 10,
+            "idClient": 0,
+            "idOffice": 1,
+            "urlPublicDocument": "https://gama.bsale.com.mx/view/8888/61f2151d2299",
+            "vdtExtra": {
+                "serialNumber": "0000",
+                "fullSerialNumber": "0000-416"
+            },
+            "period": 1,
+            "informed": 2,
+            "expirationDate": 1696204800,
+            "emissionDate": 1696204800,
+            "cpnId": 8888
+        },
+        {
+            "documentId": 818,
+            "numDoc": 417,
+            "documentStatus": 0,
+            "commercialStatus": 0,
+            "docGenerationDate": 1696278330,
+            "netAmount": 300,
+            "exemptAmount": 300,
+            "taxAmount": 0,
+            "totalAmount": 300,
+            "documentToken": "bd1f23e645",
+            "documentType": 10,
+            "idClient": 0,
+            "idOffice": 1,
+            "urlPublicDocument": "https://gama.bsale.com.mx/view/8888/bd1f23e6cebe",
+            "vdtExtra": {
+                "serialNumber": "0000",
+                "fullSerialNumber": "0000-417"
+            },
+            "period": 1,
+            "informed": 2,
+            "expirationDate": 1696204800,
+            "emissionDate": 1696204800,
+            "cpnId": 8888
+        }
+    ],
+    "totalAmountDocuments": 8354
+}
+```
+
 ## POST Factura Global
 - POST `/v1/documents.json`
 

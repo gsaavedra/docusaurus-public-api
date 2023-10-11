@@ -943,3 +943,46 @@ DELETE `/v1/documents/:id.json?officeId=2`, elimina un documento no electrónico
 Se debe enviar **la sucursal** `officeId` en la cual se eliminará el documento requerido
 
 :::
+
+
+## DELETE Cancelar un documento
+DELETE `/v1/documents/void/{id}.json`, evento de cancelación de un documento de venta
+- **id**, corresponde al documento que se desea anular
+
+### Atributos
+| Atributo      | Descripción | Tipo dato |
+| ----------- | ----------- | ----------- |
+| **cpnId**      |  Corresponde identificador de la empresa    | Integer       |
+| **rfc**      |    Registro federal de contribuyentes  | String       |
+| **uuid**      |   Folio fiscal   | String       |
+| **reason**      |   Expresa el motivo de la cancelación   | String       |
+| **salesman**      |  Identificador del vendedor    | String       |
+| **officeId**      |  Identificador de la sucursal    | String       |
+| **toVoid**      |   Indica que el documento será anulado   | String       |
+
+#### Parámetros
+- **01**, Comprobantes emitidos con errores con realción.
+- **02**, Comprobantes emitidos con errores sin relación.
+- **03**, No se llevó a cabo la operación.
+- **04**, Operación nominativa relacionada en una factura global.
+
+#### Envío
+
+```json title="POST /v1/documents/void/20913.json"
+{
+  {
+    "cpnId":888,
+    "rfc": "LIQM950304SH5",
+    "uuid": "ec726a7e-223b-44da-845c-b6491fc61d23",
+    "reason": "03",
+    "salesman": 1,
+    "officeId": 1,
+    "toVoid": 1
+  }
+```
+#### Respuesta
+```json title="201 Response /documents.json "
+{
+    "status": "OK"
+}
+```

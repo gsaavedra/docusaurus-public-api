@@ -2,18 +2,16 @@
 sidebar_position: 11
 title: Despachos
 description: Crear, editar y listar despachos
-slug: /documentos/despachos
+slug: /documentos/envíos
 ---
 
 
-# Despacho
-
-Generación de documentos tipo despacho. _(ej Guías de despacho electrónicas)_, listar despachos generados, detalles incluidos en el despacho. .
+# Envíos
 
 Cómo funciona la interfaz de Bsale, mira éstos videos:
 
-- Creación de una guía de despacho [Ver](https://youtu.be/XBAd_W8m_FI) 
-- Creación de una guía de despacho a partir de otro documento [Ver](https://youtu.be/G6LMsLwv7v0)
+- Creación de un envío [Ver](https://youtu.be/XBAd_W8m_FI) 
+- Creación de un envío a partir de otro documento [Ver](https://youtu.be/G6LMsLwv7v0)
 
 :::info
 Un documento del tipo despacho, siempre genera una salida de stock (cuando se controla stock)
@@ -65,7 +63,7 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
 | **received**   | estado de la recepción traslado interno (0) No recibida (1) Recibida   | Boolean |
 | **office**   | nodo que indica la relación con la sucursal en la que fue emitida el despacho.   |  |
 | **shipping_type**   | nodo que indica la relación con el tipo de despacho.  |  |
-| **guide**   | nodo que indica el documento guía de despacho.  |  |
+| **guide**   | nodo que indica el documento de envío.  |  |
 | **details**   | nodo que indica los detalles del despacho.  |  |
 
 ## GET lista de despachos
