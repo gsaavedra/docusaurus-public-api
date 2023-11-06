@@ -104,12 +104,12 @@ const config = {
             type: 'docsVersionDropdown',
             position: 'right',
           },
- //         {to: '/blog', label: 'Blog', position: 'left'},
-          // {
-          //   href: 'https://github.com/facebook/docusaurus',
-          //   label: 'GitHub',
-          //   position: 'right',
-          // },
+          {to: '/blog', label: 'Casos de uso', position: 'left'},
+           {
+             href: 'https://github.com/facebook/docusaurus',
+             label: 'GitHub',
+             position: 'right',
+           },
         ],
       },
       footer: {
