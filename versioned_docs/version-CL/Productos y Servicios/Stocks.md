@@ -110,8 +110,8 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
 - **expand**, permite expandir instancias y colecciones para traer relaciones en una sola petición.
 
 #### Ejemplos
-- `GET /v1/variants/44977.json?expand=[variant,office]`
-- `GET /v1/variants/44977.json?officeid=2`
+- `GET /v1/stocks/44977.json?expand=[variant,office]`
+- `GET /v1/stocks/44977.json?officeid=2`
 
 ```json title="Response /stocks/44977.json"
 {
