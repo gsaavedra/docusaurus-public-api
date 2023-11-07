@@ -196,7 +196,7 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
 
 
 ## POST aceptación o reclamo
-- POST `/v1/dtes/claims.json` Para aceptar o reclamar un documento
+- POST `https://bsp-api.bsale.io/v1/dtes/claims.json` Para aceptar o reclamar un documento
 
 ### Ejemplo JSON
 
