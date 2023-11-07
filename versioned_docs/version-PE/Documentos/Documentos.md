@@ -997,7 +997,7 @@ Se pueden enviar referencias par aun documento como ordenes de compra, guías de
       "number": "123",
       "referenceDate": 1407715200,
       "reason": "Orden de Compra 123",
-      "code": 801
+      "code": "OC"
     }
   ]
 }
