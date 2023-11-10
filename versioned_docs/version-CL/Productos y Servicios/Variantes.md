@@ -431,6 +431,7 @@ Se debe enviar un Json con la siguiente estructura:
   "id": 2110,
   "productId": 595,
   "description": "Age of empires 2",
+  "allowNegativeStock": 1,
   "attribute_values": [
     {
       "description": "Windows OS",

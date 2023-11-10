@@ -407,7 +407,9 @@ Se debe enviar un Json con la siguiente estructura.
 ```json
 {
    "id": "97",
-   "productTypeId": 10
+   "productTypeId": 10,
+   "allowDecimal": 1,
+   "name": "nombre del producto"
 }
 ```
 #### Respuesta
