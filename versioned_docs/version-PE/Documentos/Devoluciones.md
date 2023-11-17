@@ -244,7 +244,7 @@ Para crear una devolución y su respectiva nota da crédito se debe enviar un JS
   "expirationDate": 1407384000,
   "emissionDate": 1407384000,
   "motive": "prueba api",
-  "declareSii": 1,
+  "declare": 1,
   "priceAdjustment": 0,
   "editTexts": 0,
   "type": 1
@@ -256,7 +256,7 @@ Para crear una devolución y su respectiva nota da crédito se debe enviar un JS
 - **emissionDate**, Fecha de emisión de la devolución, se envía en formato GMT (Integer).
 - **expirationDate**, Fecha vencimiento de la devolución, se envía en formato GMT (Integer).
 - **motive**, Indica el motivo de la devolución (String).
-- **declareSii**, Si se desea declarar el documento al Servicio de impuestos internos se envía 1, en caso contrario un 0 (Boolean).
+- **declare**, Si se desea declarar el documento ante la SUNAT se envía 1, en caso contrario un 0 (Boolean).
 - **priceAdjustment**, Si la devolución corresponde a un ajuste de precio de los productos se envía 1, en caso contrario 0 (Boolean).
 - **editTexts**, Si la devolución corresponde a una corrección de texto (por forma) se envía 1, en caso contrario 0 (Boolean).
 - **type**, Indica como se va a devolver el dinero del documento, 0 para devolución dinero, 1 para forma pago nueva venta, 2 para abono linea de crédito, 3 para otra devolución (Integer).
@@ -374,7 +374,7 @@ Para generar este tipo de devolución es obligatorio especificar el cliente.
   "emissionDate": 1407384000,
   "referenceDocumentId": 11528,
   "motive": "prueba api",
-  "declareSii": 1,
+  "declare": 1,
   "priceAdjustment": 0,
   "editTexts": 0,
   "type": 1,
@@ -439,7 +439,7 @@ En la url de la petición se debe especificar el id de la devolución, en este c
   "referenceDocumentId": 3733,
   "emissionDate": 1414501200,
   "expirationDate": 1417179600,
-  "declareSii": 1
+  "declare": 1
 }
 ```
 - **documentTypeId**, Id del tipo de documento, en este caso, uno que sea nota de débito (Integer).

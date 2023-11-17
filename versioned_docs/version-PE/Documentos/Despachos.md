@@ -326,7 +326,7 @@ Si se desea generar una guía de traslado interno, se debe agregar al envío
   "municipality": "Lima",
   "city": "Lima",
   "address": "Miraflores",
-  "declareSii": 1,
+  "declare": 1,
   "recipient": "Edison Packard",
   "details": [
     {
