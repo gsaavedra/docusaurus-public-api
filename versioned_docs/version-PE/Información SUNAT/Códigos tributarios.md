@@ -46,7 +46,7 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
   
 #### Ejemplos
 - `GET /v1/cpe_codes.json?limit=10&offset=0`
-- `GET /v1/cpe_codes.json?fields=[name,codesii,state]`
+- `GET /v1/cpe_codes.json?fields=[name,code,state]`
 
 
 ```json title="Response /cpe_codes.json "
@@ -243,7 +243,7 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
   "href": "https://api.bsale.io/v1/cpe_codes/8.json",
   "id": 8,
   "name": "BOLETA - A4",
-  "codeSii": "03",
+  "code": "03",
   "state": 0
 }
 ```
