@@ -4,6 +4,10 @@ slug: /changelog
 ---
 
 # Liberaciones disponibles
+
+## 11/2023
+- Se agrega nombre de la variante que NO tiene stock en el intento de generación de documento 🇨🇱 🇵🇪 🇲🇽.
+
 ## 09/2023
 - Ajuste rate-limit 10 requests por segundo.
 - Validación cupo máximo de crédito en ventas
