@@ -193,7 +193,7 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
 ## POST una sucursal
 - POST `/v1/offices.json` 
 
-Para crear un cliente, se debe enviar un JSON con la siguiente estructura:
+Para crear una Sucursal, se debe enviar un JSON con la siguiente estructura:
 ### Ejemplo JSON
 
 #### Envío
