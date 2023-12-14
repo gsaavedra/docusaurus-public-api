@@ -513,11 +513,15 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
 - **token**, Corresponde al token único asociado a un checkout.
 - **clientName**,  Permite filtro por  el nombre del cliente
 - **clientEmail**, Permite filtro por el email del cliente
-- **marketId**,  Corresponde al ID del market 
+- **marketId**,  Corresponde al ID del market
+- **dateStart**,  Permite filtrar Checkout´s por fecha de inicio
+- **dateEnd**,  Permite filtrar Checkout´s por fecha de término
   
 #### Ejemplos
 - `GET /v1/markets/checkout/list.json?token=1c659e3ee5ba6ad93b8b5eadb9921ae4b0e76e76`
 - `GET /v1/markets/checkout/list.json?marketId=1`
+- `GET /v1/markets/checkout/list.json?dateStart=1702396770`
+- `GET /v1/markets/checkout/list.json?dateEnd=1702339200`
 
 ```json title="Response /checkout/list.json"
 {
