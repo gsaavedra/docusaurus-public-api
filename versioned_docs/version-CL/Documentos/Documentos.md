@@ -940,6 +940,22 @@ En el caso de **manejar tu stock con Bsale**, el detalle tendría una estructura
 :::tip
 Si controlas stock, puedes usar `code` o `variantId` o `barCode` para referenciar a tu producto existente en Bsale.
 :::
+En el caso de **controlar Series**, el detalle tendría una estructura similar a:
+
+```json 
+{
+   "details": [
+       {
+           "code": "BIDES05000",
+            "netUnitValue": "5882.35",
+            "quantity": 1,
+            "taxId": "[1]",
+            "comment": "SERIE",
+            "discount": 0
+       }
+   ]
+}
+```
 
 #### Sin control de stock
 En el caso de solo necesitar **declarar documentos en el SII con Bsale**, el detalle tendría una estructura similar a:
