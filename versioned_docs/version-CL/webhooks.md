@@ -54,7 +54,25 @@ Algunas notificaciones contendrán estructuras JSON con campos extras como por e
 
 
 ## Solicitar activación
-Para solicitar la activación, puedes escribirnos a ayuda@bsale.app indicandonos la URL y el RUC o cpnId de empresa a activar.
+Para solicitar la activación, puedes escribirnos a ayuda@bsale.app indicandonos la URL y el RUT o cpnId de la empresa a activar.
+Puedes elegir el "topic" que necesitas recibir, tanto para **POST** o para **PUT**
+**Noticifaciones base**
+- Documento
+- Stock
+- Producto
+- Variante
+- Precio
+**Notificaciones Tienda en Linea**
+- Producto Web
+- Detalle Colección
+- Colección
+- Venta Online
+**Otras Notificaciones**
+- Pagos
+- Documento de compra
+- Documento Declarado
+- Rcof
+- Courier Externo
 
 :::note
 
