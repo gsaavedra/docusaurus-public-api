@@ -5,6 +5,9 @@ slug: /changelog
 
 # Liberaciones disponibles
 
+## 01/2024
+- Creación de Pack y detalles 🇨🇱 🇵🇪 🇲🇽.
+
 ## 11/2023
 - Se agrega nombre de la variante que NO tiene stock en el intento de generación de documento 🇨🇱 🇵🇪 🇲🇽.
 
