@@ -16,7 +16,7 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
   "href": "https://api.bsale.io/v1/shipping_types/6.json",
   "id": 6,
   "name": "Otros traslados no venta",
-  "codeSii": 6,
+  "code": 6,
   "useDestinationOffice": 0,
   "state": 0
 }
@@ -28,7 +28,7 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
 | **href**      | url del Tipos de despacho     | String       |
 | **id**   | identificador único del Tipos de despacho   | Integer |
 | **name**   | nombre del tipo de despacho | String |
-| **codeSii**   | código sii del tipo de despacho | String |
+| **code**   | código SUNAT del tipo de despacho | String |
 | **useDestinationOffice**   | indica si el tipo de despacho requiere una sucursal de destino No(0) o Si (1) | Boolean |
 | **state**   | estado del tipo de despacho activo(0) o inactivo (1) | Boolean |
 
@@ -41,12 +41,12 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
 - **fields**, solo devolver atributos específicos de un recurso
 - **expand**, permite expandir instancias y colecciones para traer relaciones en una sola petición.
 - **name**, Permite filtrar por nombre tipo libro.
-- **codesii**, filtra por el código tributario del tipo de despacho.
+- **code**, filtra por el código tributario del tipo de despacho.
 - **state**, boolean (0 o 1) indica si los tipos de libro están activos(0) inactivos(1).
   
 #### Ejemplos
 - `GET /v1/shipping_types.json?limit=10&offset=0`
-- `GET /v1/book_types.json?fields=[name,codesii,state]`
+- `GET /v1/book_types.json?fields=[name,code,state]`
 
 ```json title="Response /shipping_types.json "
 {
@@ -59,7 +59,7 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
       "href": "https://api.bsale.io/v1/shipping_types/3.json",
       "id": 3,
       "name": "Consignaciones",
-      "codeSii": 3,
+      "code": 3,
       "useDestinationOffice": 0,
       "state": 0
     },
@@ -67,7 +67,7 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
       "href": "https://api.bsale.io/v1/shipping_types/4.json",
       "id": 4,
       "name": "Entrega gratuita",
-      "codeSii": 4,
+      "code": 4,
       "useDestinationOffice": 0,
       "state": 0
     },
@@ -75,7 +75,7 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
       "href": "https://api.bsale.io/v1/shipping_types/7.json",
       "id": 7,
       "name": "Guía de devolución",
-      "codeSii": 7,
+      "code": 7,
       "useDestinationOffice": 0,
       "state": 0
     },
@@ -83,7 +83,7 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
       "href": "https://api.bsale.io/v1/shipping_types/1.json",
       "id": 1,
       "name": "Operación constituye venta",
-      "codeSii": 1,
+      "code": 1,
       "useDestinationOffice": 0,
       "state": 0
     },
@@ -91,7 +91,7 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
       "href": "https://api.bsale.io/v1/shipping_types/6.json",
       "id": 6,
       "name": "Otros traslados no venta",
-      "codeSii": 6,
+      "code": 6,
       "useDestinationOffice": 0,
       "state": 0
     },
@@ -99,7 +99,7 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
       "href": "https://api.bsale.io/v1/shipping_types/5.json",
       "id": 5,
       "name": "Traslados internos",
-      "codeSii": 5,
+      "code": 5,
       "useDestinationOffice": 1,
       "state": 0
     },
@@ -107,7 +107,7 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
       "href": "https://api.bsale.io/v1/shipping_types/8.json",
       "id": 8,
       "name": "Traslado para exportación. (no venta)",
-      "codeSii": 8,
+      "code": 8,
       "useDestinationOffice": 0,
       "state": 0
     },
@@ -115,7 +115,7 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
       "href": "https://api.bsale.io/v1/shipping_types/2.json",
       "id": 2,
       "name": "Ventas por efectuar",
-      "codeSii": 2,
+      "code": 2,
       "useDestinationOffice": 0,
       "state": 0
     },
@@ -123,7 +123,7 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
       "href": "https://api.bsale.io/v1/shipping_types/9.json",
       "id": 9,
       "name": "Venta para exportación",
-      "codeSii": 9,
+      "code": 9,
       "useDestinationOffice": 0,
       "state": 0
     }
@@ -138,7 +138,7 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
   "href": "https://api.bsale.io/v1/shipping_types/6.json",
   "id": 6,
   "name": "Otros traslados no venta",
-  "codeSii": 6,
+  "code": 6,
   "useDestinationOffice": 0,
   "state": 0
 }

@@ -25,72 +25,87 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
 
 ```js title="Response /documents.json"
 {
-  "href": "https://api.bsale.io/v1/documents/382.json",
-  "id": 382,
-  "emissionDate": 1463540400,
-  "expirationDate": 1464663600,
-  "generationDate": 1463593575,
-  "rcofDate": 1464663600,
-  "number": 1,
-  "totalAmount": 14280,
-  "netAmount": 12000,
-  "taxAmount": 2280,
-  "exemptAmount": 0,
-  "exportTotalAmount": 0,
-  "exportNetAmount": 0,
-  "exportTaxAmount": 0,
-  "exportExemptAmount": 0,
-  "commissionRate": 0,
-  "commissionNetAmount": 0,
-  "commissionTaxAmount": 0,
-  "commissionTotalAmount": 0,
-  "percentageTaxWithheld": 0,
-  "purchaseTaxAmount": 0,
-  "purchaseTotalAmount": 0,
-  "urlTimbre": null,
-  "ted": null,
-  "urlPublicView": "http://app2.bsale.cl/view/2/a2d9b4da5128?sfd=99",
-  "urlPdf": "http://app2.bsale.cl/view/2/a2d9b4da5128.pdf?sfd=99",
-  "urlPublicViewOriginal": "http://app2.bsale.cl/view/2/a2d9b4da5128",
-  "urlPdfOriginal": "http://app2.bsale.cl/view/2/a2d9b4da5128.pdf",
-  "token": "a2d9b4da5128",
-  "state": 0,
-  "userId": 2,
-  "urlXml": null,
-  "address": null,
-  "municipality": null,
-  "city": null,
-  "informed": 1,
-  "responseMsg": null,
-  "document_type": {
-    "href": "https://api.bsale.io/v1/document_types/1.json",
-    "id": "1"
-  },
-  "client": {
-    "href": "https://api.bsale.io/v1/clients/7.json",
-    "id": "7"
-  },
-  "office": {
-    "href": "https://api.bsale.io/v1/offices/2.json",
-    "id": "2"
-  },
-  "user": {
-    "href": "https://api.bsale.io/v1/users/2.json",
-    "id": "2"
-  },
-  "references": {
-    "href": "https://api.bsale.io/v1/documents/382/references.json"
-  },
-  "document_taxes": {
-    "href": "https://api.bsale.io/v1/documents/382/document_taxes.json"
-  },
-  "details": {
-    "href": "https://api.bsale.io/v1/documents/382/details.json"
-  },
-  "sellers": {
-    "href": "https://api.bsale.io/v1/documents/382/sellers.json"
-  }
-}
+    "href": "https://api.bsale.cl/v1/documents.json",
+    "count": 6,
+    "limit": 25,
+    "offset": 0,
+    "items": [
+        {
+            "href": "https://api.bsale.cl/v1/documents/26.json",
+            "id": 26,
+            "emissionDate": 1707955200,
+            "expirationDate": 1707955200,
+            "generationDate": 1708086193,
+            "number": 1,
+            "serialNumber": "T001-1",
+            "trackingNumber": null,
+            "totalAmount": 0.0,
+            "netAmount": 0.0,
+            "taxAmount": 0.0,
+            "exemptAmount": 0.0,
+            "notExemptAmount": 0.0,
+            "exportTotalAmount": 0.0,
+            "exportNetAmount": 0.0,
+            "exportTaxAmount": 0.0,
+            "exportExemptAmount": 0.0,
+            "commissionRate": 0.0,
+            "commissionNetAmount": 0.0,
+            "commissionTaxAmount": 0.0,
+            "commissionTotalAmount": 0.0,
+            "percentageTaxWithheld": 0.0,
+            "purchaseTaxAmount": 0.0,
+            "purchaseTotalAmount": 0.0,
+            "address": "Jr. Miguel Grau 401 Alto libertad",
+            "district": "Cerro Colorado",
+            "city": "Arequipa",
+            "stamp": null,
+            "urlPublicView": "https://app2.bsale.com.pe/view/92747/d71a676cf160?sfd=99",
+            "urlPdf": "https://app2.bsale.com.pe/view/92747/d71a676cf160.pdf?sfd=99",
+            "urlPublicViewOriginal": "https://app2.bsale.com.pe/view/92747/d71a676cf160",
+            "urlPdfOriginal": "https://app2.bsale.com.pe/view/92747/d71a676cf160.pdf",
+            "token": "d71a676cf160",
+            "state": 0,
+            "commercialState": 0,
+            "urlXml": null,
+            "salesId": null,
+            "informed": 2,
+            "responseMsg": null,
+            "document_type": {
+                "href": "https://api.bsale.cl/v1/document_types/7.json",
+                "id": "7"
+            },
+            "client": {
+                "href": "https://api.bsale.cl/v1/clients/27.json",
+                "id": "27"
+            },
+            "office": {
+                "href": "https://api.bsale.cl/v1/offices/1.json",
+                "id": "1"
+            },
+            "user": {
+                "href": "https://api.bsale.cl/v1/users/2.json",
+                "id": "2"
+            },
+            "coin": {
+                "href": "https://api.bsale.cl/v1/coins/1.json",
+                "id": "1"
+            },
+            "references": {
+                "href": "https://api.bsale.cl/v1/documents/26/references.json"
+            },
+            "document_taxes": {
+                "href": "https://api.bsale.cl/v1/documents/26/document_taxes.json"
+            },
+            "details": {
+                "href": "https://api.bsale.cl/v1/documents/26/details.json"
+            },
+            "sellers": {
+                "href": "https://api.bsale.cl/v1/documents/26/sellers.json"
+            },
+            "attributes": {
+                "href": "https://api.bsale.cl/v1/documents/26/attributes.json"
+            }
+        },
 ```
 
 ### Atributos
@@ -127,7 +142,7 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
 |  **state**   | estado del documento indica si el documento esta activo(0) o inactivo (1)         | Boolean        |
 |  **urlXml**   | respaldo del documento electrónico         | String        |
 |  **address**   | dirección del documento        | String        |
-|  **municipality**   | comuna del documento        | String        |
+|  **district**   | distrito del documento        | String        |
 |  **city**   | ciudad del documento        | String        |
 |  **informed**   | indica si el documento fue informado al SUNAT, 0 es correcto, 1 es enviado, 2 es rechazado        | Integer        |
 | **responseMsg**   | respuesta de la declaración del documento al SUNAT en caso de ser electrónico        | String        |
@@ -156,7 +171,7 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
 - **token**, filtra documentos por el token.
 - **documenttypeid**, filtra documentos por el tipo de documento.
 - **clientid**, filtra documentos por el cliente.
-- **clientcode**, filtra rut del cliente.
+- **clientcode**, filtra RUC/DNI del cliente.
 - **officeid**, filtra documentos por la sucursal.
 - **saleconditionid**, filtra documentos por la condición de venta.
 - **informed**, filtra documentos si fue declarado en el SUNAT, 0 es correcto, 1 es enviado, 2 es rechazado (Integer).
@@ -183,80 +198,91 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
 - `GET /v1/documents.json?expand=details,payments`  
 
 ## GET único documento
-- GET `/v1/documents/421.json` retorna un único documento.
+- GET `/v1/documents/33.json` retorna un único documento.
 
 #### Parámetros
 - **expand**, permite expandir instancias y colecciones.
 
 #### Ejemplos
-- `GET /v1/documents/421.json?expand=[document_type,office]`
-- `GET /v1/documents/421.json?expand=details,payments`
+- `GET /v1/documents/33.json?expand=[document_type,office]`
+- `GET /v1/documents/33.json?expand=details,payments`
 
-```json title="Response /documents/421.json "
+```json title="Response /documents/32.json "
 {
-  "href": "https://api.bsale.io/v1/documents/421.json",
-  "id": 421,
-  "emissionDate": 1351652400,
-  "expirationDate": 1351652400,
-  "rcofDate": 1351652400,
-  "number": 1,
-  "totalAmount": 5117000,
-  "netAmount": 4300000,
-  "taxAmount": 817000,
-  "exemptAmount": 0,
-  "exportTotalAmount": 0,
-  "exportNetAmount": 0,
-  "exportTaxAmount": 0,
-  "exportExemptAmount": 0,
-  "commissionRate": 0,
-  "commissionNetAmount": 0,
-  "commissionTaxAmount": 0,
-  "commissionTotalAmount": 0,
-  "percentageTaxWithheld": 0,
-  "purchaseTaxAmount": 0,
-  "purchaseTotalAmount": 0,
-  "urlTimbre": null,
-  "ted": null,
-  "urlPublicView": "http://app2.bsale.cl/view/2/f806d6a6ae73?sfd=99",
-  "urlPdf": "http://app2.bsale.cl/view/2/f806d6a6ae73.pdf?sfd=99",
-  "urlPublicViewOriginal": "http://app2.bsale.cl/view/2/f806d6a6ae73",
-  "urlPdfOriginal": "http://app2.bsale.cl/view/2/f806d6a6ae73.pdf",
-  "token": "f806d6a6ae73",
-  "state": 0,
-  "urlXml": null,
-  "address": "San Francisco 402, jj perez 7248",
-  "municipality": "Santiago",
-  "city": "Santiago",
-  "informed": 2,
-  "responseMsg": null,
-  "document_type": {
-    "href": "https://api.bsale.io/v1/document_types/4.json",
-    "id": "4"
-  },
-  "client": {
-    "href": "https://api.bsale.io/v1/clients/7.json",
-    "id": "7"
-  },
-  "office": {
-    "href": "https://api.bsale.io/v1/offices/2.json",
-    "id": "2"
-  },
-  "user": {
-    "href": "https://api.bsale.io/v1/users/2.json",
-    "id": "2"
-  },
-  "references": {
-    "href": "https://api.bsale.io/v1/documents/421/references.json"
-  },
-  "document_taxes": {
-    "href": "https://api.bsale.io/v1/documents/421/document_taxes.json"
-  },
-  "details": {
-    "href": "https://api.bsale.io/v1/documents/421/details.json"
-  },
-  "sellers": {
-    "href": "https://api.bsale.io/v1/documents/421/sellers.json"
-  }
+    "href": "https://api.bsale.cl/v1/documents/33.json",
+    "id": 33,
+    "emissionDate": 1709683200,
+    "expirationDate": 1709683200,
+    "generationDate": 1709732999,
+    "number": 3,
+    "serialNumber": "B001-3",
+    "trackingNumber": "",
+    "totalAmount": 600.0,
+    "netAmount": 508.47,
+    "taxAmount": 91.53,
+    "exemptAmount": 0.0,
+    "notExemptAmount": 508.47,
+    "exportTotalAmount": 600.0,
+    "exportNetAmount": 508.47,
+    "exportTaxAmount": 91.53,
+    "exportExemptAmount": 0.0,
+    "commissionRate": 0.0,
+    "commissionNetAmount": 0.0,
+    "commissionTaxAmount": 0.0,
+    "commissionTotalAmount": 0.0,
+    "percentageTaxWithheld": 0.0,
+    "purchaseTaxAmount": 0.0,
+    "purchaseTotalAmount": 0.0,
+    "address": "Av. Emilio Cavenecia 151",
+    "district": "Miraflores",
+    "city": "Lima",
+    "stamp": null,
+    "urlPublicView": "https://app2.bsale.com.pe/view/92747/4d609cc15905?sfd=99",
+    "urlPdf": "https://app2.bsale.com.pe/view/92747/4d609cc15905.pdf?sfd=99",
+    "urlPublicViewOriginal": "https://app2.bsale.com.pe/view/92747/4d609cc15905",
+    "urlPdfOriginal": "https://app2.bsale.com.pe/view/92747/4d609cc15905.pdf",
+    "token": "4d609cc15905",
+    "state": 0,
+    "commercialState": 0,
+    "urlXml": null,
+    "salesId": null,
+    "informed": 1,
+    "responseMsg": null,
+    "document_type": {
+        "href": "https://api.bsale.cl/v1/document_types/1.json",
+        "id": "1"
+    },
+    "client": {
+        "href": "https://api.bsale.cl/v1/clients/1.json",
+        "id": "1"
+    },
+    "office": {
+        "href": "https://api.bsale.cl/v1/offices/1.json",
+        "id": "1"
+    },
+    "user": {
+        "href": "https://api.bsale.cl/v1/users/2.json",
+        "id": "2"
+    },
+    "coin": {
+        "href": "https://api.bsale.cl/v1/coins/1.json",
+        "id": "1"
+    },
+    "references": {
+        "href": "https://api.bsale.cl/v1/documents/33/references.json"
+    },
+    "document_taxes": {
+        "href": "https://api.bsale.cl/v1/documents/33/document_taxes.json"
+    },
+    "details": {
+        "href": "https://api.bsale.cl/v1/documents/33/details.json"
+    },
+    "sellers": {
+        "href": "https://api.bsale.cl/v1/documents/33/sellers.json"
+    },
+    "attributes": {
+        "href": "https://api.bsale.cl/v1/documents/33/attributes.json"
+    }
 }
 ```
 
@@ -278,74 +304,45 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
 - `GET /v1/documents.json?limit=10&offset=0`
 - `GET /v1/documents/summary.json?emissiondaterange=[1404187200,1406779200]`
 - `GET /v1/documents/summary.json?generationdaterange=[1404187200,1406779200]`
-- `GET /v1/documents/summary.json?code=[33,31]`
+- `GET /v1/documents/summary.json?code=[01,03]`
 - `GET /v1/documents/summary.json?perdocument=1`
 - `GET /v1/documents/summary.json?rcofdaterange=[1627776000,1627862400]&code=[39]`
 
-```json title="Response /documents/summary.json?code=[01]"
+```json title="Response /documents/summary.json?code=[03]"
 [
-  {
-    "generationDate": "",
-    "emissionDate": "",
-    "documentTypeName": "Boleta Electrónica",
-    "code": "39",
-    "month": 7,
-    "year": 2014,
-    "officeId": 2,
-    "officeName": "Los Angeles",
-    "officeCostCenter": "",
-    "count": 1,
-    "totalNetAmount": 2791,
-    "totalTaxAmount": 530,
-    "totalAmount": 3321,
-    "totalExemptAmount": 0,
-    "taxes": [
-      {
-        "taxId": 1,
-        "taxName": "IVA",
-        "taxAmount": 530
-      }
-    ],
-    "details": [
-      {
-        "itemLedgerAccount": "",
-        "totalNetAmount": 2791
-      }
-    ],
-    "documentId": 10383,
-    "documentNumber": 9093
-  },
-  {
-    "generationDate": "",
-    "emissionDate": "",
-    "documentTypeName": "Boleta Electrónica",
-    "code": "39",
-    "month": 7,
-    "year": 2014,
-    "officeId": 2,
-    "officeName": "Los Angeles",
-    "officeCostCenter": "",
-    "count": 1,
-    "totalNetAmount": 15132,
-    "totalTaxAmount": 2875,
-    "totalAmount": 18007,
-    "totalExemptAmount": 0,
-    "taxes": [
-      {
-        "taxId": 1,
-        "taxName": "IVA",
-        "taxAmount": 2875
-      }
-    ],
-    "details": [
-      {
-        "itemLedgerAccount": "",
-        "totalNetAmount": 15132
-      }
-    ],
-    "documentId": 10384,
-    "documentNumber": 9094
-  }
+    {
+        "generationDate": 1709726180,
+        "emissionDate": 1709683200,
+        "documentTypeName": "BOLETA - T",
+        "code": "03",
+        "month": 3,
+        "year": 2024,
+        "officeId": 1,
+        "officeName": "Domicilio Fiscal",
+        "officeCostCenter": "",
+        "count": 3,
+        "totalNetAmount": 1291.52,
+        "totalTaxAmount": 232.48,
+        "totalAmount": 1524.0,
+        "totalExemptAmount": 0.0,
+        "taxes": [
+            {
+                "taxId": 1,
+                "taxName": "IGV",
+                "taxAmount": 232.48
+            }
+        ],
+        "details": [
+            {
+                "itemLedgerAccount": null,
+                "totalNetAmount": 1016.94
+            },
+            {
+                "itemLedgerAccount": "",
+                "totalNetAmount": 274.58
+            }
+        ]
+    }
 ]
 ```
 ### GET cantidad de documentos
@@ -359,7 +356,7 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
 
 ```json title="Response /documents/count.json?state=0 "
 {
-   "count": 1449
+   "count": 7
 }
 ```
 ### GET costos de una venta
@@ -529,7 +526,7 @@ Retorna sólo referencias electrónicas (**XML**).
       "id": 6,
       "referenceDate": 1407643200,
       "number": "456",
-      "reason": "Guia despacho 456",
+      "reason": "Guia remisión 456",
       "dte_code": {
         "href": "https://api.bsale.io/v1/dte_codes/15.json",
         "id": "15"
@@ -791,7 +788,7 @@ En algunos documentos no es necesario agregar el cliente como en el caso de la b
     "code": "10606119111",
     "city": "Capital del Oeste",
     "company": "Capsule Corp",
-    "municipality": "Capital del Oeste",
+    "district": "Capital del Oeste",
     "activity": "Development and research",
     "address": "Hoi Poi #750",
     "email": "dr@brief.com.pe",
@@ -799,10 +796,10 @@ En algunos documentos no es necesario agregar el cliente como en el caso de la b
   }
 }
 ```
-- **code**, Rut del cliente (String).
+- **code**, RUC/DNI del cliente (String).
 - **city**, Ciudad del cliente  (String).
 - **company**, Razón social del cliente (String).
-- **municipality**, Comuna del cliente (String).
+- **district**, Distrito del cliente (String).
 - **activity**, Giro del cliente (String).
 - **address**, Dirección del cliente (String). 
 - **email**, indica el correo electronico del cliente  (String).
@@ -836,7 +833,7 @@ Si necesitas que Bsale **envie el documento al correo del cliente** puedes agreg
     "code": "10606119111",
     "city": "Capital del Oeste",
     "company": "Capsule Corp",
-    "municipality": "Capital del Oeste",
+    "district": "Capital del Oeste",
     "activity": "Development and research",
     "address": "Hoi Poi #750",
     "email": "dr@brief.com.pe",
@@ -937,12 +934,12 @@ También es posible especificar los impuestos, enviando su código tributario y 
       "quantity": 1,
       "taxes": [
         {
-          "code": 14,
-          "percentage": 19
+          "code": 1000,
+          "percentage": 18
         },
         {
-          "code": 35,
-          "percentage": 46.9
+          "code": 7152,
+          "percentage": 0.5
         }
       ],
       "comment": "el nombre del producto que voy a vender",

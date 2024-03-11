@@ -11,7 +11,7 @@ Listar Monedas configuradas en Bsale.
 
 
 :::info
-Bsale soporta el uso **1 o más monedas**. (Ej, USD en factura de exportación). Para su uso, se debe crear una lista de precio en base a la moneda creada.
+Bsale soporta el uso de **1 o más monedas**. (Ej, USD en factura de exportación). Para su uso, se debe crear una lista de precio en base a la moneda creada.
 :::
 
 ## Estructura JSON
@@ -20,12 +20,14 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
 
 ```js title="Response /coins/1.json"
 {
-  "href": "https://api.bsale.io/v1/coins/1.json",
-  "id": 1,
-  "name": "Peso Chileno",
-  "symbol": "$",
-  "decimals": 0,
-  "totalRound": 0
+      "href": "https://api.bsale.io/v1/coins/1.json",
+      "id": 1,
+      "name": "SOL",
+      "symbol": "S/",
+      "decimals": 2,
+      "roundDecimals": 2,
+      "totalRound": 0,
+      "isoCode": "PEN"
 }
 ```
 
@@ -59,36 +61,32 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
 
 ```json title="Response /coins.json "
 {
-  "href": "https://api.bsale.io/v1/coins.json",
-  "count": 3,
-  "limit": 25,
-  "offset": 0,
-  "items": [
-    {
-      "href": "https://api.bsale.io/v1/coins/3.json",
-      "id": 3,
-      "name": "Dolar",
-      "symbol": "USD",
-      "decimals": 2,
-      "totalRound": 0
-    },
-    {
-      "href": "https://api.bsale.io/v1/coins/1.json",
-      "id": 1,
-      "name": "Peso Chileno",
-      "symbol": "$",
-      "decimals": 0,
-      "totalRound": 0
-    },
-    {
-      "href": "https://api.bsale.io/v1/coins/2.json",
-      "id": 2,
-      "name": "UF",
-      "symbol": "(UF)",
-      "decimals": 2,
-      "totalRound": 0
-    }
-  ]
+    "href": "https://api.bsale.io/v1/coins.json",
+    "count": 2,
+    "limit": 25,
+    "offset": 0,
+    "items": [
+        {
+            "href": "https://api.bsale.io/v1/coins/2.json",
+            "id": 2,
+            "name": "DOLAR",
+            "symbol": "US$",
+            "decimals": 2,
+            "roundDecimals": 2,
+            "totalRound": 1,
+            "isoCode": "USD"
+        },
+        {
+            "href": "https://api.bsale.io/v1/coins/1.json",
+            "id": 1,
+            "name": "SOL",
+            "symbol": "S/",
+            "decimals": 2,
+            "roundDecimals": 2,
+            "totalRound": 0,
+            "isoCode": "PEN"
+        }
+    ]
 }
 ```
 ## GET un moneda
@@ -96,12 +94,14 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
 
 ```json title="Response /coins/2.json"
 {
-  "href": "https://api.bsale.io/v1/coins/2.json",
-  "id": 2,
-  "name": "Euro",
-  "symbol": "€",
-  "decimals": 2,
-  "totalRound": 0
+    "href": "https://api.bsale.io/v1/coins/2.json",
+    "id": 2,
+    "name": "DOLAR",
+    "symbol": "US$",
+    "decimals": 2,
+    "roundDecimals": 2,
+    "totalRound": 1,
+    "isoCode": "USD"
 }
 ```
 ## GET tipo cambio moneda
@@ -126,7 +126,7 @@ En el ejemplo, donde 2 es el `id` de la moneda y `1533223010` es la fecha en uni
 - **returns**, nodo que representa las devoluciones asignadas al moneda.
 
 ## GET ventas por Monedas
-- GET `/v1/coins/128/sales.json` Retornará los documentos de venta asignados al moneda..
+- GET `/v1/coins/128/sales.json` Retornará los documentos de venta asignados a la moneda.
 
 #### Parámetros
 - **startdate**, fecha de inicio de ventas , por defecto es la fecha del dia de la petición (Integer).
@@ -145,7 +145,7 @@ En el ejemplo, donde 2 es el `id` de la moneda y `1533223010` es la fecha en uni
         {
             "href": "https://api.bsale.io/v1/documents/83.json",
             "id": 83,
-            "name": "BOLETA MANUAL (no valido al SII)",
+            "name": "BOLETA MANUAL",
             "number": 39
         }
     ]

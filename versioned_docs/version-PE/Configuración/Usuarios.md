@@ -200,7 +200,7 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
         {
             "href": "https://api.bsale.io/v1/documents/83.json",
             "id": 83,
-            "name": "BOLETA MANUAL (no valido al SII)",
+            "name": "BOLETA MANUAL",
             "number": 39
         }
     ]

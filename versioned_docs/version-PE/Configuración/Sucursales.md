@@ -29,7 +29,7 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
   "longitude": "",
   "isVirtual": 1,
   "country": null,
-  "municipality": "",
+  "district": "",
   "city": null,
   "zipCode": null,
   "costCenter": "",
@@ -49,7 +49,7 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
 | **latitude**   | latitud de la sucursal | String |
 | **longitude**   | longitud la sucursal | String |
 | **isVirtual**   | indica si la sucursal estará disponible para trabajar en una pagina web No(0) o Si (1) | Boolean |
-| **municipality**   | comuna de la sucursal | String |
+| **district**   | distrito de la sucursal | String |
 | **city**   | ciudad de la sucursal | String |
 | **zipCode**   | código postas de la sucursal | String |
 | **costCenter**   | centro de costo de la sucursal | String |
@@ -68,7 +68,7 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
 - **address**, filtra por dirección dde las sucursales.
 - **country**, filtra por país de las sucursales.
 - **city**, filtra por ciudad de las sucursales.
-- **municipality**, filtra por comuna de las sucursales.
+- **district**, filtra por distrito de las sucursales.
 - **costcenter**, filtra centro de costo de las sucursales.
 - **state**, boolean (0 o 1) indica si las sucursales están activas(0) inactivas (1).
   
@@ -133,7 +133,7 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
       "longitude": "",
       "isVirtual": 1,
       "country": null,
-      "municipality": "",
+      "district": "",
       "city": null,
       "zipCode": null,
       "costCenter": "",
@@ -157,7 +157,7 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
   "longitude": "",
   "isVirtual": 1,
   "country": null,
-  "municipality": "",
+  "district": "",
   "city": null,
   "zipCode": null,
   "costCenter": "",
@@ -193,7 +193,7 @@ Para crear un cliente, se debe enviar un JSON con la siguiente estructura:
   "isVirtual": 0,
   "address": "Santa Rosa 402",
   "country": "Perú",
-  "municipality": "Lima",
+  "district": "Lima",
   "city": "San Isidro",
   "costCenter": "25",
   "description": "Oficina"
@@ -213,7 +213,7 @@ Para crear un cliente, se debe enviar un JSON con la siguiente estructura:
   "address": "Santa Rosa 402",
   "id": 5,
   "country": "Perú",
-  "municipality": "Lima",
+  "district": "Lima",
   "city": "San Isidro",
   "costCenter": "25",
   "description": "Oficina",
@@ -248,7 +248,7 @@ Se debe enviar un Json con la siguiente estructura
   "address": "SSanta Rosa 402 oficina B",
   "id": 5,
   "city": "Puerto Varas",
-  "municipality": "Puerto Varas",
+  "district": "Puerto Varas",
   "country": "Chile",
   "costCenter": "25",
   "description": "Oficina",
@@ -276,7 +276,7 @@ La sucursal no estará visible mediante interfaz y tendrá un `state` 99. Sus do
   "address": "Santa Rosa 402 oficina B",
   "id": 5,
   "city": "Puerto Varas",
-  "municipality": "Puerto Varas",
+  "district": "Puerto Varas",
   "country": "Perú",
   "costCenter": "25",
   "description": "Oficina",

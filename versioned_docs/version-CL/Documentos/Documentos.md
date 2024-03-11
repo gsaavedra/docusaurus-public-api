@@ -1054,7 +1054,7 @@ Se pueden especificar los pagos asociados al documento, se requiere un nodo simi
 En caso de no enviar Bsale detectara la forma de pago por defecto y asignara el monto total del documento a esa forma de pago.
 :::
 ### Referencias electrónicas (opcional)
-Se pueden enviar referencias par aun documento como ordenes de compra, guías de despacho etc. Se requiere un nodo similar a:
+Se pueden enviar referencias para aun documento como ordenes de compra, guías de despacho etc. Se requiere un nodo similar a:
 ```json 
 {
   "references": [

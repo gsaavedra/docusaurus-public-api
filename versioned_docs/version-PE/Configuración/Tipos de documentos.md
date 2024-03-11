@@ -21,7 +21,7 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
   "id": 1,
   "name": "NOTA VENTA",
   "initialNumber": 1,
-  "codeSii": "",
+  "code": "",
   "isElectronicDocument": 0,
   "breakdownTax": 1,
   "use": 0,
@@ -48,7 +48,7 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
 | **id**   | identificador único del Tipos de documentos   | Integer |
 | **name**   |  nombre del del tipo de documento | String |
 | **initialNumber**   | folio inicial del tipo de documento | Integer |
-| **codeSii**   | código tributario del tipo de documento | String |
+| **code**   | código tributario del tipo de documento | String |
 | **isElectronicDocument**   | indica si el tipo de documento es electrónico No(0) o Si(1) | Boolean |
 | **breakdownTax**   | indica si el tipo de documento desglosa impuesto No(0) o Si(1) | Boolean |
 | **use**   | indica si el uso que se le da al tipo de documento venta(0), devolución(1), despacho(2), liquidación(3) | Integer |
@@ -75,7 +75,7 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
 - **fields**, solo devolver atributos específicos de un recurso
 - **expand**, permite expandir instancias y colecciones para traer relaciones en una sola petición.
 - **name**, Permite filtrar por nombre del tipo de documento.
-- **codesii**, filtra por el código tributario del tipo de documento (String).
+- **code**, filtra por el código tributario del tipo de documento (String).
 - **ledgeraccount**, filtra por la cuenta contable del tipo de documento.
 - **booktypeid**, filtra por el tipo de libro que pertenece (Integer).
 - **iselectronicdocument**, permite filtrar si el tipo de documento es electrónico No(0) o Si(1) (Boolean).
@@ -86,7 +86,7 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
 - `GET /v1/document_types.json?limit=10&offset=0`
 - `GET /v1/document_types.json?fields=[codesii,ledgeraccount,state]`
 - `GET /v1/document_types.json?expand=[book_type]`
-- `GET /v1/document_types.json?codesii=33`
+- `GET /v1/document_types.json?code=03`
 - `GET /v1/document_types.json?state=0`
 
 ```json title="Response /document_types.json "
@@ -99,9 +99,9 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
     {
       "href": "https://api.bsale.io/v1/document_types/2.json",
       "id": 2,
-      "name": "FACTURA EXENTA O NO AFECTA ELECTRONICA",
+      "name": "FACTURA A4",
       "initialNumber": 1,
-      "codeSii": "34",
+      "code": "01",
       "isElectronicDocument": 1,
       "breakdownTax": 1,
       "use": 0,
@@ -126,9 +126,9 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
     {
       "href": "https://api.bsale.io/v1/document_types/3.json",
       "id": 3,
-      "name": "NOTA CREDITO ELECTRONICA",
-      "initialNumber": 43,
-      "codeSii": "61",
+      "name": "NOTA CREDITO",
+      "initialNumber": 1,
+      "code": "07",
       "isElectronicDocument": 1,
       "breakdownTax": 1,
       "use": 1,
@@ -155,7 +155,7 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
       "id": 1,
       "name": "NOTA VENTA",
       "initialNumber": 1,
-      "codeSii": "",
+      "code": "",
       "isElectronicDocument": 0,
       "breakdownTax": 1,
       "use": 0,
@@ -191,7 +191,7 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
   "id": 1,
   "name": "NOTA VENTA",
   "initialNumber": 1,
-  "codeSii": "",
+  "code": "",
   "isElectronicDocument": 0,
   "breakdownTax": 1,
   "use": 0,
@@ -229,14 +229,14 @@ CAF, proviene de "**Código de Asignación de Folios**". [Ver](https://www.sii.c
 :::
 
 #### Parámetros
-- **codesii**, filtra por el código tributario del tipo de documento (String).
+- **code**, filtra por el código tributario del tipo de documento (String).
 - **documenttypeid**, filtra por el identificador del tipo de documento (Integer).
 - **nextnumber**, filtra por el próximo folio que se desea utilizar (integer).
 
 #### Ejemplos
-- `GET /v1/document_types/caf.json?codesii=33`
+- `GET /v1/document_types/caf.json?code=01`
 - `GET /v1/document_types/caf.json?documenttypeid=1`
-- `GET /v1/document_types/caf.json?codesii=33&nextnumber=51`
+- `GET /v1/document_types/caf.json?code=01&nextnumber=51`
   
 ```json 
 {
@@ -261,11 +261,11 @@ CAF, proviene de "**Código de Asignación de Folios**". [Ver](https://www.sii.c
 - GET `/v1/document_types/number_availables.json` Retornará registros de números de folios.
 
 #### Parámetros
-- **codesii**, filtra por el código tributario del tipo de documento (String).
+- **code**, filtra por el código tributario del tipo de documento (String).
 - **documenttypeid**, filtra por el identificador del tipo de documento (Integer).
 
 #### Ejemplos
-- `GET /v1/document_types/number_availables.json?codesii=33`
+- `GET /v1/document_types/number_availables.json?code=01`
 - `GET /v1/document_types/number_availables.json?documenttypeid=1`
 
 ```json 
@@ -301,7 +301,7 @@ Solo es posible editar "Nombre del documento", "Estado" y "Si requiere datos de 
   "id": 10,
   "name": "Documento Boleta",
   "initialNumber": 1,
-  "codeSii": "35",
+  "code": "03",
   "isElectronicDocument": 0,
   "breakdownTax": 0,
   "use": 0,

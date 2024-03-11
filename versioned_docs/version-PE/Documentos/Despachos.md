@@ -29,7 +29,7 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
   "id": 22,
   "shippingDate": 1370318400,
   "address": null,
-  "municipality": "",
+  "district": "",
   "city": "",
   "recipient": null,
   "state": 0,
@@ -58,7 +58,7 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
 | **id**   | identificador único del despacho   | Integer |
 | **shippingDate**   | fecha del despacho   | Integer |
 | **address**   | dirección del despacho   | String |
-| **municipality**   | comuna del despacho  | String |
+| **district**   | distrito del despacho  | String |
 | **city**   | ciudad del despacho   | String |
 | **recipient**   | destinatario del despacho    | String |
 | **state**   | estado del descuento indica si el descuento esta activo(0) o inactivo (1)   | Boolean |
@@ -99,7 +99,7 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
       "id": 22,
       "shippingDate": 1370318400,
       "address": null,
-      "municipality": "",
+      "district": "",
       "city": "",
       "recipient": null,
       "state": 0,
@@ -124,7 +124,7 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
       "id": 23,
       "shippingDate": 1370318400,
       "address": null,
-      "municipality": "",
+      "district": "",
       "city": "",
       "recipient": null,
       "state": 0,
@@ -149,7 +149,7 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
       "id": 24,
       "shippingDate": 1370318400,
       "address": null,
-      "municipality": "",
+      "district": "",
       "city": "",
       "recipient": null,
       "state": 0,
@@ -187,7 +187,7 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
   "id": 22,
   "shippingDate": 1370318400,
   "address": null,
-  "municipality": "",
+  "district": "",
   "city": "",
   "recipient": null,
   "state": 0,
@@ -275,7 +275,7 @@ La **generación de documentos de remisión** está en fase de pruebas, por lo q
 - **priceListId**, Id de la lista de precio utilizada por el documento, si no es especificada se utilizara la lista de precio por defecto de la sucursal (Integer).
 - **emissionDate**, Fecha de emisión del documento (Integer) (no se debe aplicar zona horaria, solo considerar la fecha).
 - **shippingTypeId**, Id tipo de despacho (tipo de traslado) (Integer) 
-- **municipality**, Comuna de despacho (String) 
+- **district**, Distrito de despacho (String) 
 - **address**, Dirección de despacho (String)
 - **recipient**, Nombre quien recepciona despacho (String)
 
@@ -323,7 +323,7 @@ Si se desea generar una guía de traslado interno, se debe agregar al envío
   "officeId": 1,
   "emissionDate": 1603670400,
   "shippingTypeId": 6,
-  "municipality": "Lima",
+  "district": "Lima",
   "city": "Lima",
   "address": "Miraflores",
   "declare": 1,
@@ -337,7 +337,7 @@ Si se desea generar una guía de traslado interno, se debe agregar al envío
   ],
   "client": {
     "code": "123456789",
-    "municipality": "Lima",
+    "district": "Lima",
     "activity": "Arriendo de maquinaria pesada",
     "company": "Maquinarías Express",
     "city": "Lima",
@@ -354,7 +354,7 @@ Si se desea generar una guía de traslado interno, se debe agregar al envío
   "id": 1554,
   "shippingDate": 1603670400,
   "address": "Miraflores 1005",
-  "municipality": "Lima",
+  "district": "Lima",
   "city": "Lima",
   "recipient": "Edison Packard",
   "state": 0,

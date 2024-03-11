@@ -21,28 +21,31 @@ Cómo funciona la interfaz de Bsale, mira éstos videos:
 
 Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente estructura:
 
-```js title="Response /v1/products/92.json"
+```js title="Response /v1/products/12.json"
 {
-  "href": "https://api.bsale.io/v1/products/92.json",
-  "id": 92,
-  "name": null,
-  "description": null,
-  "classification": 0,
-  "ledgerAccount": null,
-  "costCenter": null,
-  "allowDecimal": 0,
-  "stockControl": 1,
-  "printDetailPack": 0,
-  "state": 99,
-  "prestashopProductId": 0,
-  "presashopAttributeId": 0,
-  "product_type": {
-    "href": "https://api.bsale.io/v1/product_types/1.json",
-    "id": "1"
-  },
-  "product_taxes": {
-    "href": "https://api.bsale.io/v1/products/92/product_taxes.json"
-  }
+    "href": "https://api.bsale.cl/v1/products/12.json",
+    "id": 12,
+    "name": "Producto",
+    "description": null,
+    "classification": 0,
+    "ledgerAccount": null,
+    "costCenter": null,
+    "allowDecimal": 0,
+    "stockControl": 1,
+    "printDetailPack": 0,
+    "state": 0,
+    "prestashopProductId": 0,
+    "presashopAttributeId": 0,
+    "product_type": {
+        "href": "https://api.bsale.cl/v1/product_types/1.json",
+        "id": "1"
+    },
+    "variants": {
+        "href": "https://api.bsale.cl/v1/products/12/variants.json"
+    },
+    "product_taxes": {
+        "href": "https://api.bsale.cl/v1/products/12/product_taxes.json"
+    }
 }
 ```
 

@@ -273,7 +273,7 @@ Para le generación de devoluciones, el cliente es obligatorio. Si el documento 
   "client": {
     "code": "1-9",
     "city": "Puerto Varas",
-    "municipality": "comuna",
+    "district": "distrito",
     "activity": "giro",
     "address": "direccion"
   }
@@ -282,7 +282,7 @@ Para le generación de devoluciones, el cliente es obligatorio. Si el documento 
 - **code**, Rut del cliente (String).
 - **city**, Ciudad del cliente  (String).
 - **company**, Razón social del cliente (String).
-- **municipality**, Comuna del cliente (String).
+- **district**, Distrito del cliente (String).
 - **activity**, Giro del cliente (String).
 - **address**, Dirección del cliente (String). 
 - **firstName**, Nombre de persona (String).
@@ -381,7 +381,7 @@ Para generar este tipo de devolución es obligatorio especificar el cliente.
   "client": {
     "code": "1-9",
     "city": "Puerto Varas",
-    "municipality": "comuna",
+    "district": "distrito",
     "activity": "giro",
     "address": "direccion"
   },
