@@ -23,7 +23,7 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
 
 ```js title="Response /v1/products/92.json"
 {
-  "href": "https://api.bsale.io/v1/products/92.json",
+  "href": "https://api.bsale.com.mx/v1/products/92.json",
   "id": 92,
   "name": null,
   "description": null,
@@ -37,11 +37,11 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
   "prestashopProductId": 0,
   "presashopAttributeId": 0,
   "product_type": {
-    "href": "https://api.bsale.io/v1/product_types/1.json",
+    "href": "https://api.bsale.com.mx/v1/product_types/1.json",
     "id": "1"
   },
   "product_taxes": {
-    "href": "https://api.bsale.io/v1/products/92/product_taxes.json"
+    "href": "https://api.bsale.com.mx/v1/products/92/product_taxes.json"
   }
 }
 ```
@@ -66,7 +66,7 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
 | **product_taxes**   | nodo que indica los impuestos asociados al producto| |
 
 ## GET lista de productos
-- GET `/v1/products.json` retornará todos los despachos.
+- GET `/v1/products.json` retornará todos los productos.
 
 #### Parámetros
 - **limit**, limita la cantidad de items de una respuesta JSON, por defecto el limit es 25, el máximo permitido es 50.
@@ -88,13 +88,13 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
 
 ```json title="Response /products.json "
 {
-  "href": "https://api.bsale.io/v1/products.json",
+  "href": "https://api.bsale.com.mx/v1/products.json",
   "count": 693,
   "limit": 3,
   "offset": 0,
   "items": [
     {
-      "href": "https://api.bsale.io/v1/products/731.json",
+      "href": "https://api.bsale.com.mx/v1/products/731.json",
       "id": 731,
       "name": "11% Avalúo Fiscal Depto 515,",
       "description": null,
@@ -108,15 +108,15 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
       "prestashopProductId": 0,
       "presashopAttributeId": 0,
       "product_type": {
-        "href": "https://api.bsale.io/v1/product_types/1.json",
+        "href": "https://api.bsale.com.mx/v1/product_types/1.json",
         "id": "1"
       },
       "product_taxes": {
-        "href": "https://api.bsale.io/v1/products/731/product_taxes.json"
+        "href": "https://api.bsale.com.mx/v1/products/731/product_taxes.json"
       }
     },
     {
-      "href": "https://api.bsale.io/v1/products/474.json",
+      "href": "https://api.bsale.com.mx/v1/products/474.json",
       "id": 474,
       "name": "24 clases 3 veces a la semana",
       "description": null,
@@ -130,15 +130,15 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
       "prestashopProductId": 0,
       "presashopAttributeId": 0,
       "product_type": {
-        "href": "https://api.bsale.io/v1/product_types/1.json",
+        "href": "https://api.bsale.com.mx/v1/product_types/1.json",
         "id": "1"
       },
       "product_taxes": {
-        "href": "https://api.bsale.io/v1/products/474/product_taxes.json"
+        "href": "https://api.bsale.com.mx/v1/products/474/product_taxes.json"
       }
     },
     {
-      "href": "https://api.bsale.io/v1/products/703.json",
+      "href": "https://api.bsale.com.mx/v1/products/703.json",
       "id": 703,
       "name": "2x1",
       "description": null,
@@ -152,15 +152,15 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
       "prestashopProductId": 0,
       "presashopAttributeId": 0,
       "product_type": {
-        "href": "https://api.bsale.io/v1/product_types/1.json",
+        "href": "https://api.bsale.com.mx/v1/product_types/1.json",
         "id": "1"
       },
       "product_taxes": {
-        "href": "https://api.bsale.io/v1/products/703/product_taxes.json"
+        "href": "https://api.bsale.com.mx/v1/products/703/product_taxes.json"
       }
     }
   ],
-  "next": "https://api.bsale.io/v1/products.json?limit=3&offset=3"
+  "next": "https://api.bsale.com.mx/v1/products.json?limit=3&offset=3"
 }
 ```
 ## GET un producto
@@ -174,7 +174,7 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
 
 ```json title="Response /products/150.json "
 {
-  "href": "https://api.bsale.io/v1/products/150.json",
+  "href": "https://api.bsale.com.mx/v1/products/150.json",
   "id": 150,
   "name": "polera",
   "description": "",
@@ -188,11 +188,11 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
   "prestashopProductId": 0,
   "presashopAttributeId": 0,
   "product_type": {
-    "href": "https://api.bsale.io/v1/product_types/1.json",
+    "href": "https://api.bsale.com.mx/v1/product_types/1.json",
     "id": "1"
   },
   "product_taxes": {
-    "href": "https://api.bsale.io/v1/products/150/product_taxes.json"
+    "href": "https://api.bsale.com.mx/v1/products/150/product_taxes.json"
   }
 }
 ```
@@ -202,13 +202,13 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
 
 ```json title="Response /products/:id/variants.json "
 {
-  "href": "https://api.bsale.io/v1/variants.json",
+  "href": "https://api.bsale.com.mx/v1/variants.json",
   "count": 3,
   "limit": 25,
   "offset": 0,
   "items": [
     {
-      "href": "https://api.bsale.io/v1/variants/500.json",
+      "href": "https://api.bsale.com.mx/v1/variants/500.json",
       "id": 500,
       "description": "gap",
       "unlimitedStock": 0,
@@ -226,18 +226,18 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
       "prestashopCombinationId": 0,
       "prestashopValueId": 0,
       "product": {
-        "href": "https://api.bsale.io/v1/products/150.json",
+        "href": "https://api.bsale.com.mx/v1/products/150.json",
         "id": "150"
       },
       "attribute_values": {
-        "href": "https://api.bsale.io/v1/variants/500/attribute_values.json"
+        "href": "https://api.bsale.com.mx/v1/variants/500/attribute_values.json"
       },
       "costs": {
-        "href": "https://api.bsale.io/v1/variants/500/costs.json"
+        "href": "https://api.bsale.com.mx/v1/variants/500/costs.json"
       }
     },
     {
-      "href": "https://api.bsale.io/v1/variants/499.json",
+      "href": "https://api.bsale.com.mx/v1/variants/499.json",
       "id": 499,
       "description": "L",
       "unlimitedStock": 0,
@@ -255,18 +255,18 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
       "prestashopCombinationId": 0,
       "prestashopValueId": 0,
       "product": {
-        "href": "https://api.bsale.io/v1/products/150.json",
+        "href": "https://api.bsale.com.mx/v1/products/150.json",
         "id": "150"
       },
       "attribute_values": {
-        "href": "https://api.bsale.io/v1/variants/499/attribute_values.json"
+        "href": "https://api.bsale.com.mx/v1/variants/499/attribute_values.json"
       },
       "costs": {
-        "href": "https://api.bsale.io/v1/variants/499/costs.json"
+        "href": "https://api.bsale.com.mx/v1/variants/499/costs.json"
       }
     },
     {
-      "href": "https://api.bsale.io/v1/variants/498.json",
+      "href": "https://api.bsale.com.mx/v1/variants/498.json",
       "id": 498,
       "description": "verde",
       "unlimitedStock": 0,
@@ -284,14 +284,14 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
       "prestashopCombinationId": 0,
       "prestashopValueId": 0,
       "product": {
-        "href": "https://api.bsale.io/v1/products/150.json",
+        "href": "https://api.bsale.com.mx/v1/products/150.json",
         "id": "150"
       },
       "attribute_values": {
-        "href": "https://api.bsale.io/v1/variants/498/attribute_values.json"
+        "href": "https://api.bsale.com.mx/v1/variants/498/attribute_values.json"
       },
       "costs": {
-        "href": "https://api.bsale.io/v1/variants/498/costs.json"
+        "href": "https://api.bsale.com.mx/v1/variants/498/costs.json"
       }
     }
   ]
@@ -303,16 +303,16 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
 
 ```json title="Response /products/150/product_taxes.json "
 {
-  "href": "https://api.bsale.io/v1/products/150/product_taxes.json",
+  "href": "https://api.bsale.com.mx/v1/products/150/product_taxes.json",
   "count": 2,
   "limit": 25,
   "offset": 0,
   "items": [
     {
-      "href": "https://api.bsale.io/v1/products/150/product_taxes/159.json",
+      "href": "https://api.bsale.com.mx/v1/products/150/product_taxes/159.json",
       "id": "159",
       "tax": {
-        "href": "https://api.bsale.io/v1/taxes/1.json",
+        "href": "https://api.bsale.com.mx/v1/taxes/1.json",
         "id": "1"
       }
     }
@@ -325,10 +325,10 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
 
 ```json title="Response /products/150/product_taxes/159.json"
 {
-  "href": "https://api.bsale.io/v1/products/150/product_taxes/159.json",
+  "href": "https://api.bsale.com.mx/v1/products/150/product_taxes/159.json",
   "id": "159",
   "tax": {
-    "href": "https://api.bsale.io/v1/taxes/1.json",
+    "href": "https://api.bsale.com.mx/v1/taxes/1.json",
     "id": "1"
   }
 }
@@ -379,13 +379,13 @@ Si no se definen impuestos en la creación del producto, se asignarán los confi
   "stockControl": 1,
   "name": "Calcetines",
   "ledgerAccount": "",
-  "href": "https://api.bsale.io/v1/products/97.json",
+  "href": "https://api.bsale.com.mx/v1/products/97.json",
   "prestashopProductId": 0,
   "presashopAttributeId": 0,
   "costCenter": "",
   "printDetailPack": 0,
   "product_type": {
-    "href": "https://api.bsale.io/v1/product_types/1.json",
+    "href": "https://api.bsale.com.mx/v1/product_types/1.json",
     "id": "1"
   },
   "classification": 1,
@@ -406,7 +406,9 @@ Se debe enviar un Json con la siguiente estructura.
 ```json
 {
    "id": "97",
-   "productTypeId": 10
+   "productTypeId": 10,
+   "allowDecimal": 1,
+   "name": "Calcetines de Mujer"
 }
 ```
 #### Respuesta
@@ -415,13 +417,13 @@ Se debe enviar un Json con la siguiente estructura.
   "stockControl": 1,
   "name": "Calcetines de Mujer",
   "ledgerAccount": "Calcetas",
-  "href": "https://api.bsale.io/v1/products/97.json",
+  "href": "https://api.bsale.com.mx/v1/products/97.json",
   "prestashopProductId": 0,
   "presashopAttributeId": 0,
   "costCenter": "23",
   "printDetailPack": 0,
   "product_type": {
-    "href": "https://api.bsale.io/v1/product_types/1.json",
+    "href": "https://api.bsale.com.mx/v1/product_types/1.json",
     "id": "1"
   },
   "classification": 1,
@@ -432,17 +434,90 @@ Se debe enviar un Json con la siguiente estructura.
 }
 ```
 
+## POST un Pack
+- POST `/v2/products/pack.json` 
+
+Se debe enviar un Json con la siguiente estructura.
+
+### Ejemplo JSON
+
+#### Envío
+```json
+{
+    "productTypeId": 1,
+    "basePrice": 10000,
+    "name": "Pack de ejemplo - api - 5",
+    "barCode": "90101001015",
+    "code": "90101001015",
+    "priceWithTax": 0,
+    "printDetailPack": 1,
+    "packDetails": [
+        {
+            "multipleVariant": 0,
+            "productPromoId": 0,
+            "quantity": 2,
+            "variantPromoId": 8901
+        }
+    ]
+}
+```
+- **productTypeId**, Id tipo de producto asociado al pack (Integer).
+- **basePrice**, Valor base del pack (Integer)
+- **name**, descripción del pack (String).
+- **barCode**, Código de barra del pack (String).
+- **code**, SKU del pack (String)
+- **priceWithTax**, Indica si basePrice es un valor bruto. No (0) o Si (1) (Boolean)
+- **printDetailPack**, Desea imprimir el detalle del pack en los documentos. No (0) o Si (1) (Boolean)
+- **packDetails.multipleVariant**, Pack soportará multiples variantes. No (0) o Si (1) (Boolean)
+- **packDetails.productPromoId**, Id producto asociado al pack
+- **packDetails.quantity**, Cantidad de producto incluido en el pack
+- **packDetails.variantPromoId**, Id variante asociado al pack
+
+:::tip
+Bsale soporta la creación de pack "cerrados" y "abiertos". Los cerrados, son los que se indica la variante y cantidad a utilizar. Los abiertos son aquellos que se les indica solamente el producto, el cual podrá seleccionar las variantes al vender.
+:::
+
+#### Respuesta
+```json
+{
+    "code": "201",
+    "data": {
+        "id": 2564,
+        "name": "Pack de ejemplo - Documentación",
+        "classification": 3,
+        "printPackDetail": 1,
+        "state": 1,
+        "productTypeId": 1,
+        "brandId": 0,
+        "sku": "90101001015",
+        "barCode": "90101001015",
+        "packDetail": [
+            {
+                "id": 29,
+                "productId": 0,
+                "variantId": 8901,
+                "quantity": 2,
+                "state": 0,
+                "packId": 2564,
+                "multipleVariant": 0,
+                "packInfo": {}
+            }
+        ]
+    }
+}
+```
+
 ## DELETE un producto virtualmente
 - DELETE `/v1/products/97.json` 
 Cambia el estado del producto.
 
 :::danger
-El producto no estará visible mediante interfaz y tendrá un `state` 99
+El producto no estará visible mediante interfaz y tendrá un `state` 1
 :::
 
 ```json
 {
-  "href": "https://api.bsale.io/v1/products/97.json",
+  "href": "https://api.bsale.com.mx/v1/products/97.json",
   "id": 97,
   "name": "Calcetines",
   "description": "Multiples colores de calcetines",
@@ -452,11 +527,11 @@ El producto no estará visible mediante interfaz y tendrá un `state` 99
   "allowDecimal": 0,
   "stockControl": 1,
   "printDetailPack": 0,
-  "state": 99,
+  "state": 1,
   "prestashopProductId": 0,
   "presashopAttributeId": 0,
   "product_type": {
-    "href": "https://api.bsale.io/v1/product_types/1.json",
+    "href": "https://api.bsale.com.mx/v1/product_types/1.json",
     "id": "1"
   }
 }
