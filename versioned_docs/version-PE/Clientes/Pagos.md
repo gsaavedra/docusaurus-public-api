@@ -292,7 +292,7 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
 - **fields**, solo devolver atributos específicos de un recurso
 - **expand**, permite expandir instancias y colecciones para traer relaciones en una sola petición.
 - **recorddate**, Permite filtrar por fecha del pago.
-- **codes**, Código documento basado en los identificadores de SUNAT, pueden ser varios separados por coma.
+- **code**, Código documento basado en los identificadores de SUNAT, pueden ser varios separados por coma.
 - **documentid**, Permite filtrar por el id del documento.
 - **officeid**, filtra por sucursal.
 - **paymenttypeid**, filtra por forma id de pago.
@@ -332,7 +332,7 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
     "isClientCredit": 0,
     "isCash": 1,
     "isCreditMemo": 0,
-    "codes": "03",
+    "code": "03",
     "officeId": 2,
     "officeName": "Los Angeles",
     "officeCostCenter": "",
@@ -351,7 +351,7 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
     "isClientCredit": 0,
     "isCash": 0,
     "isCreditMemo": 0,
-    "codes": "03",
+    "code": "03'",
     "officeId": 1,
     "officeName": "Puerto Varas",
     "officeCostCenter": "",
@@ -395,7 +395,7 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
     "isClientCredit": 1,
     "isCash": 0,
     "isCreditMemo": 0,
-    "codes": "03",
+    "code": "03",
     "officeId": 1,
     "officeName": "Puerto Varas",
     "officeCostCenter": "",
@@ -440,7 +440,7 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
     "isClientCredit": 0,
     "isCash": 0,
     "isCreditMemo": 0,
-    "code": "01",
+    "code": "03",
     "officeId": 2,
     "officeName": "Los Angeles",
     "officeCostCenter": "",
@@ -494,9 +494,9 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
       "percentageTaxWithheld": 0,
       "purchaseTaxAmount": 0,
       "purchaseTotalAmount": 0,
-      "address": "Cerro El Plomo 5855",
-      "district": "Cerro Colorado",
-      "city": "Arequipa",
+      "address": "Cerro El Plomo 5855, Las Condes, Chile",
+      "municipality": "Las Condes",
+      "city": "Chile",
       "urlTimbre": null,
       "ted": null,
       "urlPublicView": "http://app2.bsale.cl/view/18790/d132cb4d5f82?sfd=99",
@@ -506,8 +506,8 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
       "token": "d132cb4d5f82",
       "state": 0,
       "urlXml": "https://api.bsale.io/v1/18790/files/d132cb4d5f82.xml",
-      "informedSii": 2,
-      "responseMsgSii": null,
+      "informed": 2,
+      "responseMsg": null,
       "document_type": {
         "href": "https://api.bsale.io/v1/document_types/5.json",
         "id": "5"
@@ -566,9 +566,9 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
       "percentageTaxWithheld": 0,
       "purchaseTaxAmount": 0,
       "purchaseTotalAmount": 0,
-      "address": "Cerro El Plomo 5855",
-      "district": "Cerro Colorado",
-      "city": "Arequipa",
+      "address": "Cerro El Plomo 5855, Las Condes, Chile",
+      "municipality": "Las Condes",
+      "city": "Chile",
       "urlTimbre": null,
       "ted": null,
       "urlPublicView": "http://app2.bsale.cl/view/18790/8a350bb0a82d?sfd=99",
@@ -578,8 +578,8 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
       "token": "8a350bb0a82d",
       "state": 0,
       "urlXml": "https://api.bsale.io/v1/18790/files/8a350bb0a82d.xml",
-      "informedSii": 2,
-      "responseMsgSii": null,
+      "informed": 2,
+      "responseMsg": null,
       "document_type": {
         "href": "https://api.bsale.io/v1/document_types/3.json",
         "id": "3"
@@ -638,9 +638,9 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
       "percentageTaxWithheld": 0,
       "purchaseTaxAmount": 0,
       "purchaseTotalAmount": 0,
-      "address": "Cerro El Plomo 5855",
-      "district": "Cerro Colorado",
-      "city": "Arequipa",
+      "address": "Cerro El Plomo 5855, Las Condes, Chile",
+      "municipality": "Las Condes",
+      "city": "Chile",
       "urlTimbre": null,
       "ted": null,
       "urlPublicView": "http://app2.bsale.cl/view/18790/960ca7eb7519?sfd=99",
@@ -650,8 +650,8 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
       "token": "960ca7eb7519",
       "state": 0,
       "urlXml": "https://api.bsale.io/v1/18790/files/960ca7eb7519.xml",
-      "informedSii": 2,
-      "responseMsgSii": null,
+      "informed": 2,
+      "responseMsg": null,
       "document_type": {
         "href": "https://api.bsale.io/v1/document_types/5.json",
         "id": "5"
@@ -698,7 +698,7 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
 
 #### Parámetros
 - **clientid**, Permite filtrar por id del cliente.
-- **code**, Permite filtrar por RUC/DNI del cliente.
+- **code**, Permite filtrar por ruc o dni del cliente.
 - **comparisondate**, Permite separar los documentos vencidos de los por vencer, por defecto es la fecha del momento de la consulta
   
 #### Ejemplos
