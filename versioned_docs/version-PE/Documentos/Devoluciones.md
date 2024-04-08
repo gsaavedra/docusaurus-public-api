@@ -256,7 +256,7 @@ Para crear una devolución y su respectiva nota da crédito se debe enviar un JS
 - **emissionDate**, Fecha de emisión de la devolución, se envía en formato GMT (Integer).
 - **expirationDate**, Fecha vencimiento de la devolución, se envía en formato GMT (Integer).
 - **motive**, Indica el motivo de la devolución (String).
-- **declare**, Si se desea declarar el documento ante la SUNAT se envía 1, en caso contrario un 0 (Boolean).
+- **declare**, Si se desea declarar el documento al Servicio de impuestos internos se envía 1, en caso contrario un 0 (Boolean).
 - **priceAdjustment**, Si la devolución corresponde a un ajuste de precio de los productos se envía 1, en caso contrario 0 (Boolean).
 - **editTexts**, Si la devolución corresponde a una corrección de texto (por forma) se envía 1, en caso contrario 0 (Boolean).
 - **type**, Indica como se va a devolver el dinero del documento, 0 para devolución dinero, 1 para forma pago nueva venta, 2 para abono linea de crédito, 3 para otra devolución (Integer).
@@ -279,10 +279,10 @@ Para le generación de devoluciones, el cliente es obligatorio. Si el documento 
   }
 }
 ```
-- **code**, Rut del cliente (String).
+- **code**, RUC/DNI del cliente (String).
 - **city**, Ciudad del cliente  (String).
 - **company**, Razón social del cliente (String).
-- **district**, Distrito del cliente (String).
+- **district**, distrito del cliente (String).
 - **activity**, Giro del cliente (String).
 - **address**, Dirección del cliente (String). 
 - **firstName**, Nombre de persona (String).
@@ -446,7 +446,7 @@ En la url de la petición se debe especificar el id de la devolución, en este c
 - **referenceDocumentId**, Id de la nota de crédito original al cual se le va hacer la anulación (Integer).
 - **emissionDate**, Fecha de emisión de la anulación, se envía en formato GMT (Integer).
 - **expirationDate**, Fecha vencimiento de la anulación, se envía en formato GMT (Integer).
-- **declareSii**, Si se desea declarar la nota de débito al servicio de impuestos internos se envía 1, en caso contrario un 0 (Boolean).
+- **declare**, Si se desea declarar la nota de débito al servicio de impuestos internos se envía 1, en caso contrario un 0 (Boolean).
 
 ### Respuesta
 ```json title="201 Response /returns/:id/annulments.json"

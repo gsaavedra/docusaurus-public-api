@@ -84,9 +84,9 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
   
 #### Ejemplos
 - `GET /v1/document_types.json?limit=10&offset=0`
-- `GET /v1/document_types.json?fields=[codesii,ledgeraccount,state]`
+- `GET /v1/document_types.json?fields=[code,ledgeraccount,state]`
 - `GET /v1/document_types.json?expand=[book_type]`
-- `GET /v1/document_types.json?code=03`
+- `GET /v1/document_types.json?code=01`
 - `GET /v1/document_types.json?state=0`
 
 ```json title="Response /document_types.json "
@@ -99,7 +99,7 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
     {
       "href": "https://api.bsale.io/v1/document_types/2.json",
       "id": 2,
-      "name": "FACTURA A4",
+      "name": "FACTURA EXENTA O NO AFECTA ELECTRONICA",
       "initialNumber": 1,
       "code": "01",
       "isElectronicDocument": 1,
@@ -126,8 +126,8 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
     {
       "href": "https://api.bsale.io/v1/document_types/3.json",
       "id": 3,
-      "name": "NOTA CREDITO",
-      "initialNumber": 1,
+      "name": "NOTA CREDITO ELECTRONICA",
+      "initialNumber": 43,
       "code": "07",
       "isElectronicDocument": 1,
       "breakdownTax": 1,
@@ -225,7 +225,7 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
 - GET `/v1/document_types/caf.json` Retornará el archivo CAF.
 
 :::info
-CAF, proviene de "**Código de Asignación de Folios**". [Ver](https://www.sii.cl/preguntas_frecuentes/catastro/001_012_2020.htm#:~:text=%C2%BFQu%C3%A9%20significa%20el%20C%C3%B3digo%20de,Documentos%20Tributarios%20Electr%C3%B3nicos%20(DTE)%3F&text=El%20CAF%20en%20los%20DTE,procedimientos%20establecidos%20por%20el%20SII.) 
+CAF, proviene de "**Código de Asignación de Folios**". [Ver](https://www..cl/preguntas_frecuentes/catastro/001_012_2020.htm#:~:text=%C2%BFQu%C3%A9%20significa%20el%20C%C3%B3digo%20de,Documentos%20Tributarios%20Electr%C3%B3nicos%20(DTE)%3F&text=El%20CAF%20en%20los%20DTE,procedimientos%20establecidos%20por%20el%20.) 
 :::
 
 #### Parámetros
@@ -301,7 +301,7 @@ Solo es posible editar "Nombre del documento", "Estado" y "Si requiere datos de 
   "id": 10,
   "name": "Documento Boleta",
   "initialNumber": 1,
-  "code": "03",
+  "code": "35",
   "isElectronicDocument": 0,
   "breakdownTax": 0,
   "use": 0,

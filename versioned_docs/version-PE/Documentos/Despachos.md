@@ -275,7 +275,7 @@ La **generación de documentos de remisión** está en fase de pruebas, por lo q
 - **priceListId**, Id de la lista de precio utilizada por el documento, si no es especificada se utilizara la lista de precio por defecto de la sucursal (Integer).
 - **emissionDate**, Fecha de emisión del documento (Integer) (no se debe aplicar zona horaria, solo considerar la fecha).
 - **shippingTypeId**, Id tipo de despacho (tipo de traslado) (Integer) 
-- **district**, Distrito de despacho (String) 
+- **district**, distrito de despacho (String) 
 - **address**, Dirección de despacho (String)
 - **recipient**, Nombre quien recepciona despacho (String)
 
@@ -543,3 +543,34 @@ Si se desea generar una guía de tipo transporte privado, se debe agregar al env
 - **buyerCodeType**, Tipo id del comprador
 - **buyerCode**, Id del comprador
 - **buyerName**, Nombre del comprador
+
+### Categoría M1 o L
+Si se desea especificar esta opción para la categoría del vehículo según el catálogo de SUNAT,
+se debe enviar la siguiente opción con valor `02` dentro del nodo `dynamicAttributes`
+
+#### Envío
+```json title="POST /shippings.json "
+"dynamicAttributes": [
+   {
+        "alias": "specialInstructions",
+        "values": [
+            "02"
+        ]
+    }
+]
+```
+:::info
+Con esta opción activada, algunos de los datos de transportista serán opcionales, dependiendo del **Modo de Transporte** `shipmentTransportModeCode`
+:::
+
+#### Datos opcionales (Externo)
+Los campos opcinales cuando el Modo de Transporte es Externo (`shipmentTransportModeCode = 01`)
+- **shipmentCarrierCompanyName**
+
+#### Datos opcionales (Privado)
+Los campos opcinales cuando el Modo de Transporte es Externo (`shipmentTransportModeCode = 02`)
+- **shipmentCarrierDriverCodeType**
+- **shipmentCarrierDriverCode**
+- **shipmentCarrierCompanySurname**
+- **shipmentCarrierCompanyId**
+- **shipmentCarrierCompanyId**
