@@ -722,162 +722,166 @@ Al realizar una petición `HTTP`, el servicio retornara un JSON con la siguiente
 }
 ```
 
-### POST un checkout
-- POST `/v1/checkout.json` 
+### POST un checkout sin documento
+- POST `/v1/markets/checkout.json` 
 
-:::tip
-La creación de un checkout referencia a un documento pre-venta (pedido web, pedido mercado libre, orden.. etc). Dado que se debe referenciar en el checkout su `id_venta_documento_tributario`, `documentNumber` y `documentToken`.
+:::note
+Es posible crear un checkout sin referencia previa "pedido web". Esto generará un registro en la pantalla de administración de pedidos de Tienda en Linea, donde manualmente se podrá asignar un número de pedido. 
 :::
 
-Para crear una variante, se debe enviar un JSON con la siguiente estructura:
-#### Ejemplo JSON
+:::warning
+Este registro NO reserva Stock de productos y requiere una acción manual de parte del usuario, para generar el pedido.
+:::
+- **pickStoreId:** Id de la sucursal donde se retira el pedido.
+- **marketId:** Id del Market donde se genera el checkout.
+- **withdrawStore:** Refiere al tipo de despacho / 1 retiro en tienda - 0 con despacho.
+- **ptId:** Refiere a la forma de pago / - 1: webpay 2: transferencia bancaria 6: transferencia electrónica
 
-##### Envío
-```json
-{
-    "clientName": "Benito",
-    "clientLastName": "Gonzalez",
-    "clientEmail": " ",
-    "clientPhone": "",
-    "id_venta_documento_tributario": 2,
-    "documentNumber": 1,
-    "documentToken": "909a3f08ab89",
-    "clientCountry": "Chile",
-    "clientState": "Región Metropolitana",
+
+Veámos un ejemplo: Se debe enviar un JSON con la siguiente estructura:
+#### Ejemplo JSON
+<Tabs>
+  <TabItem value="Despacho" label="Despacho" default>
+
+    ```json
+    {
+    "clientName": "Mauricio Albertu",
+    "clientLastName": "Prades Vargas",
+    "clientEmail": "mprades1122@gmail.com",
+    "clientPhone": "993425349",
+    "code": "1-4",
+    //"pickName": "JUAN",
+    //"pickCode": "66666666-6",
+    "marketId": 1,
+    "withdrawStore": 0,
+    "shippingCost": 0,
     "ptId": 2,
     "payProcess": "for_validate",
+    "clientCountry": "Chile",
+    "clientState": "Región Metropolitana",
+    "clientCityZone": "Santiago",
+    "clientStreet": "Sandro Boticelli 76043",
+    "clientPostcode": "7550000",
+    "clientBuildingNumber": "depto las condes",
     "extrasUserData": {
-        "user_rut": "11111111-9",
-        "razon_social": "Rzon Social",
-        "giro_cliente": "Gro Clien",
-        "direccion": "Direccn",
-        "ciudad": "Ciudd",
-        "comuna": "Cmna"
+        "user_rut": "1-4",
+        //"razon_social": "Imaginex",
+        "direccion": "Sandro Boticelli 76043",
+        "ciudad": "Santiago",
+        "comuna": "Santiago"
     },
-    "clientStreet": "las condes",
-    "clientCityZone": "Las Condes",
-    "clientPostcode": "ss",
-    "clientBuildingNumber": "123",
     "cartDetails": [
         {
             "quantity": 1,
-            "unitValue": 29990,
-            "name": "Ejemplo Producto 1 Variante 2 Lt",
-            "image": "https://test.bsalemarket.com/assets/bsale/v1.2/images/no-image.png",
-            "idVarianteProducto": 2,
-            "productWebId": 1
+            "netUnitValue": 77577.59,
+            "idVarianteProducto": 12,
+            "productWebId": 6
         }
+    
     ]
 }
 ```
-- **token**, Si no viene lo crea.
-- **cartId**, Si no viene lo crea, Si viene valida que exista .
-- **cartDetails**, Utiliza las reglas del carro.
-- **spcId**, Si viene valida que exista .
-- **ptId**, Id forma de pago tienda en línea. Si viene valida que exista.  Id's:
-  - **1**, webpay
-  - **2**, transferencia bancaria
-  - **6**, transferencia electrónica
-- **createAt**, Fecha de creación del post, Bsale lo genera.
-- **payProcess**, Estado del pago asociado al checkout
-  - **success**, pago realizado
-  - **for_validate**, pago pendiente de validación
-- **totalCart**, Si no viene se calcula .
-- **pickStoreId**, Id tienda para retiro .
-- **shippingCost**, valor del despacho.
-- **pickName**, Nombre del que retira el pedido
-- **pickCode**, Rut del que retira el pedido 
-- **shippingComment**, Comentario del despacho.
-- **id_venta_documento_tributario**, Si viene valida que exista. (Referencia id del pedido)
-- **id_tipo_documento_tributario**, Id de tipo documento que desea generar. 
-- **documentNumber**, Si viene valida que exista. (Referencia número del pedido)
-- **documentToken**, Si viene valida que exista. (Referencia token del pedido)
-- **storeId**, Id tienda ecommerce (Debe ser igual a marketId).
-- **marketId**, Id de tienda en línea. Si viene valida que exista.
-- **isService**, Si no viene se calcula .
-- **withdrawStore**, Retiro en tienda (1) o despacho a domicilio (0)
+  </TabItem>
+  <TabItem value="Retiro en tienda" label="Retiro en tienda">
+    
+  ```json
+    {
+    "clientName": "test",
+    "clientLastName": "test",
+    "clientEmail": "test@gmail.com",
+    "clientPhone": "993425349",
+    "code": "1-4",
+    //"pickName": "JUAN",
+    //"pickCode": "66666666-6",
+    "pickStoreId": 1,
+    "marketId": 1,
+    "withdrawStore": 1,
+    "shippingCost": 0,
+    "ptId": 2,
+    "payProcess": "for_validate",
+    "clientCountry": "Chile",
+    "clientState": "Región Metropolitana",
+    "clientCityZone": "Santiago",
+    "clientStreet": "Dirección 76043",
+    "clientPostcode": "7550000",
+    "clientBuildingNumber": "depto las condes",
+    "extrasUserData": {
+        "user_rut": "1-4",
+        //"razon_social": "Imaginex",
+        "direccion": "Dirección 76043",
+        "ciudad": "Santiago",
+        "comuna": "Santiago"
+    },
+    "cartDetails": [
+        {
+            "quantity": 1,
+            "netUnitValue": 77577.59,
+            "idVarianteProducto": 12,
+            "productWebId": 6
+        }
+    
+    ]
+}
+```
+  </TabItem>
+
+</Tabs>
 
 ##### Respuesta
 ```json
 {
-  "code": "200",
-  "data": {
-    "id": 141,
-    "token": "5115f635235b69f957cef79a049864fb4fb167ef",
-    "clientName": "José",
-    "clientLastName": "Del Río",
-    "clientEmail": "j@delrio.com",
-    "clientPhone": "+569000001",
-    "clientCountry": "Chile",
-    "clientState": "Región Metropolitana",
-    "extrasUserData": {
-      "user_rut": "11111111-9",
-      "razon_social": "Rzon Social",
-      "giro_cliente": "Gro Clien",
-      "direccion": "Direccn",
-      "ciudad": "Ciudd",
-      "comuna": "Cmna"
-    },
-    "clientStreet": "las condes",
-    "clientCityZone": "Las Condes",
-    "clientPostcode": "ss",
-    "clientBuildingNumber": "123",
-    "cartId": 226,
-    "cartDetails": [
-      {
-        "id": 231,
-        "quantity": 1,
-        "unitValue": 29990,
-        "netUnitValue": 25201.6806722689,
-        "discount": 0,
-        "total": 29990,
-        "image": "https://d09.cloudfront.net/1680/product/home223.jpg",
-        "idVarianteProducto": 252,
-        "sku": "1586793957901",
-        "cartId": 226,
-        "taxList": [
-          1
-        ],
-        "shipping": {
-          "id": 102,
-          "weight": 1,
-          "width": 1,
-          "deph": 1,
-          "length": 1,
-          "match": 1
+    "code": "201",
+    "data": {
+        "id": 300,
+        "token": "b6a7be19089ef778cad9db4421077329f4f9886b",
+        "clientName": "test",
+        "clientLastName": "test",
+        "clientEmail": "test@gmail.com",
+        "clientPhone": "99342534391",
+        "clientCountry": "Chile",
+        "clientState": "Región Metropolitana",
+        "extrasUserData": {
+            "user_rut": "1-4",
+            "direccion": "Dirección 76043",
+            "ciudad": "Santiago",
+            "comuna": "Santiago"
         },
-        "value": 29990,
-        "cd_q": 1,
-        "cd_unit_value": 29990,
-        "cd_discount": 0,
-        "cd_sub_total": 29990,
-        "cd_id": 231,
-        "cd_id_discount": 0,
-        "cd_image": "https://d09.cloudfront.net/1680/product/home223.jpg",
-        "id_variante_producto": 252,
-        "codigo_variante_producto": "1586793957901",
-        "href": "https://api.bsale.io/v1/cart/226/detail/231.json"
-      }
-    ],
-    "ptId": 1,
-    "createAt": 1635431808,
-    "shippingCost": 0,
-    "isMafs": 0,
-    "discountCost": 0,
-    "active": 1,
-    "totalCart": 29990,
-    "pickStoreId": 0,
-    "id_venta_documento_tributario": 176,
-    "documentNumber": 176,
-    "documentToken": "8f4f09ed382c",
-    "isService": 0,
-    "withdrawStore": 0,
-    "payProcess": "for_validate",
-    "total": 29990,
-    "url": "https://api.bsale.io/v1/checkout/141.json"
-  }
+        "clientStreet": "Dirección 76043",
+        "clientCityZone": "Santiago",
+        "clientPostcode": "7550000",
+        "clientBuildingNumber": "depto las condes",
+        "cartId": 315,
+        "cartDetails": [
+            "https://api.bsale.io/v1/cart/315/detail.json"
+        ],
+        "ptId": 1,
+        "createAt": 1712578442,
+        "shippingCost": 0,
+        "isMafs": 0,
+        "discountCost": 0,
+        "active": 1,
+        "totalCart": 92317.3321,
+        "pickStoreId": 0,
+        "pickName": "JUAN",
+        "pickCode": "66666666-6",
+        "id_venta_documento_tributario": 498,
+        "documentNumber": 192,
+        "documentToken": "6caa6011ac68",
+        "marketId": 1,
+        "isService": 0,
+        "withdrawStore": 0,
+        "payProcess": "success",
+        "total": 92317.3321,
+        "url": "https://api.bsale.io/v1/checkout/300.json",
+        "currency": {
+            "decimals": 0,
+            "symbol": null,
+            "decimalSeparator": null
+        }
+    }
 }
 ```
+
 
 ### PUT un checkout
 - PUT `/v1/markets/checkout/:id.json` 
