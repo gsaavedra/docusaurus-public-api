@@ -1089,7 +1089,7 @@ En el caso de necesitar agregar atributos adicionales al documento, se necesita 
 }
 ```
 - **description**, Valor del atributo (String).
-- **dynamicAttributeId**, Id de la atributo dinámico (Integer).
+- **dynamicAttributeId**, Id del atributo dinámico (Integer).
 
 :::tip
 Para usar atributos adicionales deben primero deben crearse y referenciar su id.
